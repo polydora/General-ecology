@@ -1,0 +1,14 @@
+name: "General Ecology"
+output_dir: "."
+include: ["import.R"]
+exclude: ["*.csv", "*.xls", "*.xlsx"]
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    theme: cosmo
+    highlight: haddock
+    include:
+      after_body: 
+    css: my_styles.css

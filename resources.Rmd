@@ -1,0 +1,35 @@
+---
+title: Ресурсы по общей экологии и смежным темам
+---
+
+## Общая теория систем, типология, теория классификации
+
+- [Общая теория систем Урманцева](http://www.sci.aha.ru/ots/index.htm)
+- [С. В. Мейен, Ю.А. Шрейдер МЕТОДОЛОГИЧЕСКИЕ АСПЕКТЫ ТЕОРИИ КЛАССИФИКАЦИИ](http://www.kudrinbi.ru/public/453/index.htm)
+- [С. В. Мейен Исторические реконструкции в естествознании и типология](http://www.chronos.msu.ru/old/RREPORTS/meyen_istoricheskie.htm)
+- [С. В. Мейен Основные аспекты типологии организмов](http://www.kudrinbi.ru/public/451/index.htm)
+
+## Адаптации оганизмов
+
+В работе
+
+## Организмы и среда
+
+В работе
+
+
+## Структура и динамика популяций
+
+- [Г.Ю.Ризниченко Популяционная динамика](http://www.library.biophys.msu.ru/MathMod/PD.HTML)
+
+## Структура и динамика сообществ
+
+
+В работе
+
+
+## Статистика и математичесие методы в экологии
+- **Quinn, G.G.P., Keough, M.J., 2002. Experimental design and data analysis for biologists. Cambridge University Press.**
+- **Zuur, A., Ieno, E.N. and Smith, G.M., 2007. Analyzing ecological data.** Springer Science & Business Media.    
+-**Legendre, P., Legendre, L., 2012. Numerical ecology.** Elsevier.   
+

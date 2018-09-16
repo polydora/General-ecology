@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Курс “Общая экология”</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="my_styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/linmodr/">General Ecology</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">О курсе</a></li>
+        <li><a href="lectures.html">Темы лекций и презентации</a></li>
+        <li><a href="homeworks.html">Задания для самостоятельной работы</a></li>
+        <li><a href="seminars.html">Семинары</a></li>
+        <li class="dropdown">
+          <a href="appendix" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Полезности<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+             <li><a href="supplement.html">Дополнительные материалы</a></li>
+             <li><a href="resources.html">Ссылки и ресурсы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Курс “Общая экология”</h1>
+
+</div>
+
+
+<div id="-" class="section level2">
+<h2>О курсе</h2>
+<p>Не смотря на то, что современная биология у многих ассоциируется с изучением молекулярных основ жизни, одной из центральных тенденций в развитии естествознания, несомненно, является познание организации и функционирования надорганизменных систем, относящихся к области компетенции экологии. В настоящий момент трудно говорить о какой-то единой науке «экологии», под этим термином кроется целый куст дисциплин. Поэтому курс «Общая экология» направлен, в первую очередь, на рассмотрение арсенала подходов, методов и принципов формулировок гипотез при изучении систем, включающих в себя в качестве первичных элементов организмы, популяции, сообщества и среду их существования.</p>
+<div id="---" class="section level3">
+<h3>Цель и задачи курса</h3>
+<p>Главная цель курса - знакомство студентов не столько с огромным набором фактических данных, накопленных в экологических исследованиях, а, скорее, с методологией экологических исследований.</p>
+<p><strong>К числу главных задач курса мы относим</strong><br />
+- Выработку навыков представления изучаемых явлений в системной форме и отражения полученных знаний в форме моделей.<br />
+- Выработку навыков самостоятельного поиска информации, связанной с экологическими исследованиями, и ее критического осмысления.<br />
+- Знакомство с наиболее разработанными обобщениями в области аутэкологии, популяционной биологии и синэкологии.<br />
+- Знакомство с подходами и методами, используемыми в реальных экологических исследованиях.</p>
+</div>
+</div>
+<div id="--" class="section level2">
+<h2>Расписание и контакты</h2>
+<p>Лекции: с 22 сентября по две пары. О расписании семинаров объявим дополнительно</p>
+<p>Лекторы:</p>
+<ul>
+<li>Хайтов Вадим Михайлович - polydora[]rambler.ru</li>
+<li>Тиходеева Марина Юрьевна - marinaur[]list.ru</li>
+</ul>
+<p>Инструкторы семинаров:</p>
+<ul>
+<li>Мирин Денис Моисеевич</li>
+<li>Мельницкий Станислав Игоревич</li>
+<li>Чернова Елена Николаевна</li>
+<li>Сафронова Дарья Вячеславовна</li>
+<li>Крапивин Владимир Александрович</li>
+<li>….</li>
+</ul>
+</div>
+<div id="-----" class="section level2">
+<h2>Структура курса, задания, дедлайны и оценки</h2>
+<p>Курс состоит из трех частей, реализуемых в два этапа</p>
+<p><strong>Этап 1</strong> (первые 6 недель + 1 в резерве).</p>
+<p>1.Лекции<br />
+2.Самостоятельная работа</p>
+<p><strong>Этап 2</strong> (6 недель после окончания лекций)<br />
+3.Семинары</p>
+<p><strong>Оценки</strong><br />
+Политика курса направлена на использование накопительной системы, в которой дробные оценки накапливаются студентом за все время прохождения курса. Финальная оценка за курс (которая пойдет в зачетку) складывается из нескольких частей.</p>
+<p>1.<em>Оценки за самостоятельную работу</em>. Эти оценки производятся на основе тестов, которые будут размещены на платформе Stepik. После мягкого дедлайна (1 неделя) за задания начисляется только половина баллов. Студенты, не имеющие возможности использовать сетевые ресурсы, будут проходить тестирование в режиме offline, с использованием индивидуальных бумажных тестов.</p>
+<p>2.<em>Оценки за контрольные работы</em>. Всего будет две контрольные работы, которые будут проходить в формате online тестов, которые будут размещены на платформе Stepik. Каждый тест будет открыт для прохождения в определенный, согласованный с курсом, день. Студенты смогут его проходить в любом удобном для них месте, но только в течение 2 часов с момента начала тестирования. Студенты, не имеющие возможности использовать сетевые ресурсы, будут проходить тестирование, с использованием индивидуальных бумажных тестов в аудитории в течение двух часов.</p>
+<p>3.<em>Оценки за семинары</em>. По итогам семинаров студенты получат задания, за выполнение которых будет выставлены отдельные оценки. Студенты, активно работающие не семинарах, получают дополнительные баллы на счет за самостоятельные работы.</p>
+<p>4.<em>Устный экзамен</em>. Экзамен будет проходить в очной форме. Каждый студент получит один вопрос, на который надо дать развернутый ответ. Экзаменатор вправе задавать дополнительные вопросы. Студенты не набравшие баллов, необходимых для оценки «удовлетворительно», за самостоятельную работу, получают дополнительный билет. Аналогично, студенты не набравшие баллов, необходимых для оценки «удовлетворительно», за контрольные работы получают по дополнительному билет. То есть студент не прошедший ни одного теста (или прошедший их плохо) имеет возможность получить хорошую оценку, но при более сложном экзамене (максимальное количество вопросов - 4). Так что лучше работать в течение всего семестра.</p>
+<!-- - [Другие ресурсы и книги для изучения R и статистики](resources.html) -->
+<!--
+
+- [Как и где можно найти помощь с R и статистикой](more_help.html)
+
+-->
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

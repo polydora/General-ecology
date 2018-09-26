@@ -22,14 +22,19 @@ title: Ресурсы по общей экологии и смежным тем�
 
 - [Г.Ю.Ризниченко Популяционная динамика](http://www.library.biophys.msu.ru/MathMod/PD.HTML)
 
+- Turchin P. Complex population dynamics: a theoretical/empirical synthesis. – Princeton university press, 2003. – Т. 35.
+
+- Royama T. Analytical population dynamics. – Springer Science & Business Media, 2012. – Т. 10.
+
 ## Структура и динамика сообществ
 
+- Разумовский С. М. Закономерности динамики биоценозов. – Наука, 1981.
 
-В работе
+
 
 
 ## Статистика и математичесие методы в экологии
-- **Quinn, G.G.P., Keough, M.J., 2002. Experimental design and data analysis for biologists. Cambridge University Press.**
-- **Zuur, A., Ieno, E.N. and Smith, G.M., 2007. Analyzing ecological data.** Springer Science & Business Media.    
--**Legendre, P., Legendre, L., 2012. Numerical ecology.** Elsevier.   
+- Quinn, G.G.P., Keough, M.J., 2002. Experimental design and data analysis for biologists. Cambridge University Press.
+- Zuur, A., Ieno, E.N. and Smith, G.M., 2007. Analyzing ecological data. Springer Science & Business Media.    
+- Legendre, P., Legendre, L., 2012. Numerical ecology. Elsevier.   
 

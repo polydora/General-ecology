@@ -11,3 +11,7 @@ title: Презентации к лекциям
 ## Лекция 1.
 
 - [Предмет экологии](Presentations//Lecture 1.pdf)
+
+## Лекция 2.
+
+- [Аутэкология](Presentations//Lecture 2.pdf)

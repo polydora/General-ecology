@@ -1,0 +1,12 @@
+---
+title: Анализ работы
+---
+
+В работе
+
+
+```{r, echo=TRUE}
+class <- read.csv("data/class.csv")
+reasult <- read.csv("")
+```
+

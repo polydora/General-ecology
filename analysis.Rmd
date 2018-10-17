@@ -2,11 +2,32 @@
 title: Анализ работы
 ---
 
-В работе
+Вот такие предварительные результаты по контрольной.
 
 
-```{r, echo=TRUE}
+
+```{r, echo=FALSE}
 class <- read.csv("data/class.csv")
-reasult <- read.csv("")
+reasult <- read.csv("data/Control_work_1.csv", encoding = "Utf-8")
+res <- merge(class, reasult)
+res$sum <- apply(res[,-c(1:8)], MARGIN = 1, FUN = sum)
+res$Prop <- res$sum / ncol(res[,-c(1:8)]) * 100   
+
+library(ggplot2) 
+
+# library(doBy)
+# 
+# res_out <- summaryBy(sum ~ Group, data = res)
+
+ggplot(res, aes(x = Prop)) + geom_histogram(fill = "blue", color = "black", binwidth = 10) + labs(x = "Процент правильных ответов") + geom_vline(xintercept = 49) + geom_text(aes(x = 60, y = 40, label = "Зачет"))
+
+```
+
+А вот так выглядит распределение по группам. Горизотальные линии отделяют тройку (50-60%), четверку (60-80%) и пятерку (более 80%).
+
+
+```{r, echo=FALSE}
+ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Группа", y = "Количество правильных ответов") + geom_hline(yintercept = c(49, 60, 80))
+
 ```
 

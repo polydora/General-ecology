@@ -2,8 +2,9 @@
 title: Анализ работы
 ---
 
-Вот такие предварительные результаты по контрольной.
+## Распределение результатов
 
+Вот такие предварительные результаты по контрольной.
 
 
 ```{r, echo=FALSE}
@@ -30,4 +31,79 @@ ggplot(res, aes(x = Prop)) + geom_histogram(fill = "blue", color = "black", binw
 ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Группа", y = "Количество правильных ответов") + geom_hline(yintercept = c(49, 60, 80))
 
 ```
+
+
+## Распределение оценок
+
+```{r, echo=FALSE}
+res$credit[res$Prop >= 80] <- 5
+
+res$credit[res$Prop < 80 & res$Prop >= 60 ] <- 4
+
+res$credit[res$Prop < 60 & res$Prop >= 50 ] <- 3
+
+res$credit[res$Prop < 50 ] <- 2
+
+credits <- as.data.frame(table(res$credit))
+names(credits) <- c("Оценка", "Количество студентов")
+library(knitr)
+kable (credits, align = "cc")
+
+```
+
+Господа, тем, кто получил ниже тройки, надо собраться и на следующей контрольной подтянуться! Ну и не забывайте про повышающие коэффициенты за работу на семинарах...
+
+
+## Время выполнения работы
+
+А вот так выглядит степень скооперированности работы студентов. 
+
+```{r, echo=FALSE}
+time <- read.csv("data/Control_work_1_time.csv")
+time_res <- merge(class, time)
+
+time_res$start_date <- format(time_res$start_date,format = "%Y-%m-%d %H:%M:%S" )
+
+time_res$start_date <- strptime(time_res$start_date, format ="%Y-%m-%d %H:%M:%S"  )
+
+time_res$start_H <- as.numeric(format(time_res$start_date, "%H")) + as.numeric(format(time_res$start_date, "%M"))/60 
+
+
+ggplot(time_res, aes(x = as.factor(Group), y = start_H)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу")
+
+
+```
+
+
+
+Группа № 4, видимо, самая дружная :), у них минимальный разброс значений. Звонок другу... Хорошая, но не факт, что лучшая, технология.
+
+
+<!-- ```{r} -->
+<!-- cheat <- read.csv("data/Control_work_1_cheating.csv") -->
+<!-- cheat_res <- merge(class, cheat) -->
+
+<!-- cheat_res <- cheat_res[cheat_res$lesson_id %in% c(179985, 180749),] -->
+<!-- ggplot(cheat_res, aes(x = as.factor(Group), y = cheat )) + geom_boxplot() -->
+<!-- ``` -->
+
+## Трудность вопросов
+
+А вот так выглядит распределение по количеству верных ответов на вопросы 
+
+```{r, echo=FALSE}
+res_Q <- apply(res[,-c(1:8)], MARGIN = 2, FUN = sum)[1:22]
+
+res_Q <- res_Q[order(res_Q)]
+answers <- data.frame(Question = names(res_Q), Prop_TRUE = res_Q/nrow(res) *100)
+
+answers <- answers[order(answers$Prop_TRUE),]
+
+answers$Goodness <- ifelse(answers$Prop_TRUE < median(answers$Prop_TRUE), "Плохой вопрос", "Хороший вопрос")
+
+ggplot(answers, aes(y=Prop_TRUE, x = Question)) + geom_col(aes(fill= Goodness)) + coord_flip() + scale_fill_manual(values = c("red", "green")) + labs(fill = "", x = "Вопрос", y = "% Правильных ответов")
+
+
+```
+
 

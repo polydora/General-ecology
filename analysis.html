@@ -296,10 +296,60 @@ div.tocify {
 </div>
 
 
+<div id="-" class="section level2">
+<h2>Распределение результатов</h2>
 <p>Вот такие предварительные результаты по контрольной.</p>
 <p><img src="analysis_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>А вот так выглядит распределение по группам. Горизотальные линии отделяют тройку (50-60%), четверку (60-80%) и пятерку (более 80%).</p>
 <p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="-" class="section level2">
+<h2>Распределение оценок</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Оценка</th>
+<th align="center">Количество студентов</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">18</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">16</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">63</td>
+</tr>
+</tbody>
+</table>
+<p>Господа, тем, кто получил ниже тройки, надо собраться и на следующей контрольной подтянуться! Ну и не забывайте про повышающие коэффициенты за работу на семинарах…</p>
+</div>
+<div id="--" class="section level2">
+<h2>Время выполнения работы</h2>
+<p>А вот так выглядит степень скооперированности работы студентов.</p>
+<p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Группа № 4, видимо, самая дружная :), у них минимальный разброс значений. Звонок другу… Хорошая, но не факт, что лучшая, технология.</p>
+<!-- ```{r} -->
+<!-- cheat <- read.csv("data/Control_work_1_cheating.csv") -->
+<!-- cheat_res <- merge(class, cheat) -->
+<!-- cheat_res <- cheat_res[cheat_res$lesson_id %in% c(179985, 180749),] -->
+<!-- ggplot(cheat_res, aes(x = as.factor(Group), y = cheat )) + geom_boxplot() -->
+<!-- ``` -->
+</div>
+<div id="-" class="section level2">
+<h2>Трудность вопросов</h2>
+<p>А вот так выглядит распределение по количеству верных ответов на вопросы</p>
+<p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
 
 
 

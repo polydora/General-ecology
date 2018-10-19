@@ -2,6 +2,8 @@
 title: Анализ работы
 ---
 
+# Контрольная работа № 1
+
 ## Распределение результатов
 
 Вот такие предварительные результаты по контрольной.
@@ -106,4 +108,24 @@ ggplot(answers, aes(y=Prop_TRUE, x = Question)) + geom_col(aes(fill= Goodness)) 
 
 ```
 
+
+
+# Домашняя работа № 1
+
+## Распределение результатов по группам
+
+```{r, echo=FALSE}
+class <- read.csv("data/class.csv")
+reasult_hw <- read.csv("data/Home_work_1.csv", encoding = "Utf-8")
+res <- merge(class, reasult_hw)
+res$sum <- apply(res[,-c(1:7)], MARGIN = 1, FUN = sum)
+res$Prop <- res$sum / ncol(res[,-c(1:8)]) * 100   
+
+ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Группа", y = "Доля правильных ответов") + geom_hline(yintercept = c(49, 60, 80))
+
+
+```
+
+
+Замечательные результаты! Большинство получили пятерки. Это радует... 
 

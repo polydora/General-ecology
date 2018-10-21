@@ -35,4 +35,11 @@ title: Презентации к лекциям
 
 - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6.pdf)
 
+## Лекция 7.
 
+- [Конкурентные отношения](Presentations//Lecture 7.pdf)
+
+
+## Лекция 8.
+
+- [Трофические связи](Presentations//Lecture 8.pdf)

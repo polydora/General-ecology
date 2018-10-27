@@ -44,8 +44,8 @@ title: Ресурсы по общей экологии и смежным тем�
 - [Основные аспекты типологии организмов](Literature//Мейен 1978.pdf)
 
 ## Лекция №2
-- [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou] (Literature//pond2016.pdf)
+- [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou](Literature//pond2016.pdf)
 - [Голубые ракушки](Literature//Стрелков Хайтов Католикова 2012.pdf)
-- [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea] (Literature//Sarantchova 2001.pdf)
+- [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea](Literature//Sarantchova 2001.pdf)
 
 

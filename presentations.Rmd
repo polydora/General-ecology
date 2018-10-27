@@ -43,3 +43,17 @@ title: Презентации к лекциям
 ## Лекция 8.
 
 - [Трофические связи](Presentations//Lecture 8.pdf)
+
+
+
+## Лекция 9.
+
+- [Симбиозы](Presentations//Lecture 9.pdf)
+
+
+
+## Лекция 10.
+
+- [Структура сообщества](Presentations//Lecture 10.pdf)
+
+

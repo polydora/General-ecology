@@ -38,3 +38,14 @@ title: Ресурсы по общей экологии и смежным тем�
 - Zuur, A., Ieno, E.N. and Smith, G.M., 2007. Analyzing ecological data. Springer Science & Business Media.    
 - Legendre, P., Legendre, L., 2012. Numerical ecology. Elsevier.   
 
+#Литература, процитированная на лекциях
+
+## Лекция №1
+- [Основные аспекты типологии организмов](Literature//Мейен 1978.pdf)
+
+## Лекция №2
+- [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou] (Literature//pond2016.pdf)
+- [Голубые ракушки](Literature//Стрелков Хайтов Католикова 2012.pdf)
+- [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea] (Literature//Sarantchova 2001.pdf)
+
+

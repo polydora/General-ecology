@@ -234,6 +234,8 @@ ggplot(time_res, aes(x = as.factor(Group), y = start_H)) + geom_boxplot() + labs
 
 
 ```
+
+
 Ух, как все скоординировались-то! :) 
 
 Коллективный разум - это круто! 

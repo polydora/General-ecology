@@ -159,3 +159,105 @@ ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Гр�
 Не раслабляйтесь, третье домашнее задание уже открыто.
 
 
+
+# Контрольная работа № 2
+
+## Распределение результатов
+
+
+```{r, echo=FALSE}
+class <- read.csv("data/class.csv")
+reasult <- read.csv("data/Control_work_2.csv", encoding = "Utf-8")
+res <- merge(class, reasult)
+res$sum <- apply(res[,-c(1:8)], MARGIN = 1, FUN = sum)
+res$Prop <- res$sum / ncol(res[,-c(1:8)]) * 100   
+
+library(ggplot2) 
+
+# library(doBy)
+# 
+# res_out <- summaryBy(sum ~ Group, data = res)
+
+ggplot(res, aes(x = Prop)) + geom_histogram(fill = "blue", color = "black", binwidth = 10) + labs(x = "Процент правильных ответов") + geom_vline(xintercept = 49) + geom_text(aes(x = 60, y = 40, label = "Зачет"))
+
+```
+
+По-моему, стало заметно лучше, чем в предыдущий раз. Странно... работа, по-моему, сложнее. Впрочем, см. ниже оценку времени выхода в эфир.
+
+
+
+
+А вот так выглядит распределение по группам. Горизотальные линии отделяют тройку (50-60%), четверку (60-80%) и пятерку (более 80%). Соотношние между группами не изменилось, но зато резко упала дисперсия, что тоже хорошо.
+
+
+```{r, echo=FALSE}
+ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Группа", y = "Количество правильных ответов") + geom_hline(yintercept = c(49, 60, 80))
+
+```
+
+
+## Распределение оценок на контрольной №2
+
+```{r, echo=FALSE}
+res$credit[res$Prop >= 80] <- 5
+
+res$credit[res$Prop < 80 & res$Prop >= 60 ] <- 4
+
+res$credit[res$Prop < 60 & res$Prop >= 50 ] <- 3
+
+res$credit[res$Prop < 50 ] <- 2
+
+credits <- as.data.frame(table(res$credit))
+names(credits) <- c("Оценка", "Количество студентов")
+library(knitr)
+kable (credits, align = "cc")
+
+```
+
+
+
+## Время выполнения работы
+
+
+```{r, echo=FALSE}
+time <- read.csv("data/Control_work_2_time.csv")
+time_res <- merge(class, time)
+
+time_res$start_date <- format(time_res$start_date,format = "%Y-%m-%d %H:%M:%S" )
+
+time_res$start_date <- strptime(time_res$start_date, format ="%Y-%m-%d %H:%M:%S"  )
+
+time_res$start_H <- as.numeric(format(time_res$start_date, "%H")) + as.numeric(format(time_res$start_date, "%M"))/60 
+
+
+ggplot(time_res, aes(x = as.factor(Group), y = start_H)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу")
+
+
+```
+Ух, как все скоординировались-то! :) 
+
+Коллективный разум - это круто! 
+
+Но не забывайте, что **на экзамене придется отдуваться в идивидуальном порядке**...
+
+
+## Трудность вопросов
+
+А вот так выглядит распределение по количеству верных ответов на вопросы 
+
+```{r, echo=FALSE}
+res_Q <- apply(res[,-c(1:8)], MARGIN = 2, FUN = sum)[1:25]
+
+res_Q <- res_Q[order(res_Q)]
+answers <- data.frame(Question = names(res_Q), Prop_TRUE = res_Q/nrow(res) *100)
+
+answers <- answers[order(answers$Prop_TRUE),]
+
+answers$Goodness <- ifelse(answers$Prop_TRUE < median(answers$Prop_TRUE), "Плохой вопрос", "Хороший вопрос")
+
+ggplot(answers, aes(y=Prop_TRUE, x = Question)) + geom_col(aes(fill= Goodness)) + coord_flip() + scale_fill_manual(values = c("red", "green")) + labs(fill = "", x = "Вопрос", y = "% Правильных ответов")
+
+
+```
+
+

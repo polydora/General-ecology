@@ -131,9 +131,74 @@ kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption 
 ```
 
 
+
+## Второй семинар 
+
+Вот отчет преподавателей о втором семинаре. Это имена тех, кто отличился, им будет добавлено по 3% к результатам самостоятельной работы или контрольным.
+
+```{r, echo=FALSE}
+good <- sem[sem$Seminar_2 == 1 & !is.na(sem$Seminar_2), ]
+
+result <- data.frame(Group = good$Group, Name = paste(good$Last_name, " ", good$First_name))
+
+kable(result, col.names = c("Группа", "Ф. И."), caption = "Активные участники семинара", align = c("c", "l"))
+
+```
+
+
+
+Несколько снизилась интенсивность работы в нескольких группах. Постарайтесь ее нарастить на оставшихся четырех семинарах.
+
+```{r, echo=FALSE}
+library(reshape2)
+library(ggplot2)
+
+dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
+dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ]
+
+ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw()
+
+
+
+```
+
+
+
+
+### Задолженности по второму семинару 
+Внимание, ниже приведены имена тех, кто должен связаться с В. М. Хайтовым  для получения темы эссе. *Без этой отработки допуска к экзамену не будет*. Не тяните!
+
+Надеюсь, что в ближайшее время темы эссе будут окончательно сформулированы. 
+
+
+```{r, echo=FALSE}
+bad <- sem[sem$Seminar_2 == 0 & !is.na(sem$Seminar_2), ]
+```
+
+Еще раз имена тех людей, принадлежность которых к той или иной группе неизвестна, их не было на семинаре, но они отметились на Stepik.  Отзовитесь, пожалуйста! 
+
+Возможно, это люди, которые проходят тесты, но пришли откуда-то извне.
+
+```{r, echo=FALSE}
+kable(paste(bad$Last_name, " ", bad$First_name) [is.na(bad$Group)], col.names = "Ф. И.")
+```
+
+
+А вот те, у кого появилась задолженность. Если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю.
+
+
+```{r, echo=FALSE}
+bad2 <- bad[!is.na(bad$Group),]
+result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[bad2$Group])
+
+kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") )
+```
+
 <br>
 <br>
 <br>
+
+
 
 
 

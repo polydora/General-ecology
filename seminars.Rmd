@@ -79,7 +79,9 @@ topics <- c("Функциональная структура сообществ 
             "Взаимоотношения симбионтов и хозяев",
             "Температура и живые системы: эксперименты, модели, практическое значение")
 schedul <- read.csv("data/schedul_2018.csv", header = T)
- 
+
+# library(reshape2)
+# write.table(melt(schedul, id.vars = "Group"), "clipboard", sep = "\t", row.names = F) 
 
 ```
 

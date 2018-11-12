@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Материалы для подготовки к экзамену</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="my_styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/General-ecology/"> </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">О курсе</a></li>
+        <li><a href="lectures.html">Темы лекций</a></li>
+	<li><a href="presentations.html">Презентации</a></li>
+	<li><a href="schedul.html">Календарь</a></li>
+        <li><a href="homeworks.html">Cамостоятельная работа</a></li>
+        <li><a href="seminars.html">Семинары</a></li>
+	<li><a href="analysis.html">Разбор полетов</a></li>
+	<li><a href="exam.html">Экзамен</a></li>
+        <li class="dropdown">
+          <a href="appendix" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Полезности<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+             <li><a href="supplement.html">Дополнительные материалы</a></li>
+             <li><a href="resources.html">Ссылки и ресурсы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Материалы для подготовки к экзамену</h1>
+
+</div>
+
+
+<div id="----" class="section level2 smaller">
+<h2>Темы, которые выносятся на экзамен</h2>
+<p>1.Область компетенции экологии. Надорганизменные живые системы.<br />
+2.Разделы экологии и их задачи<br />
+3.Среда обитания. Понятие экологического фактора. Пространственная структура среды обитания.<br />
+4.Уровень благосостояния организма и его измерение.<br />
+5.Действие экологического фактора. Причины образования купола толерантности. Закон Либиха, закон Шелфорда<br />
+6.Экотипы и физиологические расы, связь с эволюционным процессом.<br />
+7.Эврибионты и стенобионты.<br />
+8.Изменение реакции организмов на действие экологического фактора в пространстве и времени.<br />
+9.Ритмы в активности организмов: Циркадные и лунные ритмы.<br />
+10.Совместное действие нескольких факторов. Реакция организмов на одновременное действие нескольких факторов: ведущие и лимитируемые факторы.<br />
+11. Классификации экологических факторов.<br />
+12.Витальное и сигнальное действие факторов.<br />
+13.Экологическое действие света (фотопериодизм)<br />
+14.Экологическое действие температуры. Эктотермы и эндотрмы. Правило суммы эффективных температур.<br />
+15.Экологическое действие солености. Осмоконформеры и осморегуляторы.<br />
+16.Ресурсы и ох отличие от других факторов среды.<br />
+17.Уровни действия абиотических факторов (особи, популяции, сообщества, экосистемы).<br />
+18.Унитарные и модулярные организмы.<br />
+19.Методы определения численности популяционных группировок.<br />
+20.Фундаментальные параметры популяционных группировок ( Рождаемость, смертность, эмиграция, иммиграция, площадь популяции).<br />
+21.Типы популяционных группировок.<br />
+22.Пространственная структура популяционных группировок.<br />
+23.Половая структура популяций. Определение пола у разных организмов. Аномалии в половой структуре. Циклические изменения в половой структуре.<br />
+24.Возрастная структура популяции: проблема определения возраста, кривые выживания, аномалии в возрастной структуре.<br />
+25.Основное уравнение динамики численности.Удельная рождаемость и удельная смертность. Мальтузианский параметр.<br />
+26.Закон Мальтуса. Экспоненциальная модель роста численности популяции.<br />
+27.Модель ограниченного роста численности популяции . Понятие емкости среды. Модель хаотического колебания численности. Динамика первого и второго порядка<br />
+28.r- и K-стратегии. Равновесные и оппортунистические популяции. Характерные признаки r- и K-отбора.<br />
+29.Классификация стратегий видов Раменского-Грайма<br />
+30.Циклические изменения численности популяции и их причины.<br />
+31.Причины долговременных колебаний в численности популяций.<br />
+32.Классификация симфизиологичских связей<br />
+33.Классификация взаимоотношений по результату взаимодействий.<br />
+34.Аменсализм и смежные явления<br />
+35.Протокооперация и смежные явления<br />
+36.Гнездовой паразитизм и смежные явления<br />
+37.Cинойкия и смежные явления.<br />
+38.Функциональная классификация организмов-потребителей.<br />
+39.«Гонка вооружений» хищников и жертв.<br />
+40.Теория оптимального фуражирования.<br />
+41.Динамика численности популяций потребителя (хищника) и биоресурса (жертвы).<br />
+42.Функциональная реакция хищников.<br />
+43.Ресурсы и их влияние на организм.<br />
+44.Эффект Олли.<br />
+45.Феномен каннибализма.<br />
+46.Экологическая ниша по Элтону. Гильдии.<br />
+47.Экологическая ниша по Хатчинсону.<br />
+48.Две формы конкуренции: прямая и эксплуатационная.<br />
+49.Внутривидовая конкуренция. Явление территориальности. Теоря агрессии К.Лоренца. Иерархические социальные структуры у животных. Самоизреживание и аутотоксичность у растений.<br />
+50. Межвидовая конкуренция. Фундаментальная и реализованная ниши. Экологическая лицензия.<br />
+51.Принцип конкурентного исключения. Динамика популяций конкурирующих видов.<br />
+52.Экологическая диверсификация. Смещение признаков. Парадокс планктона<br />
+53.Причины и последствия расхождения ниш. Влияние межвидовой и внутривидовой конкуренции на место видов в экосистеме.<br />
+54.Понятие симбиоза. Среда I и II порядков.<br />
+55.Стратегии симбионтов и хозяев в становлении разных типов симбиозов.<br />
+56.Мутуалистический симбиоз<br />
+57.Комменсалистический симбиоз<br />
+58.Паразитический симбиоз и его разновидности<br />
+59.Особенности паразитов, направленные на повышение притока энергии со стороны хозяина.<br />
+60.Адаптации паразитов, направленные на снижение негативного влияния со стороны хозяина.<br />
+61.Адаптации паразитов, направленные на повышение вероятности заражения следующего хозяина.<br />
+62.Паразитарные системы и роль паразитов в сообществах<br />
+63.Внутривидовые симбиозы<br />
+64.Концепция экосистемы.<br />
+65.Соотношение понятий экосистема и биогеоценоз.<br />
+66.Автотрофный и гетеротрофный компоненты экосистемы, их пространственное и временнóе разделение.<br />
+67.Структура экосистемы: продуценты, консументы, редуценты, поток энергии и два круговорота веществ.<br />
+68.Поток энергии в экосистеме. Пищевые цепи и пищевые сети.<br />
+69.Биогеохимические циклы. Обменный и резервный фонды биогеохимических циклов.<br />
+70.Блочная модель круговорота, его основные компоненты.<br />
+71.Классификация видов по их влиянию на свойства сообщества.<br />
+72.Видовое разнообразие сообществ<br />
+73.Видовое разнообразие и нарушения сообществ<br />
+74.Изменения в экосистемах: аллогенные и автогенные изменения.<br />
+75.Cукцессии и их струкутра. Биоэнергетика развития экосистемы. Изменения в характере пищевых цепей, замыкание биогеохимических циклов. Первичная и вторичная сукцессия.</p>
+</div>
+<div id="-" class="section level2 smaller">
+<h2>Опорный глоссарий</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Термины</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1 . K-стратегия</td>
+</tr>
+<tr class="even">
+<td align="left">2 . r-стратегия</td>
+</tr>
+<tr class="odd">
+<td align="left">3 . Абиогенез</td>
+</tr>
+<tr class="even">
+<td align="left">4 . Абиогенные факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">5 . Абиотические факторы</td>
+</tr>
+<tr class="even">
+<td align="left">6 . Автогенные сукцессии</td>
+</tr>
+<tr class="odd">
+<td align="left">7 . Автокаталитические циклы</td>
+</tr>
+<tr class="even">
+<td align="left">8 . Автотрофы</td>
+</tr>
+<tr class="odd">
+<td align="left">9 . Автотрофы</td>
+</tr>
+<tr class="even">
+<td align="left">10 . Агрессия</td>
+</tr>
+<tr class="odd">
+<td align="left">11 . Адаптация, Адаптивная радиация</td>
+</tr>
+<tr class="even">
+<td align="left">12 . Адаптивный комплекс</td>
+</tr>
+<tr class="odd">
+<td align="left">13 . Азотфиксирующие бактерии</td>
+</tr>
+<tr class="even">
+<td align="left">14 . Акклимация</td>
+</tr>
+<tr class="odd">
+<td align="left">15 . Аллелопатия</td>
+</tr>
+<tr class="even">
+<td align="left">16 . Аллогенные сукцессии</td>
+</tr>
+<tr class="odd">
+<td align="left">17 . Аменсализм</td>
+</tr>
+<tr class="even">
+<td align="left">18 . Аномальная возрастная структура</td>
+</tr>
+<tr class="odd">
+<td align="left">19 . Апериодические факторы</td>
+</tr>
+<tr class="even">
+<td align="left">20 . Аутотоксичность</td>
+</tr>
+<tr class="odd">
+<td align="left">21 . Аутэкология</td>
+</tr>
+<tr class="even">
+<td align="left">22 . Бентос</td>
+</tr>
+<tr class="odd">
+<td align="left">23 . Биогенные факторы</td>
+</tr>
+<tr class="even">
+<td align="left">24 . Биогеохимические циклы</td>
+</tr>
+<tr class="odd">
+<td align="left">25 . Биоиндикаторы</td>
+</tr>
+<tr class="even">
+<td align="left">26 . Биоиндикация</td>
+</tr>
+<tr class="odd">
+<td align="left">27 . Биомасса</td>
+</tr>
+<tr class="even">
+<td align="left">28 . Биотестирование</td>
+</tr>
+<tr class="odd">
+<td align="left">29 . Биотические факторы</td>
+</tr>
+<tr class="even">
+<td align="left">30 . Биоценоз</td>
+</tr>
+<tr class="odd">
+<td align="left">31 . Блочная модель круговорота</td>
+</tr>
+<tr class="even">
+<td align="left">32 . Валовая продукция</td>
+</tr>
+<tr class="odd">
+<td align="left">33 . Ведущие факторы</td>
+</tr>
+<tr class="even">
+<td align="left">34 . Вероятности перехода между когортами</td>
+</tr>
+<tr class="odd">
+<td align="left">35 . Видовое богатство</td>
+</tr>
+<tr class="even">
+<td align="left">36 . Видовое разнообразие</td>
+</tr>
+<tr class="odd">
+<td align="left">37 . Виоленты</td>
+</tr>
+<tr class="even">
+<td align="left">38 . Витальные факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">39 . Внутривидовая конкуренция</td>
+</tr>
+<tr class="even">
+<td align="left">40 . Внутривидовая кооперация</td>
+</tr>
+<tr class="odd">
+<td align="left">41 . Внутривидовые взаимоотношения (гомотипические реакции)</td>
+</tr>
+<tr class="even">
+<td align="left">42 . Возрастная пирамида</td>
+</tr>
+<tr class="odd">
+<td align="left">43 . Временная популяция</td>
+</tr>
+<tr class="even">
+<td align="left">44 . Время обработки добычи</td>
+</tr>
+<tr class="odd">
+<td align="left">45 . Время поиска добычи</td>
+</tr>
+<tr class="even">
+<td align="left">46 . Встречаемость вида</td>
+</tr>
+<tr class="odd">
+<td align="left">47 . Вторичная продукция</td>
+</tr>
+<tr class="even">
+<td align="left">48 . Вторичная сукцессия</td>
+</tr>
+<tr class="odd">
+<td align="left">49 . Вторичные периодические факторы</td>
+</tr>
+<tr class="even">
+<td align="left">50 . Второстепенные факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">51 . Выборочные методы оценки численности</td>
+</tr>
+<tr class="even">
+<td align="left">52 . Гемипопуляция</td>
+</tr>
+<tr class="odd">
+<td align="left">53 . Генетическая структура популяции</td>
+</tr>
+<tr class="even">
+<td align="left">54 . Генетический полиморфизм</td>
+</tr>
+<tr class="odd">
+<td align="left">55 . Гетеротопные организмы</td>
+</tr>
+<tr class="even">
+<td align="left">56 . Гетеротрофы</td>
+</tr>
+<tr class="odd">
+<td align="left">57 . Гетеротрофы</td>
+</tr>
+<tr class="even">
+<td align="left">58 . Гильдия</td>
+</tr>
+<tr class="odd">
+<td align="left">59 . Гнездовой паразитизм</td>
+</tr>
+<tr class="even">
+<td align="left">60 . Гомойотермные организмы</td>
+</tr>
+<tr class="odd">
+<td align="left">61 . Гомология</td>
+</tr>
+<tr class="even">
+<td align="left">62 . Гомология</td>
+</tr>
+<tr class="odd">
+<td align="left">63 . Градиент факторов</td>
+</tr>
+<tr class="even">
+<td align="left">64 . Групповое распределение особей</td>
+</tr>
+<tr class="odd">
+<td align="left">65 . Демографический вектор</td>
+</tr>
+<tr class="even">
+<td align="left">66 . Демэкология</td>
+</tr>
+<tr class="odd">
+<td align="left">67 . Денитрифицирующие бактерии</td>
+</tr>
+<tr class="even">
+<td align="left">68 . Детрит</td>
+</tr>
+<tr class="odd">
+<td align="left">69 . Диапазон оптимума</td>
+</tr>
+<tr class="even">
+<td align="left">70 . Диапазон угнетения</td>
+</tr>
+<tr class="odd">
+<td align="left">71 . Диаспорический субклимакс</td>
+</tr>
+<tr class="even">
+<td align="left">72 . Доминант сообщества</td>
+</tr>
+<tr class="odd">
+<td align="left">73 . Дыхание</td>
+</tr>
+<tr class="even">
+<td align="left">74 . Емкость среды</td>
+</tr>
+<tr class="odd">
+<td align="left">75 . Естественный отбор</td>
+</tr>
+<tr class="even">
+<td align="left">76 . Живая система</td>
+</tr>
+<tr class="odd">
+<td align="left">77 . Жизненная форма (растений)</td>
+</tr>
+<tr class="even">
+<td align="left">78 . Зависимая популяция</td>
+</tr>
+<tr class="odd">
+<td align="left">79 . Зависимый вид</td>
+</tr>
+<tr class="even">
+<td align="left">80 . Закон Либиха</td>
+</tr>
+<tr class="odd">
+<td align="left">81 . Закон Мальтуса</td>
+</tr>
+<tr class="even">
+<td align="left">82 . Закон системных преобразований</td>
+</tr>
+<tr class="odd">
+<td align="left">83 . Закон Шелфорда</td>
+</tr>
+<tr class="even">
+<td align="left">84 . Законы композиции</td>
+</tr>
+<tr class="odd">
+<td align="left">85 . Зоохория</td>
+</tr>
+<tr class="even">
+<td align="left">86 . Иерархия доминирования</td>
+</tr>
+<tr class="odd">
+<td align="left">87 . Изотерма</td>
+</tr>
+<tr class="even">
+<td align="left">88 . Иммиграция</td>
+</tr>
+<tr class="odd">
+<td align="left">89 . Индекс Шеннона</td>
+</tr>
+<tr class="even">
+<td align="left">90 . Интерференция</td>
+</tr>
+<tr class="odd">
+<td align="left">91 . Классификации экологический факторов</td>
+</tr>
+<tr class="even">
+<td align="left">92 . Клептопаразиты</td>
+</tr>
+<tr class="odd">
+<td align="left">93 . Климаксовое сообщество</td>
+</tr>
+<tr class="even">
+<td align="left">94 . Ключевой вид</td>
+</tr>
+<tr class="odd">
+<td align="left">95 . Комменсалистически симбиоз</td>
+</tr>
+<tr class="even">
+<td align="left">96 . Конвергенция</td>
+</tr>
+<tr class="odd">
+<td align="left">97 . Кондиционирующий вид</td>
+</tr>
+<tr class="even">
+<td align="left">98 . Конкуренты</td>
+</tr>
+<tr class="odd">
+<td align="left">99 . Консорций</td>
+</tr>
+<tr class="even">
+<td align="left">100 . Консументы</td>
+</tr>
+<tr class="odd">
+<td align="left">101 . Концепция «сверхорганизма»</td>
+</tr>
+<tr class="even">
+<td align="left">102 . Концепция континуума</td>
+</tr>
+<tr class="odd">
+<td align="left">103 . Косвенные топические связи</td>
+</tr>
+<tr class="even">
+<td align="left">104 . Косвенные трофические связи</td>
+</tr>
+<tr class="odd">
+<td align="left">105 . Косвенные фабрические связи</td>
+</tr>
+<tr class="even">
+<td align="left">106 . Косвенные форические связи</td>
+</tr>
+<tr class="odd">
+<td align="left">107 . Коэволюция</td>
+</tr>
+<tr class="even">
+<td align="left">108 . Коэффициент рециркуляции</td>
+</tr>
+<tr class="odd">
+<td align="left">109 . Кривая выживания</td>
+</tr>
+<tr class="even">
+<td align="left">110 . Криопротекторы</td>
+</tr>
+<tr class="odd">
+<td align="left">111 . Криптические виды</td>
+</tr>
+<tr class="even">
+<td align="left">112 . Ксенофагия</td>
+</tr>
+<tr class="odd">
+<td align="left">113 . Ксенофагия</td>
+</tr>
+<tr class="even">
+<td align="left">114 . Купол толерантности</td>
+</tr>
+<tr class="odd">
+<td align="left">115 . Летальный диапазон</td>
+</tr>
+<tr class="even">
+<td align="left">116 . Лимитирующие факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">117 . Литофилы</td>
+</tr>
+<tr class="even">
+<td align="left">118 . Логистическая кривая</td>
+</tr>
+<tr class="odd">
+<td align="left">119 . Макрофаги</td>
+</tr>
+<tr class="even">
+<td align="left">120 . Макрофиты</td>
+</tr>
+<tr class="odd">
+<td align="left">121 . Мальтузианская модель</td>
+</tr>
+<tr class="even">
+<td align="left">122 . Мальтузианский параметр</td>
+</tr>
+<tr class="odd">
+<td align="left">123 . Межвидовая конкуренция</td>
+</tr>
+<tr class="even">
+<td align="left">124 . Межвидовые взаимоотношения (гетеротипические реакции)</td>
+</tr>
+<tr class="odd">
+<td align="left">125 . Мерономия</td>
+</tr>
+<tr class="even">
+<td align="left">126 . Метапопуляция</td>
+</tr>
+<tr class="odd">
+<td align="left">127 . Метапопуляция</td>
+</tr>
+<tr class="even">
+<td align="left">128 . Микропопуляция</td>
+</tr>
+<tr class="odd">
+<td align="left">129 . Микрофаги</td>
+</tr>
+<tr class="even">
+<td align="left">130 . Мирмекофилия</td>
+</tr>
+<tr class="odd">
+<td align="left">131 . Модель</td>
+</tr>
+<tr class="even">
+<td align="left">132 . Модель Вольтера</td>
+</tr>
+<tr class="odd">
+<td align="left">133 . Модель Лотки-Вольтерра</td>
+</tr>
+<tr class="even">
+<td align="left">134 . Модель повторного отлова</td>
+</tr>
+<tr class="odd">
+<td align="left">135 . Модель Ферхюльста</td>
+</tr>
+<tr class="even">
+<td align="left">136 . Модификационная (средовая) изменчивость</td>
+</tr>
+<tr class="odd">
+<td align="left">137 . Модулярные организмы</td>
+</tr>
+<tr class="even">
+<td align="left">138 . Монофаги</td>
+</tr>
+<tr class="odd">
+<td align="left">139 . Мутуалистический симбиоз</td>
+</tr>
+<tr class="even">
+<td align="left">140 . Независимая популяция</td>
+</tr>
+<tr class="odd">
+<td align="left">141 . Нейстон</td>
+</tr>
+<tr class="even">
+<td align="left">142 . Нейтрализм</td>
+</tr>
+<tr class="odd">
+<td align="left">143 . Нейтральное влияние</td>
+</tr>
+<tr class="even">
+<td align="left">144 . Некрофагия</td>
+</tr>
+<tr class="odd">
+<td align="left">145 . Некрофагия</td>
+</tr>
+<tr class="even">
+<td align="left">146 . Нектон</td>
+</tr>
+<tr class="odd">
+<td align="left">147 . Нижний температурный порог развития</td>
+</tr>
+<tr class="even">
+<td align="left">148 . Нитратные бактерии</td>
+</tr>
+<tr class="odd">
+<td align="left">149 . Нитритные бактерии</td>
+</tr>
+<tr class="even">
+<td align="left">150 . Норма реакции</td>
+</tr>
+<tr class="odd">
+<td align="left">151 . Нунатаки</td>
+</tr>
+<tr class="even">
+<td align="left">152 . Обменный фонд круговорота</td>
+</tr>
+<tr class="odd">
+<td align="left">153 . Обратные связи первого и второго порядков</td>
+</tr>
+<tr class="even">
+<td align="left">154 . Объект-система</td>
+</tr>
+<tr class="odd">
+<td align="left">155 . Олигофаги</td>
+</tr>
+<tr class="even">
+<td align="left">156 . Осмоконформеры</td>
+</tr>
+<tr class="odd">
+<td align="left">157 . Осморегуляторы</td>
+</tr>
+<tr class="even">
+<td align="left">158 . Основное уравнение динамики популяции</td>
+</tr>
+<tr class="odd">
+<td align="left">159 . Отношения</td>
+</tr>
+<tr class="even">
+<td align="left">160 . Отрицательное влияние</td>
+</tr>
+<tr class="odd">
+<td align="left">161 . Парадокс планктона</td>
+</tr>
+<tr class="even">
+<td align="left">162 . Паразитический симбиоз</td>
+</tr>
+<tr class="odd">
+<td align="left">163 . Паразитоид</td>
+</tr>
+<tr class="even">
+<td align="left">164 . Паразитоиды</td>
+</tr>
+<tr class="odd">
+<td align="left">165 . Паразиты</td>
+</tr>
+<tr class="even">
+<td align="left">166 . Параллелизм</td>
+</tr>
+<tr class="odd">
+<td align="left">167 . Пастбищные хищники (grazers)</td>
+</tr>
+<tr class="even">
+<td align="left">168 . Патиенты</td>
+</tr>
+<tr class="odd">
+<td align="left">169 . Пелофилы</td>
+</tr>
+<tr class="even">
+<td align="left">170 . Первичная сукцессия</td>
+</tr>
+<tr class="odd">
+<td align="left">171 . Первичные периодические факторы</td>
+</tr>
+<tr class="even">
+<td align="left">172 . Первичные элементы</td>
+</tr>
+<tr class="odd">
+<td align="left">173 . Переключение пищевого предпочтения</td>
+</tr>
+<tr class="even">
+<td align="left">174 . Перифитон</td>
+</tr>
+<tr class="odd">
+<td align="left">175 . Пищевое предпочтение</td>
+</tr>
+<tr class="even">
+<td align="left">176 . Планктон</td>
+</tr>
+<tr class="odd">
+<td align="left">177 . Плейстон</td>
+</tr>
+<tr class="even">
+<td align="left">178 . Плодовитость возрастных когорт</td>
+</tr>
+<tr class="odd">
+<td align="left">179 . Плотность популяции</td>
+</tr>
+<tr class="even">
+<td align="left">180 . Пойкилотермные организмы</td>
+</tr>
+<tr class="odd">
+<td align="left">181 . Полиморфизм</td>
+</tr>
+<tr class="even">
+<td align="left">182 . Полиморфизм</td>
+</tr>
+<tr class="odd">
+<td align="left">183 . Полифаги</td>
+</tr>
+<tr class="even">
+<td align="left">184 . Положительное влияние</td>
+</tr>
+<tr class="odd">
+<td align="left">185 . Полузависимая популяция</td>
+</tr>
+<tr class="even">
+<td align="left">186 . Популяция</td>
+</tr>
+<tr class="odd">
+<td align="left">187 . Порог развития</td>
+</tr>
+<tr class="even">
+<td align="left">188 . Поселение</td>
+</tr>
+<tr class="odd">
+<td align="left">189 . Правило суммы эффективных температур</td>
+</tr>
+<tr class="even">
+<td align="left">190 . Принцип Гаузе</td>
+</tr>
+<tr class="odd">
+<td align="left">191 . Приспособленность</td>
+</tr>
+<tr class="even">
+<td align="left">192 . Проективное покрытие</td>
+</tr>
+<tr class="odd">
+<td align="left">193 . Простая популяция</td>
+</tr>
+<tr class="even">
+<td align="left">194 . Протокооперация</td>
+</tr>
+<tr class="odd">
+<td align="left">195 . Протометаболические системы</td>
+</tr>
+<tr class="even">
+<td align="left">196 . Прямые топические связи</td>
+</tr>
+<tr class="odd">
+<td align="left">197 . Прямые трофические связи</td>
+</tr>
+<tr class="even">
+<td align="left">198 . Прямые фабрические связи</td>
+</tr>
+<tr class="odd">
+<td align="left">199 . Прямые форические связи</td>
+</tr>
+<tr class="even">
+<td align="left">200 . Псаммофилы</td>
+</tr>
+<tr class="odd">
+<td align="left">201 . Псевдопопуляция</td>
+</tr>
+<tr class="even">
+<td align="left">202 . Равномерное распределение особей</td>
+</tr>
+<tr class="odd">
+<td align="left">203 . Ранжированная диета</td>
+</tr>
+<tr class="even">
+<td align="left">204 . Реализованная ниша</td>
+</tr>
+<tr class="odd">
+<td align="left">205 . Редуценты</td>
+</tr>
+<tr class="even">
+<td align="left">206 . Резервный фонд круговорота</td>
+</tr>
+<tr class="odd">
+<td align="left">207 . Рекуррентная форма модели</td>
+</tr>
+<tr class="even">
+<td align="left">208 . Реофилы</td>
+</tr>
+<tr class="odd">
+<td align="left">209 . Ресурсы</td>
+</tr>
+<tr class="even">
+<td align="left">210 . Ретардационный субклимакс</td>
+</tr>
+<tr class="odd">
+<td align="left">211 . Рецидивный субклимакс</td>
+</tr>
+<tr class="even">
+<td align="left">212 . Рождаемость</td>
+</tr>
+<tr class="odd">
+<td align="left">213 . Рудералы</td>
+</tr>
+<tr class="even">
+<td align="left">214 . Самоизреживание</td>
+</tr>
+<tr class="odd">
+<td align="left">215 . Сапробность</td>
+</tr>
+<tr class="even">
+<td align="left">216 . Саркофагия</td>
+</tr>
+<tr class="odd">
+<td align="left">217 . Саркофагия</td>
+</tr>
+<tr class="even">
+<td align="left">218 . Сбалансированная диета</td>
+</tr>
+<tr class="odd">
+<td align="left">219 . Сестон</td>
+</tr>
+<tr class="even">
+<td align="left">220 . Сигнальные факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">221 . Симбиоз</td>
+</tr>
+<tr class="even">
+<td align="left">222 . Симбиозы</td>
+</tr>
+<tr class="odd">
+<td align="left">223 . Симбионт</td>
+</tr>
+<tr class="even">
+<td align="left">224 . Синойкия</td>
+</tr>
+<tr class="odd">
+<td align="left">225 . Синэкология</td>
+</tr>
+<tr class="even">
+<td align="left">226 . Система</td>
+</tr>
+<tr class="odd">
+<td align="left">227 . Система объектов общего рода</td>
+</tr>
+<tr class="even">
+<td align="left">228 . Случайное распределение особей</td>
+</tr>
+<tr class="odd">
+<td align="left">229 . Смертность</td>
+</tr>
+<tr class="even">
+<td align="left">230 . Сообщество</td>
+</tr>
+<tr class="odd">
+<td align="left">231 . Сообщество</td>
+</tr>
+<tr class="even">
+<td align="left">232 . Среда I и II порядка</td>
+</tr>
+<tr class="odd">
+<td align="left">233 . Среда I порядка</td>
+</tr>
+<tr class="even">
+<td align="left">234 . Среда II поряка</td>
+</tr>
+<tr class="odd">
+<td align="left">235 . Стенобионты</td>
+</tr>
+<tr class="even">
+<td align="left">236 . Стенобионты</td>
+</tr>
+<tr class="odd">
+<td align="left">237 . Стресс-толеранты</td>
+</tr>
+<tr class="even">
+<td align="left">238 . Сублетальные хищники</td>
+</tr>
+<tr class="odd">
+<td align="left">239 . Сукцессия</td>
+</tr>
+<tr class="even">
+<td align="left">240 . Сумма градусо-дней (сумма «эффективных температур»)</td>
+</tr>
+<tr class="odd">
+<td align="left">241 . Таксономия</td>
+</tr>
+<tr class="even">
+<td align="left">242 . Температурно-зависимое определение пола</td>
+</tr>
+<tr class="odd">
+<td align="left">243 . Теория оптимального фуражирования</td>
+</tr>
+<tr class="even">
+<td align="left">244 . Термолабильность</td>
+</tr>
+<tr class="odd">
+<td align="left">245 . Территориальное поведение</td>
+</tr>
+<tr class="even">
+<td align="left">246 . Территория популяции</td>
+</tr>
+<tr class="odd">
+<td align="left">247 . Тотальный подсчет</td>
+</tr>
+<tr class="even">
+<td align="left">248 . Трофическая сеть</td>
+</tr>
+<tr class="odd">
+<td align="left">249 . Трофическая цепь</td>
+</tr>
+<tr class="even">
+<td align="left">250 . Трофность</td>
+</tr>
+<tr class="odd">
+<td align="left">251 . Унитарные организмы</td>
+</tr>
+<tr class="even">
+<td align="left">252 . Уровень благосостояния организма</td>
+</tr>
+<tr class="odd">
+<td align="left">253 . Условия</td>
+</tr>
+<tr class="even">
+<td align="left">254 . Фазовый портрет</td>
+</tr>
+<tr class="odd">
+<td align="left">255 . Факторы, зависящие от плотности популяции</td>
+</tr>
+<tr class="even">
+<td align="left">256 . Факторы, не зависящие от плотности популяции</td>
+</tr>
+<tr class="odd">
+<td align="left">257 . Фенотипическая пластичность</td>
+</tr>
+<tr class="even">
+<td align="left">258 . Фенотипический полиморфизм</td>
+</tr>
+<tr class="odd">
+<td align="left">259 . Фотопериодизм</td>
+</tr>
+<tr class="even">
+<td align="left">260 . Фундаментальная ниша</td>
+</tr>
+<tr class="odd">
+<td align="left">261 . Функциональный ответ хищников</td>
+</tr>
+<tr class="even">
+<td align="left">262 . Хаотическая система</td>
+</tr>
+<tr class="odd">
+<td align="left">263 . Хищники</td>
+</tr>
+<tr class="even">
+<td align="left">264 . Хищники-генералисты</td>
+</tr>
+<tr class="odd">
+<td align="left">265 . Хищники-специалисты</td>
+</tr>
+<tr class="even">
+<td align="left">266 . Хозяин</td>
+</tr>
+<tr class="odd">
+<td align="left">267 . Хромосомное определение пола</td>
+</tr>
+<tr class="even">
+<td align="left">268 . Хронополиморфизм</td>
+</tr>
+<tr class="odd">
+<td align="left">269 . Цикл азота</td>
+</tr>
+<tr class="even">
+<td align="left">270 . Цикл серы</td>
+</tr>
+<tr class="odd">
+<td align="left">271 . Цикл углерода</td>
+</tr>
+<tr class="even">
+<td align="left">272 . Цикл фосфора</td>
+</tr>
+<tr class="odd">
+<td align="left">273 . Численность популяции</td>
+</tr>
+<tr class="even">
+<td align="left">274 . Численность популяции</td>
+</tr>
+<tr class="odd">
+<td align="left">275 . Чистая первичная продукция</td>
+</tr>
+<tr class="even">
+<td align="left">276 . Эврибионты</td>
+</tr>
+<tr class="odd">
+<td align="left">277 . Эврибионты</td>
+</tr>
+<tr class="even">
+<td align="left">278 . Эвтрофикация</td>
+</tr>
+<tr class="odd">
+<td align="left">279 . Эдификатор</td>
+</tr>
+<tr class="even">
+<td align="left">280 . Экзогенные изменения</td>
+</tr>
+<tr class="odd">
+<td align="left">281 . Экоклин</td>
+</tr>
+<tr class="even">
+<td align="left">282 . Экологическая диверсификация</td>
+</tr>
+<tr class="odd">
+<td align="left">283 . Экологическая лицензия</td>
+</tr>
+<tr class="even">
+<td align="left">284 . Экологическая ниша по Хатчинсону</td>
+</tr>
+<tr class="odd">
+<td align="left">285 . Экологическая ниша по Элтону</td>
+</tr>
+<tr class="even">
+<td align="left">286 . Экологический фактор</td>
+</tr>
+<tr class="odd">
+<td align="left">287 . Экосистема</td>
+</tr>
+<tr class="even">
+<td align="left">288 . Экосистемный инженер</td>
+</tr>
+<tr class="odd">
+<td align="left">289 . Экотипы</td>
+</tr>
+<tr class="even">
+<td align="left">290 . Эксплеренты</td>
+</tr>
+<tr class="odd">
+<td align="left">291 . Эксплуатационная конкуренция</td>
+</tr>
+<tr class="even">
+<td align="left">292 . Эктотермы</td>
+</tr>
+<tr class="odd">
+<td align="left">293 . Эктотермы</td>
+</tr>
+<tr class="even">
+<td align="left">294 . Эмиграция</td>
+</tr>
+<tr class="odd">
+<td align="left">295 . Эндогенные изменения</td>
+</tr>
+<tr class="even">
+<td align="left">296 . Эндотермы</td>
+</tr>
+<tr class="odd">
+<td align="left">297 . Эндотермы</td>
+</tr>
+<tr class="even">
+<td align="left">298 . Энтропия</td>
+</tr>
+<tr class="odd">
+<td align="left">299 . Эффект Олли</td>
+</tr>
+<tr class="even">
+<td align="left">300 . Эффективная температура</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -263,3 +263,68 @@ ggplot(answers, aes(y=Prop_TRUE, x = Question)) + geom_col(aes(fill= Goodness)) 
 ```
 
 
+
+# Домашняя работа № 3
+
+## Распределение результатов по группам
+
+```{r, echo=FALSE}
+class <- read.csv("data/class.csv")
+reasult_hw <- read.csv("data/Home_work_3.csv", encoding = "Utf-8")
+res <- merge(class, reasult_hw)
+res$sum <- apply(res[,-c(1:7)], MARGIN = 1, FUN = sum)
+res$Prop <- res$sum / sum(reasult_hw[1, -c(1:3)]) * 100   
+
+ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Группа", y = "Доля правильных ответов") + geom_hline(yintercept = c(49, 60, 80))
+
+
+```
+
+
+# Финальные результаты по Домашним работам и по Контрольным
+
+```{r, echo=FALSE}
+class <- read.csv("data/class.csv")
+reasult_hw1 <- read.csv("data/Home_work_1.csv", encoding = "Utf-8")
+reasult_hw2 <- read.csv("data/Home_work_2.csv", encoding = "Utf-8")
+reasult_hw3 <- read.csv("data/Home_work_3.csv", encoding = "Utf-8")
+
+reasult_contr1 <- read.csv("data/Control_work_1.csv", encoding = "Utf-8")
+reasult_contr2 <- read.csv("data/Control_work_1.csv", encoding = "Utf-8")
+ 
+
+tmp <- merge(reasult_hw1, reasult_hw2, by = c("user_id", "last_name", "first_name"))
+all_hw <- merge(tmp,reasult_hw3, by = c("user_id", "last_name", "first_name"))
+
+Total_sum_hw <- sum(all_hw[1,-c(1:3)])
+
+all_hw$sum <- apply(all_hw[,-c(1:3)], MARGIN = 1, FUN = sum)
+
+
+all_contr <- merge(reasult_contr1, reasult_contr1, by = c("user_id", "last_name", "first_name"))
+
+Total_sum_contr <- sum(all_contr[1,-c(1:3)])
+
+all_contr$sum <- apply(all_contr[,-c(1:3)], MARGIN = 1, FUN = sum)
+
+
+res_hw <- merge(class, all_hw[,c("user_id", "last_name", "first_name", "sum")])
+
+res_contr <- merge(class, all_contr[,c("user_id", "last_name", "first_name", "sum")])
+
+res <- merge(res_hw, res_contr, by = c("user_id"))
+
+result_total <- data.frame(Name = paste(res$Last_name.x, " ", res$First_name.x), Group = res$Group.x,  Sum_Contr = res$sum.y, Sum_HW = round(res$sum.x))
+
+result_total <- result_total[!is.na(result_total$Group), ] 
+
+result_total <- result_total[order(result_total$Group), ]
+kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные (макс. 46)", "Самостоятельные (макс.77)"), align = "lccc", row.names = FALSE)
+
+```
+
+
+
+
+
+

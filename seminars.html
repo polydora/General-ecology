@@ -1053,8 +1053,14 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<p>Несколько снизилась интенсивность работы в нескольких группах. Постарайтесь ее нарастить на оставшихся четырех семинарах.</p>
-<p><img src="seminars_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<!-- Несколько снизилась интенсивность работы в нескольких группах. Постарайтесь ее нарастить на оставшихся четырех семинарах. -->
+<!-- ```{r, echo=FALSE} -->
+<!-- library(reshape2) -->
+<!-- library(ggplot2) -->
+<!-- dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ] -->
+<!-- ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw() -->
+<!-- ``` -->
 <div id="---" class="section level3">
 <h3>Задолженности по второму семинару</h3>
 <p>Внимание, ниже приведены имена тех, кто должен связаться с В. М. Хайтовым для получения темы эссе. <em>Без этой отработки допуска к экзамену не будет</em>. Не тяните!</p>
@@ -1438,7 +1444,7 @@ div.tocify {
 </tbody>
 </table>
 <p>Молодцы! Количество активных участников вновь выросло почти во всех группах. Или это очередные “популяционные циклы”?</p>
-<p><img src="seminars_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="seminars_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <div id="---" class="section level3">
 <h3>Задолженности по тертьему семинару</h3>
 <p>Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю.</p>

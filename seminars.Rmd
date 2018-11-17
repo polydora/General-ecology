@@ -244,7 +244,7 @@ bad <- sem[sem$Seminar_3 == 0 & !is.na(sem$Seminar_2), ]
 
 ```{r, echo=FALSE}
 bad2 <- bad[!is.na(bad$Group),]
-result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_2[bad2$Group]])
+result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_3[bad2$Group]])
 
 kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") )
 ```
@@ -364,10 +364,9 @@ for(i in unique(dolg$Topic)) {
 
 
 
-dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Seminar = as.numeric(dolg$variable)
-,  Topic = dolg$Topic, Esse = paste(dolg$esse)) 
+dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse)) 
 
-kable(dolg_report, col.names = c("Ф. И.","Группа", "Cеминар",  "Номер темы", "Тема эссе"), align = "lcccl") 
+kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl") 
   
 # write.csv(dolg_report, "data/Seminar_dolg_2018_2.csv", sep = ",", row.names = FALSE)  
 

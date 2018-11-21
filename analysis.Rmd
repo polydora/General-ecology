@@ -289,21 +289,23 @@ reasult_hw1 <- read.csv("data/Home_work_1.csv", encoding = "Utf-8")
 reasult_hw2 <- read.csv("data/Home_work_2.csv", encoding = "Utf-8")
 reasult_hw3 <- read.csv("data/Home_work_3.csv", encoding = "Utf-8")
 
+
 reasult_contr1 <- read.csv("data/Control_work_1.csv", encoding = "Utf-8")
-reasult_contr2 <- read.csv("data/Control_work_1.csv", encoding = "Utf-8")
+reasult_contr2 <- read.csv("data/Control_work_2.csv", encoding = "Utf-8")
  
 
-tmp <- merge(reasult_hw1, reasult_hw2, by = c("user_id", "last_name", "first_name"))
-all_hw <- merge(tmp,reasult_hw3, by = c("user_id", "last_name", "first_name"))
+tmp <- merge(reasult_hw1, reasult_hw2[,-c(2:3)], by = c("user_id"))
+all_hw <- merge(tmp,reasult_hw3[,-c(2:3)], by = c("user_id"))
 
-Total_sum_hw <- sum(all_hw[1,-c(1:3)])
+Total_sum_hw <- sum(all_hw[all_hw$user_id == 28414308, ][1, -c(1:3)])
 
 all_hw$sum <- apply(all_hw[,-c(1:3)], MARGIN = 1, FUN = sum)
 
 
-all_contr <- merge(reasult_contr1, reasult_contr1, by = c("user_id", "last_name", "first_name"))
+all_contr <- merge(reasult_contr1, reasult_contr2[,-c(2:3)], by = c("user_id"))
 
-Total_sum_contr <- sum(all_contr[1,-c(1:3)])
+
+Total_sum_contr <- sum(as.numeric(all_contr[all_contr$user_id == 28414308, ][-c(1:3)]))
 
 all_contr$sum <- apply(all_contr[,-c(1:3)], MARGIN = 1, FUN = sum)
 
@@ -319,9 +321,15 @@ result_total <- data.frame(Name = paste(res$Last_name.x, " ", res$First_name.x),
 result_total <- result_total[!is.na(result_total$Group), ] 
 
 result_total <- result_total[order(result_total$Group), ]
-kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные (макс. 46)", "Самостоятельные (макс.77)"), align = "lccc", row.names = FALSE)
+kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные (макс. 49)", "Самостоятельные (макс.77)"), align = "lccc", row.names = FALSE)
 
 ```
+
+
+
+# Файл с оценками за самостоятельные работы и контрольные работы
+
+- [Оценки](data/all_credits.xlsx)
 
 
 

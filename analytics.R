@@ -12,8 +12,9 @@ library(ggplot2)
 
 ggplot(trial, aes(x = submission_time )) + geom_histogram(binwidth = 1)
 
-tail(trial[trial$first_name == "Смутин", ])
+tail(trial[trial$last_name == "Сосновский", ])
 
+write.csv(trial, "data/all_attempts.csv")
 
 write.csv(trial[trial$first_name == "Смутин", ], "data/Smutin.csv")
 

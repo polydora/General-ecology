@@ -307,6 +307,57 @@ kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption 
 
 
 
+## Пятый семинар 
+
+Вот отчет преподавателей о пятом семинаре. Очередная серия отличившихся.
+
+```{r, echo=FALSE}
+good <- sem[sem$Seminar_5 == 1 & !is.na(sem$Seminar_5), ]
+
+result <- data.frame(Group = good$Group, Name = paste(good$Last_name, " ", good$First_name))
+
+kable(result, col.names = c("Группа", "Ф. И."), caption = "Активные участники семинара", align = c("c", "l"))
+
+```
+
+
+
+
+```{r, echo=FALSE}
+library(reshape2)
+library(ggplot2)
+
+dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
+dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ]
+
+ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw()
+
+
+
+```
+
+
+
+
+### Задолженности по Пятому семинару 
+
+```{r, echo=FALSE}
+bad <- sem[sem$Seminar_5 == 0 & !is.na(sem$Seminar_4), ]
+```
+
+
+Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю.
+
+
+```{r, echo=FALSE}
+bad2 <- bad[!is.na(bad$Group),]
+result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_5[bad2$Group]])
+
+kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") )
+```
+
+
+
 
 <br>
 <br>
@@ -380,7 +431,7 @@ dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Gr
 
 kable(dolg_report, col.names = c("Ф. И.","Группа", "Cеминар",  "Номер темы", "Тема эссе"), align = "lcccl") 
   
-# write.csv(dolg_report, "data/Seminar_dolg_2018_2.csv", sep = ",", row.names = FALSE)  
+# write.csv(dolg_report, "data/Seminar_dolg_2018_5.csv", sep = ",", row.names = FALSE)  
 
 ```
 
@@ -430,7 +481,7 @@ kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы
 ```
 
 
-## Темы эссе для должников по семиар № 4
+## Темы эссе для должников по семиару № 4
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -476,6 +527,53 @@ kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы
 
 
 
+
+## Темы эссе для должников по семиару № 5
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sem <- read.csv("data/Seminars_2018.csv", header = T)
+topics <- c("Функциональная структура сообществ (взаимоотношения организмов)",
+            "Динамика экосистем: сукцессии и флуктуации",
+            "Приспособление водных организмов к среде обитания",
+            "Эволюционные экологические адаптации",
+            "Взаимоотношения симбионтов и хозяев",
+            "Температура и живые системы: эксперименты, модели, практическое значение")
+schedul <- read.csv("data/schedul_2018.csv", header = T)
+
+esse <- read.csv("data/Esse_topics_2018.csv")
+
+sem <- sem[ ,c(1:3, 8)] ## Выбор номера семинара
+
+library(reshape2)
+
+sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
+sem_long <- sem_long[!is.na(sem_long$Group), ]
+dolg <- sem_long[sem_long$value == 0, ]
+dolg <- dolg[!is.na(dolg$Group), ]
+topic_long <- melt(schedul, id.vars = "Group")
+dolg <- merge(dolg, topic_long, by = c("Group", "variable"))
+
+names(dolg)[6] <- "Topic"
+dolg$esse <- NA
+
+
+for(i in unique(dolg$Topic)) {
+  dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i]))
+}
+
+
+
+dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse)) 
+
+kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl") 
+  
+# write.csv(dolg_report, "data/Seminar_dolg_2018_5.csv", sep = ",", row.names = FALSE)  
+
+```
+
+
+
 <br>
 <br>
 
@@ -489,6 +587,15 @@ _______________________________________________________
 <br>
 <br>
 
+# Общий список тем эссе для отработки семинаров
+
+```{r, echo=FALSE}
+esse_total <- read.csv("data/Seminar_dolg_total_2018.csv", header = TRUE)
+
+esse_total_print <- esse_total[order(esse_total$Status, esse_total$Name, decreasing = TRUE), ]
+kable(esse_total_print)
+
+```
 
 
 

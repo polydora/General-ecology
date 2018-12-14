@@ -323,6 +323,59 @@ kable(result, col.names = c("Группа", "Ф. И."), caption = "Активн�
 
 
 
+<!-- ```{r, echo=FALSE} -->
+<!-- library(reshape2) -->
+<!-- library(ggplot2) -->
+
+<!-- dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ] -->
+
+<!-- ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw() -->
+
+
+
+<!-- ``` -->
+
+
+
+
+### Задолженности по Пятому семинару 
+
+```{r, echo=FALSE}
+bad <- sem[sem$Seminar_5 == 0 & !is.na(sem$Seminar_5), ]
+```
+
+
+Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю.
+
+
+```{r, echo=FALSE}
+bad2 <- bad[!is.na(bad$Group),]
+result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_5[bad2$Group]])
+
+kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") )
+```
+
+
+
+
+
+
+## Шестой семинар 
+
+
+```{r, echo=FALSE}
+good <- sem[sem$Seminar_6 == 1 & !is.na(sem$Seminar_6), ]
+
+result <- data.frame(Group = good$Group, Name = paste(good$Last_name, " ", good$First_name))
+
+kable(result, col.names = c("Группа", "Ф. И."), caption = "Активные участники семинара", align = c("c", "l"))
+
+```
+
+
+
+
 ```{r, echo=FALSE}
 library(reshape2)
 library(ggplot2)
@@ -339,10 +392,10 @@ ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom 
 
 
 
-### Задолженности по Пятому семинару 
+### Задолженности по Шестому семинару 
 
 ```{r, echo=FALSE}
-bad <- sem[sem$Seminar_5 == 0 & !is.na(sem$Seminar_4), ]
+bad <- sem[sem$Seminar_6 == 0 & !is.na(sem$Seminar_6), ]
 ```
 
 
@@ -351,10 +404,11 @@ bad <- sem[sem$Seminar_5 == 0 & !is.na(sem$Seminar_4), ]
 
 ```{r, echo=FALSE}
 bad2 <- bad[!is.na(bad$Group),]
-result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_5[bad2$Group]])
+result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_6[bad2$Group]])
 
 kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") )
 ```
+
 
 
 
@@ -390,192 +444,244 @@ _______________________________________________________
 Сохраните ваши готовые работы в формате **pdf** и присылайте их на электронный адрес В. М. Хайтова (обязательно **с указанием темы «эссе по экологии»**, иначе письмо может уйти в спам и не вернуться).  
 
 
-## Темы эссе для должников по семиарам № 1 и № 2
+### Информация для должников
+Как выяснилось, запрет на доступ к экзамену, опция недоступная. Поэтому санкция для должников, которые не сдадут эссе вовремя, будет в форме дополнительного вопроса (билета) на экзамене за каждый долг. Так что если не хотите рисковать, то пишите тексты.
 
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-sem <- read.csv("data/Seminars_2018.csv", header = T)
-topics <- c("Функциональная структура сообществ (взаимоотношения организмов)",
-            "Динамика экосистем: сукцессии и флуктуации",
-            "Приспособление водных организмов к среде обитания",
-            "Эволюционные экологические адаптации",
-            "Взаимоотношения симбионтов и хозяев",
-            "Температура и живые системы: эксперименты, модели, практическое значение")
-schedul <- read.csv("data/schedul_2018.csv", header = T)
 
-esse <- read.csv("data/Esse_topics_2018.csv")
+<!-- ## Темы эссе для должников по семиарам № 1 и № 2 -->
 
-sem <- sem[,c(1:5)]
 
-library(reshape2)
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
+<!-- sem <- read.csv("data/Seminars_2018.csv", header = T) -->
+<!-- topics <- c("Функциональная структура сообществ (взаимоотношения организмов)", -->
+<!--             "Динамика экосистем: сукцессии и флуктуации", -->
+<!--             "Приспособление водных организмов к среде обитания", -->
+<!--             "Эволюционные экологические адаптации", -->
+<!--             "Взаимоотношения симбионтов и хозяев", -->
+<!--             "Температура и живые системы: эксперименты, модели, практическое значение") -->
+<!-- schedul <- read.csv("data/schedul_2018.csv", header = T) -->
 
-sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
-sem_long <- sem_long[!is.na(sem_long$Group), ]
-dolg <- sem_long[sem_long$value == 0, ]
-dolg <- dolg[!is.na(dolg$Group), ]
-topic_long <- melt(schedul, id.vars = "Group")
-dolg <- merge(dolg, topic_long, by = c("Group", "variable"))
+<!-- esse <- read.csv("data/Esse_topics_2018.csv") -->
 
-names(dolg)[6] <- "Topic"
-dolg$esse <- NA
+<!-- sem <- sem[,c(1:5)] -->
 
+<!-- library(reshape2) -->
 
-for(i in unique(dolg$Topic)) {
-  dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i]))
-}
+<!-- sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- sem_long <- sem_long[!is.na(sem_long$Group), ] -->
+<!-- dolg <- sem_long[sem_long$value == 0, ] -->
+<!-- dolg <- dolg[!is.na(dolg$Group), ] -->
+<!-- topic_long <- melt(schedul, id.vars = "Group") -->
+<!-- dolg <- merge(dolg, topic_long, by = c("Group", "variable")) -->
 
+<!-- names(dolg)[6] <- "Topic" -->
+<!-- dolg$esse <- NA -->
 
 
-dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Seminar = as.numeric(dolg$variable)
-,  Topic = dolg$Topic, Esse = paste(dolg$esse)) 
+<!-- for(i in unique(dolg$Topic)) { -->
+<!--   dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i])) -->
+<!-- } -->
 
-kable(dolg_report, col.names = c("Ф. И.","Группа", "Cеминар",  "Номер темы", "Тема эссе"), align = "lcccl") 
-  
-# write.csv(dolg_report, "data/Seminar_dolg_2018_5.csv", sep = ",", row.names = FALSE)  
 
-```
 
+<!-- dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Seminar = as.numeric(dolg$variable) -->
+<!-- ,  Topic = dolg$Topic, Esse = paste(dolg$esse))  -->
 
-## Темы эссе для должников по семиар № 3
+<!-- kable(dolg_report, col.names = c("Ф. И.","Группа", "Cеминар",  "Номер темы", "Тема эссе"), align = "lcccl")  -->
 
+<!-- # write.csv(dolg_report, "data/Seminar_dolg_2018_5.csv", sep = ",", row.names = FALSE)   -->
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-sem <- read.csv("data/Seminars_2018.csv", header = T)
-topics <- c("Функциональная структура сообществ (взаимоотношения организмов)",
-            "Динамика экосистем: сукцессии и флуктуации",
-            "Приспособление водных организмов к среде обитания",
-            "Эволюционные экологические адаптации",
-            "Взаимоотношения симбионтов и хозяев",
-            "Температура и живые системы: эксперименты, модели, практическое значение")
-schedul <- read.csv("data/schedul_2018.csv", header = T)
+<!-- ``` -->
 
-esse <- read.csv("data/Esse_topics_2018.csv")
 
-sem <- sem[ ,c(1:3, 6)]
+<!-- ## Темы эссе для должников по семиар № 3 -->
 
-library(reshape2)
 
-sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
-sem_long <- sem_long[!is.na(sem_long$Group), ]
-dolg <- sem_long[sem_long$value == 0, ]
-dolg <- dolg[!is.na(dolg$Group), ]
-topic_long <- melt(schedul, id.vars = "Group")
-dolg <- merge(dolg, topic_long, by = c("Group", "variable"))
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
+<!-- sem <- read.csv("data/Seminars_2018.csv", header = T) -->
+<!-- topics <- c("Функциональная структура сообществ (взаимоотношения организмов)", -->
+<!--             "Динамика экосистем: сукцессии и флуктуации", -->
+<!--             "Приспособление водных организмов к среде обитания", -->
+<!--             "Эволюционные экологические адаптации", -->
+<!--             "Взаимоотношения симбионтов и хозяев", -->
+<!--             "Температура и живые системы: эксперименты, модели, практическое значение") -->
+<!-- schedul <- read.csv("data/schedul_2018.csv", header = T) -->
 
-names(dolg)[6] <- "Topic"
-dolg$esse <- NA
+<!-- esse <- read.csv("data/Esse_topics_2018.csv") -->
 
+<!-- sem <- sem[ ,c(1:3, 6)] -->
 
-for(i in unique(dolg$Topic)) {
-  dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i]))
-}
+<!-- library(reshape2) -->
 
+<!-- sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- sem_long <- sem_long[!is.na(sem_long$Group), ] -->
+<!-- dolg <- sem_long[sem_long$value == 0, ] -->
+<!-- dolg <- dolg[!is.na(dolg$Group), ] -->
+<!-- topic_long <- melt(schedul, id.vars = "Group") -->
+<!-- dolg <- merge(dolg, topic_long, by = c("Group", "variable")) -->
 
+<!-- names(dolg)[6] <- "Topic" -->
+<!-- dolg$esse <- NA -->
 
-dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse)) 
 
-kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl") 
-  
-# write.csv(dolg_report, "data/Seminar_dolg_2018_2.csv", sep = ",", row.names = FALSE)  
+<!-- for(i in unique(dolg$Topic)) { -->
+<!--   dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i])) -->
+<!-- } -->
 
-```
 
 
-## Темы эссе для должников по семиару № 4
+<!-- dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse))  -->
 
+<!-- kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl")  -->
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-sem <- read.csv("data/Seminars_2018.csv", header = T)
-topics <- c("Функциональная структура сообществ (взаимоотношения организмов)",
-            "Динамика экосистем: сукцессии и флуктуации",
-            "Приспособление водных организмов к среде обитания",
-            "Эволюционные экологические адаптации",
-            "Взаимоотношения симбионтов и хозяев",
-            "Температура и живые системы: эксперименты, модели, практическое значение")
-schedul <- read.csv("data/schedul_2018.csv", header = T)
+<!-- # write.csv(dolg_report, "data/Seminar_dolg_2018_2.csv", sep = ",", row.names = FALSE)   -->
 
-esse <- read.csv("data/Esse_topics_2018.csv")
+<!-- ``` -->
 
-sem <- sem[ ,c(1:3, 7)] ## Выбор номера семинара
 
-library(reshape2)
+<!-- ## Темы эссе для должников по семиару № 4 -->
 
-sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
-sem_long <- sem_long[!is.na(sem_long$Group), ]
-dolg <- sem_long[sem_long$value == 0, ]
-dolg <- dolg[!is.na(dolg$Group), ]
-topic_long <- melt(schedul, id.vars = "Group")
-dolg <- merge(dolg, topic_long, by = c("Group", "variable"))
 
-names(dolg)[6] <- "Topic"
-dolg$esse <- NA
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
+<!-- sem <- read.csv("data/Seminars_2018.csv", header = T) -->
+<!-- topics <- c("Функциональная структура сообществ (взаимоотношения организмов)", -->
+<!--             "Динамика экосистем: сукцессии и флуктуации", -->
+<!--             "Приспособление водных организмов к среде обитания", -->
+<!--             "Эволюционные экологические адаптации", -->
+<!--             "Взаимоотношения симбионтов и хозяев", -->
+<!--             "Температура и живые системы: эксперименты, модели, практическое значение") -->
+<!-- schedul <- read.csv("data/schedul_2018.csv", header = T) -->
 
+<!-- esse <- read.csv("data/Esse_topics_2018.csv") -->
 
-for(i in unique(dolg$Topic)) {
-  dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i]))
-}
+<!-- sem <- sem[ ,c(1:3, 7)] ## Выбор номера семинара -->
 
+<!-- library(reshape2) -->
 
+<!-- sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- sem_long <- sem_long[!is.na(sem_long$Group), ] -->
+<!-- dolg <- sem_long[sem_long$value == 0, ] -->
+<!-- dolg <- dolg[!is.na(dolg$Group), ] -->
+<!-- topic_long <- melt(schedul, id.vars = "Group") -->
+<!-- dolg <- merge(dolg, topic_long, by = c("Group", "variable")) -->
 
-dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse)) 
+<!-- names(dolg)[6] <- "Topic" -->
+<!-- dolg$esse <- NA -->
 
-kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl") 
-  
-# write.csv(dolg_report, "data/Seminar_dolg_2018_4.csv", sep = ",", row.names = FALSE)  
 
-```
+<!-- for(i in unique(dolg$Topic)) { -->
+<!--   dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i])) -->
+<!-- } -->
 
 
 
+<!-- dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse))  -->
 
-## Темы эссе для должников по семиару № 5
+<!-- kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl")  -->
 
+<!-- # write.csv(dolg_report, "data/Seminar_dolg_2018_4.csv", sep = ",", row.names = FALSE)   -->
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-sem <- read.csv("data/Seminars_2018.csv", header = T)
-topics <- c("Функциональная структура сообществ (взаимоотношения организмов)",
-            "Динамика экосистем: сукцессии и флуктуации",
-            "Приспособление водных организмов к среде обитания",
-            "Эволюционные экологические адаптации",
-            "Взаимоотношения симбионтов и хозяев",
-            "Температура и живые системы: эксперименты, модели, практическое значение")
-schedul <- read.csv("data/schedul_2018.csv", header = T)
+<!-- ``` -->
 
-esse <- read.csv("data/Esse_topics_2018.csv")
 
-sem <- sem[ ,c(1:3, 8)] ## Выбор номера семинара
 
-library(reshape2)
 
-sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
-sem_long <- sem_long[!is.na(sem_long$Group), ]
-dolg <- sem_long[sem_long$value == 0, ]
-dolg <- dolg[!is.na(dolg$Group), ]
-topic_long <- melt(schedul, id.vars = "Group")
-dolg <- merge(dolg, topic_long, by = c("Group", "variable"))
+<!-- ## Темы эссе для должников по семиару № 5 -->
 
-names(dolg)[6] <- "Topic"
-dolg$esse <- NA
 
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
+<!-- sem <- read.csv("data/Seminars_2018.csv", header = T) -->
+<!-- topics <- c("Функциональная структура сообществ (взаимоотношения организмов)", -->
+<!--             "Динамика экосистем: сукцессии и флуктуации", -->
+<!--             "Приспособление водных организмов к среде обитания", -->
+<!--             "Эволюционные экологические адаптации", -->
+<!--             "Взаимоотношения симбионтов и хозяев", -->
+<!--             "Температура и живые системы: эксперименты, модели, практическое значение") -->
+<!-- schedul <- read.csv("data/schedul_2018.csv", header = T) -->
 
-for(i in unique(dolg$Topic)) {
-  dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i]))
-}
+<!-- esse <- read.csv("data/Esse_topics_2018.csv") -->
 
+<!-- sem <- sem[ ,c(1:3, 8)] ## Выбор номера семинара -->
 
+<!-- library(reshape2) -->
 
-dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse)) 
+<!-- sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- sem_long <- sem_long[!is.na(sem_long$Group), ] -->
+<!-- dolg <- sem_long[sem_long$value == 0, ] -->
+<!-- dolg <- dolg[!is.na(dolg$Group), ] -->
+<!-- topic_long <- melt(schedul, id.vars = "Group") -->
+<!-- dolg <- merge(dolg, topic_long, by = c("Group", "variable")) -->
 
-kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl") 
-  
-# write.csv(dolg_report, "data/Seminar_dolg_2018_5.csv", sep = ",", row.names = FALSE)  
+<!-- names(dolg)[6] <- "Topic" -->
+<!-- dolg$esse <- NA -->
 
-```
 
+<!-- for(i in unique(dolg$Topic)) { -->
+<!--   dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i])) -->
+<!-- } -->
 
 
-<br>
-<br>
+
+<!-- dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse))  -->
+
+<!-- kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl")  -->
+
+<!-- # write.csv(dolg_report, "data/Seminar_dolg_2018_5.csv", sep = ",", row.names = FALSE)   -->
+
+<!-- ``` -->
+
+
+
+
+
+
+<!-- ## Темы эссе для должников по семиару № 6 -->
+
+
+<!-- ```{r, echo=FALSE, warning=FALSE, message=FALSE} -->
+<!-- sem <- read.csv("data/Seminars_2018.csv", header = T) -->
+<!-- topics <- c("Функциональная структура сообществ (взаимоотношения организмов)", -->
+<!--             "Динамика экосистем: сукцессии и флуктуации", -->
+<!--             "Приспособление водных организмов к среде обитания", -->
+<!--             "Эволюционные экологические адаптации", -->
+<!--             "Взаимоотношения симбионтов и хозяев", -->
+<!--             "Температура и живые системы: эксперименты, модели, практическое значение") -->
+<!-- schedul <- read.csv("data/schedul_2018.csv", header = T) -->
+
+<!-- esse <- read.csv("data/Esse_topics_2018.csv") -->
+
+<!-- sem <- sem[ ,c(1:3, 9)] ## Выбор номера семинара -->
+
+<!-- library(reshape2) -->
+
+<!-- sem_long <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- sem_long <- sem_long[!is.na(sem_long$Group), ] -->
+<!-- dolg <- sem_long[sem_long$value == 0, ] -->
+<!-- dolg <- dolg[!is.na(dolg$Group), ] -->
+<!-- topic_long <- melt(schedul, id.vars = "Group") -->
+<!-- dolg <- merge(dolg, topic_long, by = c("Group", "variable")) -->
+
+<!-- names(dolg)[6] <- "Topic" -->
+<!-- dolg$esse <- NA -->
+
+
+<!-- for(i in unique(dolg$Topic)) { -->
+<!--   dolg$esse[dolg$Topic == i] <- paste(as.character(esse$Task[esse$Topic == i])) -->
+<!-- } -->
+
+
+
+<!-- dolg_report <- data.frame(Name = paste(dolg$Last_name, ' ', dolg$First_name), Group = dolg$Group, Topic = dolg$Topic, Esse = paste(dolg$esse))  -->
+
+<!-- kable(dolg_report, col.names = c("Ф. И.","Группа",  "Номер темы", "Тема эссе"), align = "lccl")  -->
+
+<!-- # write.csv(dolg_report, "data/Seminar_dolg_2018_6.csv", sep = ",", row.names = FALSE)   -->
+
+<!-- ``` -->
+
+<!-- <br> -->
+<!-- <br> -->
 
 _______________________________________________________
 

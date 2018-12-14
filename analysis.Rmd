@@ -294,6 +294,7 @@ reasult_contr1 <- read.csv("data/Control_work_1.csv", encoding = "Utf-8")
 reasult_contr2 <- read.csv("data/Control_work_2.csv", encoding = "Utf-8")
  
 
+
 tmp <- merge(reasult_hw1, reasult_hw2[,-c(2:3)], by = c("user_id"))
 all_hw <- merge(tmp,reasult_hw3[,-c(2:3)], by = c("user_id"))
 
@@ -318,7 +319,10 @@ res <- merge(res_hw, res_contr, by = c("user_id"))
 
 result_total <- data.frame(Name = paste(res$Last_name.x, " ", res$First_name.x), Group = res$Group.x,  Sum_Contr = res$sum.y, Sum_HW = round(res$sum.x))
 
+
+
 result_total <- result_total[!is.na(result_total$Group), ] 
+
 
 result_total <- result_total[order(result_total$Group), ]
 kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные (макс. 49)", "Самостоятельные (макс.77)"), align = "lccc", row.names = FALSE)

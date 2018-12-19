@@ -2357,99 +2357,26 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<p><img src="seminars_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<div id="---" class="section level3">
-<h3>Задолженности по Шестому семинару</h3>
-<p>Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю.</p>
-<table>
-<caption>Задолженности</caption>
-<thead>
-<tr class="header">
-<th align="center">Группа</th>
-<th align="left">Ф. И.</th>
-<th align="right">Тема</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td align="left">Зубарева Екатерина</td>
-<td align="right">Температура и живые системы: эксперименты, модели, практическое значение</td>
-</tr>
-<tr class="even">
-<td align="center">1</td>
-<td align="left">Куаншкалиева Айгуль</td>
-<td align="right">Температура и живые системы: эксперименты, модели, практическое значение</td>
-</tr>
-<tr class="odd">
-<td align="center">1</td>
-<td align="left">Шикштенайте Анастасия</td>
-<td align="right">Температура и живые системы: эксперименты, модели, практическое значение</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td align="left">Веселова Мария</td>
-<td align="right">Динамика экосистем: сукцессии и флуктуации</td>
-</tr>
-<tr class="odd">
-<td align="center">2</td>
-<td align="left">Малышев Михаил</td>
-<td align="right">Динамика экосистем: сукцессии и флуктуации</td>
-</tr>
-<tr class="even">
-<td align="center">3</td>
-<td align="left">Бапинаев Роман</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="left">Воскресенская Вероника</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="even">
-<td align="center">3</td>
-<td align="left">Ганина Анастасия</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="left">Иванов Вадим</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="even">
-<td align="center">3</td>
-<td align="left">Мазур Евгения</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="left">Никифорова Валерия</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="even">
-<td align="center">3</td>
-<td align="left">Чернейко Юлия</td>
-<td align="right">Приспособление водных организмов к среде обитания</td>
-</tr>
-<tr class="odd">
-<td align="center">4</td>
-<td align="left">Романова Анна</td>
-<td align="right">Функциональная структура сообществ (взаимоотношения организмов)</td>
-</tr>
-<tr class="even">
-<td align="center">5</td>
-<td align="left">Бабина Полина</td>
-<td align="right">Динамика экосистем: сукцессии и флуктуации</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td align="left">Бондарева Ольга</td>
-<td align="right">Динамика экосистем: сукцессии и флуктуации</td>
-</tr>
-</tbody>
-</table>
-<p><br> <br> <br></p>
-</div>
+<!-- ```{r, echo=FALSE} -->
+<!-- library(reshape2) -->
+<!-- library(ggplot2) -->
+<!-- dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ] -->
+<!-- ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw() -->
+<!-- ``` -->
+<!-- ### Задолженности по Шестому семинару  -->
+<!-- ```{r, echo=FALSE} -->
+<!-- bad <- sem[sem$Seminar_6 == 0 & !is.na(sem$Seminar_6), ] -->
+<!-- ``` -->
+<!-- Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю. -->
+<!-- ```{r, echo=FALSE} -->
+<!-- bad2 <- bad[!is.na(bad$Group),] -->
+<!-- result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_6[bad2$Group]]) -->
+<!-- kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") ) -->
+<!-- ``` -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
 </div>
 </div>
 <div id="-----" class="section level1">
@@ -2658,6 +2585,15 @@ div.tocify {
 <td align="left">Прислано эссе</td>
 </tr>
 <tr class="even">
+<td>54</td>
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="left">Симанова Ангелина</td>
+<td align="right">1</td>
+<td align="left">Проявления прошедшей конкуренции в составе или структуре сообществ (примеры по растительности и животному населению).</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
 <td>10</td>
 <td align="right">2</td>
 <td align="right">1</td>
@@ -2666,7 +2602,43 @@ div.tocify {
 <td align="left">Одно из определений паразитизма включат понятия вреда и пользы. Что бы вы включили в эти понятия, чтобы их можно было оценить научными методами?</td>
 <td align="left">Прислано эссе</td>
 </tr>
+<tr class="even">
+<td>36</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="left">Матвеев Константин</td>
+<td align="right">2</td>
+<td align="left">Раскройте смысл фразы «Сукцессия управляется самим сообществом», приведите примеры.</td>
+<td align="left">Прислано эссе</td>
+</tr>
 <tr class="odd">
+<td>41</td>
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="left">Матвевнина Дарья</td>
+<td align="right">6</td>
+<td align="left">Экологические группы организмов по отношению к температуре: преимущества и недостатки имеющихся классификаций</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>53</td>
+<td align="right">2</td>
+<td align="right">5</td>
+<td align="left">Матвевнина Дарья</td>
+<td align="right">1</td>
+<td align="left">Необходимые условия конкуренции и как их можно обойти (примеры по растительности и животному населению).</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="left">Малышев Михаил</td>
+<td align="right">5</td>
+<td align="left">Опишите несколько примеров того, как паразиты могут влиять на структуру сообществ.</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
 <td>40</td>
 <td align="right">2</td>
 <td align="right">4</td>
@@ -2675,7 +2647,133 @@ div.tocify {
 <td align="left">Наблюдаемые экологические последствия глобального изменения климата</td>
 <td align="left">Прислано эссе</td>
 </tr>
+<tr class="odd">
+<td>69</td>
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="left">Мазур Евгения</td>
+<td align="right">3</td>
+<td align="left">Приспособления организмов к жизни в планктоне</td>
+<td align="left">Прислано эссе</td>
+</tr>
 <tr class="even">
+<td>5</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">Кузьмина Дарья</td>
+<td align="right">1</td>
+<td align="left">Взаимоблагоприятствование (опосредованное): причины, механизмы, участники, примеры по растительности и животному населению.</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="left">Замышляева Валерия</td>
+<td align="right">4</td>
+<td align="left">Мюллеровская мимикрия</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">Долгова Диана</td>
+<td align="right">1</td>
+<td align="left">Проявления прошедшей конкуренции в составе или структуре сообществ (примеры по растительности и животному населению).</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>48</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="left">Долгова Диана</td>
+<td align="right">4</td>
+<td align="left">Норма реакции организма как характеристика возможностей его фенотипической адаптации к действию экологических факторов.</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>66</td>
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="left">Воскресенская Вероника</td>
+<td align="right">3</td>
+<td align="left">Приспособления организмов к жизни в бентосе</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>46</td>
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="left">Валина Анна</td>
+<td align="right">3</td>
+<td align="left">Приспособления организмов к жизни в планктоне</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>74</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="left">Бондарева Ольга</td>
+<td align="right">2</td>
+<td align="left">Эндоэкогенетическая обусловленность сукцессий.</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">Безлепкина Светлана</td>
+<td align="right">1</td>
+<td align="left">Сформулировать различия между видами трофических взаимодействий между организмами, привести примеры (учесть не только прямые, но и опосредованные трофические взаимодействия)</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>65</td>
+<td align="right">3</td>
+<td align="right">6</td>
+<td align="left">Бапинаев Роман</td>
+<td align="right">3</td>
+<td align="left">Приспособления организмов к жизни в планктоне</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>26</td>
+<td align="right">6</td>
+<td align="right">1</td>
+<td align="left">Азаматова Ляйсан</td>
+<td align="right">2</td>
+<td align="left">Cукцессии и их механизмы</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>28</td>
+<td align="right">6</td>
+<td align="right">2</td>
+<td align="left">Азаматова Ляйсан</td>
+<td align="right">3</td>
+<td align="left">Функциональная структура сообществ</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="left">Азаматова Ляйсан</td>
+<td align="right">2</td>
+<td align="left">Температура и живые системы: эксперименты, модели, практическое значение</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="even">
+<td>75</td>
+<td align="right">6</td>
+<td align="right">NA</td>
+<td align="left">Азаматова Ляйсан</td>
+<td align="right">2</td>
+<td align="left">Водная среда – такая среда, в которой вода в качестве внешней среды играет важную роль.</td>
+<td align="left">Прислано эссе</td>
+</tr>
+<tr class="odd">
 <td>7</td>
 <td align="right">1</td>
 <td align="right">1</td>
@@ -2684,7 +2782,7 @@ div.tocify {
 <td align="left">Необходимые условия конкуренции и как их можно обойти (примеры по растительности и животному населению).</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>29</td>
 <td align="right">1</td>
 <td align="right">3</td>
@@ -2693,7 +2791,7 @@ div.tocify {
 <td align="left">Приспособления организмов к жизни в планктоне</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>38</td>
 <td align="right">1</td>
 <td align="right">4</td>
@@ -2702,7 +2800,7 @@ div.tocify {
 <td align="left">Опишите несколько примеров того, как паразиты могут влиять на структуру сообществ.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>51</td>
 <td align="right">1</td>
 <td align="right">5</td>
@@ -2711,7 +2809,7 @@ div.tocify {
 <td align="left">Различные формы полифенизма и их значение.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>62</td>
 <td align="right">1</td>
 <td align="right">6</td>
@@ -2720,7 +2818,7 @@ div.tocify {
 <td align="left">Экологические группы организмов по отношению к температуре: преимущества и недостатки имеющихся классификаций</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>34</td>
 <td align="right">4</td>
 <td align="right">3</td>
@@ -2729,7 +2827,7 @@ div.tocify {
 <td align="left">Расчёт суммы градусо-дней и её биологический смысл</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>22</td>
 <td align="right">3</td>
 <td align="right">2</td>
@@ -2738,7 +2836,7 @@ div.tocify {
 <td align="left">Необходимые условия конкуренции и как их можно обойти (примеры по растительности и животному населению).</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>45</td>
 <td align="right">3</td>
 <td align="right">4</td>
@@ -2747,7 +2845,7 @@ div.tocify {
 <td align="left">Приспособительные взаимоотношения организмов: причины отрицательного и положительного одностороннего не аллелопатического влияния.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>71</td>
 <td align="right">3</td>
 <td align="right">6</td>
@@ -2756,7 +2854,7 @@ div.tocify {
 <td align="left">Типы питания гидробионтов</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>17</td>
 <td align="right">3</td>
 <td align="right">1</td>
@@ -2765,7 +2863,7 @@ div.tocify {
 <td align="left">Норма реакции организма как характеристика возможностей его фенотипической адаптации к действию экологических факторов.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>21</td>
 <td align="right">3</td>
 <td align="right">2</td>
@@ -2774,7 +2872,7 @@ div.tocify {
 <td align="left">Сформулировать различия между видами трофических взаимодействий между организмами, привести примеры (учесть не только прямые, но и опосредованные трофические взаимодействия)</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>44</td>
 <td align="right">3</td>
 <td align="right">4</td>
@@ -2783,22 +2881,13 @@ div.tocify {
 <td align="left">Проявления прошедшей конкуренции в составе или структуре сообществ (примеры по растительности и животному населению).</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>59</td>
 <td align="right">3</td>
 <td align="right">5</td>
 <td align="left">Тимошенко Руслан</td>
 <td align="right">6</td>
 <td align="left">Термолабильность процессов развития и её адаптивная роль</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>54</td>
-<td align="right">2</td>
-<td align="right">5</td>
-<td align="left">Симанова Ангелина</td>
-<td align="right">1</td>
-<td align="left">Проявления прошедшей конкуренции в составе или структуре сообществ (примеры по растительности и животному населению).</td>
 <td align="left">Выдано задание</td>
 </tr>
 <tr class="even">
@@ -2874,66 +2963,12 @@ div.tocify {
 <td align="left">Выдано задание</td>
 </tr>
 <tr class="even">
-<td>36</td>
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="left">Матвеев Константин</td>
-<td align="right">2</td>
-<td align="left">Раскройте смысл фразы «Сукцессия управляется самим сообществом», приведите примеры.</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>41</td>
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="left">Матвевнина Дарья</td>
-<td align="right">6</td>
-<td align="left">Экологические группы организмов по отношению к температуре: преимущества и недостатки имеющихся классификаций</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>53</td>
-<td align="right">2</td>
-<td align="right">5</td>
-<td align="left">Матвевнина Дарья</td>
-<td align="right">1</td>
-<td align="left">Необходимые условия конкуренции и как их можно обойти (примеры по растительности и животному населению).</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="left">Малышев Михаил</td>
-<td align="right">5</td>
-<td align="left">Опишите несколько примеров того, как паразиты могут влиять на структуру сообществ.</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
 <td>64</td>
 <td align="right">2</td>
 <td align="right">6</td>
 <td align="left">Малышев Михаил</td>
 <td align="right">2</td>
 <td align="left">Раскройте смысл фразы «Сукцессия управляется самим сообществом», приведите примеры.</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>69</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="left">Мазур Евгения</td>
-<td align="right">3</td>
-<td align="left">Приспособления организмов к жизни в планктоне</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="left">Кузьмина Дарья</td>
-<td align="right">1</td>
-<td align="left">Взаимоблагоприятствование (опосредованное): причины, механизмы, участники, примеры по растительности и животному населению.</td>
 <td align="left">Выдано задание</td>
 </tr>
 <tr class="odd">
@@ -3045,33 +3080,6 @@ div.tocify {
 <td align="left">Выдано задание</td>
 </tr>
 <tr class="odd">
-<td>14</td>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="left">Замышляева Валерия</td>
-<td align="right">4</td>
-<td align="left">Мюллеровская мимикрия</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="left">Долгова Диана</td>
-<td align="right">1</td>
-<td align="left">Проявления прошедшей конкуренции в составе или структуре сообществ (примеры по растительности и животному населению).</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>48</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="left">Долгова Диана</td>
-<td align="right">4</td>
-<td align="left">Норма реакции организма как характеристика возможностей его фенотипической адаптации к действию экологических факторов.</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
 <td>13</td>
 <td align="right">3</td>
 <td align="right">1</td>
@@ -3080,7 +3088,7 @@ div.tocify {
 <td align="left">Норма реакции организма как характеристика возможностей его фенотипической адаптации к действию экологических факторов.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>18</td>
 <td align="right">3</td>
 <td align="right">2</td>
@@ -3089,7 +3097,7 @@ div.tocify {
 <td align="left">Проявления прошедшей конкуренции в составе или структуре сообществ (примеры по растительности и животному населению).</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>31</td>
 <td align="right">3</td>
 <td align="right">3</td>
@@ -3098,7 +3106,7 @@ div.tocify {
 <td align="left">Вы обнаружили рачка, который регулярно обнаруживается в мантийной полости двустворчатого моллюска. Какие гипотезы нужно проверить, чтобы верно охарактеризовать тип их взаимоотношений? Предложите дизайн лабораторных исследований и полевых экспериментов для проверки этих гипотез.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>42</td>
 <td align="right">3</td>
 <td align="right">4</td>
@@ -3107,7 +3115,7 @@ div.tocify {
 <td align="left">Сформулировать различия между видами трофических взаимодействий между организмами, привести примеры (учесть не только прямые, но и опосредованные трофические взаимодействия)</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>57</td>
 <td align="right">3</td>
 <td align="right">5</td>
@@ -3116,7 +3124,7 @@ div.tocify {
 <td align="left">Наблюдаемые экологические последствия глобального изменения климата</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>67</td>
 <td align="right">3</td>
 <td align="right">6</td>
@@ -3125,7 +3133,7 @@ div.tocify {
 <td align="left">Типы питания гидробионтов</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>12</td>
 <td align="right">3</td>
 <td align="right">1</td>
@@ -3134,22 +3142,13 @@ div.tocify {
 <td align="left">Различные формы полифенизма и их значение.</td>
 <td align="left">Выдано задание</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>56</td>
 <td align="right">3</td>
 <td align="right">5</td>
 <td align="left">Воскресенская Вероника</td>
 <td align="right">6</td>
 <td align="left">Расчёт суммы градусо-дней и её биологический смысл</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>66</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="left">Воскресенская Вероника</td>
-<td align="right">3</td>
-<td align="left">Приспособления организмов к жизни в бентосе</td>
 <td align="left">Выдано задание</td>
 </tr>
 <tr class="odd">
@@ -3216,42 +3215,6 @@ div.tocify {
 <td align="left">Выдано задание</td>
 </tr>
 <tr class="even">
-<td>46</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="left">Валина Анна</td>
-<td align="right">3</td>
-<td align="left">Приспособления организмов к жизни в планктоне</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>74</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="left">Бондарева Ольга</td>
-<td align="right">2</td>
-<td align="left">Эндоэкогенетическая обусловленность сукцессий.</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="left">Безлепкина Светлана</td>
-<td align="right">1</td>
-<td align="left">Сформулировать различия между видами трофических взаимодействий между организмами, привести примеры (учесть не только прямые, но и опосредованные трофические взаимодействия)</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>65</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="left">Бапинаев Роман</td>
-<td align="right">3</td>
-<td align="left">Приспособления организмов к жизни в планктоне</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
 <td>73</td>
 <td align="right">5</td>
 <td align="right">6</td>
@@ -3267,33 +3230,6 @@ div.tocify {
 <td align="left">Афанасьев Роман</td>
 <td align="right">5</td>
 <td align="left">Вы обнаружили рачка, который регулярно обнаруживается в мантийной полости двустворчатого моллюска. Какие гипотезы нужно проверить, чтобы верно охарактеризовать тип их взаимоотношений? Предложите дизайн лабораторных исследований и полевых экспериментов для проверки этих гипотез.</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>26</td>
-<td align="right">6</td>
-<td align="right">1</td>
-<td align="left">Азаматова Ляйсан</td>
-<td align="right">2</td>
-<td align="left">Cукцессии и их механизмы</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="odd">
-<td>28</td>
-<td align="right">6</td>
-<td align="right">2</td>
-<td align="left">Азаматова Ляйсан</td>
-<td align="right">3</td>
-<td align="left">Приспособления организмов к жизни в планктоне</td>
-<td align="left">Выдано задание</td>
-</tr>
-<tr class="even">
-<td>35</td>
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="left">Азаматова Ляйсан</td>
-<td align="right">2</td>
-<td align="left">Изменение энергетики и продуктивности сообщества в ходе сукцессии.</td>
 <td align="left">Выдано задание</td>
 </tr>
 </tbody>

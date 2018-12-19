@@ -376,46 +376,46 @@ kable(result, col.names = c("Группа", "Ф. И."), caption = "Активн�
 
 
 
-```{r, echo=FALSE}
-library(reshape2)
-library(ggplot2)
+<!-- ```{r, echo=FALSE} -->
+<!-- library(reshape2) -->
+<!-- library(ggplot2) -->
 
-dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name"))
-dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ]
+<!-- dynamics <- melt(sem, id.vars = c("Group","Last_name", "First_name")) -->
+<!-- dynamics <- dynamics[!is.na(dynamics$value) & !is.na(dynamics$Group), ] -->
 
-ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw()
-
-
-
-```
+<!-- ggplot(dynamics, aes(x = variable, y = value)) + stat_summary(fun.y = sum, geom = "bar", fill = "blue", color = "black") + facet_wrap(~ Group, ncol = 2) + labs(x = "Семинары", y = "Количество активных участников") + theme_bw() -->
 
 
 
-
-### Задолженности по Шестому семинару 
-
-```{r, echo=FALSE}
-bad <- sem[sem$Seminar_6 == 0 & !is.na(sem$Seminar_6), ]
-```
-
-
-Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю.
-
-
-```{r, echo=FALSE}
-bad2 <- bad[!is.na(bad$Group),]
-result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_6[bad2$Group]])
-
-kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") )
-```
+<!-- ``` -->
 
 
 
 
+<!-- ### Задолженности по Шестому семинару  -->
 
-<br>
-<br>
-<br>
+<!-- ```{r, echo=FALSE} -->
+<!-- bad <- sem[sem$Seminar_6 == 0 & !is.na(sem$Seminar_6), ] -->
+<!-- ``` -->
+
+
+<!-- Опять же, если здесь что-то не так (например, вы были на семинаре), то срочно пишите, я свяжусь с преподавателями и проверю. -->
+
+
+<!-- ```{r, echo=FALSE} -->
+<!-- bad2 <- bad[!is.na(bad$Group),] -->
+<!-- result_bad <- data.frame(bad2$Group, paste(bad2$Last_name, " ", bad2$First_name), Topic = topics[schedul$Seminar_6[bad2$Group]]) -->
+
+<!-- kable(result_bad, col.names = c("Группа", "Ф. И.", "Тема"), caption = "Задолженности", align = c("c", "l", "r") ) -->
+<!-- ``` -->
+
+
+
+
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
 
 
 

@@ -325,7 +325,26 @@ result_total <- result_total[!is.na(result_total$Group), ]
 
 
 result_total <- result_total[order(result_total$Group), ]
-kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные (макс. 49)", "Самостоятельные (макс.77)"), align = "lccc", row.names = FALSE)
+
+
+
+sem_fin <- read.csv("data/Seminars_2018_final.csv", header = TRUE)
+
+sem_fin_2 <- data.frame(Name = paste(sem_fin$Last_name," ",sem_fin$First_name), Seminar_score = sem_fin$Score*3)
+
+
+result_total <- merge(result_total, sem_fin_2)
+
+result_total$Sum_Contr <- round(result_total$Sum_Contr/49*100)
+result_total$Sum_HW <- round(result_total$Sum_HW/77*100)
+
+
+
+# 
+# kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные (макс. 49)", "Самостоятельные (макс.77)"), align = "lccc", row.names = FALSE)
+
+
+kable(result_total, col.names = c("Ф. И.", "Группа", "Контрольные %", "Самостоятельные %", "Надбавка за семинары"), align = "lcccc", row.names = FALSE)
 
 ```
 

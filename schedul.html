@@ -83,6 +83,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -97,7 +100,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -117,6 +119,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -138,18 +177,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -298,121 +396,64 @@ div.tocify {
 
 
 <p><strong>Внимание!</strong> В расписании могут быть измененя и уточнения.</p>
+<p>Расписание семинаров у каждой группы будет свое (см. страничку “Семинары”)</p>
 <div class="section level2">
-<h2>10/6/2018 Суббота</h2>
+<h2>09/21/2019 Суббота</h2>
 <ul>
-<li>Открываем самостоятельную работу №1</li>
+<li>В.М.Хайтов лекция “Предмет экологии”</li>
 </ul>
 </div>
 <div id="-1" class="section level2">
-<h2>10/13/2018 Суббота</h2>
+<h2>09/28/2019 Суббота</h2>
 <ul>
-<li>В.М.Хайтов лекция “Взаимоотношния”<br />
-</li>
-<li>В.М.Хайтов лекция “Взаимоотношния”</li>
-</ul>
-</div>
-<div class="section level2">
-<h2>10/14/2018 Воскресенье</h2>
-<ul>
-<li>Контрольная №1. Контрольная по следующим темам: Аутэкология, Структура популяций, Динамика популяций.</li>
-</ul>
-</div>
-<div class="section level2">
-<h2>10/17/2018 Среда</h2>
-<ul>
-<li>Открываем самостоятельную работу №2</li>
+<li>В.М.Хайтов лекция “Аутэкология”</li>
 </ul>
 </div>
 <div id="-2" class="section level2">
-<h2>10/20/2018 Суббота</h2>
+<h2>10/05/2019 Суббота</h2>
+<ul>
+<li>В.М.Хайтов лекция “Демэкология”</li>
+<li><p>В.М.Хайтов лекция “Динамика популяции”</p></li>
+<li><p>Начинаем самостоятельную работу №1</p></li>
+</ul>
+</div>
+<div id="-3" class="section level2">
+<h2>10/12/2019 Суббота</h2>
+<ul>
+<li>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 1”</li>
+<li><p>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 2”</p></li>
+<li><p>Контрольная работа №1. Темы: Аутэкология, Структура популяций, Динамика популяций. <strong>Внимание!</strong> Точную дату и время проведеиня контрольной работы обсудим отдельно.</p></li>
+</ul>
+</div>
+<div id="-4" class="section level2">
+<h2>10/19/2019 Суббота</h2>
 <ul>
 <li>В.М.Хайтов лекция “Трофические связи”</li>
-<li>В.М.Хайтов лекция “Конкуренция”</li>
-</ul>
-</div>
-<div id="-3" class="section level2">
-<h2>10/27/2018 Суббота</h2>
-<ul>
-<li>В. М.Хайтов лекция “Симбиозы”</li>
-<li>В. М. Хайтов лекция “Структура сообщества”</li>
-</ul>
-</div>
-<div id="-1" class="section level2">
-<h2>10/31/2018 Среда</h2>
-<ul>
-<li>семинар 1</li>
-</ul>
-</div>
-<div id="-2" class="section level2">
-<h2>11/01/2018 Среда</h2>
-<ul>
-<li>Открываем самостоятельную работу №3</li>
-</ul>
-</div>
-<div id="-4" class="section level2">
-<h2>11/3/2018 Суббота</h2>
-<ul>
-<li>М.Ю.Тиходеева лекция<br />
-</li>
-<li>М.Ю.Тиходеева лекция</li>
-</ul>
-</div>
-<div id="-1" class="section level2">
-<h2>11/4/2018 Воскресенье</h2>
-<ul>
-<li>Контрольная №2</li>
-</ul>
-</div>
-<div id="-3" class="section level2">
-<h2>11/7/2018 Среда</h2>
-<ul>
-<li>семинар 2</li>
-</ul>
-</div>
-<div id="-4" class="section level2">
-<h2>11/14/2018 Среда</h2>
-<ul>
-<li>семинар 3</li>
+<li>В.М.Хайтов лекция “Конкурентные взаимоотношения”</li>
+<li>Начинаем самостоятельную работу №2</li>
 </ul>
 </div>
 <div id="-5" class="section level2">
-<h2>11/20/2018 Среда</h2>
+<h2>10/26/2019 Суббота</h2>
+<ul>
+<li>В.М.Хайтов лекция “Симбиозы”</li>
+<li>В.М.Хайтов лекция “Структура сообщества”</li>
+<li>Начинаем самостоятельную работу №3</li>
+</ul>
+</div>
+<div id="-6" class="section level2">
+<h2>11/02/2019 Суббота</h2>
+<ul>
+<li>М.Ю.Тиходеева лекция “Экосистемы”</li>
+<li>Контрольная работа №2. Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы, Многообразие жизненных циклов, Глобальные круговороты.</li>
+</ul>
+</div>
+<div id="---" class="section level2">
+<h2>Конец ноября, по согласованию</h2>
 <ul>
 <li>В. М. Хайтов Консультация “Трудные моменты курса”<br />
 Не забудьте прислать свои вопросы по электронной почте.</li>
 </ul>
-</div>
-<div id="-6" class="section level2">
-<h2>11/21/2018 Среда</h2>
-<ul>
-<li>семинар 4<br />
-<!-- Вован 1 пара --></li>
-</ul>
-</div>
-<div id="-7" class="section level2">
-<h2>11/28/2018 Среда</h2>
-<ul>
-<li>семинар 5</li>
-</ul>
-</div>
-<div id="-8" class="section level2">
-<h2>12/5/2018 Среда</h2>
-<ul>
-<li>семинар 6 (у групп 1 - 4)</li>
-</ul>
-</div>
-<div id="-9" class="section level2">
-<h2>12/12/2018 Среда</h2>
-<ul>
-<li>семинар 6 (у групп 5 и 6)</li>
-</ul>
-</div>
-<div id="-10" class="section level2">
-<h2>12/19/2018 среда</h2>
-<hr />
-<p>** Последний срок приемки эссе.**</p>
-<hr />
 </div>
 
 

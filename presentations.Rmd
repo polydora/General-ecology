@@ -4,70 +4,70 @@ title: Презентации к лекциям
 
 Презентации будут открываться по мере чтения лекций.
 
-## Введение
+<!-- ## Введение -->
 
-- [Правила игры](Presentations/Lecture Introduction.pdf)
+<!-- - [Правила игры](Presentations/Lecture Introduction.pdf) -->
 
-## Лекция 1.
+<!-- ## Лекция 1. -->
 
-- [Предмет экологии](Presentations//Lecture 1.pdf)
+<!-- - [Предмет экологии](Presentations//Lecture 1.pdf) -->
 
-## Лекция 2.
+<!-- ## Лекция 2. -->
 
-- [Аутэкология](Presentations//Lecture 2.pdf)
+<!-- - [Аутэкология](Presentations//Lecture 2.pdf) -->
 
-## Лекция 3.
+<!-- ## Лекция 3. -->
 
-- [Демэкология](Presentations//Lecture 3.pdf)
-
-
-## Лекция 4.
-
-- [Динамика популяции](Presentations//Lecture 4.pdf)
+<!-- - [Демэкология](Presentations//Lecture 3.pdf) -->
 
 
-## Лекция 5.
+<!-- ## Лекция 4. -->
 
-- [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5.pdf)
-
-
-## Лекция 6.
-
-- [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6.pdf)
-
-## Лекция 7.
-
-- [Конкурентные отношения](Presentations//Lecture 7.pdf)
+<!-- - [Динамика популяции](Presentations//Lecture 4.pdf) -->
 
 
-## Лекция 8.
+<!-- ## Лекция 5. -->
 
-- [Трофические связи](Presentations//Lecture 8.pdf)
+<!-- - [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5.pdf) -->
 
 
+<!-- ## Лекция 6. -->
 
-## Лекция 9.
+<!-- - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6.pdf) -->
 
-- [Симбиозы](Presentations//Lecture 9.pdf)
+<!-- ## Лекция 7. -->
+
+<!-- - [Конкурентные отношения](Presentations//Lecture 7.pdf) -->
+
+
+<!-- ## Лекция 8. -->
+
+<!-- - [Трофические связи](Presentations//Lecture 8.pdf) -->
 
 
 
-## Лекция 10.
+<!-- ## Лекция 9. -->
 
-- [Структура сообщества](Presentations//Lecture 10.pdf)
-
-
-## Лекция 11,  12 и 13.
-
-- [Экосистемы и сукцессии](Presentations//Lecture11_12 Экосистема.pdf)
+<!-- - [Симбиозы](Presentations//Lecture 9.pdf) -->
 
 
-- [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf)
+
+<!-- ## Лекция 10. -->
+
+<!-- - [Структура сообщества](Presentations//Lecture 10.pdf) -->
 
 
-## Лекция про температуру
+<!-- ## Лекция 11,  12 и 13. -->
 
-- [Температура](Presentations//Temperature living systems.pdf)
+<!-- - [Экосистемы и сукцессии](Presentations//Lecture11_12 Экосистема.pdf) -->
+
+
+<!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
+
+
+<!-- ## Лекция про температуру -->
+
+<!-- - [Температура](Presentations//Temperature living systems.pdf) -->
 
 
 

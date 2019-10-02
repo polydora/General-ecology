@@ -8,7 +8,7 @@ title: Анализ работы
 
 Вот эти люди.
 
-```{r}
+```{r,  echo=FALSE}
 library(knitr)
 class <- read.csv("data/class.csv")
 
@@ -16,17 +16,14 @@ class$Name <- as.character(class$Name)
 
 class_dolg <- class[!complete.cases(class),]
 
-
-class_dolg[ ! is.na(class$Name) , 1]
-
 kable(class_dolg[ , 1][complete.cases(class_dolg[ , 1])], col.names = "Ф.И.")
 ```
 
-Кроме того, обнаружены еще несколько человек, которые не числятся на курсе. 
+Кроме того, обнаружены еще несколько человек, которые не числятся на курсе, но зарегистрировались на Stepik. 
 
-Бегимова	Жасмин
-Парамонова	Ирина
-Садовин	Василий
+Бегимова	Жасмин   
+Парамонова	Ирина   
+Садовин	Василий   
 
 
 

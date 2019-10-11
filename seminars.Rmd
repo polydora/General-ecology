@@ -6,6 +6,19 @@ title: Семинары
 **Если вы заметите какие-то накладки и нестыковки, то сразу пишите В. М. Хайтову**
 
 
+
+<style type="text/css">
+
+td {  /* Table  */
+  font-size: 10px;
+}
+</style>
+
+
+
+
+
+
 | Дата семинара 	| Группа 1                       	| Группа 2                       	| Группа 3                       	| Группа 4                       	| Группа 5                       	| Группа 6                       	| Группа 7                       	|
 |---------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|
 | 15.10.2019    	| Д. А. Кучеров                  	|                                	|                                	|                                	|                                	| А. Г. Гончар и  В. А. Крапивин 	| Д. М. Мирин                    	|
@@ -21,6 +34,91 @@ title: Семинары
 
 
 **Важно!** Группы указаны НЕ учебные, а те, на которые вы разделились перед началом курса "Общая экология"
+
+
+
+
+```{r, echo=FALSE}
+
+library(knitr)
+
+# chunk default options
+opts_chunk$set(fig.align='center', tidy = FALSE, fig.width = 7, fig.height = 3, warning = FALSE, echo = FALSE, message = FALSE)
+
+class <- read.csv("data/class.csv")
+
+class$Name <- as.character(class$Name)
+
+
+```
+
+## Списки групп
+
+**Важно!** После начала семинаров перемещаться из группы в группу уже будет нельзя. Проверьте, все ли правильно.
+
+
+### Группа 1 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_1"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+
+### Группа 2 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_2"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+### Группа 3 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_3"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+
+
+### Группа 4 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_4"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+
+### Группа 5 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_5"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+### Группа 6 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_6"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+
+### Группа 7 
+```{r}
+print(data.frame(Name = class$Name[class$Group == "Group_7"]), row.names = F)
+# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
+```
+
+
+## Долги
+
+Коллеги! Вот список тех студентов, кто еще не зарегистриовался на Stepik
+
+
+```{r}
+print(data.frame(Name = class$Name[is.na(class$ID)]), row.names = F)
+```
 
 
 <!-- # **Первый семинар** 31.10.2018   -->

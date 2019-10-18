@@ -10,6 +10,8 @@ title: Анализ работы
 
 ```{r,  echo=FALSE}
 library(knitr)
+
+
 class <- read.csv("data/class.csv")
 
 hw1 <- read.csv("data/homework_1.csv")
@@ -23,7 +25,7 @@ kable(class_dolg[ , 1], col.names = "Ф.И.")
 
 ## Результаты самостоятельной работы № 1
 
-```{r}
+```{r,  echo=FALSE}
 hw_res <- merge(class[, c("Name", "Group", "ID")], hw1, by = "ID")
 
 

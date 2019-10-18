@@ -25,92 +25,6 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; } /* Alert */
-code span.an { color: #008000; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #0000ff; } /* ControlFlow */
-code span.ch { color: #008080; } /* Char */
-code span.cn { } /* Constant */
-code span.co { color: #008000; } /* Comment */
-code span.cv { color: #008000; } /* CommentVar */
-code span.do { color: #008000; } /* Documentation */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.im { } /* Import */
-code span.in { color: #008000; } /* Information */
-code span.kw { color: #0000ff; } /* Keyword */
-code span.op { } /* Operator */
-code span.ot { color: #ff4000; } /* Other */
-code span.pp { color: #ff4000; } /* Preprocessor */
-code span.sc { color: #008080; } /* SpecialChar */
-code span.ss { color: #008080; } /* SpecialString */
-code span.st { color: #008080; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #008080; } /* VerbatimString */
-code span.wa { color: #008000; font-weight: bold; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -510,29 +424,6 @@ div.tocify {
 </table>
 <div id="---1" class="section level2">
 <h2>Результаты самостоятельной работы № 1</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">hw_res &lt;-<span class="st"> </span><span class="kw">merge</span>(class[, <span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;ID&quot;</span>)], hw1, <span class="dt">by =</span> <span class="st">&quot;ID&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">hw_res &lt;-<span class="st"> </span>hw_res[ , <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">6</span><span class="op">:</span><span class="dv">39</span>)]</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">Max &lt;-<span class="st"> </span><span class="kw">length</span>(<span class="kw">names</span>(hw_res)[<span class="dv">8</span><span class="op">:</span><span class="kw">ncol</span>(hw_res)])</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">hw_res<span class="op">$</span>Score_HW_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">apply</span>(hw_res[ , <span class="dv">4</span><span class="op">:</span><span class="kw">ncol</span>(hw_res)], <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> sum)</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">hw_res<span class="op">$</span>Score_HW_<span class="dv">1</span>[hw_res<span class="op">$</span>Name <span class="op">==</span><span class="st"> &quot;Леняшина Мария&quot;</span>] &lt;-<span class="st"> </span>hw_res<span class="op">$</span>Score_HW_<span class="dv">1</span>[hw_res<span class="op">$</span>Name <span class="op">==</span><span class="st"> &quot;Леняшина Мария&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="dv">1</span> </a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13">hw_res<span class="op">$</span>Score_HW_<span class="dv">1</span> &lt;-<span class="st"> </span>hw_res<span class="op">$</span>Score_HW_<span class="dv">1</span><span class="op">/</span>Max<span class="op">*</span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15">hw_res &lt;-<span class="st"> </span>hw_res[, <span class="kw">c</span>(<span class="st">&quot;Name&quot;</span>, <span class="st">&quot;Group&quot;</span>, <span class="st">&quot;ID&quot;</span>, <span class="st">&quot;Score_HW_1&quot;</span>)]</a>
-<a class="sourceLine" id="cb1-16" data-line-number="16">hw_res &lt;-<span class="st"> </span>hw_res[<span class="kw">order</span>(hw_res<span class="op">$</span>ID), ]</a>
-<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co"># write.table(hw_res, &quot;clipboard&quot;, sep = &quot;\t&quot;, row.names = F)</span></a>
-<a class="sourceLine" id="cb1-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb1-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb1-20" data-line-number="20"></a>
-<a class="sourceLine" id="cb1-21" data-line-number="21"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb1-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb1-23" data-line-number="23"><span class="kw">ggplot</span>(hw_res, <span class="kw">aes</span>(<span class="dt">x =</span> Group, <span class="dt">y =</span> Score_HW_<span class="dv">1</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Количесвто баллов по каждой группе&quot;</span>)</a></code></pre></div>
 <p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Группа №3 впереди всех! Остальные тоже молодцы…</p>
 <!-- # Контрольная работа № 1 -->

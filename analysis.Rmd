@@ -48,7 +48,7 @@ hw_res <- hw_res[order(hw_res$ID), ]
 
 library(ggplot2)
 
-ggplot(hw_res, aes(x = Group, y = Score_HW_1)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе")
+ggplot(hw_res, aes(x = Group, y = Score_HW_1)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
 
 
 ```

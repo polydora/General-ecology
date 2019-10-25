@@ -38,6 +38,8 @@ hw_res$Score_HW_1 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum)
 
 hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1 
 
+hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] + 4 
+
 hw_res$Score_HW_1 <- hw_res$Score_HW_1/Max*3
 
 hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_1")]
@@ -60,83 +62,89 @@ ggplot(hw_res, aes(x = Group, y = Score_HW_1)) + geom_boxplot() + ggtitle("Ко�
 
 
 
-<!-- # Контрольная работа № 1 -->
+# Контрольная работа № 1
 
-<!-- ## Распределение результатов -->
+## Распределение результатов
 
-<!-- Вот такие предварительные результаты по контрольной. -->
-
-
-<!-- ```{r, echo=FALSE} -->
-<!-- class <- read.csv("data/class.csv") -->
-<!-- reasult <- read.csv("data/Control_work_1.csv", encoding = "Utf-8") -->
-<!-- res <- merge(class, reasult) -->
-<!-- res$sum <- apply(res[,-c(1:8)], MARGIN = 1, FUN = sum) -->
-<!-- res$Prop <- res$sum / ncol(res[,-c(1:8)]) * 100    -->
-
-<!-- library(ggplot2)  -->
-
-<!-- # library(doBy) -->
-<!-- #  -->
-<!-- # res_out <- summaryBy(sum ~ Group, data = res) -->
-
-<!-- ggplot(res, aes(x = Prop)) + geom_histogram(fill = "blue", color = "black", binwidth = 10) + labs(x = "Процент правильных ответов") + geom_vline(xintercept = 49) + geom_text(aes(x = 60, y = 40, label = "Зачет")) -->
-
-<!-- ``` -->
-
-<!-- А вот так выглядит распределение по группам. Горизотальные линии отделяют тройку (50-60%), четверку (60-80%) и пятерку (более 80%). -->
+Вот такие предварительные результаты по контрольной.
 
 
-<!-- ```{r, echo=FALSE} -->
-<!-- ggplot(res, aes(x = factor(Group), y = Prop)) + geom_boxplot() + labs(x = "Группа", y = "Количество правильных ответов") + geom_hline(yintercept = c(49, 60, 80)) -->
+```{r, echo=FALSE}
+class <- read.csv("data/class.csv")
 
-<!-- ``` -->
+class <- class[, c("Name", "ID", "Group")]
+reasult <- read.csv("data/controlwork_1.csv", encoding = "Utf-8")
+res <- merge(class, reasult, by = "ID")
 
+res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum)
 
-<!-- ## Распределение оценок -->
+Max <- ncol(res[,-c(1:5, ncol(res))])
 
-<!-- ```{r, echo=FALSE} -->
-<!-- res$credit[res$Prop >= 80] <- 5 -->
+res$Prop <- res$sum / Max  * 10
 
-<!-- res$credit[res$Prop < 80 & res$Prop >= 60 ] <- 4 -->
+# write.table(res, "clipboard", sep = "\t", row.names = F)
 
-<!-- res$credit[res$Prop < 60 & res$Prop >= 50 ] <- 3 -->
+library(ggplot2)
 
-<!-- res$credit[res$Prop < 50 ] <- 2 -->
+# library(doBy)
+#
+# res_out <- summaryBy(sum ~ Group, data = res)
 
-<!-- credits <- as.data.frame(table(res$credit)) -->
-<!-- names(credits) <- c("Оценка", "Количество студентов") -->
-<!-- library(knitr) -->
-<!-- kable (credits, align = "cc") -->
-
-<!-- ``` -->
-
-<!-- Господа, тем, кто получил ниже тройки, надо собраться и на следующей контрольной подтянуться! Ну и не забывайте про повышающие коэффициенты за работу на семинарах... -->
+ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
 
 
-<!-- ## Время выполнения работы -->
-
-<!-- А вот так выглядит степень скооперированности работы студентов.  -->
-
-<!-- ```{r, echo=FALSE} -->
-<!-- time <- read.csv("data/Control_work_1_time.csv") -->
-<!-- time_res <- merge(class, time) -->
-
-<!-- time_res$start_date <- format(time_res$start_date,format = "%Y-%m-%d %H:%M:%S" ) -->
-
-<!-- time_res$start_date <- strptime(time_res$start_date, format ="%Y-%m-%d %H:%M:%S"  ) -->
-
-<!-- time_res$start_H <- as.numeric(format(time_res$start_date, "%H")) + as.numeric(format(time_res$start_date, "%M"))/60  -->
-
-
-<!-- ggplot(time_res, aes(x = as.factor(Group), y = start_H)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу") -->
-
-
-<!-- ``` -->
+```
 
 
 
-<!-- Группа № 4, видимо, самая дружная :), у них минимальный разброс значений. Звонок другу... Хорошая, но не факт, что лучшая, технология. -->
+
+## Время выполнения работы
+
+А вот так выглядит степень скоординированности работы студентов.
+
+```{r, echo=FALSE, message=FALSE, warning=F}
+contr_trial <- read.csv("data/Control1_attempts.csv", header = T)
+
+contr_trial$submission_date_time <- as.POSIXct(contr_trial$submission,format = "%d-%m %H:%M")
+
+
+ggplot(contr_trial, aes(x = Group, y = submission_date_time)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу")
+
+
+
+```
+
+
+
+Группа № 2, видимо, самая дружная :), у них минимальный разброс значений. Коллективная работа... Я не против... но экзамен будет индивидуальным...  
+
+## Кто раньше, тот лучше
+
+Посмотрите на результаты регрессионного анализа, который описывает связь вероятности правильного ответа на вопросы контрольной работы, с тем, когда происходило решение задач. 
+
+```{r, echo=FALSE, message=FALSE, warning=F}
+library(dplyr)
+contr_trial$Out <- ifelse(contr_trial$status == "correct", 1, 0)
+
+Mod_time <- glm(Out ~ submission_date_time, data = contr_trial, family = "binomial")
+
+
+new_data <- data.frame(submission_date_time = seq(min(contr_trial$submission_date_time, na.rm = T), max(contr_trial$submission_date_time, na.rm = T), length.out = 100))
+
+new_data$Predict <- predict(Mod_time, newdata =new_data, type = "response", se.fit = T)$fit
+new_data$SE <- predict(Mod_time, newdata =new_data, type = "response", se.fit = T)$se.fit
+
+
+ggplot(new_data, aes(x = submission_date_time, y = Predict)) + geom_line(color = "blue", size = 2) + geom_ribbon(aes(ymin = Predict - 1.96*SE, ymax = Predict + 1.96*SE), alpha = 0.2) + labs(x = "Время решеня задачи", y = "Вероятность правильного решения")
+
+
+```
+
+
+Результаты статистически значимы и характер связи очевиден: те, кто раньше берется за контрольную, те с большей вероятностью решают ее правильно. Думайте над механизмами этой связи :)
+
+
+
 
 
 <!-- <!-- ```{r} --> -->

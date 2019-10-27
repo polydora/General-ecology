@@ -145,6 +145,27 @@ ggplot(new_data, aes(x = submission_date_time, y = Predict)) + geom_line(color =
 
 
 
+# Текущие оценки 
+Коллеги, для сохранения персональных данных в тайне, вывешиваются только номера ID. Поэтому для поиска информации о себе выясните на Степике свой ID.
+
+```{r, echo=FALSE, message=FALSE, warning=F}
+class <- read.csv("data/class.csv")
+
+results_print <- class[, c("ID", "Seminar_1",	"Seminar_2",	"Seminar_3",	"Seminar_4",	"Seminar_5",	"Seminar_6", 	"Seminar_7", 	"HW_1",	"HW_2",	"HW_3",	"Control_1",	"Control_2")]
+
+results_print <- results_print[!is.na(results_print$ID), ]
+
+results_print[is.na(results_print)] <- 0
+options(knitr.kable.NA = '')
+
+results_print[,2:8] <- results_print[,2:8]/1*3
+
+results_print$Sum <- apply(results_print[,-c(1, ncol(results_print))], MARGIN = 1, FUN = sum)
+
+
+kable(results_print, col.names = c("ID", "Сем.1", "Сем.2", "Сем.3",  "Сем.4", "Сем.5", "Сем.6", "Сем.7",  "СР1", "СР2", "СР3", "КР1", "КР2", "Сумма"), digits = 1)
+
+```
 
 
 <!-- <!-- ```{r} --> -->

@@ -145,6 +145,53 @@ ggplot(new_data, aes(x = submission_date_time, y = Predict)) + geom_line(color =
 
 
 
+# Результаты самостоятельной работы № 1
+
+```{r,  echo=FALSE}
+
+
+class <- read.csv("data/class.csv")
+
+hw2 <- read.csv("data/homework_2.csv")
+
+class$Name <- as.character(class$Name)
+
+
+
+hw_res <- merge(class[, c("Name", "Group", "ID")], hw2, by = "ID")
+
+
+
+hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))]
+
+Max <- length(names(hw_res)[4:ncol(hw_res)])
+
+hw_res$Score_HW_2 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum)
+# 
+# hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1 
+# 
+# hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] + 4 
+
+hw_res$Score_HW_2 <- hw_res$Score_HW_2/Max*3
+
+hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_2")]
+hw_res <- hw_res[order(hw_res$ID), ]
+# write.table(hw_res, "clipboard", sep = "\t", row.names = F)
+
+
+
+library(ggplot2)
+
+ggplot(hw_res, aes(x = Group, y = Score_HW_2)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
+
+
+
+```
+
+
+На этот раз вперед вырвались группы 6 и 7. А вот группа 3 что-то сдала позиции...
+
+
 # Текущие оценки 
 Коллеги, для сохранения персональных данных в тайне, вывешиваются только номера ID. Поэтому для поиска информации о себе выясните на Степике свой ID.
 
@@ -161,7 +208,6 @@ options(knitr.kable.NA = '')
 results_print[,2:8] <- results_print[,2:8]/1*3
 
 results_print$Sum <- apply(results_print[,-c(1, ncol(results_print))], MARGIN = 1, FUN = sum)
-
 
 kable(results_print, col.names = c("ID", "Сем.1", "Сем.2", "Сем.3",  "Сем.4", "Сем.5", "Сем.6", "Сем.7",  "СР1", "СР2", "СР3", "КР1", "КР2", "Сумма"), digits = 1)
 

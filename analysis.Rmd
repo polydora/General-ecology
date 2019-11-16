@@ -145,7 +145,7 @@ ggplot(new_data, aes(x = submission_date_time, y = Predict)) + geom_line(color =
 
 
 
-# Результаты самостоятельной работы № 1
+# Результаты самостоятельной работы № 2
 
 ```{r,  echo=FALSE}
 
@@ -190,6 +190,95 @@ ggplot(hw_res, aes(x = Group, y = Score_HW_2)) + geom_boxplot() + ggtitle("Ко�
 
 
 На этот раз вперед вырвались группы 6 и 7. А вот группа 3 что-то сдала позиции...
+
+
+
+
+# Результаты самостоятельной работы № 3
+
+```{r,  echo=FALSE}
+
+
+class <- read.csv("data/class.csv")
+
+hw3 <- read.csv("data/homework_3.csv")
+
+class$Name <- as.character(class$Name)
+
+
+
+hw_res <- merge(class[, c("Name", "Group", "ID")], hw3, by = "ID")
+
+
+
+hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))]
+
+Max <- 27
+
+hw_res$Score_HW_3 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum)
+# 
+# hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1 
+# 
+# hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] + 4 
+
+hw_res$Score_HW_3 <- hw_res$Score_HW_3/Max*3
+
+hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_3")]
+hw_res <- hw_res[order(hw_res$ID), ]
+# write.table(hw_res, "clipboard", sep = "\t", row.names = F)
+
+
+
+library(ggplot2)
+
+ggplot(hw_res, aes(x = Group, y = Score_HW_3)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
+
+
+
+```
+
+
+На этот раз всех победила группа № 7!
+
+
+
+
+# Контрольная работа № 2
+
+## Распределение результатов
+
+Вот такие предварительные результаты по второй контрольной.
+
+
+```{r, echo=FALSE}
+class <- read.csv("data/class.csv")
+
+class <- class[, c("Name", "ID", "Group")]
+reasult <- read.csv("data/controlwork_2.csv", encoding = "Utf-8")
+res <- merge(class, reasult, by = "ID")
+
+res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum)
+
+Max <- ncol(res[,-c(1:5, ncol(res))])
+
+res$Prop <- res$sum / Max  * 10
+
+# write.table(res, "clipboard", sep = "\t", row.names = F)
+
+library(ggplot2)
+
+# library(doBy)
+#
+# res_out <- summaryBy(sum ~ Group, data = res)
+
+ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 10)
+
+
+```
+
+И опять группа № 7 на высоте!
+
+
 
 
 # Текущие оценки 

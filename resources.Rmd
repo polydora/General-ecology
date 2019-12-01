@@ -2,6 +2,135 @@
 title: Ресурсы по общей экологии и смежным темам
 ---
 
+
+# Литература, процитированная на лекциях
+
+Материалы будут открываться после лекций
+
+## Лекция № 1. Предмет экологии
+- [Основные аспекты типологии организмов](Literature//Мейен 1978.pdf)
+- [Общая паразитология](Literature//dogel1947_kurs_obsch_parazitol.pdf)
+- [Общая теория систем: состояние, приложения и перспективы развития](Literature//Урманцев OTSU.pdf)
+- [Эгоистичный ген](Literature//Докинз Эгоистичный ген.pdf)
+
+
+
+## Лекция № 2. Аутэкология
+- [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou](Literature//pond2016.pdf)
+- [Голубые ракушки](Literature//Стрелков Хайтов Католикова 2012.pdf)
+- [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea](Literature//Sarantchova 2001.pdf)
+- [On the endemic Fucus radicans in the Baltic Sea](Literature//Shagerstrom_endemic_Fucus.pdf)
+- [Marine Lake Mogilnoe (Kildin Island, the Barents Sea): one hundred years of solitude](Literature//Strelkov et al_Marine Lake Mogilnoe 2014.pdf)
+- [Relationships between Seston, Available Food and Feeding Activity in the Common Mussel Mytilus edulis	Widdows 1979](Literature//Relationships Between Seston and pceudofeaces.pdf)
+- [Following the heart: temperature and salinity effects on heart rate in native and invasive species of blue mussels (genus Mytilus).](Literature//Braby Somero 2006.pdf)
+- [Seasonal cycles of noctuid moths of the subfamily Plusiinae (Lepidoptera, Noctuidae) of the Palaearctic: Diversity and environmental control](Literature//Saulich_et_al_2017_Plusiinae_Engl.pdf)
+- [Genetic, Ecological and Morphological Distinctness of the Blue Mussels Mytilus trossulus Gould and M. edulis L. in the White Sea.](Literature//Katolikova et al 2016 Sympatric Mussels in the White Sea.pdf)
+- [Экология Особи, популяции и сообщества](Literature//Bigon_Harper_Taunsend_V2.pdf)
+- [Введение в Общую Экологию](Literature//Нинбург 2005.pdf)
+
+
+
+## Лекция № 3. Демэкология
+
+- [Age determination and growth rate of a Callista chione population from the southwestern coast of Portugal](Literature//Age_determination_and_growth_rate_of_a_Callista_ch.pdf)
+- [Demographic and medical consequences of the postponement of parenthood](Literature//Demographic_and_medical_consequences_of_the_postpo.pdf)
+- [Comparative analyses of longevity and senescence reveal variable survival benefits of living in zoos across mammals](Literature//Comparative analyses of longevity and senescence.pdf)
+- [Two-year migration of adult female white sharks (Carcharodon carcharias) reveals widely separated nursery areas and conservation concerns](Literature//Domeier-and-Nasby-Lucas-2013.pdf)
+- [Sex Determination: Why So Many Ways of Doing It?](Literature//Bachtorg et al 2014 Sex determination.pdf)
+- [Evolutionary ecology of human birth sex ratio under the compound influence of climate change, famine, economic crises and wars](Literature//Helle et al 2009.pdf)
+- [Sex Determination in Reptiles](Literature//bull1980 reptilia sex determination.pdf)
+- [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf)
+
+
+## Лекция № 4. Динамика популяций 
+- [Does population ecology have general laws?](Literature//Turchin 2001 General low of population ecology.pdf)
+- [Sustained exponential population growth of grey seals at Sable Island, Nova Scotia](Literature//Bowen et al 2003 Exponentizl growth in grey seel.pdf)
+- [Exponential Population Growth of Monk Parakeets in the United States](Literature//Van Bael Pruett Jones 1996 Parrot exponential growth.pdf)
+- [The Rise and Fall of a Reindeer Herd](Literature//Reindeer _Pribilovs.pdf)
+- [Post-invasion demography of prehistoric humans in South America](Literature//goldberg2016 human populaion dynamics.pdf)
+- [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf)
+- [The Theory of Population Dynamics: I. Back To First Principles](ginzburg1986.pdf)
+- [Long-Term Population Cycles in Human Societies](Literature//Turchin 2009 review.pdf)
+
+## Лекция № 5. Межвидовые взаимоотношения (симфизиологические связи)
+
+- [Биоценологические основы сравнительной паразитологии](Literature//beklemishev1970 Биоценотческие основы сравнительной паразитологии.djvu)
+- [Cockles, barnacles and ascidians compose a subtidal facilitation cascade with multiple hierarchical levels of foundation species](Literature//Yakovis Artemieva 2017 Cockles, barnacles and ascidians.pdf)
+- [Allelopathy](Literature//Allelopaty.pdf)
+
+## Лекция № 6. Взаимоотношения организмов
+
+- [Indirect positive effects of a parasitic plant on host pollination and seed dispersal](Literature//candia2014 parasitic plant positive effect.pdf)
+- [Parasites alter host phenotype and may create a new ecological niche for snail hosts](Literature//miura2006 parasites provide new ecological niche.pdf)
+- [Spider-Ant Associations: An Updated Review of Myrmecomorphy, Myrmecophily, and Myrmecophagy in Spiders](Literature//Cushing 2012 Spider-Ant Associations.pdf)
+- [Islands of Mytilus as a habitat for small intertidal animals: effect of islands size on community structure](Literature//Tsuchia Nishichira 1986.pdf)
+- [Multiple foundation species shape benthic habitat islands](Literature//Yakovis et al 2008 in press.pdf)
+- [THE EVOLUTION AND DYNAMICS OF INTRASPECIFIC PREDATION](Literature//polis1981 evolution of cannibalism.pdf)
+- [Matrotrophy and placentation in invertebrates: a new paradigm](Literature//Ostrovsky et al 2016 Matrotrophy.pdf)
+- [Deadly competition and life-saving predation: the potential for alternative stable states in a stage-structured predator–prey system](Literature//Toscano et al 2016 Atage structured predator pray system.pdf)
+- [PRIMARY AND SECONDARY SETTLEMENT IN MYTILUS EDULIS L. (MOLLUSCA)](Literature//Bayne 1964.pdf)
+- [Общая экология](http://ekolog.org/books/26/)
+
+
+## Лекция № 7. Конкуренция
+
+- [The multidimensional Stoichiometric Niche](Literature//fevo-05-00110.pdf)
+- [Агрессия, или Так называемое зло](Literature//Конрад Лоренц. Агрессия - royallib.ru.fb2)
+- [Aggressive Behavior of White-Tailed Deer at Concentrated Food Sites as Affected by Population Density](Literature//Donohue et al 2013 Dear aggression.pdf)
+- [Variation in grouping patterns, mating systems and social structure: what socioecological models attempt to explain](Literature//Koenig et al 2013 Ecology and social structure in apes.pdf)
+- [Experimental Examination of Intraspecific Densty- Dependent Competition during the Breeding Period in Monarch Butterflies (*Danaus plexippus*)](Literature//Flockhart et al 2012 intraspecific competition in butterfly.PDF)
+- [INTRASPECIFIC COMPETITION AND FACILITATION IN A NORTHERN ACORN BARNACLE POPULATION](Literature//bertness1989 Semibalanus.pdf)
+- [THE INFLUENCE OF INTERSPECIFIC COMPETITION AND OTHER FACTORS ON THE DISTRIBUTION OF THE BARNACLE CHTHAMALUS STELLA TUS](connell1961 Chthamalus Balanus.pdf)
+- [Models and Mechanisms of Succession: An Example From a Rocky Intertidal Community](Literature//farrell 1991 Balanus Chthamalus experiments.pdf)
+- [The Struggle for Existence](Gause The Struggle for Existence.pdf)
+- [Genetic, Ecological and Morphological Distinctness of the blue mussels Mytilus trossulus and M. edulis L. in the White Sea](Literature//Katolikova et al 2016 Sympatric Mussels in the White Sea.pdf)
+- [Intraspecific variation in stable isotope signatures indicates no small-scale feeding interference between a horse mussel and an ascidian](Literature//Yakovis et al. 2012 Modiolus Styella isotopes.pdf)
+- [On the Diversity of Foraging-Related Traits in Stingless Bees](Literature//HrncirandMaia-Silva2013 Niche differenciation in Bees.pdf)
+- [Size of mudsnails, *Hydrobia ulvae* (Pennant) and *H. ventrosa* (Montagu), in allopatry and sympatry: conclusions from field distributions and laboratory growth experiments](Literature//grudemo1999 Hydrobia Character dispacement.pdf)
+- [Character displacement of song and morphology in African tinkerbirds](Literature//Kirschel 2009 Character displacement in Bird songs and morphology.pdf)
+
+
+## Лекция № 8. Трофические отношения 
+- [Chemically induced predator avoidance behavior in the burrowing bivalve Macoma balthica](Literature//Griffiths Richardson 2005.pdf)
+- [PREY SELECTION AND SOCIAL BEHAVIOUR IN WAGTAILS (AVES: MOTACILLIDAE)](Literature//davies1977 Maticilla optimal diet.pdf)
+- [Discriminating Eaters: Sea Stars *Asterias rubens* L. Feed Preferably on *Mytilus trossulus* Gould in Mixed Stocks of *Mytilus trossulus* and *Mytilus edulis* L.](Literature//Khaitov et al 2018.pdf)
+- [SWITCHING IN GENERAL PREDATORS: EXPERIMENTS ON PREDATOR SPECIFICITY AND STABILITY OF PREY POPULATIONS](Literature//Murdoch 1969 Predator switching.pdf)
+[Are oystercatchers (Haematopus ostralegus) selecting the most profitable mussels (Mytilus edulis)?](Literature//meire1986 Oystercatchers and optimal feeding theory.pdf)
+- [Hunter-gatherer residential mobility and the marginal value of rainforest patches](Literature//Vankatarman et ql 2017 Humans and Marginal value theorem.pdf)
+- [EXPERIMENTAL DEMONSTRATION OF VOLTERRA'S PERIODIC OSCILLATIONS IN THE NUMBERS OF ANIMALS](Literature//Gause 1934 Predator paey Voltera model.pdf)
+- [Are lemmings prey or predators?](turchin 2000 lemmings are predators.pdf)
+- [Complex population dynamics: a theoretical/empirical synthesis.](Literature//Turchin 2003 Complex Population Dynamics_ A Theoretical_Empirical Synthesis.pdf)
+
+## Лекция № 9. Симбиозы 
+
+- [English translation of Heinrich Anton de Bary’s 1878 speech, ‘Die Erscheinung der Symbiose’ (‘De la symbiose’)](Literature//oulhen 2016 английский перевод речи де Бари про симбиозы.pdf)
+- [Symbiosis: “Living Together” in Chaos](Literature//Martin Shwabb, 2012 Symbiosis Living together in Chaos.pdf)
+- [Общая паразитология](Literature//dogel1947_kurs_obsch_parazitol.pdf)
+- [Symbiotic digestion of lignocellulose in termite guts](Literature//brune2014 symbiotic digestion of cellulose.pdf)
+- [Вестиментиферы – автотрофные животные](Literature//malahov1997 Вестиментиферы.pdf)
+- [The evolution of mutualism from reciprocal parasitism: more ecological clothes for the Prisoner’s Dilemma](Literature//antonovics 2015 Mutualism origin.pdf)
+- [HAUSTORIAL TYPES AND THEIR FREQUENCIES IN A RANGE OF LICHENS WITH TREBOUXIOID PHOTOBIONTS](Honegger 1986 Lichen Haustoria type.pdf)
+- [Species-specific ant brain manipulation by a specialized fungal parasite](Literature//de Bekker 2014 Fungi manipulate Ants.pdf)
+- [ALTERED BEHAVIOR OF PARASITIZED KILLIFISH INCREASES SUSCEPTIBILITY TO PREDATION BY BIRD FINAL HOSTS](Literature//Lafferty 1996 ALTERED BEHAVIOR OF PARASITIZED KILLIFISH.pdf)
+- [Host-Parasite Interactions and Population Dynamics of Rock Ptarmigan](Literature//Stenkewitz et al 2016 Популяционная динамика белой куропатки и влияние паразитов.pdf)
+- [The Bright Side of the Black Death](https://www.americanscientist.org/article/the-bright-side-of-the-black-death)
+- [Эгоистичный ген](Literature//Докинз Эгоистичный ген.pdf)
+
+## Лекция № 10. Структура сообществ
+
+- [РОЛЬ МИДИЕВЫХ ДРУЗ В СТРУКТУРИРОВАНИИ СООБЩЕСТВ ИЛИСТО-ПЕСЧАНЫХ ПЛЯЖЕЙ I. СОСТАВ СООБЩЕСТВА, СВЯЗАННОГО С ДРУЗАМИ, НА БЕЛОМОРСКОЙ ЛИТОРАЛИ](Literature//Хайтов и др. 2007a.pdf)
+- [Revisiting Paine’s 1966 Sea Star Removal Experiment, the Most-Cited Empirical Article in the American Naturalist](Literature//Paine-1966-Revisit.pdf)
+- [Структура сообществ и экологическая ниша](Literature//giller1988_struktura_soobsch.djvu)
+
+<!-- ## Лекция № 11 -->
+
+
+
+
+
+# Литература по отдельным темам
+
+
 ## Общая теория систем, типология, теория классификации
 
 - [Общая теория систем Урманцева](http://www.sci.aha.ru/ots/index.htm)
@@ -22,8 +151,6 @@ title: Ресурсы по общей экологии и смежным тем�
 
 - [Г.Ю.Ризниченко Популяционная динамика](http://www.library.biophys.msu.ru/MathMod/PD.HTML)
 
-- Turchin P. Complex population dynamics: a theoretical/empirical synthesis. – Princeton university press, 2003. – Т. 35.
-
 - Royama T. Analytical population dynamics. – Springer Science & Business Media, 2012. – Т. 10.
 
 ## Структура и динамика сообществ
@@ -37,40 +164,6 @@ title: Ресурсы по общей экологии и смежным тем�
 - Quinn, G.G.P., Keough, M.J., 2002. Experimental design and data analysis for biologists. Cambridge University Press.
 - Zuur, A., Ieno, E.N. and Smith, G.M., 2007. Analyzing ecological data. Springer Science & Business Media.    
 - Legendre, P., Legendre, L., 2012. Numerical ecology. Elsevier.   
-
-#Литература, процитированная на лекциях
-
-Материалы будут открываться после лекций
-
-<!-- ## Лекция № 1. Предмет экологии  -->
-<!-- - [Основные аспекты типологии организмов](Literature//Мейен 1978.pdf) -->
-
-<!-- ## Лекция № 2 -->
-<!-- - [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou](Literature//pond2016.pdf) -->
-<!-- - [Голубые ракушки](Literature//Стрелков Хайтов Католикова 2012.pdf) -->
-<!-- - [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea](Literature//Sarantchova 2001.pdf) -->
-
-<!-- ## Лекция № 3 -->
-
-<!-- ## Лекция № 4 -->
-
-<!-- ## Лекция № 5 -->
-
-<!-- ## Лекция № 6 -->
-
-<!-- ## Лекция № 7 -->
-
-<!-- ## Лекция № 8 -->
-
-<!-- ## Лекция № 9 -->
-
-<!-- ## Лекция № 10 -->
-
-<!-- ## Лекция № 11 -->
-
-<!-- ## Лекция № 12 -->
-
-<!-- ## Лекция № 13 -->
 
 
 

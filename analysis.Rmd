@@ -298,6 +298,16 @@ results_print[,2:8] <- results_print[,2:8]/1*3
 
 results_print$Sum <- apply(results_print[,2:13], MARGIN = 1, FUN = sum)
 
+
+# Надбавка за помощь Мешковский Сергей, Такки Ольга
+
+results_print$Sum[results_print$ID %in% c(19491533, 96556392)] <- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] + 5
+
+
+
+
+
+
 kable(results_print, col.names = c("ID", "Сем.1", "Сем.2", "Сем.3",  "Сем.4", "Сем.5", "Сем.6", "Сем.7",  "СР1", "СР2", "СР3", "КР1", "КР2", "Сумма"), digits = 1)
 
 ```

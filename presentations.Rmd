@@ -66,9 +66,9 @@ title: Презентации к лекциям
 <!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
 
 
-<!-- ## Лекция про температуру -->
+## Презентация для семинара по теме "Температура и живые системы"
 
-<!-- - [Температура](Presentations//Temperature living systems.pdf) -->
+- [Температура](Presentations//Temperature living systems.pdf)
 
 
 

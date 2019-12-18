@@ -303,8 +303,7 @@ results_print$Sum <- apply(results_print[,2:13], MARGIN = 1, FUN = sum)
 
 results_print$Sum[results_print$ID %in% c(19491533, 96556392)] <- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] + 5
 
-
-
+# write.table(merge(class[,c("ID", "Name"), ], results_print), "clipboard", sep = "\t", row.names = F, fileEncoding = "utf8")
 
 
 

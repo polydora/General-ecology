@@ -1,6 +1,6 @@
 # Анализ попыток студентов 
 
-trial <- read.csv("data/course-32065-submissions.csv", header = T)
+trial <- read.csv("data/course-32065-submissions-full.csv", header = T)
 
 class <- read.csv("data/class.csv")
 
@@ -11,18 +11,18 @@ trial <- merge(class, trial, by = "ID")
 
 
 
-trial$attempt <- format(as.POSIXct((trial$attempt_time), origin = "1970-01-01", tz = "UTC"), "%d-%m %H:%M")
+trial$attempt <- format(as.POSIXct((trial$attempt_time), origin = "1970-01-01", tz = "UTC"), "%d/%m/%Y %H:%M")
 
-trial$submission <- format(as.POSIXct((trial$submission_time), origin = "1970-01-01", tz = "UTC"), "%d-%m %H:%M")
-
-
+trial$submission <- format(as.POSIXct((trial$submission_time), origin = "1970-01-01", tz = "UTC"), "%d/%m/%Y %H:%M")
 
 
-tail(trial[trial$last_name == "Тарасова", ])
 
-write.csv(trial, "data/all_attempts.csv")
 
-write.csv(trial[trial$last_name == "Тарасова", ], "data/Tarasova.csv")
+tail(trial[trial$last_name == "Маслаков", ])
+
+write.csv(trial, "data/all_attempts_2019.csv")
+
+write.csv(trial[trial$last_name == "Маслаков", ], "data/Маслаков.csv")
 
 
 ###############################

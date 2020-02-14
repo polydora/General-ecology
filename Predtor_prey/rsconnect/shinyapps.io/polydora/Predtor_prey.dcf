@@ -1,0 +1,12 @@
+name: Predtor_prey
+title: Predtor_prey
+username:
+account: polydora
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1812954
+bundleId: 2801243
+url: https://polydora.shinyapps.io/Predtor_prey/
+when: 1581696061.61921
+asMultiple: FALSE
+asStatic: FALSE

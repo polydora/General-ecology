@@ -1,0 +1,12 @@
+name: Logistic_dynamics_model
+title: Logistic_dynamics_model
+username:
+account: polydora
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1812754
+bundleId: 2801147
+url: https://polydora.shinyapps.io/Logistic_dynamics_model/
+when: 1581694068.15612
+asMultiple: FALSE
+asStatic: FALSE

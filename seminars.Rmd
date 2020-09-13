@@ -15,110 +15,95 @@ td {  /* Table  */
 </style>
 
 
+Пока идут согласования по форме и расписании  семинаров.
+
+
+<!-- **Важно!** Группы указаны НЕ учебные, а те, на которые вы разделились перед началом курса "Общая экология" -->
 
 
 
 
-| Дата семинара 	| Группа 1                       	| Группа 2                       	| Группа 3                       	| Группа 4                       	| Группа 5                       	| Группа 6                       	| Группа 7                       	|
-|---------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|--------------------------------	|
-| 15.10.2019    	| Д. А. Кучеров                  	|                                	|                                	|                                	|                                	| А. Г. Гончар и  В. А. Крапивин 	| Д. М. Мирин                    	|
-| 22.10.2019    	| Д. М. Мирин                    	| Д. А. Кучеров                  	|                                	|                                	|                                	| Е. Н. Чернова                  	| А. Г. Гончар и  В. А. Крапивин 	|
-| 29.10.2019    	| Е. М. Копцева                  	| Д. М. Мирин                    	| Д. А. Кучеров                  	| С. И. Мельницкий               	|                                	| М. В. Иванов                   	|                                	|
-| 05.11.2019    	| А. Г. Гончар и  В. А. Крапивин 	| Е. М. Копцева                  	| Д. М. Мирин                    	| Д. А. Кучеров                  	| С. И. Мельницкий               	|                                	| Е. Н. Чернова                  	|
-| 12.11.2019    	| Е. Н. Чернова                  	| А. Г. Гончар и  В. А. Крапивин 	| Е. М. Копцева                  	| Д. М. Мирин                    	| Д. А. Кучеров                  	| С. И. Мельницкий               	| М. В. Иванов                   	|
-| 19.11.2019    	| М. В. Иванов                   	| Е. Н. Чернова                  	| А. Г. Гончар и  В. А. Крапивин 	| Е. М. Копцева                  	| Д. М. Мирин                    	| Д. А. Кучеров                  	| С. И. Мельницкий               	|
-| 26.11.2019    	|                                	| М. В. Иванов                   	| Е. Н. Чернова                  	| А. Г. Гончар и  В. А. Крапивин 	| Е. М. Копцева                  	| Д. М. Мирин                    	| Д. А. Кучеров                  	|
-| 03.12.2019    	| С. И. Мельницкий               	|                                	| М. В. Иванов                   	| Е. Н. Чернова                  	| А. Г. Гончар и  В. А. Крапивин 	| Е. М. Копцева                  	|                                	|
-| 10.12.2019    	|                                	| С. И. Мельницкий               	|                                	| М. В. Иванов                   	| Е. Н. Чернова                  	|                                	| Е. М. Копцева                  	|
-| 17.12.2019    	|                                	|                                	| С. И. Мельницкий               	|                                	| М. В. Иванов                   	|                                	|                                	|
+<!-- ```{r, echo=FALSE} -->
+
+<!-- library(knitr) -->
+
+<!-- # chunk default options -->
+<!-- opts_chunk$set(fig.align='center', tidy = FALSE, fig.width = 7, fig.height = 3, warning = FALSE, echo = FALSE, message = FALSE) -->
+
+<!-- class <- read.csv("data/class.csv") -->
+
+<!-- class$Name <- as.character(class$Name) -->
 
 
-**Важно!** Группы указаны НЕ учебные, а те, на которые вы разделились перед началом курса "Общая экология"
+<!-- ``` -->
+
+<!-- ## Списки групп -->
+
+<!-- **Важно!** После начала семинаров перемещаться из группы в группу уже будет нельзя. Проверьте, все ли правильно. -->
 
 
-
-
-```{r, echo=FALSE}
-
-library(knitr)
-
-# chunk default options
-opts_chunk$set(fig.align='center', tidy = FALSE, fig.width = 7, fig.height = 3, warning = FALSE, echo = FALSE, message = FALSE)
-
-class <- read.csv("data/class.csv")
-
-class$Name <- as.character(class$Name)
-
-
-```
-
-## Списки групп
-
-**Важно!** После начала семинаров перемещаться из группы в группу уже будет нельзя. Проверьте, все ли правильно.
-
-
-### Группа 1 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_1"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 1  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_1"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
 
-### Группа 2 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_2"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 2  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_2"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
-### Группа 3 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_3"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 3  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_3"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
 
 
-### Группа 4 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_4"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 4  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_4"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
 
-### Группа 5 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_5"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 5  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_5"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
-### Группа 6 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_6"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 6  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_6"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
 
-### Группа 7 
-```{r}
-print(data.frame(Name = class$Name[class$Group == "Group_7"]), row.names = F)
-# kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.")
-```
+<!-- ### Группа 7  -->
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[class$Group == "Group_7"]), row.names = F) -->
+<!-- # kable(class$Name[class$Group == "Group_1"], col.names = "Ф.И.") -->
+<!-- ``` -->
 
 
-## Долги
+<!-- ## Долги -->
 
-Коллеги! Вот список тех студентов, кто еще не зарегистриовался на Stepik
+<!-- Коллеги! Вот список тех студентов, кто еще не зарегистриовался на Stepik -->
 
 
-```{r}
-print(data.frame(Name = class$Name[is.na(class$ID)]), row.names = F)
-```
+<!-- ```{r} -->
+<!-- print(data.frame(Name = class$Name[is.na(class$ID)]), row.names = F) -->
+<!-- ``` -->
 
 
 <!-- # **Первый семинар** 31.10.2018   -->

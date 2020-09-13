@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -56,9 +56,7 @@ h6 {
 
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -72,7 +70,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -177,8 +174,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -223,6 +218,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -235,48 +231,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -290,6 +247,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -325,8 +288,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -341,6 +302,16 @@ div.tocify {
 }
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -395,1647 +366,131 @@ div.tocify {
 </div>
 
 
+<p>Здесь будут отражаться материалы с анализом выполненных заданий.</p>
 <!-- **Важные задолженности!** -->
 <!-- Коллеги! В настоящий момент большая часть курса зарегистрировалась в системе Stepik, и прошли первый тест! Однако есть несколько человек, которые значатся на курсе, но пока не зарегистрировались. Если их ID не станет известен в ближайшее время, то за первый тест у них не будут начислены баллы.  -->
 <!-- Вот эти люди. -->
-<div id="---1" class="section level1">
-<h1>Результаты самостоятельной работы № 1</h1>
-<p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Группа №3 впереди всех! Остальные тоже молодцы…</p>
-</div>
-<div id="--1" class="section level1">
-<h1>Контрольная работа № 1</h1>
-<div id="-" class="section level2">
-<h2>Распределение результатов</h2>
-<p>Вот такие предварительные результаты по контрольной.</p>
-<p><img src="analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-</div>
-<div id="--" class="section level2">
-<h2>Время выполнения работы</h2>
-<p>А вот так выглядит степень скоординированности работы студентов.</p>
-<p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>Группа № 2, видимо, самая дружная :), у них минимальный разброс значений. Коллективная работа… Я не против… но экзамен будет индивидуальным…</p>
-</div>
-<div id="---" class="section level2">
-<h2>Кто раньше, тот лучше</h2>
-<p>Посмотрите на результаты регрессионного анализа, который описывает связь вероятности правильного ответа на вопросы контрольной работы, с тем, когда происходило решение задач.</p>
-<p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Результаты статистически значимы и характер связи очевиден: те, кто раньше берется за контрольную, те с большей вероятностью решают ее правильно. Думайте над механизмами этой связи :)</p>
-</div>
-</div>
-<div id="---2" class="section level1">
-<h1>Результаты самостоятельной работы № 2</h1>
-<p><img src="analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>На этот раз вперед вырвались группы 6 и 7. А вот группа 3 что-то сдала позиции…</p>
-</div>
-<div id="---3" class="section level1">
-<h1>Результаты самостоятельной работы № 3</h1>
-<p><img src="analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>На этот раз всех победила группа № 7!</p>
-</div>
-<div id="--2" class="section level1">
-<h1>Контрольная работа № 2</h1>
-<div id="--1" class="section level2">
-<h2>Распределение результатов</h2>
-<p>Вот такие предварительные результаты по второй контрольной.</p>
-<p><img src="analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>И опять группа № 7 на высоте!</p>
-</div>
-</div>
-<div id="-" class="section level1">
-<h1>Текущие оценки</h1>
-<p>Коллеги, для сохранения персональных данных в тайне, вывешиваются только номера ID. Поэтому для поиска информации о себе выясните на Степике свой ID.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="right">ID</th>
-<th align="right">Сем.1</th>
-<th align="right">Сем.2</th>
-<th align="right">Сем.3</th>
-<th align="right">Сем.4</th>
-<th align="right">Сем.5</th>
-<th align="right">Сем.6</th>
-<th align="right">Сем.7</th>
-<th align="right">СР1</th>
-<th align="right">СР2</th>
-<th align="right">СР3</th>
-<th align="right">КР1</th>
-<th align="right">КР2</th>
-<th align="right">Сумма</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">19491533</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">62.9</td>
-</tr>
-<tr class="even">
-<td align="right">19850193</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">2.6</td>
-<td align="right">2.0</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">54.5</td>
-</tr>
-<tr class="odd">
-<td align="right">25722143</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">41.7</td>
-</tr>
-<tr class="even">
-<td align="right">32589632</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">8.3</td>
-<td align="right">5.2</td>
-<td align="right">40.6</td>
-</tr>
-<tr class="odd">
-<td align="right">36484324</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">49.1</td>
-</tr>
-<tr class="even">
-<td align="right">37010902</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">3.1</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">9.2</td>
-<td align="right">9.3</td>
-<td align="right">44.2</td>
-</tr>
-<tr class="odd">
-<td align="right">37265646</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">8.9</td>
-<td align="right">53.1</td>
-</tr>
-<tr class="even">
-<td align="right">37764773</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.3</td>
-<td align="right">51.8</td>
-</tr>
-<tr class="odd">
-<td align="right">38021891</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.4</td>
-<td align="right">1.6</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">8.9</td>
-<td align="right">43.2</td>
-</tr>
-<tr class="even">
-<td align="right">40227731</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">57.1</td>
-</tr>
-<tr class="odd">
-<td align="right">40281030</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">10.0</td>
-<td align="right">8.5</td>
-<td align="right">52.2</td>
-</tr>
-<tr class="even">
-<td align="right">40392234</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">0.0</td>
-<td align="right">9.3</td>
-<td align="right">37.2</td>
-</tr>
-<tr class="odd">
-<td align="right">47835872</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.1</td>
-<td align="right">3.2</td>
-<td align="right">3.3</td>
-<td align="right">8.3</td>
-<td align="right">9.6</td>
-<td align="right">48.6</td>
-</tr>
-<tr class="even">
-<td align="right">49342112</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.1</td>
-<td align="right">1.7</td>
-<td align="right">1.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">56.3</td>
-</tr>
-<tr class="odd">
-<td align="right">52582988</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.1</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">5.7</td>
-<td align="right">32.3</td>
-</tr>
-<tr class="even">
-<td align="right">53683751</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">57.1</td>
-</tr>
-<tr class="odd">
-<td align="right">55499378</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">2.8</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">8.9</td>
-<td align="right">49.6</td>
-</tr>
-<tr class="even">
-<td align="right">56002756</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">2.7</td>
-<td align="right">2.8</td>
-<td align="right">0.0</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">43.9</td>
-</tr>
-<tr class="odd">
-<td align="right">58522742</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">2.9</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">10.0</td>
-<td align="right">8.1</td>
-<td align="right">51.5</td>
-</tr>
-<tr class="even">
-<td align="right">59188161</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">2.8</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">8.1</td>
-<td align="right">54.3</td>
-</tr>
-<tr class="odd">
-<td align="right">60746155</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">2.1</td>
-<td align="right">3.0</td>
-<td align="right">1.7</td>
-<td align="right">9.2</td>
-<td align="right">7.0</td>
-<td align="right">31.2</td>
-</tr>
-<tr class="even">
-<td align="right">61401274</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">1.6</td>
-<td align="right">3.6</td>
-<td align="right">8.8</td>
-<td align="right">9.6</td>
-<td align="right">48.5</td>
-</tr>
-<tr class="odd">
-<td align="right">61456289</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">52.8</td>
-</tr>
-<tr class="even">
-<td align="right">61558096</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.4</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">50.6</td>
-</tr>
-<tr class="odd">
-<td align="right">73366967</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">1.7</td>
-<td align="right">10.0</td>
-<td align="right">8.9</td>
-<td align="right">53.2</td>
-</tr>
-<tr class="even">
-<td align="right">77910974</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.1</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.2</td>
-<td align="right">9.6</td>
-<td align="right">52.6</td>
-</tr>
-<tr class="odd">
-<td align="right">84611763</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">1.5</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">9.6</td>
-<td align="right">6.3</td>
-<td align="right">44.0</td>
-</tr>
-<tr class="even">
-<td align="right">84724396</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.3</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">57.6</td>
-</tr>
-<tr class="odd">
-<td align="right">88490850</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.3</td>
-<td align="right">9.6</td>
-<td align="right">8.5</td>
-<td align="right">46.7</td>
-</tr>
-<tr class="even">
-<td align="right">90419254</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.1</td>
-<td align="right">3.2</td>
-<td align="right">3.4</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">58.2</td>
-</tr>
-<tr class="odd">
-<td align="right">91903658</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">56.0</td>
-</tr>
-<tr class="even">
-<td align="right">96556392</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">1.8</td>
-<td align="right">10.0</td>
-<td align="right">0.0</td>
-<td align="right">48.7</td>
-</tr>
-<tr class="odd">
-<td align="right">121106547</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">57.0</td>
-</tr>
-<tr class="even">
-<td align="right">121710203</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">2.9</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">57.9</td>
-</tr>
-<tr class="odd">
-<td align="right">122146324</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">2.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">10.0</td>
-<td align="right">9.3</td>
-<td align="right">49.4</td>
-</tr>
-<tr class="even">
-<td align="right">125993752</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">57.5</td>
-</tr>
-<tr class="odd">
-<td align="right">129688134</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">2.8</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">8.8</td>
-<td align="right">9.6</td>
-<td align="right">32.1</td>
-</tr>
-<tr class="even">
-<td align="right">130171543</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">2.9</td>
-<td align="right">2.8</td>
-<td align="right">3.3</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">55.3</td>
-</tr>
-<tr class="odd">
-<td align="right">133106461</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">0.0</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">50.2</td>
-</tr>
-<tr class="even">
-<td align="right">135393590</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">2.9</td>
-<td align="right">2.8</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">8.5</td>
-<td align="right">43.9</td>
-</tr>
-<tr class="odd">
-<td align="right">135393813</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">59.3</td>
-</tr>
-<tr class="even">
-<td align="right">135393966</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">54.9</td>
-</tr>
-<tr class="odd">
-<td align="right">135394266</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">55.5</td>
-</tr>
-<tr class="even">
-<td align="right">135394706</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">57.0</td>
-</tr>
-<tr class="odd">
-<td align="right">135394948</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.6</td>
-<td align="right">4.0</td>
-<td align="right">3.8</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">61.4</td>
-</tr>
-<tr class="even">
-<td align="right">135395127</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">1.6</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">47.8</td>
-</tr>
-<tr class="odd">
-<td align="right">135396655</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">9.0</td>
-<td align="right">3.1</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">63.6</td>
-</tr>
-<tr class="even">
-<td align="right">135398275</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">2.3</td>
-<td align="right">7.5</td>
-<td align="right">6.3</td>
-<td align="right">45.8</td>
-</tr>
-<tr class="odd">
-<td align="right">135402036</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">2.8</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">55.6</td>
-</tr>
-<tr class="even">
-<td align="right">135403215</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.1</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">10.0</td>
-<td align="right">7.4</td>
-<td align="right">51.6</td>
-</tr>
-<tr class="odd">
-<td align="right">135403557</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.3</td>
-<td align="right">54.8</td>
-</tr>
-<tr class="even">
-<td align="right">135436926</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.4</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">57.2</td>
-</tr>
-<tr class="odd">
-<td align="right">135447191</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">2.1</td>
-<td align="right">2.7</td>
-<td align="right">3.1</td>
-<td align="right">0.0</td>
-<td align="right">9.3</td>
-<td align="right">44.2</td>
-</tr>
-<tr class="even">
-<td align="right">135458190</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.4</td>
-<td align="right">2.8</td>
-<td align="right">3.0</td>
-<td align="right">10.0</td>
-<td align="right">7.8</td>
-<td align="right">56.3</td>
-</tr>
-<tr class="odd">
-<td align="right">135465278</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">60.7</td>
-</tr>
-<tr class="even">
-<td align="right">135468336</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">8.8</td>
-<td align="right">9.6</td>
-<td align="right">52.0</td>
-</tr>
-<tr class="odd">
-<td align="right">135470089</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">7.4</td>
-<td align="right">57.3</td>
-</tr>
-<tr class="even">
-<td align="right">135472403</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">2.5</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">9.6</td>
-<td align="right">0.0</td>
-<td align="right">21.1</td>
-</tr>
-<tr class="odd">
-<td align="right">135472805</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">1.3</td>
-<td align="right">2.8</td>
-<td align="right">2.9</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">55.5</td>
-</tr>
-<tr class="even">
-<td align="right">135474063</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">2.7</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.3</td>
-<td align="right">56.0</td>
-</tr>
-<tr class="odd">
-<td align="right">135474875</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">2.8</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">52.6</td>
-</tr>
-<tr class="even">
-<td align="right">135481233</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.4</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">55.4</td>
-</tr>
-<tr class="odd">
-<td align="right">135482132</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">5.9</td>
-<td align="right">55.5</td>
-</tr>
-<tr class="even">
-<td align="right">135486870</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">1.6</td>
-<td align="right">1.7</td>
-<td align="right">0.7</td>
-<td align="right">3.3</td>
-<td align="right">3.7</td>
-<td align="right">41.0</td>
-</tr>
-<tr class="odd">
-<td align="right">135490086</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">48.3</td>
-</tr>
-<tr class="even">
-<td align="right">135490517</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.1</td>
-<td align="right">2.8</td>
-<td align="right">3.3</td>
-<td align="right">9.6</td>
-<td align="right">9.3</td>
-<td align="right">49.9</td>
-</tr>
-<tr class="odd">
-<td align="right">135491554</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">8.9</td>
-<td align="right">40.2</td>
-</tr>
-<tr class="even">
-<td align="right">135496443</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.3</td>
-<td align="right">54.0</td>
-</tr>
-<tr class="odd">
-<td align="right">135499461</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">10.0</td>
-<td align="right">9.3</td>
-<td align="right">37.5</td>
-</tr>
-<tr class="even">
-<td align="right">135499542</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.4</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">59.2</td>
-</tr>
-<tr class="odd">
-<td align="right">135503778</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">10.0</td>
-<td align="right">8.9</td>
-<td align="right">56.5</td>
-</tr>
-<tr class="even">
-<td align="right">135505048</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">2.3</td>
-<td align="right">2.8</td>
-<td align="right">3.4</td>
-<td align="right">9.2</td>
-<td align="right">8.5</td>
-<td align="right">56.3</td>
-</tr>
-<tr class="odd">
-<td align="right">135507625</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">2.9</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">52.7</td>
-</tr>
-<tr class="even">
-<td align="right">135509654</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">2.0</td>
-<td align="right">1.8</td>
-<td align="right">2.6</td>
-<td align="right">5.0</td>
-<td align="right">8.9</td>
-<td align="right">48.0</td>
-</tr>
-<tr class="odd">
-<td align="right">135517241</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">2.9</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">8.3</td>
-<td align="right">10.0</td>
-<td align="right">46.0</td>
-</tr>
-<tr class="even">
-<td align="right">135517381</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">7.8</td>
-<td align="right">39.7</td>
-</tr>
-<tr class="odd">
-<td align="right">135527042</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">2.8</td>
-<td align="right">3.2</td>
-<td align="right">0.0</td>
-<td align="right">4.2</td>
-<td align="right">0.0</td>
-<td align="right">17.6</td>
-</tr>
-<tr class="even">
-<td align="right">135551451</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">8.8</td>
-<td align="right">10.0</td>
-<td align="right">50.9</td>
-</tr>
-<tr class="odd">
-<td align="right">135560396</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">2.5</td>
-<td align="right">2.2</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">51.7</td>
-</tr>
-<tr class="even">
-<td align="right">135560433</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">1.8</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">45.4</td>
-</tr>
-<tr class="odd">
-<td align="right">135563911</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">0.0</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">3.3</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">44.0</td>
-</tr>
-<tr class="even">
-<td align="right">135569834</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">1.8</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">56.4</td>
-</tr>
-<tr class="odd">
-<td align="right">135591872</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">1.6</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.6</td>
-<td align="right">53.6</td>
-</tr>
-<tr class="even">
-<td align="right">135605766</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.1</td>
-<td align="right">3.0</td>
-<td align="right">3.2</td>
-<td align="right">10.0</td>
-<td align="right">8.9</td>
-<td align="right">54.5</td>
-</tr>
-<tr class="odd">
-<td align="right">135609455</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">9.3</td>
-<td align="right">57.1</td>
-</tr>
-<tr class="even">
-<td align="right">135654998</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">9.6</td>
-<td align="right">10.0</td>
-<td align="right">57.3</td>
-</tr>
-<tr class="odd">
-<td align="right">135667259</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.4</td>
-<td align="right">9.2</td>
-<td align="right">9.3</td>
-<td align="right">56.9</td>
-</tr>
-<tr class="even">
-<td align="right">135868620</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">58.4</td>
-</tr>
-<tr class="odd">
-<td align="right">135894390</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.2</td>
-<td align="right">0.0</td>
-<td align="right">3.2</td>
-<td align="right">7.1</td>
-<td align="right">10.0</td>
-<td align="right">52.0</td>
-</tr>
-<tr class="even">
-<td align="right">135898439</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">2.3</td>
-<td align="right">10.0</td>
-<td align="right">8.9</td>
-<td align="right">53.9</td>
-</tr>
-<tr class="odd">
-<td align="right">135929312</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.3</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">10.0</td>
-<td align="right">59.3</td>
-</tr>
-<tr class="even">
-<td align="right">136478516</td>
-<td align="right">0.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.4</td>
-<td align="right">3.2</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">55.3</td>
-</tr>
-<tr class="odd">
-<td align="right">136618799</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">1.8</td>
-<td align="right">3.6</td>
-<td align="right">7.5</td>
-<td align="right">8.9</td>
-<td align="right">51.0</td>
-</tr>
-<tr class="even">
-<td align="right">137188385</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">57.3</td>
-</tr>
-<tr class="odd">
-<td align="right">137342742</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.4</td>
-<td align="right">3.0</td>
-<td align="right">3.4</td>
-<td align="right">9.2</td>
-<td align="right">10.0</td>
-<td align="right">59.0</td>
-</tr>
-<tr class="even">
-<td align="right">137366991</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">4.5</td>
-<td align="right">3.8</td>
-<td align="right">3.8</td>
-<td align="right">4.5</td>
-<td align="right">3.0</td>
-<td align="right">2.8</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">10.0</td>
-<td align="right">9.3</td>
-<td align="right">50.6</td>
-</tr>
-<tr class="odd">
-<td align="right">137374462</td>
-<td align="right">3.0</td>
-<td align="right">4.5</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">2.4</td>
-<td align="right">0.0</td>
-<td align="right">3.6</td>
-<td align="right">0.0</td>
-<td align="right">5.0</td>
-<td align="right">22.2</td>
-</tr>
-<tr class="even">
-<td align="right">137413300</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">0.0</td>
-<td align="right">3.8</td>
-<td align="right">3.0</td>
-<td align="right">2.8</td>
-<td align="right">1.6</td>
-<td align="right">3.6</td>
-<td align="right">10.0</td>
-<td align="right">9.6</td>
-<td align="right">47.8</td>
-</tr>
-</tbody>
-</table>
-</div>
+<!-- ```{r,  echo=FALSE} -->
+<!-- library(knitr) -->
+<!-- class <- read.csv("data/class.csv") -->
+<!-- hw1 <- read.csv("data/homework_1.csv") -->
+<!-- class$Name <- as.character(class$Name) -->
+<!-- class_dolg <- class[is.na(class$ID), ] -->
+<!-- # kable(class_dolg[ , 1], col.names = "Ф.И.") -->
+<!-- ``` -->
+<!-- # Результаты самостоятельной работы № 1 -->
+<!-- ```{r,  echo=FALSE} -->
+<!-- hw_res <- merge(class[, c("Name", "Group", "ID")], hw1, by = "ID") -->
+<!-- hw_res <- hw_res[ , c(1,2,3, 6:39)] -->
+<!-- Max <- length(names(hw_res)[8:ncol(hw_res)]) -->
+<!-- hw_res$Score_HW_1 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum) -->
+<!-- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1  -->
+<!-- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] + 4  -->
+<!-- hw_res$Score_HW_1 <- hw_res$Score_HW_1/Max*3 -->
+<!-- hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_1")] -->
+<!-- hw_res <- hw_res[order(hw_res$ID), ] -->
+<!-- # write.table(hw_res, "clipboard", sep = "\t", row.names = F) -->
+<!-- library(ggplot2) -->
+<!-- ggplot(hw_res, aes(x = Group, y = Score_HW_1)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
+<!-- ``` -->
+<!-- # Контрольная работа № 1 -->
+<!-- ## Распределение результатов -->
+<!-- Вот такие предварительные результаты по контрольной. -->
+<!-- ```{r, echo=FALSE} -->
+<!-- class <- read.csv("data/class.csv") -->
+<!-- class <- class[, c("Name", "ID", "Group")] -->
+<!-- reasult <- read.csv("data/controlwork_1.csv", encoding = "Utf-8") -->
+<!-- res <- merge(class, reasult, by = "ID") -->
+<!-- res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum) -->
+<!-- Max <- ncol(res[,-c(1:5, ncol(res))]) -->
+<!-- res$Prop <- res$sum / Max  * 10 -->
+<!-- # write.table(res, "clipboard", sep = "\t", row.names = F) -->
+<!-- library(ggplot2) -->
+<!-- # library(doBy) -->
+<!-- # -->
+<!-- # res_out <- summaryBy(sum ~ Group, data = res) -->
+<!-- ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
+<!-- ``` -->
+<!-- ## Время выполнения работы -->
+<!-- А вот так выглядит степень скоординированности работы студентов. -->
+<!-- ```{r, echo=FALSE, message=FALSE, warning=F} -->
+<!-- contr_trial <- read.csv("data/Control1_attempts.csv", header = T) -->
+<!-- contr_trial$submission_date_time <- as.POSIXct(contr_trial$submission,format = "%d-%m %H:%M") -->
+<!-- ggplot(contr_trial, aes(x = Group, y = submission_date_time)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу") -->
+<!-- ``` -->
+<!-- # Результаты самостоятельной работы № 2 -->
+<!-- ```{r,  echo=FALSE} -->
+<!-- class <- read.csv("data/class.csv") -->
+<!-- hw2 <- read.csv("data/homework_2.csv") -->
+<!-- class$Name <- as.character(class$Name) -->
+<!-- hw_res <- merge(class[, c("Name", "Group", "ID")], hw2, by = "ID") -->
+<!-- hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))] -->
+<!-- Max <- length(names(hw_res)[4:ncol(hw_res)]) -->
+<!-- hw_res$Score_HW_2 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum) -->
+<!-- #  -->
+<!-- # hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1  -->
+<!-- #  -->
+<!-- hw_res$Score_HW_2[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_2[hw_res$Name == "Каськова Ксения"] + 5 -->
+<!-- hw_res$Score_HW_2 <- hw_res$Score_HW_2/(Max-1)*3 -->
+<!-- hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_2")] -->
+<!-- hw_res <- hw_res[order(hw_res$ID), ] -->
+<!-- # write.table(hw_res, "clipboard", sep = "\t", row.names = F) -->
+<!-- library(ggplot2) -->
+<!-- ggplot(hw_res, aes(x = Group, y = Score_HW_2)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
+<!-- ``` -->
+<!-- # Результаты самостоятельной работы № 3 -->
+<!-- ```{r,  echo=FALSE} -->
+<!-- class <- read.csv("data/class.csv") -->
+<!-- hw3 <- read.csv("data/homework_3.csv") -->
+<!-- class$Name <- as.character(class$Name) -->
+<!-- hw_res <- merge(class[, c("Name", "Group", "ID")], hw3, by = "ID") -->
+<!-- hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))] -->
+<!-- Max <- 27 -->
+<!-- hw_res$Score_HW_3 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum) -->
+<!-- #  -->
+<!-- # hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1  -->
+<!-- #  -->
+<!-- hw_res$Score_HW_3[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_3[hw_res$Name == "Каськова Ксения"] + 5 + 1 -->
+<!-- hw_res$Score_HW_3 <- hw_res$Score_HW_3/Max*3 -->
+<!-- hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_3")] -->
+<!-- hw_res <- hw_res[order(hw_res$ID), ] -->
+<!-- # write.table(hw_res, "clipboard", sep = "\t", row.names = F) -->
+<!-- library(ggplot2) -->
+<!-- ggplot(hw_res, aes(x = Group, y = Score_HW_3)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
+<!-- ``` -->
+<!-- # Контрольная работа № 2 -->
+<!-- ## Распределение результатов -->
+<!-- Вот такие предварительные результаты по второй контрольной. -->
+<!-- ```{r, echo=FALSE} -->
+<!-- class <- read.csv("data/class.csv") -->
+<!-- class <- class[, c("Name", "ID", "Group")] -->
+<!-- reasult <- read.csv("data/controlwork_2.csv", encoding = "Utf-8") -->
+<!-- res <- merge(class, reasult, by = "ID") -->
+<!-- res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum) -->
+<!-- Max <- ncol(res[,-c(1:5, ncol(res))]) -->
+<!-- res$Prop <- res$sum / Max  * 10 -->
+<!-- # write.table(res, "clipboard", sep = "\t", row.names = F) -->
+<!-- library(ggplot2) -->
+<!-- # library(doBy) -->
+<!-- # -->
+<!-- # res_out <- summaryBy(sum ~ Group, data = res) -->
+<!-- ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 10) -->
+<!-- ``` -->
+<!-- # Текущие оценки  -->
+<!-- Коллеги, для сохранения персональных данных в тайне, вывешиваются только номера ID. Поэтому для поиска информации о себе выясните на Степике свой ID. -->
+<!-- ```{r, echo=FALSE, message=FALSE, warning=F} -->
+<!-- class <- read.csv("data/class.csv") -->
+<!-- results_print <- class[, c("ID", "Seminar_1",  "Seminar_2",    "Seminar_3",    "Seminar_4",    "Seminar_5",    "Seminar_6",    "Seminar_7",    "HW_1", "HW_2", "HW_3", "Control_1",    "Control_2")] -->
+<!-- results_print <- results_print[!is.na(results_print$ID), ] -->
+<!-- results_print[is.na(results_print)] <- 0 -->
+<!-- options(knitr.kable.NA = '') -->
+<!-- results_print[,2:8] <- results_print[,2:8]/1*3 -->
+<!-- results_print$Sum <- apply(results_print[,2:13], MARGIN = 1, FUN = sum) -->
+<!-- # Надбавка за помощь Мешковский Сергей, Такки Ольга -->
+<!-- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] <- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] + 5 -->
+<!-- # write.table(merge(class[,c("ID", "Name"), ], results_print), "clipboard", sep = "\t", row.names = F, fileEncoding = "utf8") -->
+<!-- kable(results_print, col.names = c("ID", "Сем.1", "Сем.2", "Сем.3",  "Сем.4", "Сем.5", "Сем.6", "Сем.7",  "СР1", "СР2", "СР3", "КР1", "КР2", "Сумма"), digits = 1) -->
+<!-- ``` -->
 
 
 
@@ -2055,6 +510,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -56,9 +56,7 @@ h6 {
 
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -72,7 +70,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -177,8 +174,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -223,6 +218,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -235,48 +231,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -290,6 +247,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -325,8 +288,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -341,6 +302,16 @@ div.tocify {
 }
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -398,79 +369,31 @@ div.tocify {
 <p>Презентации будут открываться по мере чтения лекций.</p>
 <!-- ## Введение -->
 <!-- - [Правила игры](Presentations/Lecture Introduction.pdf) -->
-<div id="-1." class="section level2">
-<h2>Лекция 1.</h2>
-<ul>
-<li><a href="Presentations//Lecture%201%202019%20Предмет%20экологии%20.pdf">Предмет экологии</a></li>
-</ul>
-</div>
-<div id="-2." class="section level2">
-<h2>Лекция 2.</h2>
-<ul>
-<li><a href="Presentations//Lecture%202%202019%20Аутэкология%20.pdf">Аутэкология</a></li>
-</ul>
-</div>
-<div id="-3." class="section level2">
-<h2>Лекция 3.</h2>
-<ul>
-<li><a href="Presentations//Lecture%203%20Демэкология.pdf">Демэкология</a></li>
-</ul>
-</div>
-<div id="-4." class="section level2">
-<h2>Лекция 4.</h2>
-<ul>
-<li><a href="Presentations//Lecture%204%20Динамика%20популяции.pdf">Динамика популяции</a></li>
-</ul>
-</div>
-<div id="-5." class="section level2">
-<h2>Лекция 5.</h2>
-<ul>
-<li><a href="Presentations//Lecture%205%20Взаимоотношения%20часть%201.pdf">Взаимоотношения организмов (часть 1)</a></li>
-</ul>
-</div>
-<div id="-6." class="section level2">
-<h2>Лекция 6.</h2>
-<ul>
-<li><a href="Presentations//Lecture%206%20Взаимоотношения%20часть%202.pdf">Взаимоотношения организмов (часть 2)</a></li>
-</ul>
-</div>
-<div id="-7." class="section level2">
-<h2>Лекция 7.</h2>
-<ul>
-<li><a href="Presentations//Lecture%207%20Конкуренция.pdf">Конкурентные отношения</a></li>
-</ul>
-</div>
-<div id="-8." class="section level2">
-<h2>Лекция 8.</h2>
-<ul>
-<li><a href="Presentations//Lecture%208%20Трофические%20отношения.pdf">Трофические связи</a></li>
-</ul>
-</div>
-<div id="-9." class="section level2">
-<h2>Лекция 9.</h2>
-<ul>
-<li><a href="Presentations//Lecture%209%20Симбиозы.pdf">Симбиозы</a></li>
-</ul>
-</div>
-<div id="-10." class="section level2">
-<h2>Лекция 10.</h2>
-<ul>
-<li><a href="Presentations//Lecture%2010%20Структура%20сообщества.pdf">Структура сообщества</a></li>
-</ul>
-</div>
-<div id="-11--12." class="section level2">
-<h2>Лекция 11 и 12.</h2>
-<ul>
-<li><a href="Presentations//Lecture%2011%20Экосистема19.pdf">Экосистемы и сукцессии</a></li>
-</ul>
-<!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
-</div>
-<div id="--------" class="section level2">
-<h2>Презентация для семинара по теме “Температура и живые системы”</h2>
-<ul>
-<li><a href="Presentations//Temperature%20living%20systems.pdf">Температура</a></li>
-</ul>
-</div>
+<!-- ## Лекция 1. -->
+<!-- - [Предмет экологии](Presentations//Lecture 1 2019 Предмет экологии .pdf) -->
+<!-- ## Лекция 2. -->
+<!-- - [Аутэкология](Presentations//Lecture 2 2019 Аутэкология .pdf) -->
+<!-- ## Лекция 3. -->
+<!-- - [Демэкология](Presentations//Lecture 3 Демэкология.pdf) -->
+<!-- ## Лекция 4. -->
+<!-- - [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf) -->
+<!-- ## Лекция 5. -->
+<!-- - [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf) -->
+<!-- ## Лекция 6. -->
+<!-- - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Взаимоотношения часть 2.pdf) -->
+<!-- ## Лекция 7. -->
+<!-- - [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf) -->
+<!-- ## Лекция 8. -->
+<!-- - [Трофические связи](Presentations//Lecture 8 Трофические отношения.pdf) -->
+<!-- ## Лекция 9. -->
+<!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
+<!-- ## Лекция 10. -->
+<!-- - [Структура сообщества](Presentations//Lecture 10 Структура сообщества.pdf) -->
+<!-- ## Лекция 11 и 12. -->
+<!-- - [Экосистемы и сукцессии](Presentations//Lecture 11 Экосистема19.pdf) -->
+<!-- <!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
+<!-- ## Презентация для семинара по теме "Температура и живые системы" -->
+<!-- - [Температура](Presentations//Temperature living systems.pdf) -->
 
 
 
@@ -490,6 +413,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -56,9 +56,7 @@ h6 {
 
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -72,7 +70,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -177,8 +174,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -223,6 +218,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -235,48 +231,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -290,6 +247,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -325,8 +288,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -341,6 +302,16 @@ div.tocify {
 }
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -395,10 +366,10 @@ div.tocify {
 </div>
 
 
-<div id="-" class="section level2">
+<div id="о-курсе" class="section level2">
 <h2>О курсе</h2>
 <p>Современная биология у многих ассоциируется с изучением молекулярных основ жизни, однако на практике одной из центральных тенденций в развитии естествознания, несомненно, является познание организации и функционирования <em>надорганизменных</em> систем, относящихся к области компетенции экологии. В настоящий момент трудно говорить о какой-то единой науке «экологии», под этим термином кроется целый куст дисциплин. Поэтому курс «<em>Общая экология</em>» направлен, в первую очередь, на рассмотрение арсенала подходов, методов и принципов формулировок гипотез при изучении систем, включающих в себя в качестве первичных элементов организмы, популяции, сообщества и среду их существования.</p>
-<div id="---" class="section level3">
+<div id="цель-и-задачи-курса" class="section level3">
 <h3>Цель и задачи курса</h3>
 <p>Главная цель курса - знакомство студентов не столько с огромным набором фактических данных, накопленных в экологических исследованиях, а, скорее, с методологией экологических исследований.</p>
 <p><strong>К числу главных задач курса мы относим</strong><br />
@@ -408,7 +379,7 @@ div.tocify {
 - Знакомство с подходами и методами, используемыми в реальных экологических исследованиях.</p>
 </div>
 </div>
-<div id="--" class="section level2">
+<div id="расписание-и-контакты" class="section level2">
 <h2>Расписание и контакты</h2>
 <p>Лекции: с 21 сентября по субботам по две пары. О расписании семинаров объявим дополнительно</p>
 <p>Лекторы:</p>
@@ -425,11 +396,11 @@ div.tocify {
 <li>Копцева Елена Михайловна (каф. Геоботаники)</li>
 <li>Кучеров Дмитрий Александрович (каф. Энтомологии)</li>
 <li>Гончар Анна Георгиевна (каф. Зоологии беспозвоночных)</li>
-<li>…</li>
+<li>Иванов Михаил Валерьевич (Каф. Гидробиологии и ихтиологии)</li>
 </ul>
-<p>Подготовка тестов и обслужвание сайта - Вадим Михайлович Хайтов</p>
+<p>Подготовка тестов и обслуживание сайта - Вадим Михайлович Хайтов - Ольга Валерьевна Князева</p>
 </div>
-<div id="-----" class="section level2">
+<div id="структура-курса-задания-дедлайны-и-оценки" class="section level2">
 <h2>Структура курса, задания, дедлайны и оценки</h2>
 <p>Курс состоит из трех частей, реализуемых в два этапа</p>
 <p><strong>Этап 1</strong> (первые 6 недель + 1 в резерве).</p>
@@ -439,18 +410,14 @@ div.tocify {
 3.Семинары</p>
 <p><strong>Оценки</strong><br />
 Политика курса направлена на использование накопительной системы, в которой дробные оценки накапливаются студентом за все время прохождения курса. Финальная оценка за курс (которая пойдет в зачетку) складывается из нескольких частей.</p>
-<p>1.<em>Оценки за самостоятельную работу</em>. Эти оценки производятся на основе тестов, которые будут размещены на платформе Stepik. После мягкого дедлайна (7 дней) за задания начисляется только половина баллов. Студенты, не имеющие возможности использовать сетевые ресурсы, будут проходить тестирование в режиме offline, с использованием индивидуальных бумажных тестов.</p>
-<p>2.<em>Оценки за контрольные работы</em>. Всего будет две контрольные работы, которые будут проходить в формате online тестов, которые будут размещены на платформе Stepik. Каждый тест будет открыт для прохождения в определенный, согласованный с курсом, день. Студенты смогут его проходить в любом удобном для них месте, но только в течение 2 часов с момента начала тестирования. Студенты, не имеющие возможности использовать сетевые ресурсы, будут проходить тестирование, с использованием индивидуальных бумажных тестов в аудитории в течение двух часов.</p>
-<p>3.<em>Оценки за семинары</em>. Посещение каждого семинара принесет один балл в накопление, но по итогам семинаров студенты, активно работающие не семинарах, могут получить дополнительный балл. Преподаватель отмечает наиболее активных студентов по своему усмотрению.</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Оценки за освоение материалов лекций</em>. Задача этих тестов - привлечение студентов к внимательной работе с лекционным материалом, стимуляция посещения лекций и создание основы для постепенного освоения материалов. Эти оценки производятся на основе тестов, которые будут размещены на платформе Ms Teams. За сутки до начала очередной лекции будет открыт тест по материалам <strong>предыдущих</strong> лекций. Тест будет закрыт одновременно со временем начала текущей лекции.</p></li>
+<li><p><em>Оценки за самостоятельную работу</em>. Эти оценки будут выставлены за задания, связанные с самостоятельной работой с литературными источниками. Всего будет предложено самостоятельно изучить три темы, каждая из которых будет завершаться тестом.</p></li>
+</ol>
+<p>3.<em>Оценки за контрольные работы</em>. Всего будет две контрольные работы, которые будут проходить в формате online тестов, размещенных на платформе Stepik. Каждый тест будет открыт для прохождения в определенный, согласованный с курсом, день. Студенты смогут его проходить в любом удобном для них месте, но только в течение 2 часов с момента начала тестирования.</p>
+<p>4.<em>Оценки за семинары</em>. Посещение каждого семинара принесет один балл в накопление, но по итогам семинаров студенты, активно работающие не семинарах, могут получить дополнительный балл. Преподаватель отмечает наиболее активных студентов по своему усмотрению.</p>
 <p>4.<em>Устный экзамен</em>. Экзамен будет проходить в очной форме. Каждый студент получит два вопроса (вопрос на знание теории плюс задача), на которые надо дать развернутые ответы. Экзаменатор вправе задавать дополнительные вопросы.</p>
 <p>Каждый источник оценок вносит свой вклад в формирование итоговой оценки</p>
-<!-- | Источник оценки          | Максимальный вклад в финильную оценку     | -->
-<!-- |------------------------  |:-------------------------------------:    | -->
-<!-- | Экзамен                  |                   50%                     | -->
-<!-- | Самостоятельные работы   |                   9%                      | -->
-<!-- | Семинары                 |                   21%                     | -->
-<!-- | Контрольные              |                   20%                     | -->
-<!-- Для выработки стратегии накопления оценки можно воспользоваться следующей таблицей. -->
 <table>
 <thead>
 <tr class="header">
@@ -461,109 +428,122 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
+<td>Тесты по содержанию лекций</td>
+<td align="center">100</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
 <td>Самостоятельная работа 1</td>
 <td align="center">100</td>
-<td align="center">3</td>
-</tr>
-<tr class="even">
-<td>Самостоятельная работа 2</td>
-<td align="center">100</td>
-<td align="center">3</td>
+<td align="center">1</td>
 </tr>
 <tr class="odd">
-<td>Самостоятельная работа 3</td>
+<td>Самостоятельная работа 2</td>
 <td align="center">100</td>
-<td align="center">3</td>
+<td align="center">1</td>
 </tr>
 <tr class="even">
+<td>Самостоятельная работа 3</td>
+<td align="center">100</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
 <td>Семинар 1</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Семинар 2</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Семинар 3</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Семинар 4</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Семинар 5</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Семинар 6</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Семинар 7</td>
 <td align="center">1</td>
 <td align="center">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Контрольная 1</td>
 <td align="center">100</td>
-<td align="center">10</td>
-</tr>
-<tr class="even">
-<td>Контрольная 2</td>
-<td align="center">100</td>
-<td align="center">10</td>
+<td align="center">2.5</td>
 </tr>
 <tr class="odd">
-<td>Экзамен 1</td>
-<td align="center">5</td>
-<td align="center">25</td>
+<td>Контрольная 2</td>
+<td align="center">100</td>
+<td align="center">2.5</td>
 </tr>
 <tr class="even">
+<td>Экзамен 1</td>
+<td align="center">5</td>
+<td align="center">35</td>
+</tr>
+<tr class="odd">
 <td>Экзамен 2</td>
 <td align="center">5</td>
-<td align="center">25</td>
+<td align="center">35</td>
 </tr>
 </tbody>
 </table>
 <p>Итоговая оценка вычисляется по следующей формуле</p>
 <p><span class="math display">\[
-Final Score = \sum{\frac{Real}{Max}}\times Weight \%
+Final Score = \sum({\frac{Real}{Max}}\times Weight) \%
 \]</span></p>
 <p>где</p>
 <p>-<span class="math inline">\(Real\)</span> — Реально полученная оценка</p>
 <p>-<span class="math inline">\(Max\)</span> — Максимально возможная оценка</p>
 <p>-<span class="math inline">\(Weight\)</span> — Вес оценки (см. таблицу)</p>
-<p>Оценки в зачетку выставляются в соответствии со следущей шкалой</p>
+<p>Оценки зачетную ведомость выставляются в соответствии со следующей шкалой</p>
 <table>
 <thead>
 <tr class="header">
-<th>Балл</th>
+<th>Балл ECTS</th>
 <th>Сколько надо набрать</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Отлично</td>
-<td>более 90% от максимума</td>
+<td>A</td>
+<td>90-100% от максимума</td>
 </tr>
 <tr class="even">
-<td>Хорошо</td>
-<td>более 80% от максимума</td>
+<td>B</td>
+<td>80 - 89% от максимума</td>
 </tr>
 <tr class="odd">
-<td>Удовлетворительно</td>
-<td>более 60% от максимума</td>
+<td>С</td>
+<td>70-79% от максимума</td>
 </tr>
 <tr class="even">
-<td>Неудовлетворительно</td>
-<td>менее 60% от максимума</td>
+<td>D</td>
+<td>61-69% от максимума</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>50-60% от максимума</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>&lt;50% от максимума</td>
 </tr>
 </tbody>
 </table>
@@ -588,6 +568,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

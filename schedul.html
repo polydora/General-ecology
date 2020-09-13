@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -56,9 +56,7 @@ h6 {
 
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -72,7 +70,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -177,8 +174,6 @@ $(document).ready(function () {
 });
 </script>
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
 
 <style type="text/css">
@@ -223,6 +218,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -235,48 +231,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -290,6 +247,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -325,8 +288,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -341,6 +302,16 @@ div.tocify {
 }
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -397,63 +368,63 @@ div.tocify {
 
 <p><strong>Внимание!</strong> В расписании могут быть измененя и уточнения.</p>
 <p>Расписание семинаров у каждой группы будет свое (см. страничку “Семинары”)</p>
-<div class="section level2">
-<h2>09/21/2019 Суббота</h2>
+<div id="суббота" class="section level2">
+<h2>09/19/2020 Суббота</h2>
 <ul>
 <li>В.М.Хайтов лекция “Предмет экологии”</li>
 </ul>
 </div>
-<div id="-1" class="section level2">
-<h2>09/28/2019 Суббота</h2>
+<div id="суббота-1" class="section level2">
+<h2>09/26/2019 Суббота</h2>
 <ul>
 <li>В.М.Хайтов лекция “Аутэкология”</li>
 </ul>
 </div>
-<div id="-2" class="section level2">
-<h2>10/05/2019 Суббота</h2>
+<div id="суббота-2" class="section level2">
+<h2>10/03/2019 Суббота</h2>
 <ul>
-<li>В.М.Хайтов лекция “Демэкология”</li>
+<li><p>В.М.Хайтов лекция “Демэкология”</p></li>
 <li><p>В.М.Хайтов лекция “Динамика популяции”</p></li>
 <li><p>Начинаем самостоятельную работу №1</p></li>
 </ul>
 </div>
-<div id="-3" class="section level2">
-<h2>10/12/2019 Суббота</h2>
+<div id="суббота-3" class="section level2">
+<h2>10/10/2019 Суббота</h2>
 <ul>
-<li>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 1”</li>
+<li><p>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 1”</p></li>
 <li><p>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 2”</p></li>
 <li><p>Контрольная работа №1. Темы: Аутэкология, Структура популяций, Динамика популяций. <strong>Внимание!</strong> Точную дату и время проведеиня контрольной работы обсудим отдельно.</p></li>
 </ul>
 </div>
-<div id="-4" class="section level2">
-<h2>10/19/2019 Суббота</h2>
+<div id="суббота-4" class="section level2">
+<h2>10/17/2019 Суббота</h2>
 <ul>
-<li>В.М.Хайтов лекция “Трофические связи”</li>
-<li>В.М.Хайтов лекция “Конкурентные взаимоотношения”</li>
-<li>Начинаем самостоятельную работу №2</li>
+<li><p>В.М.Хайтов лекция “Трофические связи”</p></li>
+<li><p>В.М.Хайтов лекция “Конкурентные взаимоотношения”</p></li>
+<li><p>Начинаем самостоятельную работу №2</p></li>
 </ul>
 </div>
-<div id="-5" class="section level2">
-<h2>10/26/2019 Суббота</h2>
+<div id="суббота-5" class="section level2">
+<h2>10/24/2019 Суббота</h2>
 <ul>
 <li>В.М.Хайтов лекция “Симбиозы”</li>
 <li>В.М.Хайтов лекция “Структура сообщества”</li>
 </ul>
 </div>
-<div class="section level2">
-<h2>10/29/2019 Вторник</h2>
+<div id="вторник" class="section level2">
+<h2>10/31/2019 Вторник</h2>
 <ul>
 <li>Начинаем самостоятельную работу №3</li>
 </ul>
 </div>
-<div id="-6" class="section level2">
-<h2>11/02/2019 Суббота</h2>
+<div id="суббота-6" class="section level2">
+<h2>11/07/2019 Суббота</h2>
 <ul>
-<li>М.Ю.Тиходеева лекция “Экосистемы”</li>
-<li>Контрольная работа №2. Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы, Многообразие жизненных циклов, Глобальные круговороты.</li>
+<li><p>М.Ю.Тиходеева лекция “Экосистемы”</p></li>
+<li><p>Контрольная работа №2. Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы, Многообразие жизненных циклов, Глобальные круговороты.</p></li>
 </ul>
 </div>
-<div id="---" class="section level2">
+<div id="конец-ноября-по-согласованию" class="section level2">
 <h2>Конец ноября, по согласованию</h2>
 <ul>
 <li>В. М. Хайтов Консультация “Трудные моменты курса”<br />
@@ -479,6 +450,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

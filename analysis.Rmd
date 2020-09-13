@@ -2,312 +2,278 @@
 title: Анализ работы
 ---
 
+Здесь будут отражаться материалы с анализом выполненных заданий.
+
 <!-- **Важные задолженности!** -->
 
 <!-- Коллеги! В настоящий момент большая часть курса зарегистрировалась в системе Stepik, и прошли первый тест! Однако есть несколько человек, которые значатся на курсе, но пока не зарегистрировались. Если их ID не станет известен в ближайшее время, то за первый тест у них не будут начислены баллы.  -->
 
 <!-- Вот эти люди. -->
 
-```{r,  echo=FALSE}
-library(knitr)
+<!-- ```{r,  echo=FALSE} -->
+<!-- library(knitr) -->
 
 
-class <- read.csv("data/class.csv")
+<!-- class <- read.csv("data/class.csv") -->
 
-hw1 <- read.csv("data/homework_1.csv")
+<!-- hw1 <- read.csv("data/homework_1.csv") -->
 
-class$Name <- as.character(class$Name)
+<!-- class$Name <- as.character(class$Name) -->
 
-class_dolg <- class[is.na(class$ID), ]
+<!-- class_dolg <- class[is.na(class$ID), ] -->
 
-# kable(class_dolg[ , 1], col.names = "Ф.И.")
-```
+<!-- # kable(class_dolg[ , 1], col.names = "Ф.И.") -->
+<!-- ``` -->
 
-# Результаты самостоятельной работы № 1
 
-```{r,  echo=FALSE}
-hw_res <- merge(class[, c("Name", "Group", "ID")], hw1, by = "ID")
 
 
+<!-- # Результаты самостоятельной работы № 1 -->
 
-hw_res <- hw_res[ , c(1,2,3, 6:39)]
+<!-- ```{r,  echo=FALSE} -->
+<!-- hw_res <- merge(class[, c("Name", "Group", "ID")], hw1, by = "ID") -->
 
-Max <- length(names(hw_res)[8:ncol(hw_res)])
 
-hw_res$Score_HW_1 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum)
 
-hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1 
+<!-- hw_res <- hw_res[ , c(1,2,3, 6:39)] -->
 
-hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] + 4 
+<!-- Max <- length(names(hw_res)[8:ncol(hw_res)]) -->
 
-hw_res$Score_HW_1 <- hw_res$Score_HW_1/Max*3
+<!-- hw_res$Score_HW_1 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum) -->
 
-hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_1")]
-hw_res <- hw_res[order(hw_res$ID), ]
-# write.table(hw_res, "clipboard", sep = "\t", row.names = F)
+<!-- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1  -->
 
+<!-- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_1[hw_res$Name == "Каськова Ксения"] + 4  -->
 
+<!-- hw_res$Score_HW_1 <- hw_res$Score_HW_1/Max*3 -->
 
-library(ggplot2)
+<!-- hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_1")] -->
+<!-- hw_res <- hw_res[order(hw_res$ID), ] -->
+<!-- # write.table(hw_res, "clipboard", sep = "\t", row.names = F) -->
 
-ggplot(hw_res, aes(x = Group, y = Score_HW_1)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
 
 
-```
+<!-- library(ggplot2) -->
 
-Группа №3 впереди всех! Остальные тоже молодцы...  
+<!-- ggplot(hw_res, aes(x = Group, y = Score_HW_1)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
 
 
+<!-- ``` -->
 
 
 
+<!-- # Контрольная работа № 1 -->
 
-# Контрольная работа № 1
+<!-- ## Распределение результатов -->
 
-## Распределение результатов
+<!-- Вот такие предварительные результаты по контрольной. -->
 
-Вот такие предварительные результаты по контрольной.
 
+<!-- ```{r, echo=FALSE} -->
+<!-- class <- read.csv("data/class.csv") -->
 
-```{r, echo=FALSE}
-class <- read.csv("data/class.csv")
+<!-- class <- class[, c("Name", "ID", "Group")] -->
+<!-- reasult <- read.csv("data/controlwork_1.csv", encoding = "Utf-8") -->
+<!-- res <- merge(class, reasult, by = "ID") -->
 
-class <- class[, c("Name", "ID", "Group")]
-reasult <- read.csv("data/controlwork_1.csv", encoding = "Utf-8")
-res <- merge(class, reasult, by = "ID")
+<!-- res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum) -->
 
-res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum)
+<!-- Max <- ncol(res[,-c(1:5, ncol(res))]) -->
 
-Max <- ncol(res[,-c(1:5, ncol(res))])
+<!-- res$Prop <- res$sum / Max  * 10 -->
 
-res$Prop <- res$sum / Max  * 10
+<!-- # write.table(res, "clipboard", sep = "\t", row.names = F) -->
 
-# write.table(res, "clipboard", sep = "\t", row.names = F)
+<!-- library(ggplot2) -->
 
-library(ggplot2)
+<!-- # library(doBy) -->
+<!-- # -->
+<!-- # res_out <- summaryBy(sum ~ Group, data = res) -->
 
-# library(doBy)
-#
-# res_out <- summaryBy(sum ~ Group, data = res)
+<!-- ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
 
-ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
 
+<!-- ``` -->
 
-```
 
 
 
+<!-- ## Время выполнения работы -->
 
-## Время выполнения работы
+<!-- А вот так выглядит степень скоординированности работы студентов. -->
 
-А вот так выглядит степень скоординированности работы студентов.
+<!-- ```{r, echo=FALSE, message=FALSE, warning=F} -->
+<!-- contr_trial <- read.csv("data/Control1_attempts.csv", header = T) -->
 
-```{r, echo=FALSE, message=FALSE, warning=F}
-contr_trial <- read.csv("data/Control1_attempts.csv", header = T)
+<!-- contr_trial$submission_date_time <- as.POSIXct(contr_trial$submission,format = "%d-%m %H:%M") -->
 
-contr_trial$submission_date_time <- as.POSIXct(contr_trial$submission,format = "%d-%m %H:%M")
 
+<!-- ggplot(contr_trial, aes(x = Group, y = submission_date_time)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу") -->
 
-ggplot(contr_trial, aes(x = Group, y = submission_date_time)) + geom_boxplot() + labs(x = "Группа", y = "Час, когда начали работу")
 
 
+<!-- ``` -->
 
-```
 
 
 
-Группа № 2, видимо, самая дружная :), у них минимальный разброс значений. Коллективная работа... Я не против... но экзамен будет индивидуальным...  
 
-## Кто раньше, тот лучше
+<!-- # Результаты самостоятельной работы № 2 -->
 
-Посмотрите на результаты регрессионного анализа, который описывает связь вероятности правильного ответа на вопросы контрольной работы, с тем, когда происходило решение задач. 
+<!-- ```{r,  echo=FALSE} -->
 
-```{r, echo=FALSE, message=FALSE, warning=F}
-library(dplyr)
-contr_trial$Out <- ifelse(contr_trial$status == "correct", 1, 0)
 
-Mod_time <- glm(Out ~ submission_date_time, data = contr_trial, family = "binomial")
+<!-- class <- read.csv("data/class.csv") -->
 
+<!-- hw2 <- read.csv("data/homework_2.csv") -->
 
-new_data <- data.frame(submission_date_time = seq(min(contr_trial$submission_date_time, na.rm = T), max(contr_trial$submission_date_time, na.rm = T), length.out = 100))
+<!-- class$Name <- as.character(class$Name) -->
 
-new_data$Predict <- predict(Mod_time, newdata =new_data, type = "response", se.fit = T)$fit
-new_data$SE <- predict(Mod_time, newdata =new_data, type = "response", se.fit = T)$se.fit
 
 
-ggplot(new_data, aes(x = submission_date_time, y = Predict)) + geom_line(color = "blue", size = 2) + geom_ribbon(aes(ymin = Predict - 1.96*SE, ymax = Predict + 1.96*SE), alpha = 0.2) + labs(x = "Время решеня задачи", y = "Вероятность правильного решения")
+<!-- hw_res <- merge(class[, c("Name", "Group", "ID")], hw2, by = "ID") -->
 
 
-```
 
+<!-- hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))] -->
 
-Результаты статистически значимы и характер связи очевиден: те, кто раньше берется за контрольную, те с большей вероятностью решают ее правильно. Думайте над механизмами этой связи :)
+<!-- Max <- length(names(hw_res)[4:ncol(hw_res)]) -->
 
+<!-- hw_res$Score_HW_2 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum) -->
+<!-- #  -->
+<!-- # hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1  -->
+<!-- #  -->
+<!-- hw_res$Score_HW_2[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_2[hw_res$Name == "Каськова Ксения"] + 5 -->
 
+<!-- hw_res$Score_HW_2 <- hw_res$Score_HW_2/(Max-1)*3 -->
 
-# Результаты самостоятельной работы № 2
+<!-- hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_2")] -->
+<!-- hw_res <- hw_res[order(hw_res$ID), ] -->
+<!-- # write.table(hw_res, "clipboard", sep = "\t", row.names = F) -->
 
-```{r,  echo=FALSE}
 
 
-class <- read.csv("data/class.csv")
+<!-- library(ggplot2) -->
 
-hw2 <- read.csv("data/homework_2.csv")
+<!-- ggplot(hw_res, aes(x = Group, y = Score_HW_2)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
 
-class$Name <- as.character(class$Name)
 
 
+<!-- ``` -->
 
-hw_res <- merge(class[, c("Name", "Group", "ID")], hw2, by = "ID")
 
 
 
-hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))]
 
-Max <- length(names(hw_res)[4:ncol(hw_res)])
 
-hw_res$Score_HW_2 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum)
-# 
-# hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1 
-# 
-hw_res$Score_HW_2[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_2[hw_res$Name == "Каськова Ксения"] + 5
+<!-- # Результаты самостоятельной работы № 3 -->
 
-hw_res$Score_HW_2 <- hw_res$Score_HW_2/(Max-1)*3
+<!-- ```{r,  echo=FALSE} -->
 
-hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_2")]
-hw_res <- hw_res[order(hw_res$ID), ]
-# write.table(hw_res, "clipboard", sep = "\t", row.names = F)
 
+<!-- class <- read.csv("data/class.csv") -->
 
+<!-- hw3 <- read.csv("data/homework_3.csv") -->
 
-library(ggplot2)
+<!-- class$Name <- as.character(class$Name) -->
 
-ggplot(hw_res, aes(x = Group, y = Score_HW_2)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
 
 
+<!-- hw_res <- merge(class[, c("Name", "Group", "ID")], hw3, by = "ID") -->
 
-```
 
 
-На этот раз вперед вырвались группы 6 и 7. А вот группа 3 что-то сдала позиции...
+<!-- hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))] -->
 
+<!-- Max <- 27 -->
 
+<!-- hw_res$Score_HW_3 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum) -->
+<!-- #  -->
+<!-- # hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1  -->
+<!-- #  -->
+<!-- hw_res$Score_HW_3[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_3[hw_res$Name == "Каськова Ксения"] + 5 + 1 -->
 
+<!-- hw_res$Score_HW_3 <- hw_res$Score_HW_3/Max*3 -->
 
-# Результаты самостоятельной работы № 3
+<!-- hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_3")] -->
+<!-- hw_res <- hw_res[order(hw_res$ID), ] -->
+<!-- # write.table(hw_res, "clipboard", sep = "\t", row.names = F) -->
 
-```{r,  echo=FALSE}
 
 
-class <- read.csv("data/class.csv")
+<!-- library(ggplot2) -->
 
-hw3 <- read.csv("data/homework_3.csv")
+<!-- ggplot(hw_res, aes(x = Group, y = Score_HW_3)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3) -->
 
-class$Name <- as.character(class$Name)
 
 
+<!-- ``` -->
 
-hw_res <- merge(class[, c("Name", "Group", "ID")], hw3, by = "ID")
 
 
 
-hw_res <- hw_res[ , c(1,2,3, 6:ncol(hw_res))]
+<!-- # Контрольная работа № 2 -->
 
-Max <- 27
+<!-- ## Распределение результатов -->
 
-hw_res$Score_HW_3 <- apply(hw_res[ , 4:ncol(hw_res)], MARGIN = 1, FUN = sum)
-# 
-# hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] <- hw_res$Score_HW_1[hw_res$Name == "Леняшина Мария"] + 1 
-# 
-hw_res$Score_HW_3[hw_res$Name == "Каськова Ксения"] <- hw_res$Score_HW_3[hw_res$Name == "Каськова Ксения"] + 5 + 1
+<!-- Вот такие предварительные результаты по второй контрольной. -->
 
-hw_res$Score_HW_3 <- hw_res$Score_HW_3/Max*3
 
-hw_res <- hw_res[, c("Name", "Group", "ID", "Score_HW_3")]
-hw_res <- hw_res[order(hw_res$ID), ]
-# write.table(hw_res, "clipboard", sep = "\t", row.names = F)
+<!-- ```{r, echo=FALSE} -->
+<!-- class <- read.csv("data/class.csv") -->
 
+<!-- class <- class[, c("Name", "ID", "Group")] -->
+<!-- reasult <- read.csv("data/controlwork_2.csv", encoding = "Utf-8") -->
+<!-- res <- merge(class, reasult, by = "ID") -->
 
+<!-- res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum) -->
 
-library(ggplot2)
+<!-- Max <- ncol(res[,-c(1:5, ncol(res))]) -->
 
-ggplot(hw_res, aes(x = Group, y = Score_HW_3)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 3)
+<!-- res$Prop <- res$sum / Max  * 10 -->
 
+<!-- # write.table(res, "clipboard", sep = "\t", row.names = F) -->
 
+<!-- library(ggplot2) -->
 
-```
+<!-- # library(doBy) -->
+<!-- # -->
+<!-- # res_out <- summaryBy(sum ~ Group, data = res) -->
 
+<!-- ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 10) -->
 
-На этот раз всех победила группа № 7!
 
+<!-- ``` -->
 
 
 
-# Контрольная работа № 2
+<!-- # Текущие оценки  -->
+<!-- Коллеги, для сохранения персональных данных в тайне, вывешиваются только номера ID. Поэтому для поиска информации о себе выясните на Степике свой ID. -->
 
-## Распределение результатов
+<!-- ```{r, echo=FALSE, message=FALSE, warning=F} -->
+<!-- class <- read.csv("data/class.csv") -->
 
-Вот такие предварительные результаты по второй контрольной.
+<!-- results_print <- class[, c("ID", "Seminar_1",	"Seminar_2",	"Seminar_3",	"Seminar_4",	"Seminar_5",	"Seminar_6", 	"Seminar_7", 	"HW_1",	"HW_2",	"HW_3",	"Control_1",	"Control_2")] -->
 
+<!-- results_print <- results_print[!is.na(results_print$ID), ] -->
 
-```{r, echo=FALSE}
-class <- read.csv("data/class.csv")
+<!-- results_print[is.na(results_print)] <- 0 -->
+<!-- options(knitr.kable.NA = '') -->
 
-class <- class[, c("Name", "ID", "Group")]
-reasult <- read.csv("data/controlwork_2.csv", encoding = "Utf-8")
-res <- merge(class, reasult, by = "ID")
+<!-- results_print[,2:8] <- results_print[,2:8]/1*3 -->
 
-res$sum <- apply(res[,-c(1:5)], MARGIN = 1, FUN = sum)
+<!-- results_print$Sum <- apply(results_print[,2:13], MARGIN = 1, FUN = sum) -->
 
-Max <- ncol(res[,-c(1:5, ncol(res))])
 
-res$Prop <- res$sum / Max  * 10
+<!-- # Надбавка за помощь Мешковский Сергей, Такки Ольга -->
 
-# write.table(res, "clipboard", sep = "\t", row.names = F)
+<!-- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] <- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] + 5 -->
 
-library(ggplot2)
+<!-- # write.table(merge(class[,c("ID", "Name"), ], results_print), "clipboard", sep = "\t", row.names = F, fileEncoding = "utf8") -->
 
-# library(doBy)
-#
-# res_out <- summaryBy(sum ~ Group, data = res)
 
-ggplot(res, aes(x = Group, y =  Prop)) + geom_boxplot() + ggtitle("Количесвто баллов по каждой группе") + labs(x = "Группа", y = "Итоговые баллы") + geom_hline(yintercept = 10)
 
+<!-- kable(results_print, col.names = c("ID", "Сем.1", "Сем.2", "Сем.3",  "Сем.4", "Сем.5", "Сем.6", "Сем.7",  "СР1", "СР2", "СР3", "КР1", "КР2", "Сумма"), digits = 1) -->
 
-```
-
-И опять группа № 7 на высоте!
-
-
-
-
-# Текущие оценки 
-Коллеги, для сохранения персональных данных в тайне, вывешиваются только номера ID. Поэтому для поиска информации о себе выясните на Степике свой ID.
-
-```{r, echo=FALSE, message=FALSE, warning=F}
-class <- read.csv("data/class.csv")
-
-results_print <- class[, c("ID", "Seminar_1",	"Seminar_2",	"Seminar_3",	"Seminar_4",	"Seminar_5",	"Seminar_6", 	"Seminar_7", 	"HW_1",	"HW_2",	"HW_3",	"Control_1",	"Control_2")]
-
-results_print <- results_print[!is.na(results_print$ID), ]
-
-results_print[is.na(results_print)] <- 0
-options(knitr.kable.NA = '')
-
-results_print[,2:8] <- results_print[,2:8]/1*3
-
-results_print$Sum <- apply(results_print[,2:13], MARGIN = 1, FUN = sum)
-
-
-# Надбавка за помощь Мешковский Сергей, Такки Ольга
-
-results_print$Sum[results_print$ID %in% c(19491533, 96556392)] <- results_print$Sum[results_print$ID %in% c(19491533, 96556392)] + 5
-
-# write.table(merge(class[,c("ID", "Name"), ], results_print), "clipboard", sep = "\t", row.names = F, fileEncoding = "utf8")
-
-
-
-kable(results_print, col.names = c("ID", "Сем.1", "Сем.2", "Сем.3",  "Сем.4", "Сем.5", "Сем.6", "Сем.7",  "СР1", "СР2", "СР3", "КР1", "КР2", "Сумма"), digits = 1)
-
-```
+<!-- ``` -->
 

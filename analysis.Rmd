@@ -2,29 +2,46 @@
 title: Анализ работы
 ---
 
-Здесь будут отражаться материалы с анализом выполненных заданий.
-
-**Важные задолженности!**
-
-Коллеги! В настоящий момент большая часть курса зарегистрировалась в системе Ms Teams, которая будет использоваться для администрирования и проведения тестов. Однако есть несколько человек, которые значатся на курсе, но пока не зарегистрировались. Если их ID не станет известен в ближайшее время, то за первый тест у них не будут начислены баллы.
-
-Вот эти люди.   
-Если Вы есть среди них, то обязательно свяжитесь с В. М. Хайтовым в ближайшее время.
+Состояние индивидуального счета студентов  
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(dplyr)
 
 class <- read.csv("data/Classess_2020.csv")
-
 class <- class[, 1:7]
+class <- class %>% filter(!is.na(Login))
 
-teams <- read.csv("data/teams.csv")
 
-dolg <- class %>% filter(!(St_Mail %in% teams$Email)) %>% select(Family, Name, Otch ) 
+
+# class[is.na(class$St_Mail),]
+
+credits <- class %>% select(Login, St_Mail)
+
+#Тест по Лекции 1
+test_lecture_1 <- read.csv("data/Оценки класса Общая экология — 30.09.2020, 8-08.csv")
+test_lecture_1 <- test_lecture_1 %>% select(3:4)
+names(test_lecture_1) <- c("St_Mail", "Score_lecture_1")
+
+credits <- merge(credits, test_lecture_1, all.x = TRUE)
+
+add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1)
+
+credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE)
+
+
+
+
+#Вывод общей таблицы с баллами
+
+credits_print <- credits[, -1]
+
+credits_print$Sum <- credits_print %>% select(-1) %>% rowSums(na.rm=TRUE) 
+
 
 options(knitr.kable.NA = '')
-kable(dolg, col.names = c("Фамилия", "Имя", "Отчество"))
+kable(credits_print)
+
 ```
 
 

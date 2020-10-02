@@ -9,8 +9,8 @@ library(knitr)
 library(dplyr)
 
 class <- read.csv("data/Classess_2020.csv")
+class <- class %>% filter(!is.na(Login)|!is.na(Group) )
 class <- class[, 1:7]
-class <- class %>% filter(!is.na(Login))
 
 
 

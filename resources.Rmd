@@ -3,7 +3,7 @@ title: Ресурсы по общей экологии и смежным тем�
 ---
 
 
-# Литература, процитированная на лекциях
+# **Литература, процитированная на лекциях**
 
 Материалы будут открываться после лекций
 
@@ -15,31 +15,31 @@ title: Ресурсы по общей экологии и смежным тем�
 
 
 
-<!-- ## Лекция № 2. Аутэкология -->
-<!-- - [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou](Literature//pond2016.pdf) -->
-<!-- - [Голубые ракушки](Literature//Стрелков Хайтов Католикова 2012.pdf) -->
-<!-- - [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea](Literature//Sarantchova 2001.pdf) -->
-<!-- - [On the endemic Fucus radicans in the Baltic Sea](Literature//Shagerstrom_endemic_Fucus.pdf) -->
-<!-- - [Marine Lake Mogilnoe (Kildin Island, the Barents Sea): one hundred years of solitude](Literature//Strelkov et al_Marine Lake Mogilnoe 2014.pdf) -->
-<!-- - [Relationships between Seston, Available Food and Feeding Activity in the Common Mussel Mytilus edulis	Widdows 1979](Literature//Relationships Between Seston and pceudofeaces.pdf) -->
-<!-- - [Following the heart: temperature and salinity effects on heart rate in native and invasive species of blue mussels (genus Mytilus).](Literature//Braby Somero 2006.pdf) -->
-<!-- - [Seasonal cycles of noctuid moths of the subfamily Plusiinae (Lepidoptera, Noctuidae) of the Palaearctic: Diversity and environmental control](Literature//Saulich_et_al_2017_Plusiinae_Engl.pdf) -->
-<!-- - [Genetic, Ecological and Morphological Distinctness of the Blue Mussels Mytilus trossulus Gould and M. edulis L. in the White Sea.](Literature//Katolikova et al 2016 Sympatric Mussels in the White Sea.pdf) -->
-<!-- - [Экология Особи, популяции и сообщества](Literature//Bigon_Harper_Taunsend_V2.pdf) -->
-<!-- - [Введение в Общую Экологию](Literature//Нинбург 2005.pdf) -->
+## Лекция № 2. Аутэкология
+- [Drawing lines: Spatial behaviours reveal two ecotypes of woodland caribou](Literature//pond2016.pdf)
+- [Голубые ракушки](Literature//Стрелков Хайтов Католикова 2012.pdf)
+- [Research into tolerance for the environment salinity in sea starfish Asterias rubens L. from populations of the White Sea and Barentz Sea](Literature//Sarantchova 2001.pdf)
+- [On the endemic Fucus radicans in the Baltic Sea](Literature//Shagerstrom_endemic_Fucus.pdf)
+- [Marine Lake Mogilnoe (Kildin Island, the Barents Sea): one hundred years of solitude](Literature//Strelkov et al_Marine Lake Mogilnoe 2014.pdf)
+- [Relationships between Seston, Available Food and Feeding Activity in the Common Mussel Mytilus edulis	Widdows 1979](Literature//Relationships Between Seston and pceudofeaces.pdf)
+- [Following the heart: temperature and salinity effects on heart rate in native and invasive species of blue mussels (genus Mytilus).](Literature//Braby Somero 2006.pdf)
+- [Seasonal cycles of noctuid moths of the subfamily Plusiinae (Lepidoptera, Noctuidae) of the Palaearctic: Diversity and environmental control](Literature//Saulich_et_al_2017_Plusiinae_Engl.pdf)
+- [Genetic, Ecological and Morphological Distinctness of the Blue Mussels Mytilus trossulus Gould and M. edulis L. in the White Sea.](Literature//Katolikova et al 2016 Sympatric Mussels in the White Sea.pdf)
+- [Экология Особи, популяции и сообщества](Literature//Bigon_Harper_Taunsend_V2.pdf)
+- [Введение в Общую Экологию](Literature//Нинбург 2005.pdf)
 
 
 
-<!-- ## Лекция № 3. Демэкология -->
+## Лекция № 3. Демэкология
 
-<!-- - [Age determination and growth rate of a Callista chione population from the southwestern coast of Portugal](Literature//Age_determination_and_growth_rate_of_a_Callista_ch.pdf) -->
-<!-- - [Demographic and medical consequences of the postponement of parenthood](Literature//Demographic_and_medical_consequences_of_the_postpo.pdf) -->
-<!-- - [Comparative analyses of longevity and senescence reveal variable survival benefits of living in zoos across mammals](Literature//Comparative analyses of longevity and senescence.pdf) -->
-<!-- - [Two-year migration of adult female white sharks (Carcharodon carcharias) reveals widely separated nursery areas and conservation concerns](Literature//Domeier-and-Nasby-Lucas-2013.pdf) -->
-<!-- - [Sex Determination: Why So Many Ways of Doing It?](Literature//Bachtorg et al 2014 Sex determination.pdf) -->
-<!-- - [Evolutionary ecology of human birth sex ratio under the compound influence of climate change, famine, economic crises and wars](Literature//Helle et al 2009.pdf) -->
-<!-- - [Sex Determination in Reptiles](Literature//bull1980 reptilia sex determination.pdf) -->
-<!-- - [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf) -->
+- [Age determination and growth rate of a Callista chione population from the southwestern coast of Portugal](Literature//Age_determination_and_growth_rate_of_a_Callista_ch.pdf)
+- [Demographic and medical consequences of the postponement of parenthood](Literature//Demographic_and_medical_consequences_of_the_postpo.pdf)
+- [Comparative analyses of longevity and senescence reveal variable survival benefits of living in zoos across mammals](Literature//Comparative analyses of longevity and senescence.pdf)
+- [Two-year migration of adult female white sharks (Carcharodon carcharias) reveals widely separated nursery areas and conservation concerns](Literature//Domeier-and-Nasby-Lucas-2013.pdf)
+- [Sex Determination: Why So Many Ways of Doing It?](Literature//Bachtorg et al 2014 Sex determination.pdf)
+- [Evolutionary ecology of human birth sex ratio under the compound influence of climate change, famine, economic crises and wars](Literature//Helle et al 2009.pdf)
+- [Sex Determination in Reptiles](Literature//bull1980 reptilia sex determination.pdf)
+- [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf)
 
 
 <!-- ## Лекция № 4. Динамика популяций  -->
@@ -122,31 +122,30 @@ title: Ресурсы по общей экологии и смежным тем�
 <!-- - [Revisiting Paine’s 1966 Sea Star Removal Experiment, the Most-Cited Empirical Article in the American Naturalist](Literature//Paine-1966-Revisit.pdf) -->
 <!-- - [Структура сообществ и экологическая ниша](Literature//giller1988_struktura_soobsch.djvu) -->
 
-<!-- <!-- ## Лекция № 11 --> -->
+<!-- <!-- ## Лекция № 11 --> 
 
 
 
 
-
-<!-- # Литература по отдельным темам -->
-
-
-<!-- ## Общая теория систем, типология, теория классификации -->
-
-<!-- - [Общая теория систем Урманцева](http://www.sci.aha.ru/ots/index.htm) -->
-<!-- - [С. В. Мейен, Ю.А. Шрейдер МЕТОДОЛОГИЧЕСКИЕ АСПЕКТЫ ТЕОРИИ КЛАССИФИКАЦИИ](http://www.kudrinbi.ru/public/453/index.htm) -->
-<!-- - [С. В. Мейен Исторические реконструкции в естествознании и типология](http://www.chronos.msu.ru/old/RREPORTS/meyen_istoricheskie.htm) -->
-<!-- - [С. В. Мейен Основные аспекты типологии организмов](http://www.kudrinbi.ru/public/451/index.htm) -->
+# **Литература по отдельным темам**
 
 
+## Общая теория систем, типология, теория классификации
 
-## Адаптации оганизмов
+- [Общая теория систем Урманцева](http://www.sci.aha.ru/ots/index.htm)
+- [С. В. Мейен, Ю.А. Шрейдер МЕТОДОЛОГИЧЕСКИЕ АСПЕКТЫ ТЕОРИИ КЛАССИФИКАЦИИ](http://www.kudrinbi.ru/public/453/index.htm)
+- [С. В. Мейен Исторические реконструкции в естествознании и типология](http://www.chronos.msu.ru/old/RREPORTS/meyen_istoricheskie.htm)
+- [С. В. Мейен Основные аспекты типологии организмов](http://www.kudrinbi.ru/public/451/index.htm)
 
-В работе
 
-## Организмы и среда
 
-В работе
+<!-- ## Адаптации оганизмов -->
+
+<!-- В работе -->
+
+<!-- ## Организмы и среда -->
+
+<!-- В работе -->
 
 
 ## Структура и динамика популяций

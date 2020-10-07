@@ -10,7 +10,7 @@ title: Дополнительные материалы
 
 - [Модель ограниченного роста численности (модель Ферхюльста)](https://polydora.shinyapps.io/Logistic_dynamics_model/)
 
-- [Модель динамики сложной популяции со взаимодействующими возрастными когортами](https://polydora.shinyapps.io/Filter_feeders_dyamics/)
+<!-- - [Модель динамики сложной популяции со взаимодействующими возрастными когортами](https://polydora.shinyapps.io/Filter_feeders_dyamics/) -->
 
 - [Модель динамики численности популяций двух конкурирующих видов](https://polydora.shinyapps.io/Competition_model/)
 

@@ -41,6 +41,13 @@ names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
 credits <- merge(credits, test_lecture_2, all.x = TRUE)
 
 
+#Тест по Лекции 3
+test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология)(1-85).xlsx")
+test_lecture_3 <- test_lecture_3 %>% select(2,4)
+names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
+
+credits <- merge(credits, test_lecture_3, all.x = TRUE)
+
 
 
 #Вывод общей таблицы с баллами

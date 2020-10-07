@@ -42,15 +42,15 @@ title: Ресурсы по общей экологии и смежным тем�
 - [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf)
 
 
-<!-- ## Лекция № 4. Динамика популяций  -->
-<!-- - [Does population ecology have general laws?](Literature//Turchin 2001 General low of population ecology.pdf) -->
-<!-- - [Sustained exponential population growth of grey seals at Sable Island, Nova Scotia](Literature//Bowen et al 2003 Exponentizl growth in grey seel.pdf) -->
-<!-- - [Exponential Population Growth of Monk Parakeets in the United States](Literature//Van Bael Pruett Jones 1996 Parrot exponential growth.pdf) -->
-<!-- - [The Rise and Fall of a Reindeer Herd](Literature//Reindeer _Pribilovs.pdf) -->
-<!-- - [Post-invasion demography of prehistoric humans in South America](Literature//goldberg2016 human populaion dynamics.pdf) -->
-<!-- - [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf) -->
-<!-- - [The Theory of Population Dynamics: I. Back To First Principles](ginzburg1986.pdf) -->
-<!-- - [Long-Term Population Cycles in Human Societies](Literature//Turchin 2009 review.pdf) -->
+## Лекция № 4. Динамика популяций
+- [Does population ecology have general laws?](Literature//Turchin 2001 General low of population ecology.pdf)
+- [Sustained exponential population growth of grey seals at Sable Island, Nova Scotia](Literature//Bowen et al 2003 Exponentizl growth in grey seel.pdf)
+- [Exponential Population Growth of Monk Parakeets in the United States](Literature//Van Bael Pruett Jones 1996 Parrot exponential growth.pdf)
+- [The Rise and Fall of a Reindeer Herd](Literature//Reindeer _Pribilovs.pdf)
+- [Post-invasion demography of prehistoric humans in South America](Literature//goldberg2016 human populaion dynamics.pdf)
+- [The cycle of mussels: long-term dynamics of mussel beds on intertidal soft bottoms at the White Sea](Literature//Khaitov Lentsman 2016.pdf)
+- [The Theory of Population Dynamics: I. Back To First Principles](ginzburg1986.pdf)
+- [Long-Term Population Cycles in Human Societies](Literature//Turchin 2009 review.pdf)
 
 <!-- ## Лекция № 5. Межвидовые взаимоотношения (симфизиологические связи) -->
 

@@ -58,6 +58,7 @@ credits_print$Sum <- credits_print %>% select(-1) %>% rowSums(na.rm=TRUE)
 
 credits_print$Credit_Sum <- 10*(ncol(credits_print)-4) 
 
+credits_print$Proportion_of_final <- credits_print$Sum / credits_print$Credit_Sum 
 
 options(knitr.kable.NA = '')
 kable(credits_print)

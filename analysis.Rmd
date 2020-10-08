@@ -2,7 +2,7 @@
 title: Анализ работы
 ---
 
-Состояние индивидуального счета студентов  
+
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -48,24 +48,40 @@ names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
 
 credits <- merge(credits, test_lecture_3, all.x = TRUE)
 
-
+credits$Addition_2 <- 1
 
 #Вывод общей таблицы с баллами
+
+credits_sum <- 10 + 9
 
 credits_print <- credits[, -1]
 
 credits_print$Sum <- credits_print %>% select(-1) %>% rowSums(na.rm=TRUE) 
 
-credits_print$Credit_Sum <- 10*(ncol(credits_print)-4) 
+credits_print$Credit_Sum <- credits_sum 
 
 credits_print$Proportion_of_final <- credits_print$Sum / credits_print$Credit_Sum 
 
-options(knitr.kable.NA = '')
+```
+
+Состояние индивидуального счета студентов  
+
+```{r, echo=F}
+
+options(knitr.kable.NA = '-')
 kable(credits_print)
 
 ```
 
 
+**Замечание:**
+
+В любой большой работе бывают сбои. Спасибо тем, кто обнаруживает ошибки (значит разобрались в вопросе, что и является задачей курса).  Для оплаты ваших затрат на улучшение курса будем начислять дополнительные баллы.  
+
+**Внимание**   
+В графе *"Proportion_of_final"* Публикуется текущее количество набранных баллов, которое войдет в финальную оценку. Однако, эта величина будет изменяться, так как общее количество баллов, которое приводится в графе *"Credit_Sum"*, тоже будет изменяться по мере открытия новых заданий. 
+
+Следите за текущим счетом и если что-то не так, то пишите.
 
 
 <!-- # Результаты самостоятельной работы № 1 -->

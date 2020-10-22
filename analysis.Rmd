@@ -72,7 +72,7 @@ credits$Addition_2 <- 1
 
 
 #Тест по Лекции 4, 5, 6
-test_lecture_4 <- read_xlsx("data/Динамика популяции. Взаимоотношения. (Общая экология)(1-78).xlsx")
+test_lecture_4 <- read_xlsx("data/Динамика популяции. Взаимоотношения. (Общая экология)(1-82).xlsx")
 test_lecture_4 <- test_lecture_4 %>% select(1,2)
 names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
 

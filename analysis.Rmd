@@ -127,13 +127,18 @@ kable(credits_print)
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 hw1 <- read.csv("data/Самостоятельная работа №1 Основные вопросы.csv", header = T)
-hw1 <- hw1[1:3]
-names(hw1)[3] <- "Login"
+hw1 <- hw1[1:2]
+names(hw1)[2] <- "Login"
 
 hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score))
 
 add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T)
 names(add_hw1) <- c("Login", "add_score")
+
+add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score))
+
+# hw1[!(hw1$Login %in% add_hw1$Login), ]
+
 
 hw1_score <- class %>% select(Login, Group)
 

@@ -93,7 +93,9 @@ credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRU
 
 credits_print$Credit_Sum <- credits_sum 
 
-credits_print$Proportion_of_final <- credits_print$Sum / credits_print$Credit_Sum 
+credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum 
+
+credits_print$Exam <- round(credits_print$Exam, 1)
 
 ```
 
@@ -126,6 +128,7 @@ kable(credits_print)
 
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
 hw1 <- read.csv("data/Самостоятельная работа №1 Основные вопросы.csv", header = T)
 hw1 <- hw1[1:2]
 names(hw1)[2] <- "Login"
@@ -150,12 +153,44 @@ hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T
 
 hw1_score$Total <- hw1_score$Sum/30
 
-hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Total)
+hw1_score$Exam <- round(hw1_score$Total * 1, 1)
+
+hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
 
 kable(hw1_score_print)
 
 ```
 
+<br>
+<br>
 
+## **Анализ контрольной работы № 1**
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+cont_reg <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx")
+
+cont <- read_excel("data/Контрольная работа №1 (Responses).xlsx")
+
+# cont_reg[!(cont_reg$Login %in% cont$Login), ]
+
+# table(cont_reg$Login)
+
+
+cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+
+cont1$Add <- 1
+
+cont1$Total <- (cont1$Score + cont1$Add)/18
+
+cont1$Exam <- round(cont1$Total * 2, 1)  
+
+cont1_print <- class %>% select(Login)
+
+cont1_print <- merge(cont1_print, cont1, all.x = T)
+
+kable(cont1_print)
+
+```
 
 

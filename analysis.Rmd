@@ -183,7 +183,7 @@ cont1$Add <- 1
 
 cont1$Total <- (cont1$Score + cont1$Add)/18
 
-cont1$Exam <- round(cont1$Total * 2, 1)  
+cont1$Exam <- round(cont1$Total * 2.5, 1)  
 
 cont1_print <- class %>% select(Login)
 

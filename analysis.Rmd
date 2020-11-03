@@ -103,6 +103,8 @@ test_lecture_6 <- read_xlsx("data/Тест по материалам лекци�
 test_lecture_6 <- test_lecture_6 %>% select(1,2)
 names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
 
+test_lecture_6$Addition_4 <- 1 
+
 credits <- merge(credits, test_lecture_6, all.x = TRUE)
 
 
@@ -110,7 +112,7 @@ credits <- merge(credits, test_lecture_6, all.x = TRUE)
 
 #Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 9 + 14 + 15 + 10
+credits_sum <- 10 + 9 + 14 + 15 + 9
 
 credits_print <- credits[, -1]
 

@@ -15,6 +15,7 @@ class <- class %>% filter(!is.na(Login)|!is.na(Group) )
 class <- class[, 1:7]
 
 
+
 # class[class$Login == "st092164", ]
 
 
@@ -83,9 +84,33 @@ credits$Addition_3 <- 6
 
 
 
+
+#Тест по Лекции 7, 8
+test_lecture_5 <- read_xlsx("data/Конкуренция. Трофические связи (Общая экология)(1-79).xlsx")
+test_lecture_5 <- test_lecture_5 %>% select(1,2)
+names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
+
+credits <- merge(credits, test_lecture_5, all.x = TRUE)
+
+# credits$Addition_3 <- 6
+
+
+
+
+#Тест по Лекции 9, 10
+
+test_lecture_6 <- read_xlsx("data/Тест по материалам лекций № 9 (симбиозы) и № 10 (структура сообщества) (Общая экология)(1-80).xlsx")
+test_lecture_6 <- test_lecture_6 %>% select(1,2)
+names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+
+credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
+
+
+
 #Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 9 + 14
+credits_sum <- 10 + 9 + 14 + 15 + 10
 
 credits_print <- credits[, -1]
 
@@ -96,6 +121,7 @@ credits_print$Credit_Sum <- credits_sum
 credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum 
 
 credits_print$Exam <- round(credits_print$Exam, 1)
+
 
 ```
 
@@ -110,9 +136,9 @@ kable(credits_print)
 
 
 
-**Большое спасибо тем, кто принял участие в обсуждении вопросов теста по лекциям 21.10.2020 !**
+ 
 
-Самое ценное в исследователе- это умение сомневаться :)
+
 
 
 <!-- **Внимание**    -->
@@ -164,6 +190,16 @@ kable(hw1_score_print)
 <br>
 <br>
 
+
+# **Анализ отчетов по самостоятельной работе № 2**
+
+
+Идет обработка результатов
+
+<br>
+<br>
+
+
 ## **Анализ контрольной работы № 1**
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
@@ -192,5 +228,28 @@ cont1_print <- merge(cont1_print, cont1, all.x = T)
 kable(cont1_print)
 
 ```
+
+
+
+
+## **Частотное распределение результатов**
+
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+library(patchwork)
+
+Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")
+
+Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по самостоятельной работt №1")
+
+
+Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")
+
+Pl_foo <- ggplot() + theme(panel.background = element_blank())
+(Pl_lect + Pl_hw1)/(Pl_cw1 + Pl_foo)
+
+```
+
 
 

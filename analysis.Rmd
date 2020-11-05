@@ -104,7 +104,8 @@ test_lecture_6 <- test_lecture_6 %>% select(1,2)
 names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
 
 test_lecture_6$Addition_4 <- 1 
-
+test_lecture_6$Addition_5 <- NA
+test_lecture_6$Addition_5[test_lecture_6$St_Mail == "st075764@student.spbu.ru"] <- 2
 credits <- merge(credits, test_lecture_6, all.x = TRUE)
 
 
@@ -185,7 +186,7 @@ hw1_score$Exam <- round(hw1_score$Total * 1, 1)
 
 hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
 
-kable(hw1_score_print)
+kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки"))
 
 ```
 
@@ -196,7 +197,44 @@ kable(hw1_score_print)
 # **Анализ отчетов по самостоятельной работе № 2**
 
 
-Идет обработка результатов
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+hw2 <- read_excel("data/Репродукция и жизненные циклы организмов (Основные вопросы).xlsx")
+
+
+add_hw2 <- read_excel("data/Репродукция и жизненные циклы организмов (Дополнительный вопрос)_оценено_2.xlsx")
+add_hw2 <-  add_hw2 %>% select(-Timestamp)
+
+names(add_hw2) <- c("Login", "add_score_2", "add_score_3")
+
+
+hw2_score <- merge(hw2, add_hw2, all.x = T)
+
+hw2_score <- hw2_score %>% group_by(Login) %>% summarise(Score = max(Score), Add_1 = max(Add_1), add_score_2 = max(add_score_2), add_score_3 = max(add_score_3) )
+
+hw2_score$Sum <- hw2_score %>% select(Score, Add_1, add_score_2, add_score_3) %>% rowSums(na.rm = T)
+
+hw2_score$Total <- hw2_score$Sum / 15 
+
+
+hw2_score$Exam <- round(hw2_score$Total, 1)  
+  
+  
+
+hw2_score_print <- hw2_score 
+
+kable(hw2_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Доп. вопр. 2", "Баллы за придуманные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки"))
+
+
+```
+
+
+**Господа!** Все большие молодцы, но не могу удержаться от замечания.
+
+В научном аду за **плагиат**  в костер кладут ОЧЕНЬ большое бревно! 
+
+К сожалению, при проверке СР-2 было обнаружено несколько практически идентичных ответов за дополнительный вопрос №2. Мы поставили одинаковые оценки за этот вопрос всем, кто прислал идентичные ответы, поскольку мы не хотели выяснять, кто истинный автор. **НО, пожалуйста, больше так не делайте!** 
 
 <br>
 <br>
@@ -243,13 +281,15 @@ library(patchwork)
 
 Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")
 
-Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по самостоятельной работt №1")
+Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №1")
 
 
 Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")
 
-Pl_foo <- ggplot() + theme(panel.background = element_blank())
-(Pl_lect + Pl_hw1)/(Pl_cw1 + Pl_foo)
+Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")
+
+
+(Pl_lect + Pl_hw1)/(Pl_cw1 + Pl_hw2)
 
 ```
 

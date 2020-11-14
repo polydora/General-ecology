@@ -15,7 +15,7 @@ class <- class %>% filter(!is.na(Login)|!is.na(Group) )
 class <- class[, 1:7]
 
 
-
+opts_chunk$set(echo = FALSE)
 # class[class$Login == "st092164", ]
 
 
@@ -294,4 +294,34 @@ Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x =
 ```
 
 
+## **Результаты семинаров**
+
+**Внимание!**
+
+```{r}
+seminars <- read_excel("data/Семинары по общей экологии.xlsx")
+Groups <- seminars %>% select(c(Group))
+
+seminars <- seminars %>% select(-c(Family, Name, Group))
+
+seminars$Sum <- rowSums(seminars[, 2:8], na.rm = T)
+
+
+seminars$Exam <- seminars$Sum * 3
+
+Groups$Exam <-seminars$Exam 
+```
+
+
+```{r}
+kable(seminars)
+```
+
+### "Групповой зачет"
+
+Этот график иллюстрирует общую активность группы (ну или строгость преподавателя...)
+
+```{r}
+ggplot(Groups, aes(x = factor(Group), y = Exam)) + geom_violin() + labs(x = "Группа") 
+```
 

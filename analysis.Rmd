@@ -272,6 +272,39 @@ kable(cont1_print)
 
 
 
+
+## **Анализ контрольной работы № 2**
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+# 
+# cont_reg2 <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx")
+
+cont <- read_excel("data/Контрольная работа №2 (Responses).xlsx")
+
+# cont_reg[!(cont_reg$Login %in% cont$Login), ]
+
+# table(cont_reg$Login)
+
+
+cont2 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+
+
+# cont2$Add <- 0
+
+cont2$Total <- (cont2$Score)/18
+
+cont2$Exam <- round(cont2$Total * 2.5, 1)  
+
+cont2_print <- class %>% select(Login)
+
+cont2_print <- merge(cont2_print, cont2, all.x = T)
+
+kable(cont2_print)
+
+```
+
+
+
 ## **Частотное распределение результатов**
 
 

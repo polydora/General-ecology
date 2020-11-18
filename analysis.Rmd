@@ -312,17 +312,18 @@ kable(cont2_print)
 library(ggplot2)
 library(patchwork)
 
-Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")
+Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")+xlim(0, 1)
 
-Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №1")
-
-
-Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")
-
-Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")
+Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №1")+xlim(0, 1)
 
 
-(Pl_lect + Pl_hw1)/(Pl_cw1 + Pl_hw2)
+Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")+xlim(0, 2.5)
+
+Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")+xlim(0, 1)
+
+Pl_cw2 <- ggplot(cont2, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №2") + xlim(0, 2.5)
+
+(Pl_lect + Pl_hw1)/(Pl_cw1 + Pl_cw2 + Pl_hw2 )
 
 ```
 
@@ -332,7 +333,7 @@ Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x =
 **Внимание!**
 
 ```{r}
-seminars <- read_excel("data/Семинары по общей экологии.xlsx")
+seminars <- read_excel("data/Семинары по общей экологии.xlsx", na = "NA")
 Groups <- seminars %>% select(c(Group))
 
 seminars <- seminars %>% select(-c(Family, Name, Group))
@@ -350,7 +351,7 @@ Groups$Exam <-seminars$Exam
 kable(seminars)
 ```
 
-### "Групповой зачет"
+### **"Групповой зачет"**
 
 Этот график иллюстрирует общую активность группы (ну или строгость преподавателя...)
 

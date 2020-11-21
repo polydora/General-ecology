@@ -333,7 +333,7 @@ Pl_cw2 <- ggplot(cont2, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% 
 **Внимание!**
 
 ```{r}
-seminars <- read_excel("data/Семинары по общей экологии.xlsx", na = "NA")
+seminars <- read.csv("data/Семинары по общей экологии - Sheet1.csv", header = TRUE)
 Groups <- seminars %>% select(c(Group))
 
 seminars <- seminars %>% select(-c(Family, Name, Group))

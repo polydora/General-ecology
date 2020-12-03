@@ -123,7 +123,7 @@ credits_print$Credit_Sum <- credits_sum
 
 credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum 
 
-credits_print$Exam <- round(credits_print$Exam, 1)
+credits_print$Exam <- round(credits_print$Exam, 1)*2 #умножаем на два, так как высвободился 1% от СР3
 
 
 ```
@@ -240,6 +240,46 @@ kable(hw2_score_print, col.names = c("Login", "Основные вопросы",
 <br>
 
 
+# **Анализ отчетов по самостоятельной работе № 3**
+
+
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+hw3 <- read_excel("data/Самостоятельная работа № 3.xlsx", na = "NA")
+
+
+names(hw3) <- c("Score", "Login")
+
+
+hw3_score <- hw3 %>% group_by(Login) %>% summarise(Score = max(Score))
+
+hw3_score$Sum <- hw3_score %>% select(Score) %>% rowSums(na.rm = T)
+
+hw3_score$Total <- hw3_score$Sum / 40 
+
+
+hw3_score$Exam <- round(hw3_score$Total, 1)  
+  
+hw3_score <- hw3_score[!is.na(hw3_score$Login), ]
+  
+
+hw3_score_print <- merge(class[, "Login"], hw3_score, all.x = TRUE ) 
+
+kable(hw3_score_print, col.names = c("Login", "Основные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки"))
+
+
+```
+
+
+**Господа!** Приношу извинения за задержку с публикацией оценок. Напоминаю, что баллы за эту работу дополнительные (те, кто работу не сделал, ничего не потерял... но и не приобрел:). Поскольку в результате высвободился 1%, он уходит в оценку за работы по тестам по материалам лекций (то есть вес этой оценки удваивается).
+
+
+
+<br>
+<br>
+
+
 ## **Анализ контрольной работы № 1**
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
@@ -321,9 +361,11 @@ Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% 
 
 Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")+xlim(0, 1)
 
+Pl_hw3 <- ggplot(hw3_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №3")+xlim(0, 1)
+
 Pl_cw2 <- ggplot(cont2, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №2") + xlim(0, 2.5)
 
-(Pl_lect + Pl_hw1)/(Pl_cw1 + Pl_cw2 + Pl_hw2 )
+(Pl_lect + Pl_hw1 + Pl_hw2 )/(Pl_hw3 + Pl_cw1 + Pl_cw2 )
 
 ```
 

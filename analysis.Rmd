@@ -31,7 +31,7 @@ opts_chunk$set(echo = FALSE)
 credits <- class %>% select(Login, St_Mail)
 
 # credits[credits$Login == "st092164", ]
-
+# credits[credits$Login == "st092135", ]
 
 #Тест по Лекции 1
 # test_lecture_1 <- read.csv("data/Оценки класса Общая экология — 30.09.2020, 8-08.csv")

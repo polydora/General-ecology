@@ -401,3 +401,29 @@ kable(seminars)
 ggplot(Groups, aes(x = factor(Group), y = Exam)) + geom_violin() + labs(x = "Группа") 
 ```
 
+# **Финальный счет**
+
+```{r, message=FALSE}
+
+tests <- credits_print %>% select(Login, Exam) 
+
+hw1 <- hw1_score_print %>% select(Login, Exam) 
+
+hw2 <- hw2_score_print %>% select(Login, Exam) 
+
+hw3 <- hw3_score_print %>% select(Login, Exam) 
+
+cont1 <- cont1_print %>%  select(Login, Exam)
+
+cont2 <- cont2_print %>%  select(Login, Exam)
+
+seminars <- seminars %>%  select(Login, Exam)
+
+
+Total <- rbind(tests, hw1, hw2, hw3, cont1, cont2, seminars)
+
+Result <-Total %>% group_by(Login) %>% summarize(Total = sum(Exam, na.rm = TRUE))
+
+kable(Result)
+```
+

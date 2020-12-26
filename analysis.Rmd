@@ -380,7 +380,7 @@ Groups <- seminars %>% select(c(Group))
 
 seminars <- seminars %>% select(-c(Family, Name, Group))
 
-seminars$Sum <- rowSums(seminars[, 2:8], na.rm = T)
+seminars$Sum <- rowSums(seminars[, 2:9], na.rm = T)
 
 
 seminars$Exam <- seminars$Sum * 3

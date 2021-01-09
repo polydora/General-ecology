@@ -117,29 +117,29 @@ kable(paste(1:nrow(terms),". ", terms$Term), col.names = "Термины")
 ```
 
 
-<!-- ```{r, echo=FALSE, message=FALSE} -->
-<!-- library(readxl) -->
-<!-- library(dplyr) -->
+```{r, echo=FALSE, message=FALSE}
+library(readxl)
+library(dplyr)
 
-<!-- exam_date <- "9 января" -->
+exam_date <- "9 января"
 
-<!-- students <- read_excel("data/Exam_2021_schedule.xlsx") -->
+students <- read_excel("data/Exam_2021_schedule.xlsx")
 
-<!-- group <- students %>% filter(Date == exam_date)  -->
+group <- students %>% filter(Date == exam_date)
 
-<!-- files <- list.files("data/Bilets") -->
+files <- list.files("data/Bilets")
 
-<!-- files_sample <- sample(files, nrow(group)) -->
+files_sample <- sample(files, nrow(group))
 
-<!-- task <- data.frame(Name = paste(group$Familia, group$Name), Link = paste("[Задача](data/Bilets/",files_sample,")", sep = "")) -->
-
-
-<!-- ``` -->
+task <- data.frame(Name = paste(group$Familia, group$Name), Link = paste("[Задача](data/Bilets/",files_sample,")", sep = ""))
 
 
-<!-- ## Вопросы для экзамена  -->
+```
 
-<!-- ```{r, echo=FALSE, message=FALSE} -->
-<!-- kable(task, col.names = c("Ф.И.", "Задача для первого этапа экзамена")) -->
-<!-- ``` -->
+
+## Вопросы для экзамена
+
+```{r, echo=FALSE, message=FALSE}
+kable(task, col.names = c("Ф.И.", "Задача для первого этапа экзамена"))
+```
 

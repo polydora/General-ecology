@@ -1326,111 +1326,20 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-</div>
-<div id="вопросы-для-экзамена" class="section level2">
-<h2>Вопросы для экзамена</h2>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Ф.И.</th>
-<th align="left">Задача для первого этапа экзамена</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Кулишенко Анастасия</td>
-<td align="left"><a href="data/Bilets/Билеты-4.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Торопов Артём</td>
-<td align="left"><a href="data/Bilets/Билеты-49.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Перцев Владислав</td>
-<td align="left"><a href="data/Bilets/Билеты-26.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Самусик Вероника</td>
-<td align="left"><a href="data/Bilets/Билеты-8.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Петренко Екатерина</td>
-<td align="left"><a href="data/Bilets/Билеты-34.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Яковлева Дарья</td>
-<td align="left"><a href="data/Bilets/Билеты-5.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Сальникова Елизавета</td>
-<td align="left"><a href="data/Bilets/Билеты-37.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Селезнёва Екатерина</td>
-<td align="left"><a href="data/Bilets/Билеты-19.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Сотникова Арина</td>
-<td align="left"><a href="data/Bilets/Билеты-12.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Ракова Мария</td>
-<td align="left"><a href="data/Bilets/Билеты-20.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Щербань Анастасия</td>
-<td align="left"><a href="data/Bilets/Билеты-3.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Селюк Алексей</td>
-<td align="left"><a href="data/Bilets/Билеты-35.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Тауберт Карл</td>
-<td align="left"><a href="data/Bilets/Билеты-18.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Шуберт Мария</td>
-<td align="left"><a href="data/Bilets/Билеты-33.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Южанинова Мария</td>
-<td align="left"><a href="data/Bilets/Билеты-36.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Ивакин Владимир</td>
-<td align="left"><a href="data/Bilets/Билеты-14.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Турсунов Александр</td>
-<td align="left"><a href="data/Bilets/Билеты-45.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Худякова Елена</td>
-<td align="left"><a href="data/Bilets/Билеты-10.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Шалякина Александра</td>
-<td align="left"><a href="data/Bilets/Билеты-1.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Бернгардт Валерия</td>
-<td align="left"><a href="data/Bilets/Билеты-48.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Савосина Елизавета</td>
-<td align="left"><a href="data/Bilets/Билеты-23.pdf">Задача</a></td>
-</tr>
-<tr class="even">
-<td align="left">Королёва Дарья</td>
-<td align="left"><a href="data/Bilets/Билеты-47.pdf">Задача</a></td>
-</tr>
-<tr class="odd">
-<td align="left">Михальский Михаил</td>
-<td align="left"><a href="data/Bilets/Билеты-9.pdf">Задача</a></td>
-</tr>
-</tbody>
-</table>
+<!-- ```{r, echo=FALSE, message=FALSE} -->
+<!-- library(readxl) -->
+<!-- library(dplyr) -->
+<!-- exam_date <- "9 января" -->
+<!-- students <- read_excel("data/Exam_2021_schedule.xlsx") -->
+<!-- group <- students %>% filter(Date == exam_date) -->
+<!-- files <- list.files("data/Bilets") -->
+<!-- files_sample <- sample(files, nrow(group)) -->
+<!-- task <- data.frame(Name = paste(group$Familia, group$Name), Link = paste("[Задача](data/Bilets/",files_sample,")", sep = "")) -->
+<!-- ``` -->
+<!-- ## Вопросы для экзамена -->
+<!-- ```{r, echo=FALSE, message=FALSE} -->
+<!-- kable(task, col.names = c("Ф.И.", "Задача для первого этапа экзамена")) -->
+<!-- ``` -->
 </div>
 
 

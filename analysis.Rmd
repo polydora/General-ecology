@@ -2,428 +2,431 @@
 title: Анализ работы
 ---
 
+Здесь будут выкладываться текущие результаты ваших работ.
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(dplyr)
-library(readxl)
 
 
-class <- read_xlsx("data/Classess_2020.xlsx", sheet = "Sheet1", col_names = T)
-class <- class %>% filter(!is.na(Login)|!is.na(Group) )
-class <- class[, 1:7]
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- library(knitr) -->
+<!-- library(dplyr) -->
+<!-- library(readxl) -->
 
 
-opts_chunk$set(echo = FALSE)
-# class[class$Login == "st092164", ]
+<!-- class <- read_xlsx("data/Classess_2020.xlsx", sheet = "Sheet1", col_names = T) -->
+<!-- class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
+<!-- class <- class[, 1:7] -->
 
 
-# class[is.na(class$St_Mail),]
-```
+<!-- opts_chunk$set(echo = FALSE) -->
+<!-- # class[class$Login == "st092164", ] -->
 
 
+<!-- # class[is.na(class$St_Mail),] -->
+<!-- ``` -->
 
-# **Анализ тестов по материалам лекций**
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-credits <- class %>% select(Login, St_Mail)
+<!-- # **Анализ тестов по материалам лекций** -->
 
-# credits[credits$Login == "st092164", ]
-# credits[credits$Login == "st092135", ]
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-#Тест по Лекции 1
-# test_lecture_1 <- read.csv("data/Оценки класса Общая экология — 30.09.2020, 8-08.csv")
-# test_lecture_1 <- test_lecture_1 %>% select(3:4)
+<!-- credits <- class %>% select(Login, St_Mail) -->
 
-test_lecture_1 <- read_xlsx("data/Суть экологии. Теория систем. Живые системы.  (Общая экология)(1-90) (1).xlsx")
+<!-- # credits[credits$Login == "st092164", ] -->
+<!-- # credits[credits$Login == "st092135", ] -->
 
-names(test_lecture_1) <- c("St_Mail", "Score_lecture_1")
+<!-- #Тест по Лекции 1 -->
+<!-- # test_lecture_1 <- read.csv("data/Оценки класса Общая экология — 30.09.2020, 8-08.csv") -->
+<!-- # test_lecture_1 <- test_lecture_1 %>% select(3:4) -->
 
-# test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ]
+<!-- test_lecture_1 <- read_xlsx("data/Суть экологии. Теория систем. Живые системы.  (Общая экология)(1-90) (1).xlsx") -->
 
+<!-- names(test_lecture_1) <- c("St_Mail", "Score_lecture_1") -->
 
-credits <- merge(credits, test_lecture_1, all.x = TRUE)
+<!-- # test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ] -->
 
-# credits[credits$St_Mail == "st092164@student.spbu.ru", ]
 
-add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1)
+<!-- credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
 
-credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE)
+<!-- # credits[credits$St_Mail == "st092164@student.spbu.ru", ] -->
 
+<!-- add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1) -->
 
+<!-- credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE) -->
 
-#Тест по Лекции 2
-test_lecture_2 <- read_xlsx("data/Аутэкология. (Общая экология)(1-87).xlsx")
-test_lecture_2 <- test_lecture_2 %>% select(1,2)
-names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
 
-credits <- merge(credits, test_lecture_2, all.x = TRUE)
 
+<!-- #Тест по Лекции 2 -->
+<!-- test_lecture_2 <- read_xlsx("data/Аутэкология. (Общая экология)(1-87).xlsx") -->
+<!-- test_lecture_2 <- test_lecture_2 %>% select(1,2) -->
+<!-- names(test_lecture_2) <- c("St_Mail", "Score_lecture_2") -->
 
-#Тест по Лекции 3
-test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология)(1-85).xlsx")
-test_lecture_3 <- test_lecture_3 %>% select(1,2)
-names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
+<!-- credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
 
-credits <- merge(credits, test_lecture_3, all.x = TRUE)
 
-credits$Addition_2 <- 1
+<!-- #Тест по Лекции 3 -->
+<!-- test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология)(1-85).xlsx") -->
+<!-- test_lecture_3 <- test_lecture_3 %>% select(1,2) -->
+<!-- names(test_lecture_3) <- c("St_Mail", "Score_lecture_3") -->
 
+<!-- credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
 
-#Тест по Лекции 4, 5, 6
-test_lecture_4 <- read_xlsx("data/Динамика популяции. Взаимоотношения. (Общая экология)(1-82).xlsx")
-test_lecture_4 <- test_lecture_4 %>% select(1,2)
-names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
+<!-- credits$Addition_2 <- 1 -->
 
-credits <- merge(credits, test_lecture_4, all.x = TRUE)
 
-credits$Addition_3 <- 6
+<!-- #Тест по Лекции 4, 5, 6 -->
+<!-- test_lecture_4 <- read_xlsx("data/Динамика популяции. Взаимоотношения. (Общая экология)(1-82).xlsx") -->
+<!-- test_lecture_4 <- test_lecture_4 %>% select(1,2) -->
+<!-- names(test_lecture_4) <- c("St_Mail", "Score_lecture_4") -->
 
+<!-- credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
 
+<!-- credits$Addition_3 <- 6 -->
 
 
 
-#Тест по Лекции 7, 8
-test_lecture_5 <- read_xlsx("data/Конкуренция. Трофические связи (Общая экология)(1-79).xlsx")
-test_lecture_5 <- test_lecture_5 %>% select(1,2)
-names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
 
-credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
-# credits$Addition_3 <- 6
+<!-- #Тест по Лекции 7, 8 -->
+<!-- test_lecture_5 <- read_xlsx("data/Конкуренция. Трофические связи (Общая экология)(1-79).xlsx") -->
+<!-- test_lecture_5 <- test_lecture_5 %>% select(1,2) -->
+<!-- names(test_lecture_5) <- c("St_Mail", "Score_lecture_5") -->
 
+<!-- credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
 
+<!-- # credits$Addition_3 <- 6 -->
 
 
-#Тест по Лекции 9, 10
 
-test_lecture_6 <- read_xlsx("data/Тест по материалам лекций № 9 (симбиозы) и № 10 (структура сообщества) (Общая экология)(1-80).xlsx")
-test_lecture_6 <- test_lecture_6 %>% select(1,2)
-names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
 
-test_lecture_6$Addition_4 <- 1 
-test_lecture_6$Addition_5 <- NA
-test_lecture_6$Addition_5[test_lecture_6$St_Mail == "st075764@student.spbu.ru"] <- 2
-credits <- merge(credits, test_lecture_6, all.x = TRUE)
+<!-- #Тест по Лекции 9, 10 -->
 
+<!-- test_lecture_6 <- read_xlsx("data/Тест по материалам лекций № 9 (симбиозы) и № 10 (структура сообщества) (Общая экология)(1-80).xlsx") -->
+<!-- test_lecture_6 <- test_lecture_6 %>% select(1,2) -->
+<!-- names(test_lecture_6) <- c("St_Mail", "Score_lecture_6") -->
 
+<!-- test_lecture_6$Addition_4 <- 1  -->
+<!-- test_lecture_6$Addition_5 <- NA -->
+<!-- test_lecture_6$Addition_5[test_lecture_6$St_Mail == "st075764@student.spbu.ru"] <- 2 -->
+<!-- credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
 
 
-#Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 9 + 14 + 15 + 9
 
-credits_print <- credits[, -1]
+<!-- #Вывод общей таблицы с баллами -->
 
-credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE) 
+<!-- credits_sum <- 10 + 9 + 14 + 15 + 9 -->
 
-credits_print$Credit_Sum <- credits_sum 
+<!-- credits_print <- credits[, -1] -->
 
-credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum 
+<!-- credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE)  -->
 
-credits_print$Exam <- round(credits_print$Exam, 1)*2 #умножаем на два, так как высвободился 1% от СР3
+<!-- credits_print$Credit_Sum <- credits_sum  -->
 
+<!-- credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum  -->
 
-```
+<!-- credits_print$Exam <- round(credits_print$Exam, 1)*2 #умножаем на два, так как высвободился 1% от СР3 -->
 
-**Состояние индивидуального счета студентов**  
 
-```{r, echo=F}
+<!-- ``` -->
 
-options(knitr.kable.NA = '-')
-kable(credits_print)
+<!-- **Состояние индивидуального счета студентов**   -->
 
-```
+<!-- ```{r, echo=F} -->
 
+<!-- options(knitr.kable.NA = '-') -->
+<!-- kable(credits_print) -->
 
+<!-- ``` -->
 
- 
 
 
 
 
-<!-- **Внимание**    -->
-<!-- В графе *"Proportion_of_final"* Публикуется текущее количество набранных баллов, которое войдет в финальную оценку. Однако, эта величина будет изменяться, так как общее количество баллов, которое приводится в графе *"Credit_Sum"*, тоже будет изменяться по мере открытия новых заданий.  -->
 
-Следите за текущим счетом и если что-то не так, то пишите.
 
 
-<br>
-<br>
+<!-- <!-- **Внимание**    --> -->
+<!-- <!-- В графе *"Proportion_of_final"* Публикуется текущее количество набранных баллов, которое войдет в финальную оценку. Однако, эта величина будет изменяться, так как общее количество баллов, которое приводится в графе *"Credit_Sum"*, тоже будет изменяться по мере открытия новых заданий.  --> -->
 
-# **Анализ отчетов по самостоятельной работе № 1**
+<!-- Следите за текущим счетом и если что-то не так, то пишите. -->
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- <br> -->
+<!-- <br> -->
 
-hw1 <- read.csv("data/Самостоятельная работа №1 Основные вопросы.csv", header = T)
-hw1 <- hw1[1:2]
-names(hw1)[2] <- "Login"
+<!-- # **Анализ отчетов по самостоятельной работе № 1** -->
 
-hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score))
 
-add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T)
-names(add_hw1) <- c("Login", "add_score")
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score))
+<!-- hw1 <- read.csv("data/Самостоятельная работа №1 Основные вопросы.csv", header = T) -->
+<!-- hw1 <- hw1[1:2] -->
+<!-- names(hw1)[2] <- "Login" -->
 
-# hw1[!(hw1$Login %in% add_hw1$Login), ]
+<!-- hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score)) -->
 
+<!-- add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
+<!-- names(add_hw1) <- c("Login", "add_score") -->
 
-hw1_score <- class %>% select(Login, Group)
+<!-- add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
 
-hw1_score <- merge(hw1_score, hw1, all.x = T)
+<!-- # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
 
-hw1_score <- merge(hw1_score, add_hw1, all.x = T)
 
-hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T)
+<!-- hw1_score <- class %>% select(Login, Group) -->
 
-hw1_score$Total <- hw1_score$Sum/30
+<!-- hw1_score <- merge(hw1_score, hw1, all.x = T) -->
 
-hw1_score$Exam <- round(hw1_score$Total * 1, 1)
+<!-- hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
 
-hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
+<!-- hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
 
-kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки"))
+<!-- hw1_score$Total <- hw1_score$Sum/30 -->
 
-```
+<!-- hw1_score$Exam <- round(hw1_score$Total * 1, 1) -->
 
-<br>
-<br>
+<!-- hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
 
+<!-- kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
 
-# **Анализ отчетов по самостоятельной работе № 2**
+<!-- ``` -->
 
+<!-- <br> -->
+<!-- <br> -->
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- # **Анализ отчетов по самостоятельной работе № 2** -->
 
-hw2 <- read_excel("data/Репродукция и жизненные циклы организмов (Основные вопросы).xlsx")
 
 
-add_hw2 <- read_excel("data/Репродукция и жизненные циклы организмов (Дополнительный вопрос)_оценено_2.xlsx")
-add_hw2 <-  add_hw2 %>% select(-Timestamp)
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-names(add_hw2) <- c("Login", "add_score_2", "add_score_3")
+<!-- hw2 <- read_excel("data/Репродукция и жизненные циклы организмов (Основные вопросы).xlsx") -->
 
 
-hw2_score <- merge(hw2, add_hw2, all.x = T)
+<!-- add_hw2 <- read_excel("data/Репродукция и жизненные циклы организмов (Дополнительный вопрос)_оценено_2.xlsx") -->
+<!-- add_hw2 <-  add_hw2 %>% select(-Timestamp) -->
 
-hw2_score <- hw2_score %>% group_by(Login) %>% summarise(Score = max(Score), Add_1 = max(Add_1), add_score_2 = max(add_score_2), add_score_3 = max(add_score_3) )
+<!-- names(add_hw2) <- c("Login", "add_score_2", "add_score_3") -->
 
-hw2_score$Sum <- hw2_score %>% select(Score, Add_1, add_score_2, add_score_3) %>% rowSums(na.rm = T)
 
-hw2_score$Total <- hw2_score$Sum / 15 
+<!-- hw2_score <- merge(hw2, add_hw2, all.x = T) -->
 
+<!-- hw2_score <- hw2_score %>% group_by(Login) %>% summarise(Score = max(Score), Add_1 = max(Add_1), add_score_2 = max(add_score_2), add_score_3 = max(add_score_3) ) -->
 
-hw2_score$Exam <- round(hw2_score$Total, 1)  
-  
-  
+<!-- hw2_score$Sum <- hw2_score %>% select(Score, Add_1, add_score_2, add_score_3) %>% rowSums(na.rm = T) -->
 
-hw2_score_print <- hw2_score 
+<!-- hw2_score$Total <- hw2_score$Sum / 15  -->
 
-kable(hw2_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Доп. вопр. 2", "Баллы за придуманные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки"))
 
+<!-- hw2_score$Exam <- round(hw2_score$Total, 1)   -->
 
-```
 
 
-**Господа!** Все большие молодцы, но не могу удержаться от замечания.
+<!-- hw2_score_print <- hw2_score  -->
 
-В научном аду за **плагиат**  в костер кладут ОЧЕНЬ большое бревно! 
+<!-- kable(hw2_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Доп. вопр. 2", "Баллы за придуманные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки")) -->
 
-К сожалению, при проверке СР-2 было обнаружено несколько практически идентичных ответов за дополнительный вопрос №2. Мы поставили одинаковые оценки за этот вопрос всем, кто прислал идентичные ответы, поскольку мы не хотели выяснять, кто истинный автор. **НО, пожалуйста, больше так не делайте!** 
 
-<br>
-<br>
+<!-- ``` -->
 
 
-# **Анализ отчетов по самостоятельной работе № 3**
+<!-- <!-- **Господа!** Все большие молодцы, но не могу удержаться от замечания. --> -->
 
+<!-- <!-- В научном аду за **плагиат**  в костер кладут ОЧЕНЬ большое бревно!  --> -->
 
+<!-- <!-- К сожалению, при проверке СР-2 было обнаружено несколько практически идентичных ответов за дополнительный вопрос №2. Мы поставили одинаковые оценки за этот вопрос всем, кто прислал идентичные ответы, поскольку мы не хотели выяснять, кто истинный автор. **НО, пожалуйста, больше так не делайте!**  --> -->
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- <br> -->
+<!-- <br> -->
 
-hw3 <- read_excel("data/Самостоятельная работа № 3.xlsx", na = "NA")
 
+<!-- # **Анализ отчетов по самостоятельной работе № 3** -->
 
-names(hw3) <- c("Score", "Login")
 
 
-hw3_score <- hw3 %>% group_by(Login) %>% summarise(Score = max(Score))
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-hw3_score$Sum <- hw3_score %>% select(Score) %>% rowSums(na.rm = T)
+<!-- hw3 <- read_excel("data/Самостоятельная работа № 3.xlsx", na = "NA") -->
 
-hw3_score$Total <- hw3_score$Sum / 40 
 
+<!-- names(hw3) <- c("Score", "Login") -->
 
-hw3_score$Exam <- round(hw3_score$Total, 1)  
-  
-hw3_score <- hw3_score[!is.na(hw3_score$Login), ]
-  
 
-hw3_score_print <- merge(class[, "Login"], hw3_score, all.x = TRUE ) 
+<!-- hw3_score <- hw3 %>% group_by(Login) %>% summarise(Score = max(Score)) -->
 
-kable(hw3_score_print, col.names = c("Login", "Основные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки"))
+<!-- hw3_score$Sum <- hw3_score %>% select(Score) %>% rowSums(na.rm = T) -->
 
+<!-- hw3_score$Total <- hw3_score$Sum / 40  -->
 
-```
 
+<!-- hw3_score$Exam <- round(hw3_score$Total, 1)   -->
 
-**Господа!** Приношу извинения за задержку с публикацией оценок. Напоминаю, что баллы за эту работу дополнительные (те, кто работу не сделал, ничего не потерял... но и не приобрел:). Поскольку в результате высвободился 1%, он уходит в оценку за работы по тестам по материалам лекций (то есть вес этой оценки удваивается).
+<!-- hw3_score <- hw3_score[!is.na(hw3_score$Login), ] -->
 
 
+<!-- hw3_score_print <- merge(class[, "Login"], hw3_score, all.x = TRUE )  -->
 
-<br>
-<br>
+<!-- kable(hw3_score_print, col.names = c("Login", "Основные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки")) -->
 
 
-## **Анализ контрольной работы № 1**
+<!-- ``` -->
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-cont_reg <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx")
+<!-- <!-- **Господа!** Приношу извинения за задержку с публикацией оценок. Напоминаю, что баллы за эту работу дополнительные (те, кто работу не сделал, ничего не потерял... но и не приобрел:). Поскольку в результате высвободился 1%, он уходит в оценку за работы по тестам по материалам лекций (то есть вес этой оценки удваивается). --> -->
 
-cont <- read_excel("data/Контрольная работа №1 (Responses).xlsx")
 
-# cont_reg[!(cont_reg$Login %in% cont$Login), ]
 
-# table(cont_reg$Login)
+<!-- <br> -->
+<!-- <br> -->
 
 
-cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+<!-- ## **Анализ контрольной работы № 1** -->
 
-cont1$Add <- 1
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-cont1$Total <- (cont1$Score + cont1$Add)/18
+<!-- cont_reg <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx") -->
 
-cont1$Exam <- round(cont1$Total * 2.5, 1)  
+<!-- cont <- read_excel("data/Контрольная работа №1 (Responses).xlsx") -->
 
-cont1_print <- class %>% select(Login)
+<!-- # cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
 
-cont1_print <- merge(cont1_print, cont1, all.x = T)
+<!-- # table(cont_reg$Login) -->
 
-kable(cont1_print)
 
-```
+<!-- cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
 
+<!-- cont1$Add <- 1 -->
 
+<!-- cont1$Total <- (cont1$Score + cont1$Add)/18 -->
 
+<!-- cont1$Exam <- round(cont1$Total * 2.5, 1)   -->
 
+<!-- cont1_print <- class %>% select(Login) -->
 
-## **Анализ контрольной работы № 2**
+<!-- cont1_print <- merge(cont1_print, cont1, all.x = T) -->
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
-# 
-# cont_reg2 <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx")
+<!-- kable(cont1_print) -->
 
-cont <- read_excel("data/Контрольная работа №2 (Responses).xlsx")
+<!-- ``` -->
 
-# cont_reg[!(cont_reg$Login %in% cont$Login), ]
 
-# table(cont_reg$Login)
 
 
-cont2 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
 
+<!-- ## **Анализ контрольной работы № 2** -->
 
-# cont2$Add <- 0
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- #  -->
+<!-- # cont_reg2 <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx") -->
 
-cont2$Total <- (cont2$Score)/18
+<!-- cont <- read_excel("data/Контрольная работа №2 (Responses).xlsx") -->
 
-cont2$Exam <- round(cont2$Total * 2.5, 1)  
+<!-- # cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
 
-cont2_print <- class %>% select(Login)
+<!-- # table(cont_reg$Login) -->
 
-cont2_print <- merge(cont2_print, cont2, all.x = T)
 
-kable(cont2_print)
+<!-- cont2 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
 
-```
 
+<!-- # cont2$Add <- 0 -->
 
+<!-- cont2$Total <- (cont2$Score)/18 -->
 
-## **Частотное распределение результатов**
+<!-- cont2$Exam <- round(cont2$Total * 2.5, 1)   -->
 
+<!-- cont2_print <- class %>% select(Login) -->
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
-library(ggplot2)
-library(patchwork)
+<!-- cont2_print <- merge(cont2_print, cont2, all.x = T) -->
 
-Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")+xlim(0, 1)
+<!-- kable(cont2_print) -->
 
-Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №1")+xlim(0, 1)
+<!-- ``` -->
 
 
-Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")+xlim(0, 2.5)
 
-Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")+xlim(0, 1)
+<!-- ## **Частотное распределение результатов** -->
 
-Pl_hw3 <- ggplot(hw3_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №3")+xlim(0, 1)
 
-Pl_cw2 <- ggplot(cont2, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №2") + xlim(0, 2.5)
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- library(ggplot2) -->
+<!-- library(patchwork) -->
 
-(Pl_lect + Pl_hw1 + Pl_hw2 )/(Pl_hw3 + Pl_cw1 + Pl_cw2 )
+<!-- Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")+xlim(0, 1) -->
 
-```
+<!-- Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №1")+xlim(0, 1) -->
 
 
-## **Результаты семинаров**
+<!-- Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")+xlim(0, 2.5) -->
 
-**Внимание!**
+<!-- Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")+xlim(0, 1) -->
 
-```{r}
-seminars <- read.csv("data/Семинары по общей экологии - Sheet1.csv", header = TRUE)
-Groups <- seminars %>% select(c(Group))
+<!-- Pl_hw3 <- ggplot(hw3_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №3")+xlim(0, 1) -->
 
-seminars <- seminars %>% select(-c(Family, Name, Group))
+<!-- Pl_cw2 <- ggplot(cont2, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №2") + xlim(0, 2.5) -->
 
-seminars$Sum <- rowSums(seminars[, 2:9], na.rm = T)
+<!-- (Pl_lect + Pl_hw1 + Pl_hw2 )/(Pl_hw3 + Pl_cw1 + Pl_cw2 ) -->
 
+<!-- ``` -->
 
-seminars$Exam <- seminars$Sum * 3
 
-Groups$Exam <-seminars$Exam 
-```
+<!-- ## **Результаты семинаров** -->
 
+<!-- **Внимание!** -->
 
-```{r}
-kable(seminars)
-```
+<!-- ```{r} -->
+<!-- seminars <- read.csv("data/Семинары по общей экологии - Sheet1.csv", header = TRUE) -->
+<!-- Groups <- seminars %>% select(c(Group)) -->
 
-### **"Групповой зачет"**
+<!-- seminars <- seminars %>% select(-c(Family, Name, Group)) -->
 
-Этот график иллюстрирует общую активность группы (ну или строгость преподавателя...)
+<!-- seminars$Sum <- rowSums(seminars[, 2:9], na.rm = T) -->
 
-```{r}
-ggplot(Groups, aes(x = factor(Group), y = Exam)) + geom_violin() + labs(x = "Группа") 
-```
 
-# **Финальный счет**
+<!-- seminars$Exam <- seminars$Sum * 3 -->
 
-```{r, message=FALSE}
+<!-- Groups$Exam <-seminars$Exam  -->
+<!-- ``` -->
 
-tests <- credits_print %>% select(Login, Exam) 
 
-hw1 <- hw1_score_print %>% select(Login, Exam) 
+<!-- ```{r} -->
+<!-- kable(seminars) -->
+<!-- ``` -->
 
-hw2 <- hw2_score_print %>% select(Login, Exam) 
+<!-- ### **"Групповой зачет"** -->
 
-hw3 <- hw3_score_print %>% select(Login, Exam) 
+<!-- Этот график иллюстрирует общую активность группы (ну или строгость преподавателя...) -->
 
-cont1 <- cont1_print %>%  select(Login, Exam)
+<!-- ```{r} -->
+<!-- ggplot(Groups, aes(x = factor(Group), y = Exam)) + geom_violin() + labs(x = "Группа")  -->
+<!-- ``` -->
 
-cont2 <- cont2_print %>%  select(Login, Exam)
+<!-- # **Финальный счет** -->
 
-seminars <- seminars %>%  select(Login, Exam)
+<!-- ```{r, message=FALSE} -->
 
+<!-- tests <- credits_print %>% select(Login, Exam)  -->
 
-Total <- rbind(tests, hw1, hw2, hw3, cont1, cont2, seminars)
+<!-- hw1 <- hw1_score_print %>% select(Login, Exam)  -->
 
-Result <-Total %>% group_by(Login) %>% summarize(Total = sum(Exam, na.rm = TRUE))
+<!-- hw2 <- hw2_score_print %>% select(Login, Exam)  -->
 
-kable(Result)
-```
+<!-- hw3 <- hw3_score_print %>% select(Login, Exam)  -->
+
+<!-- cont1 <- cont1_print %>%  select(Login, Exam) -->
+
+<!-- cont2 <- cont2_print %>%  select(Login, Exam) -->
+
+<!-- seminars <- seminars %>%  select(Login, Exam) -->
+
+
+<!-- Total <- rbind(tests, hw1, hw2, hw3, cont1, cont2, seminars) -->
+
+<!-- Result <-Total %>% group_by(Login) %>% summarize(Total = sum(Exam, na.rm = TRUE)) -->
+
+<!-- kable(Result) -->
+<!-- ``` -->
 

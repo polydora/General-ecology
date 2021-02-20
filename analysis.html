@@ -367,78 +367,256 @@ div.tocify {
 
 
 <p>Здесь будут выкладываться текущие результаты ваших работ.</p>
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(dplyr) -->
-<!-- library(readxl) -->
-<!-- class <- read_xlsx("data/Classess_2020.xlsx", sheet = "Sheet1", col_names = T) -->
-<!-- class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class[, 1:7] -->
-<!-- opts_chunk$set(echo = FALSE) -->
-<!-- # class[class$Login == "st092164", ] -->
-<!-- # class[is.na(class$St_Mail),] -->
-<!-- ``` -->
-<!-- # **Анализ тестов по материалам лекций** -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- credits <- class %>% select(Login, St_Mail) -->
-<!-- # credits[credits$Login == "st092164", ] -->
-<!-- # credits[credits$Login == "st092135", ] -->
-<!-- #Тест по Лекции 1 -->
-<!-- # test_lecture_1 <- read.csv("data/Оценки класса Общая экология — 30.09.2020, 8-08.csv") -->
-<!-- # test_lecture_1 <- test_lecture_1 %>% select(3:4) -->
-<!-- test_lecture_1 <- read_xlsx("data/Суть экологии. Теория систем. Живые системы.  (Общая экология)(1-90) (1).xlsx") -->
-<!-- names(test_lecture_1) <- c("St_Mail", "Score_lecture_1") -->
-<!-- # test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ] -->
-<!-- credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
-<!-- # credits[credits$St_Mail == "st092164@student.spbu.ru", ] -->
-<!-- add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1) -->
-<!-- credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE) -->
-<!-- #Тест по Лекции 2 -->
-<!-- test_lecture_2 <- read_xlsx("data/Аутэкология. (Общая экология)(1-87).xlsx") -->
-<!-- test_lecture_2 <- test_lecture_2 %>% select(1,2) -->
-<!-- names(test_lecture_2) <- c("St_Mail", "Score_lecture_2") -->
-<!-- credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
-<!-- #Тест по Лекции 3 -->
-<!-- test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология)(1-85).xlsx") -->
-<!-- test_lecture_3 <- test_lecture_3 %>% select(1,2) -->
-<!-- names(test_lecture_3) <- c("St_Mail", "Score_lecture_3") -->
-<!-- credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
-<!-- credits$Addition_2 <- 1 -->
-<!-- #Тест по Лекции 4, 5, 6 -->
-<!-- test_lecture_4 <- read_xlsx("data/Динамика популяции. Взаимоотношения. (Общая экология)(1-82).xlsx") -->
-<!-- test_lecture_4 <- test_lecture_4 %>% select(1,2) -->
-<!-- names(test_lecture_4) <- c("St_Mail", "Score_lecture_4") -->
-<!-- credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
-<!-- credits$Addition_3 <- 6 -->
-<!-- #Тест по Лекции 7, 8 -->
-<!-- test_lecture_5 <- read_xlsx("data/Конкуренция. Трофические связи (Общая экология)(1-79).xlsx") -->
-<!-- test_lecture_5 <- test_lecture_5 %>% select(1,2) -->
-<!-- names(test_lecture_5) <- c("St_Mail", "Score_lecture_5") -->
-<!-- credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
-<!-- # credits$Addition_3 <- 6 -->
-<!-- #Тест по Лекции 9, 10 -->
-<!-- test_lecture_6 <- read_xlsx("data/Тест по материалам лекций № 9 (симбиозы) и № 10 (структура сообщества) (Общая экология)(1-80).xlsx") -->
-<!-- test_lecture_6 <- test_lecture_6 %>% select(1,2) -->
-<!-- names(test_lecture_6) <- c("St_Mail", "Score_lecture_6") -->
-<!-- test_lecture_6$Addition_4 <- 1  -->
-<!-- test_lecture_6$Addition_5 <- NA -->
-<!-- test_lecture_6$Addition_5[test_lecture_6$St_Mail == "st075764@student.spbu.ru"] <- 2 -->
-<!-- credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
-<!-- #Вывод общей таблицы с баллами -->
-<!-- credits_sum <- 10 + 9 + 14 + 15 + 9 -->
-<!-- credits_print <- credits[, -1] -->
-<!-- credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE)  -->
-<!-- credits_print$Credit_Sum <- credits_sum  -->
-<!-- credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum  -->
-<!-- credits_print$Exam <- round(credits_print$Exam, 1)*2 #умножаем на два, так как высвободился 1% от СР3 -->
-<!-- ``` -->
-<!-- **Состояние индивидуального счета студентов**   -->
-<!-- ```{r, echo=F} -->
-<!-- options(knitr.kable.NA = '-') -->
-<!-- kable(credits_print) -->
-<!-- ``` -->
+<div id="анализ-тестов-по-материалам-лекций" class="section level1">
+<h1><strong>Анализ тестов по материалам лекций</strong></h1>
+<p><strong>Состояние индивидуального счета студентов</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Score_lecture_1</th>
+<th align="right">Sum</th>
+<th align="right">Credit_Sum</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st069091</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="left">st087176</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="odd">
+<td align="left">st087997</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">10</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="even">
+<td align="left">st088480</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right">0.125</td>
+</tr>
+<tr class="odd">
+<td align="left">st088957</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">0.250</td>
+</tr>
+<tr class="even">
+<td align="left">st088974</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="odd">
+<td align="left">st089295</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">10</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="even">
+<td align="left">st089297</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="odd">
+<td align="left">st089440</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">0.250</td>
+</tr>
+<tr class="even">
+<td align="left">st089628</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">0.250</td>
+</tr>
+<tr class="odd">
+<td align="left">st089882</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">10</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="even">
+<td align="left">st089894</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.875</td>
+</tr>
+<tr class="odd">
+<td align="left">st089942</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="even">
+<td align="left">st089959</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="left">st089989</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="even">
+<td align="left">st090193</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">0.250</td>
+</tr>
+<tr class="odd">
+<td align="left">st090302</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="even">
+<td align="left">st090423</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="odd">
+<td align="left">st090508</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="even">
+<td align="left">st090543</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="odd">
+<td align="left">st090644</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">10</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="even">
+<td align="left">st090727</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="odd">
+<td align="left">st090784</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="left">st090843</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="odd">
+<td align="left">st090927</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="even">
+<td align="left">st091046</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="odd">
+<td align="left">st091355</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="even">
+<td align="left">st091651</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">0.250</td>
+</tr>
+<tr class="odd">
+<td align="left">st091667</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.750</td>
+</tr>
+<tr class="even">
+<td align="left">st091690</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="left">st091701</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.625</td>
+</tr>
+<tr class="even">
+<td align="left">st091710</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="left">st091712</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">10</td>
+<td align="right">0.250</td>
+</tr>
+</tbody>
+</table>
 <!-- <!-- **Внимание**    -->
-<p>–&gt; <!-- <!-- В графе *"Proportion_of_final"* Публикуется текущее количество набранных баллов, которое войдет в финальную оценку. Однако, эта величина будет изменяться, так как общее количество баллов, которое приводится в графе *"Credit_Sum"*, тоже будет изменяться по мере открытия новых заданий.  --> –&gt;</p>
+<!-- <!-- В графе *"Proportion_of_final"* Публикуется текущее количество набранных баллов, которое войдет в финальную оценку. Однако, эта величина будет изменяться, так как общее количество баллов, которое приводится в графе *"Credit_Sum"*, тоже будет изменяться по мере открытия новых заданий.  -->
+<p>–&gt;</p>
 <!-- Следите за текущим счетом и если что-то не так, то пишите. -->
 <!-- <br> -->
 <!-- <br> -->
@@ -477,10 +655,8 @@ div.tocify {
 <!-- hw2_score_print <- hw2_score  -->
 <!-- kable(hw2_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Доп. вопр. 2", "Баллы за придуманные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки")) -->
 <!-- ``` -->
-<!-- <!-- **Господа!** Все большие молодцы, но не могу удержаться от замечания. -->
-<p>–&gt;</p>
-<!-- <!-- В научном аду за **плагиат**  в костер кладут ОЧЕНЬ большое бревно!  -->
-<p>–&gt;</p>
+<!-- **Господа!** Все большие молодцы, но не могу удержаться от замечания. -->
+<!-- В научном аду за **плагиат**  в костер кладут ОЧЕНЬ большое бревно!  -->
 <!-- <!-- К сожалению, при проверке СР-2 было обнаружено несколько практически идентичных ответов за дополнительный вопрос №2. Мы поставили одинаковые оценки за этот вопрос всем, кто прислал идентичные ответы, поскольку мы не хотели выяснять, кто истинный автор. **НО, пожалуйста, больше так не делайте!**  -->
 <p>–&gt;</p>
 <!-- <br> -->
@@ -497,8 +673,7 @@ div.tocify {
 <!-- hw3_score_print <- merge(class[, "Login"], hw3_score, all.x = TRUE )  -->
 <!-- kable(hw3_score_print, col.names = c("Login", "Основные вопросы", "Сумма", "Доля от максимума", "% от экзаменационной оценки")) -->
 <!-- ``` -->
-<!-- <!-- **Господа!** Приношу извинения за задержку с публикацией оценок. Напоминаю, что баллы за эту работу дополнительные (те, кто работу не сделал, ничего не потерял... но и не приобрел:). Поскольку в результате высвободился 1%, он уходит в оценку за работы по тестам по материалам лекций (то есть вес этой оценки удваивается). -->
-<p>–&gt;</p>
+<!-- **Господа!** Приношу извинения за задержку с публикацией оценок. Напоминаю, что баллы за эту работу дополнительные (те, кто работу не сделал, ничего не потерял... но и не приобрел:). Поскольку в результате высвободился 1%, он уходит в оценку за работы по тестам по материалам лекций (то есть вес этой оценки удваивается). -->
 <!-- <br> -->
 <!-- <br> -->
 <!-- ## **Анализ контрольной работы № 1** -->
@@ -573,6 +748,7 @@ div.tocify {
 <!-- Result <-Total %>% group_by(Login) %>% summarize(Total = sum(Exam, na.rm = TRUE)) -->
 <!-- kable(Result) -->
 <!-- ``` -->
+</div>
 
 
 

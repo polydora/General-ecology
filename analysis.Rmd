@@ -298,7 +298,7 @@ kable(credits_print)
 
 cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 46 *10)
+cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *10)
 
 correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 

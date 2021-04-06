@@ -120,7 +120,7 @@ credits <- merge(credits, test_lecture_7, all.x = TRUE)
 
 #Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 10 + 10 + 10 + 10 + 10 + 9
+credits_sum <- 10 + 10 + 10 + 10 + 10 + 10 + 8
 
 credits_print <- credits %>% select(-St_Mail) 
 

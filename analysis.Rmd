@@ -107,13 +107,20 @@ credits <- merge(credits, test_lecture_6, all.x = TRUE)
 
 
 
+#Тест по Лекции 7
+test_lecture_7 <- read_xlsx("data/Трофические связи (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx")
+test_lecture_7 <- test_lecture_7 %>% select(1,2)
+names(test_lecture_7) <- c("St_Mail", "Score_lecture_7")
+
+credits <- merge(credits, test_lecture_7, all.x = TRUE)
+
 
 
 
 
 #Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 10 + 10 + 10 + 10 + 10
+credits_sum <- 10 + 10 + 10 + 10 + 10 + 10 + 8
 
 credits_print <- credits %>% select(-St_Mail) 
 
@@ -123,7 +130,7 @@ credits_print$Credit_Sum <- credits_sum
 
 credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum
 
-credits_print$Exam <- round(credits_print$Exam, 1)*(10/8) #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
+credits_print$Exam <- round(credits_print$Exam, 1) #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
 
 
 ```

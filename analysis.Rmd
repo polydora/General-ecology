@@ -130,7 +130,7 @@ credits_print$Credit_Sum <- credits_sum
 
 credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum
 
-credits_print$Exam <- round(credits_print$Exam, 1) #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
+credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
 
 
 ```
@@ -318,13 +318,22 @@ kable(cont1_print)
 
 ```
 
-**Коллеги!** В принципе, контрольную вы написали хорошо. НО! Я при постановке оценки решил, на первый раз, не учитывать штрафы. Посмотрите внимательно на свой результат. И пересчитайте свою оценку с учетом штрафа. А главное, посмотрите на чудесный график. Корреляция между временем, затарченным на тест, и количеством ошибок вполне статистически значимая (R = `r round(correl$estimate, 2)`, p = `r round(correl$p.value, 4)`). Не торопитесь! 
 
-```{r warning=F, message=F}
-qplot(y =cont1$Incorrect, x= cont1$Time) + geom_smooth(method = "lm") + labs(x = "Время выполнения теста (минуты)", y = "Количество ошибок")
+
+## **Семинар-конференция № 1**
+
+
+```{r}
+
+sem_1 <- read_excel("data/Conference_seminar_1.xlsx")
+
+sem_1_print <- merge(class, sem_1) %>% select(-St_Mail) %>% mutate(Exam = Presentation + Presence + Speech + Bonus)
+
 ```
 
-
+```{r}
+kable(sem_1_print)
+```
 
 
 <!-- ## **Анализ контрольной работы № 2** -->

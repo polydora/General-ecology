@@ -336,6 +336,26 @@ kable(sem_1_print)
 ```
 
 
+
+
+## **Семинар-конференция № 2**
+
+
+```{r}
+
+sem_2 <- read_excel("data/Conference_seminar_2.xlsx")
+
+sem_2_print <- merge(class, sem_2) %>% select(-St_Mail) %>% mutate(Exam = Presentation + Presence + Speech + Bonus)
+
+```
+
+```{r}
+kable(sem_2_print)
+```
+
+
+
+
 <!-- ## **Анализ контрольной работы № 2** -->
 
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->

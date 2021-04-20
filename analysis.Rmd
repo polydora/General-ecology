@@ -293,7 +293,7 @@ kable(credits_print)
 
 cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *10)
+cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *5)
 
 correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 
@@ -333,6 +333,8 @@ sem_1_print <- merge(class, sem_1) %>% select(-St_Mail) %>% mutate(Exam = Presen
 
 ```{r}
 kable(sem_1_print)
+
+
 ```
 
 
@@ -351,8 +353,76 @@ sem_2_print <- merge(class, sem_2) %>% select(-St_Mail) %>% mutate(Exam = Presen
 
 ```{r}
 kable(sem_2_print)
+
 ```
 
+
+
+## **Анализ контрольной работы № 2**
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+cont2 <- read_excel("data/Control_work_2_biotech.xlsx")
+
+cont2_print <- merge(class, cont2 %>% select(-Name) ) %>% select(-St_Mail) %>% mutate(Exam = round((Correct - Incorrect) / 54 *5, 3))
+
+#  cont_reg[!(cont_reg$Login %in% cont$Login), ]
+
+# table(cont_reg$Login)
+# 
+# 
+# cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+# 
+# cont1$Add <- 1
+# 
+# cont1$Total <- (cont1$Score + cont1$Add)/18
+# 
+# cont1$Exam <- round(cont1$Total * 2.5, 1)
+# 
+# cont1_print <- class %>% select(Login)
+# 
+# cont1_print <- merge(cont1_print, cont1, all.x = T)
+
+kable(cont2_print)
+
+```
+
+
+
+## **Итоговый счет**
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+d1 <- credits_print %>% select(Login, Exam) 
+
+d2 <- cont1_print %>% select(Login, Exam) 
+
+d2$Exam[is.na(d2$Exam)] <- 0
+
+
+d3 <- sem_1_print %>% select(Login, Exam) 
+
+d4 <- sem_2_print %>% select(Login, Exam) 
+
+d5 <- cont2_print %>% select(Login, Exam)
+
+
+Results <- merge(d1, d2, by = "Login") %>% merge(., d3, by = "Login") %>% merge(., d4, by = "Login") %>%  merge(., d5, by = "Login") 
+ 
+ 
+names(Results) <- c("Login", "Lecture_test (max 10)", "Control_1(max 5)", "Seminar_1 (max 5)", "Seminar_2 (max 5)", "Control_2 (max 5)")
+
+
+Results_print <- Results
+
+Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = sum ), 1) 
+
+
+```
+
+```{r}
+kable(Results_print)
+```
 
 
 

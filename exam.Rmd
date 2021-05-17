@@ -190,9 +190,10 @@ kable(terms, col.names = rep("Термины", 3))
 library(readxl)
 library(dplyr)
 
-exam_date <- "22 февраля"
+exam_date <- "17 мая 1"
+# exam_date <- "17 мая 2"
 
-students <- read_excel("data/Exam_2021_schedule.xlsx")
+students <- read_excel("data/Exam_2021_biotech_schedule.xlsx")
 
 group <- students %>% filter(Date == exam_date)
 
@@ -200,15 +201,15 @@ files <- list.files("data/Bilets")
 
 files_sample <- sample(files, nrow(group))
 
-task <- data.frame(Name = paste(group$Familia, group$Name), Link = paste("[Задача](data/Bilets/",files_sample,")", sep = ""))
+task <- data.frame(Name = paste(group$Name), Link = paste("[Задача](data/Bilets/",files_sample,")", sep = ""))
 
 
 ```
 
 
-<!-- ## Вопросы для экзамена -->
+## Вопросы для экзамена
 
-<!-- ```{r, echo=FALSE, message=FALSE} -->
-<!-- kable(task, col.names = c("Ф.И.", "Задача для экзамена")) -->
-<!-- ``` -->
+```{r, echo=FALSE, message=FALSE}
+kable(task, col.names = c("Ф.И.", "Задача для экзамена"))
+```
 

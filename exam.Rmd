@@ -190,8 +190,8 @@ kable(terms, col.names = rep("Термины", 3))
 library(readxl)
 library(dplyr)
 
-exam_date <- "17 мая 1"
-# exam_date <- "17 мая 2"
+# exam_date <- "17 мая 1"
+exam_date <- "17 мая 2"
 
 students <- read_excel("data/Exam_2021_biotech_schedule.xlsx")
 

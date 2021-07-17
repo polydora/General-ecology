@@ -425,6 +425,11 @@ kable(Results_print)
 ```
 
 
+```{r}
+class2 <- read_xlsx("data/Classess_2021_biotech.xlsx", col_names = T)
+
+merge(class2, Results_print) %>% select(Family,Name,Login, Exam) %>% write.csv(.,"before_exam_2021_biotech.csv")
+```
 
 <!-- ## **Анализ контрольной работы № 2** -->
 

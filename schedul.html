@@ -19,40 +19,33 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
-
-
-
 <style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
 
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
@@ -63,10 +56,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -83,40 +72,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -144,7 +106,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -156,7 +118,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -167,10 +129,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -182,7 +157,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -314,7 +288,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -357,7 +331,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -369,93 +343,110 @@ div.tocify {
 <p><strong>Внимание!</strong> В расписании могут быть измененя и уточнения.</p>
 <p>Это рабочая версия расписания даты и последовательность занятий будут уточняться.</p>
 <p>Расписание семинаров у каждой группы будет свое (см. страничку “Семинары”)</p>
-<div id="февраля-суббота" class="section level2">
-<h2>13 февраля Суббота</h2>
-<ul>
-<li>Лекция “Предмет экологии”</li>
-</ul>
-</div>
-<div id="февраля" class="section level2">
-<h2>15-20 февраля</h2>
-<ul>
-<li>Лекция “Аутэкология”</li>
-<li>Лекция “Структура популяций”</li>
-</ul>
-</div>
-<div id="февраля-1" class="section level2">
-<h2>22-27 февраля</h2>
-<ul>
-<li><p>Лекция “Динамика популяций”</p></li>
-<li><p>Лекция “Многообразие взаимоотношений организмов. Трофические связи”</p></li>
-<li><p><strong>Контрольная работа №1.</strong> Темы: Аутэкология, Структура популяций, Динамика популяций.</p></li>
-</ul>
-<p><strong>Внимание!</strong> Точную дату и время проведеиня контрольной работы обсудим на лекции.</p>
-</div>
-<div id="марта" class="section level2">
-<h2>1-6 марта</h2>
-<ul>
-<li><p>Лекция “Конкурентные взаимоотношения”</p></li>
-<li><p>Лекция “Симбиозы”</p></li>
-</ul>
-</div>
-<div id="марта-1" class="section level2">
-<h2>9-13 марта</h2>
-<ul>
-<li><p>Лекция “Структура и динамиа экосистем”</p></li>
-<li><p><strong>Контрольная работа №2.</strong> Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы.</p></li>
-</ul>
-</div>
-<div id="марта-2" class="section level2">
-<h2>15-20 марта</h2>
-<ul>
-<li><p>Семинар 1.<br />
-</p></li>
-<li><p>Семинар 2.</p></li>
-<li><p>Консультация: “Трудные моменты курса” (по согласованию с группой)</p></li>
-</ul>
-<!-- Расписание семинаров у каждой группы будет свое (см. страничку "Семинары") -->
-<!-- ## 21 сентября 2020    Понедельник -->
-<!-- - В.М.Хайтов лекция "Предмет экологии" -->
-<!-- ## 26 сентября 2020    Суббота -->
-<!-- - В.М.Хайтов лекция "Аутэкология" (2 пары) -->
-<!-- ## 03 октябя 2020  Суббота -->
-<!-- - В.М.Хайтов лекция "Демэкология" -->
-<!-- ## 07 октябя 2020  Среда -->
-<!-- - В.М.Хайтов лекция "Динамика популяции" -->
-<!-- - Начинаем самостоятельную работу №1 -->
-<!-- - Будет тест с задачами, решение которых потребует освоения литературных источников.  -->
-<!-- ## 10 октябя 2020  суббота -->
-<!-- - В.М.Хайтов лекция "Взаимоотношения организмов. Часть 1" -->
-<!-- - В.М.Хайтов лекция "Взаимоотношения организмов. Часть 2" -->
+<!-- Версия для биотехнологов -->
+<!-- ## 13 февраля Суббота -->
+<!-- - Лекция "Предмет экологии" -->
+<!-- ## 15-20 февраля -->
+<!-- - Лекция "Аутэкология"  -->
+<!-- - Лекция "Структура популяций"  -->
+<!-- ## 22-27 февраля -->
+<!-- - Лекция "Динамика популяций" -->
+<!-- - Лекция "Многообразие взаимоотношений организмов. Трофические связи" -->
 <!-- - **Контрольная работа №1.** Темы: Аутэкология, Структура популяций, Динамика популяций. -->
 <!-- **Внимание!** Точную дату и время проведеиня контрольной работы обсудим на лекции. -->
-<!-- ## 15 октябя 2020  Среда 23:59  -->
-<!-- - Начинаем самостоятельную работу №2 -->
-<!-- ## 19 октябя 2020  Среда 23:59  -->
-<!-- Срок закрытия теста по самостоятельной работе №1.  -->
-<!-- Ответы на вопросы, которые будут присланы после 23:59 будут приносить лишь 0.5 балла. -->
-<!-- ## 21 октября среда 1 и 2 пары -->
-<!-- - В.М.Хайтов лекция "Трофические связи" -->
-<!-- - В.М.Хайтов лекция "Конкурентные взаимоотношения" -->
-<!-- ## 24 октября (суббота)  -->
-<!-- - **Контрольная работа №1.** -->
-<!-- Тест будет открыт в 0:00 и закрыт в 23:59. На выполнение работы отводится 2 часа с момента открытия  -->
-<!-- ## 26 октябя 2020  Среда 23:59 -->
-<!-- Срок закрытия теста по самостоятельной работе № 2.  -->
-<!-- Ответы на вопросы, которые будут присланы после 23:59 будут приносить лишь 0.5 балла. -->
-<!-- ## 28 октября 2020 Среда -->
-<!-- - В.М.Хайтов лекция "Симбиозы" -->
-<!-- - В.М.Хайтов лекция "Структура сообщества" -->
-<!-- ## 2 ноября 2020 Вторник -->
-<!-- - М.Ю.Тиходеева лекция "Экосистемы" (2 пары) -->
-<!-- ## 7 ноября 2020 Суббота -->
-<!-- - Контрольная работа №2. Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы, Многообразие жизненных циклов, Глобальные круговороты. -->
-<!-- ## 11 ноября 2020 Среда  -->
-<!-- - Заканчиваем самостоятельную работу №3 -->
-<!-- ## 14 ноября 2020 Суббота  -->
-<!-- - Контрольная работа №2 -->
-<!-- ## Конец ноября, по согласованию    -->
-<!-- - В. М. Хайтов Консультация "Трудные моменты курса"      -->
+<!-- ## 1-6 марта  -->
+<!-- - Лекция "Конкурентные взаимоотношения" -->
+<!-- - Лекция "Симбиозы" -->
+<!-- ## 9-13 марта -->
+<!-- - Лекция "Структура и динамиа экосистем" -->
+<!-- - **Контрольная работа №2.** Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы. -->
+<!-- ## 15-20 марта -->
+<!-- - Семинар 1.     -->
+<!-- - Семинар 2. -->
+<!-- - Консультация: "Трудные моменты курса" (по согласованию с группой) -->
+<!-- Версия для биологов -->
+<div id="сентября-2021-суббота" class="section level2">
+<h2>4 сентября 2021 суббота</h2>
+<ul>
+<li>В.М.Хайтов лекция “Вводные замечания к курсу, правила игры”</li>
+<li>В.М.Хайтов лекция “Предмет экологии”</li>
+</ul>
+</div>
+<div id="сентября-2021-суббота-1" class="section level2">
+<h2>11 сентября 2021 Суббота</h2>
+<ul>
+<li>В.М.Хайтов лекция “Аутэкология” (2 пары)</li>
+</ul>
+</div>
+<div id="сентября-2021-суббота-2" class="section level2">
+<h2>18 сентября 2021 Суббота</h2>
+<ul>
+<li><p>В.М.Хайтов лекция “Демэкология”</p></li>
+<li><p>В.М.Хайтов лекция “Динамика популяции”</p></li>
+<li><p>Начинаем самостоятельную работу №1</p></li>
+<li><p>Будет тест с задачами, решение которых потребует освоения литературных источников.</p></li>
+</ul>
+</div>
+<div id="сентября-2021-суббота-3" class="section level2">
+<h2>25 сентября 2021 суббота</h2>
+<ul>
+<li><p>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 1”</p></li>
+<li><p>В.М.Хайтов лекция “Взаимоотношения организмов. Часть 2”</p></li>
+<li><p><strong>Контрольная работа №1</strong> Темы: Аутэкология, Структура популяций, Динамика популяций. <strong>Внимание!</strong> Точную дату и время проведения контрольной работы обсудим на лекции.</p></li>
+</ul>
+</div>
+<div id="сентября-2021-четверг-2359" class="section level2">
+<h2>30 сентября 2021 четверг 23:59</h2>
+<p>Срок закрытия теста по самостоятельной работе №1.</p>
+</div>
+<div id="октябя-2021-пятница-2359" class="section level2">
+<h2>1 октябя 2021 пятница 23:59</h2>
+<ul>
+<li>Начинаем самостоятельную работу №2</li>
+</ul>
+</div>
+<div id="октября-суббота" class="section level2">
+<h2>2 октября суббота</h2>
+<ul>
+<li>В.М.Хайтов лекция “Трофические связи”</li>
+<li>В.М.Хайтов лекция “Конкурентные взаимоотношения”</li>
+</ul>
+</div>
+<div id="октября" class="section level2">
+<h2>9 октября</h2>
+<ul>
+<li><strong>Контрольная работа №1.</strong></li>
+</ul>
+<p>Согласуем дату и время контрольнойработы №2</p>
+</div>
+<div id="октября-2021-пятница-2359" class="section level2">
+<h2>15 октября 2021 пятница 23:59</h2>
+<p>Срок закрытия теста по самостоятельной работе №2.</p>
+</div>
+<div id="октября-2021-суббота" class="section level2">
+<h2>16 октября 2021 суббота</h2>
+<ul>
+<li><p>В.М.Хайтов лекция “Симбиозы”</p></li>
+<li><p>В.М.Хайтов лекция “Структура сообщества”</p></li>
+</ul>
+</div>
+<div id="октября-2021-суббота-1" class="section level2">
+<h2>23 октября 2021 суббота</h2>
+<ul>
+<li>М.Ю.Тиходеева лекция “Экосистемы” (2 пары)</li>
+</ul>
+</div>
+<div id="контрольная-работа-2-конец-октября.-точную-дату-согласуем" class="section level2">
+<h2>Контрольная работа №2 (конец октября. точную дату согласуем)</h2>
+<ul>
+<li>Контрольная работа №2. Темы:Взаимоотношения организмов, Структура сообщества, Экосистемы, Многообразие жизненных циклов, Глобальные круговороты.</li>
+</ul>
+</div>
+<div id="ноябрь-по-согласованию" class="section level2">
+<h2>Ноябрь, по согласованию</h2>
+<ul>
+<li>В. М. Хайтов Консультация “Трудные моменты курса”</li>
+</ul>
 </div>
 
 
@@ -469,7 +460,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -487,7 +478,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -496,6 +487,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

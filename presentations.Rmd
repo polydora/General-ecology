@@ -103,15 +103,19 @@ title: Презентации к лекциям
 <!-- - [Температура](Presentations//Temperature living systems.pdf) -->
 
 
+
+
+
+
 <!-- Версия для биологов -->
 
-<!-- ## Введение -->
+## Введение
 
-<!-- - [Правила игры](Presentations/Lecture Introduction.pdf) -->
+- [Правила игры](Presentations/Lecture Introduction.pdf)
 
-<!-- ## Лекция 1. -->
+## Лекция 1.
 
-<!-- - [Предмет экологии](Presentations//Lecture 1 2019 Предмет экологии .pdf) -->
+- [Предмет экологии](Presentations//Lecture 1 2021 Предмет экологии.pptx)
 
 <!-- ## Лекция 2. -->
 

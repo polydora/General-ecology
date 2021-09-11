@@ -340,81 +340,807 @@ div.tocify {
 </div>
 
 
-<p>Здесь будут выкладываться текущие результаты ваших работ.</p>
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(dplyr) -->
-<!-- library(readxl) -->
-<!-- library(ggplot2) -->
-<!-- library(broom) -->
-<!-- library(tidyr) -->
-<!-- class <- read_xlsx("data/Classess_2021_biotech.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class %>% select(St_Mail, Login) -->
-<!-- opts_chunk$set(echo = FALSE) -->
-<!-- # class[class$Login == "st092164", ] -->
-<!-- # class[is.na(class$St_Mail),] -->
-<!-- ``` -->
-<!-- # **Анализ тестов по материалам лекций** -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- credits <- class %>% select(Login, St_Mail) -->
-<!-- # credits[credits$Login == "st092164", ] -->
-<!-- # credits[credits$Login == "st092135", ] -->
-<!-- #Тест по Лекции 1 -->
-<!-- # test_lecture_1 <- read.csv("data/Оценки класса Общая экология — 30.09.2020, 8-08.csv") -->
-<!-- # test_lecture_1 <- test_lecture_1 %>% select(3:4) -->
-<!-- test_lecture_1 <- read_xlsx("data/Суть экологии. Теория систем. Живые системы.  (Общая экология для Биотехнологов)(1-28).xlsx") -->
-<!-- names(test_lecture_1) <- c("St_Mail", "Score_lecture_1") -->
-<!-- # test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ] -->
-<!-- credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
-<!-- # credits[credits$St_Mail == "st092164@student.spbu.ru", ] -->
-<!-- # add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1) -->
-<!-- # credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE) -->
-<!-- #Тест по Лекции 2 -->
-<!-- test_lecture_2 <- read_xlsx("data/Аутэкология (биотехнологи). (Общая экология для Биотехнологов)(1-26).xlsx") -->
-<!-- test_lecture_2$Score <- test_lecture_2$Score + 1  -->
-<!-- test_lecture_2 <- test_lecture_2 %>% select(1,2) -->
-<!-- names(test_lecture_2) <- c("St_Mail", "Score_lecture_2") -->
-<!-- credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
-<!-- #Тест по Лекции 3 -->
-<!-- test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология для Биотехнологов)(1-26).xlsx") -->
-<!-- test_lecture_3 <- test_lecture_3 %>% select(1,2) -->
-<!-- names(test_lecture_3) <- c("St_Mail", "Score_lecture_3") -->
-<!-- credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
-<!-- # credits$Addition_2 <- 1 -->
-<!-- #Тест по Лекции 4 -->
-<!-- test_lecture_4 <- read_xlsx("data/Динамика популяции (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx") -->
-<!-- test_lecture_4 <- test_lecture_4 %>% select(1,2) -->
-<!-- names(test_lecture_4) <- c("St_Mail", "Score_lecture_4") -->
-<!-- credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
-<!-- #Тест по Лекции 5 -->
-<!-- test_lecture_5 <- read_xlsx("data/Взаимоотношения. Лекция 5. (2)(1-26).xlsx") -->
-<!-- test_lecture_5 <- test_lecture_5 %>% select(1,2) -->
-<!-- names(test_lecture_5) <- c("St_Mail", "Score_lecture_5") -->
-<!-- credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
-<!-- #Тест по Лекции 6 -->
-<!-- test_lecture_6 <- read_xlsx("data/Конкуренция (биотехнологи) (Общая экология для Биотехнологов)(1-24).xlsx") -->
-<!-- test_lecture_6 <- test_lecture_6 %>% select(1,2) -->
-<!-- names(test_lecture_6) <- c("St_Mail", "Score_lecture_6") -->
-<!-- credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
-<!-- #Тест по Лекции 7 -->
-<!-- test_lecture_7 <- read_xlsx("data/Трофические связи (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx") -->
-<!-- test_lecture_7 <- test_lecture_7 %>% select(1,2) -->
-<!-- names(test_lecture_7) <- c("St_Mail", "Score_lecture_7") -->
-<!-- credits <- merge(credits, test_lecture_7, all.x = TRUE) -->
-<!-- #Вывод общей таблицы с баллами -->
-<!-- credits_sum <- 10 + 10 + 10 + 10 + 10 + 10 + 8 -->
-<!-- credits_print <- credits %>% select(-St_Mail)  -->
-<!-- credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE) -->
-<!-- credits_print$Credit_Sum <- credits_sum -->
-<!-- credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum -->
-<!-- credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки -->
-<!-- ``` -->
-<!-- **Состояние индивидуального счета студентов** -->
-<!-- ```{r, echo=F} -->
-<!-- options(knitr.kable.NA = '-') -->
-<!-- kable(credits_print) -->
-<!-- ``` -->
+<!-- Здесь будут выкладываться текущие результаты ваших работ. -->
+<div id="анализ-тестов-по-материалам-лекций" class="section level1">
+<h1><strong>Анализ тестов по материалам лекций</strong></h1>
+<p><strong>Состояние индивидуального счета студентов</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Score_lecture_1</th>
+<th align="right">Sum</th>
+<th align="right">Credit_Sum</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st037699</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="even">
+<td align="left">st046540</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st056057</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st060046</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st061423</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st065058</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st067957</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left">st067969</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st068842</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st071886</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st075815</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st076066</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st076517</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st076617</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st081830</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st082193</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st082207</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left">st082342</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st084860</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st084927</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st084932</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="even">
+<td align="left">st084942</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st084962</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st084972</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st085011</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st085017</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st085043</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st085055</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st085111</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st085128</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st085207</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st085228</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st085307</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st085322</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st085323</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st085372</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st085384</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st085662</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st085668</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st085770</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st085802</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st086289</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st086454</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st086753</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st086774</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st086804</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st086851</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st086860</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st086879</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st086960</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st087101</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st087399</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st087476</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st087477</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st087488</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">10</td>
+<td align="right">0.6</td>
+</tr>
+<tr class="even">
+<td align="left">st087500</td>
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">10</td>
+<td align="right">0.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st087505</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left">st087516</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st087682</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st087714</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st087730</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st087733</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st087737</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st087774</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st087792</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st087842</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st087848</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st087995</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st087999</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st088123</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st088151</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st088300</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st088301</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left">st088315</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st089184</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st089252</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st089270</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st089306</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st089451</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st089461</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st089463</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="even">
+<td align="left">st089490</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st089553</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="even">
+<td align="left">st089566</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st089581</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st089749</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st089762</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="even">
+<td align="left">st089777</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st089878</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">10</td>
+<td align="right">0.3</td>
+</tr>
+<tr class="even">
+<td align="left">st090061</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st090169</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st090259</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st090280</td>
+<td align="right">-</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st090309</td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">10</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st090311</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st090325</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st090327</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st090348</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st090393</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st090436</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st090479</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st090510</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st090523</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st090608</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st090630</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st090747</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st090973</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st091003</td>
+<td align="right">7</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st091608</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">st091661</td>
+<td align="right">9</td>
+<td align="right">9</td>
+<td align="right">10</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st092183</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">st0903552</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
 <!-- <!-- **Внимание**    -->
 <!-- <!-- В графе *"Proportion_of_final"* Публикуется текущее количество набранных баллов, которое войдет в финальную оценку. Однако, эта величина будет изменяться, так как общее количество баллов, которое приводится в графе *"Credit_Sum"*, тоже будет изменяться по мере открытия новых заданий.  -->
 <!-- Следите за текущим счетом и если что-то не так, то пишите. -->
@@ -612,6 +1338,7 @@ div.tocify {
 <!-- Result <-Total %>% group_by(Login) %>% summarize(Total = sum(Exam, na.rm = TRUE)) -->
 <!-- kable(Result) -->
 <!-- ``` -->
+</div>
 
 
 

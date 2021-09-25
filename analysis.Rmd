@@ -75,17 +75,21 @@ names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
 
 credits <- merge(credits, test_lecture_2, all.x = TRUE)
 
-# 
-# 
-# #Тест по Лекции 3
+
+
+#Тест по Лекции 3_4
 # test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология для Биотехнологов)(1-26).xlsx")
-# test_lecture_3 <- test_lecture_3 %>% select(1,2)
-# names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
-# 
-# credits <- merge(credits, test_lecture_3, all.x = TRUE)
-# 
-# # credits$Addition_2 <- 1
-# 
+
+test_lecture_3 <- read_xlsx("data/Структура и динамика популяций  (Общая экология 2021)(1-87).xlsx")
+
+
+test_lecture_3 <- test_lecture_3 %>% select(1,2)
+names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
+
+credits <- merge(credits, test_lecture_3, all.x = TRUE)
+
+# credits$Addition_2 <- 1
+
 # 
 # #Тест по Лекции 4
 # test_lecture_4 <- read_xlsx("data/Динамика популяции (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx")
@@ -125,7 +129,7 @@ credits <- merge(credits, test_lecture_2, all.x = TRUE)
 
 #Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 10 
+credits_sum <- 10 + 10 + 19
 # + 10 + 10 + 10 + 10 + 10 + 8
 
 credits_print <- credits %>% select(-St_Mail)

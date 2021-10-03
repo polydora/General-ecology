@@ -204,7 +204,7 @@ hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score))
 
 hw1_score <- hw1
 
-hw1_score$Total <- 20
+hw1_score$Total <- 15
 
 hw1_score$Exam <- round(hw1_score$Score / hw1_score$Total, 1)
 
@@ -305,40 +305,62 @@ kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопр
 
 
 
-<!-- <br> -->
-<!-- <br> -->
+<br>
+<br>
 
 
-<!-- ## **Анализ контрольной работы № 1** -->
+## **Анализ контрольной работы № 1**
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2021)(1-99).xlsx")
 
-<!-- cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *5) -->
+cont1 <- cont1 %>% select(-Name)
 
-<!-- correl <- tidy(cor.test(cont1$Incorrect, cont1$Time)) -->
+names(cont1) <- c("St_Mail", "Score")
 
-<!-- #  cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
+cont1 <- cont1 %>% mutate(Total = 24, Exam = Score/Total)
 
-<!-- # table(cont_reg$Login) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-<!-- #  -->
-<!-- # cont1$Add <- 1 -->
-<!-- #  -->
-<!-- # cont1$Total <- (cont1$Score + cont1$Add)/18 -->
-<!-- #  -->
-<!-- # cont1$Exam <- round(cont1$Total * 2.5, 1) -->
-<!-- #  -->
-<!-- # cont1_print <- class %>% select(Login) -->
-<!-- #  -->
-<!-- # cont1_print <- merge(cont1_print, cont1, all.x = T) -->
+cont1_print <- cont1
 
-<!-- kable(cont1_print) -->
+# 
+# cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *5)
+# 
+# correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 
-<!-- ``` -->
+#  cont_reg[!(cont_reg$Login %in% cont$Login), ]
+
+# table(cont_reg$Login)
+#
+#
+# cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+#
+# cont1$Add <- 1
+#
+# cont1$Total <- (cont1$Score + cont1$Add)/18
+#
+# cont1$Exam <- round(cont1$Total * 2.5, 1)
+#
+# cont1_print <- class %>% select(Login)
+#
+# cont1_print <- merge(cont1_print, cont1, all.x = T)
+
+kable(cont1_print)
+
+```
+
+По поводу вопроса № 25. В задании теста была очевидная ошибка.  При -35 радусах, естественно, развитие растений проходить не может. НО! правильный ответ, все-таки, был - это не ставить вообще никакого решения. Поэтому, никому я этот вопрос не зачел, кроме тех, кто вообще на него не поставил ответа. Вот  эти люди:
+
+Камил-Джан Байазыт   
+Ксения Давыдова   
+Валерия Иштуганова   
+Арсений Шкляр   
+Георгий Данелия   
+Екатерина Кандаловская.   
+Александр Родимцев
+
+
+Им я добавил +1. НО! чтобы за эту подставу обидно не было и остальным, я общую сумму баллов уменьшил до 24. 
 
 
 

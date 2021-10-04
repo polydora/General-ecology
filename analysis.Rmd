@@ -204,7 +204,7 @@ hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score))
 
 hw1_score <- hw1
 
-hw1_score$Total <- 20
+hw1_score$Total <- 19
 
 hw1_score$Exam <- round(hw1_score$Score / hw1_score$Total, 1)
 
@@ -309,37 +309,50 @@ kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопр
 <!-- <br> -->
 
 
-<!-- ## **Анализ контрольной работы № 1** -->
+## **Анализ контрольной работы № 1**
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-<!-- cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *5) -->
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- correl <- tidy(cor.test(cont1$Incorrect, cont1$Time)) -->
+cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- #  cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
 
-<!-- # table(cont_reg$Login) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-<!-- #  -->
-<!-- # cont1$Add <- 1 -->
-<!-- #  -->
-<!-- # cont1$Total <- (cont1$Score + cont1$Add)/18 -->
-<!-- #  -->
-<!-- # cont1$Exam <- round(cont1$Total * 2.5, 1) -->
-<!-- #  -->
-<!-- # cont1_print <- class %>% select(Login) -->
-<!-- #  -->
-<!-- # cont1_print <- merge(cont1_print, cont1, all.x = T) -->
+cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *5)
 
-<!-- kable(cont1_print) -->
+correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 
-<!-- ``` -->
+#  cont_reg[!(cont_reg$Login %in% cont$Login), ]
 
+# table(cont_reg$Login)
+#
+#
+# cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+#
+# cont1$Add <- 1
+#
+# cont1$Total <- (cont1$Score + cont1$Add)/18
+#
+# cont1$Exam <- round(cont1$Total * 2.5, 1)
+#
+# cont1_print <- class %>% select(Login)
+#
+# cont1_print <- merge(cont1_print, cont1, all.x = T)
+
+kable(cont1_print)
+
+```
+Вот люди, которые абсолютно правильно ответили на каверзный вопрос про сумму эффективных температур.
+
+Камил-Джан Байазыт
+Ксения Давыдова
+Валерия Иштуганова
+Арсений Шкляр
+Георгий Данелия
+Екатерина Кандаловская
+
+В этом вопросе не было ни одного правильного ответа! Надо было просто не отвечать на него. Более того, цифры были подобраны таким образом, чтобы получался нереалистичный результат. Развитие ни одного из растений не может начинаться при температуре -35 градусов. 
 
 
 <!-- ## **Семинар-конференция № 1** -->

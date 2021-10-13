@@ -108,14 +108,18 @@ names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
 
 credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
-# 
-# #Тест по Лекции 6
+
+#Тест по Лекции 7-8
 # test_lecture_6 <- read_xlsx("data/Конкуренция (биотехнологи) (Общая экология для Биотехнологов)(1-24).xlsx")
-# test_lecture_6 <- test_lecture_6 %>% select(1,2)
-# names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
-# 
-# credits <- merge(credits, test_lecture_6, all.x = TRUE)
-# 
+
+test_lecture_6 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология 2021)(1-85).xlsx")
+
+
+test_lecture_6 <- test_lecture_6 %>% select(1,2)
+names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+
+credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
 # 
 # 
 # #Тест по Лекции 7
@@ -131,7 +135,7 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 #Вывод общей таблицы с баллами
 
-credits_sum <- 10 + 10 + 19 + 9
+credits_sum <- 10 + 10 + 19 + 9 + 14
 # + 10 + 10 + 10 + 10 + 10 + 8
 
 credits_print <- credits %>% select(-St_Mail)
@@ -316,12 +320,12 @@ kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопр
 
 # cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
+cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2021)(1-99).xlsx")
+names(cont1) <- c("St_Mail", "Score", "Name") 
 
+cont1_print <- merge(class, cont1 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = Score / 24)
 
-cont1_print <- merge(class, cont1 %>% select(-Family) ) %>% select(-St_Mail) %>% mutate(Exam = Correct / 45 *5)
-
-correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
+# correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 
 #  cont_reg[!(cont_reg$Login %in% cont$Login), ]
 

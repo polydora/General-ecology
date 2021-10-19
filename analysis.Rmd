@@ -377,7 +377,21 @@ kable(cont1_print)
 <!-- ``` -->
 
 
+## **Анализ контрольной работы № 2**
 
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
+
+cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2021)(1-11).xlsx")
+names(cont2) <- c("St_Mail",  "Name", "Score") 
+
+cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = Score / 14)
+
+kable(cont2_print)
+
+```
 
 <!-- ## **Семинар-конференция № 2** -->
 
@@ -397,34 +411,6 @@ kable(cont1_print)
 
 
 
-<!-- ## **Анализ контрольной работы № 2** -->
-
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-
-<!-- cont2 <- read_excel("data/Control_work_2_biotech.xlsx") -->
-
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name) ) %>% select(-St_Mail) %>% mutate(Exam = round((Correct - Incorrect) / 54 *5, 3)) -->
-
-<!-- #  cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
-
-<!-- # table(cont_reg$Login) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-<!-- #  -->
-<!-- # cont1$Add <- 1 -->
-<!-- #  -->
-<!-- # cont1$Total <- (cont1$Score + cont1$Add)/18 -->
-<!-- #  -->
-<!-- # cont1$Exam <- round(cont1$Total * 2.5, 1) -->
-<!-- #  -->
-<!-- # cont1_print <- class %>% select(Login) -->
-<!-- #  -->
-<!-- # cont1_print <- merge(cont1_print, cont1, all.x = T) -->
-
-<!-- kable(cont2_print) -->
-
-<!-- ``` -->
 
 
 

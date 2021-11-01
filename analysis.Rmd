@@ -213,7 +213,7 @@ hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score))
 
 hw1_score <- hw1
 
-hw1_score$Total <- 19
+hw1_score$Total <- 15
 
 hw1_score$Exam <- round(hw1_score$Score / hw1_score$Total, 1)
 

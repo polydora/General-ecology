@@ -544,13 +544,20 @@ Results_print <- Results
 
 Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1)
 
-
 ```
 
 ```{r}
 kable(Results_print)
 ```
 
+<!-- ## Частотное распределение накопленных баллов перед экзаменом -->
+
+<!-- ```{r} -->
+<!-- library(ggplot2) -->
+
+
+
+<!-- ``` -->
 
 <!-- ```{r} -->
 <!-- class2 <- read_xlsx("data/Classess_2021_biotech.xlsx", col_names = T) -->

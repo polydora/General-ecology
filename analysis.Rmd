@@ -400,6 +400,7 @@ cont1_print <- merge(class, cont1 %>% select(-Name ) ) %>% select(-St_Mail) %>% 
 
 kable(cont1_print)
 
+
 ```
 Вот люди, которые абсолютно правильно ответили на каверзный вопрос про сумму эффективных температур.
 
@@ -485,6 +486,9 @@ seminars_print <- merge(class, seminars)
 seminars_print <- seminars_print %>% select(-St_Mail, -Family, -Name) %>% arrange((Login))
 
 
+seminars_print$Exam <- seminars_print %>% select(- c(Login, Group) ) %>% mutate(Sum = rowSums(., na.rm = T), Exam = Sum) %>% pull(Exam)
+
+
 kable(seminars_print)
 
 
@@ -496,40 +500,57 @@ kable(seminars_print)
 
 
 
-<!-- ## **Итоговый счет** -->
-
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-
-<!-- d1 <- credits_print %>% select(Login, Exam)  -->
-
-<!-- d2 <- cont1_print %>% select(Login, Exam)  -->
-
-<!-- d2$Exam[is.na(d2$Exam)] <- 0 -->
+## **Итоговый счет**
 
 
-<!-- d3 <- sem_1_print %>% select(Login, Exam)  -->
-
-<!-- d4 <- sem_2_print %>% select(Login, Exam)  -->
-
-<!-- d5 <- cont2_print %>% select(Login, Exam) -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+library(stringr)
 
 
-<!-- Results <- merge(d1, d2, by = "Login") %>% merge(., d3, by = "Login") %>% merge(., d4, by = "Login") %>%  merge(., d5, by = "Login")  -->
+d1 <- credits_print %>% select(Login, Exam)
+
+d1$Exam <- round(d1$Exam*3, 2)
 
 
-<!-- names(Results) <- c("Login", "Lecture_test (max 10)", "Control_1(max 5)", "Seminar_1 (max 5)", "Seminar_2 (max 5)", "Control_2 (max 5)") -->
+d2 <- cont1_print %>% select(Login, Exam)
+d2$Exam <- round(d2$Exam * 1.5, 2)
 
 
-<!-- Results_print <- Results -->
 
-<!-- Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = sum ), 1)  -->
+d3 <- cont2_print %>% select(Login, Exam)
+d3$Exam <- round(d3$Exam * 1.5, 2)
 
 
-<!-- ``` -->
+d4 <- hw1_score_print %>% select(Login, Exam)
+d4$Login <- word(d4$Login, 1 ,sep = "\\@")
+d4$Exam <- round(d4$Exam * 1.5, 2)
 
-<!-- ```{r} -->
-<!-- kable(Results_print) -->
-<!-- ``` -->
+
+d5 <- hw2_score_print %>% select(Login, Exam)
+d5$Login <- word(d5$Login, 1 ,sep = "\\@")
+d5$Exam <- round(d5$Exam * 1.5, 2)
+
+
+d6 <- seminars_print %>% select(Login, Exam)
+d6$Exam <- round(d6$Exam * 3, 2)
+
+
+Results <- merge(d1, d2, by = "Login") %>% merge(., d3, by = "Login") %>% merge(., d4, by = "Login") %>%  merge(., d5, by = "Login") %>%  merge(., d6, by = "Login")
+
+
+names(Results) <- c("Login", "Lecture_test (max 3)", "Control_1(max 1.5)", "Control_2 (max 1.5)", "Home Work 1 (max 1.5)", "Home Work 2 (max 1.5)", "Seminars (max 21)")
+
+
+Results_print <- Results
+
+Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = sum ), 1)
+
+
+```
+
+```{r}
+kable(Results_print)
+```
 
 
 <!-- ```{r} -->

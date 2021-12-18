@@ -176,13 +176,26 @@ title: Материалы для подготовки к экзамену
 
 Если термин вам не знаком, то ищите информацию про него, лишним не будет....
 
+Огромное спасибо **Екатерине Териной** и **Степану Озерову**, взявшим на себя труд подбора ссылок на статьи из Википедии.
+
+Используя Википедию, помните, что надо быть очень остороным! Читайте критически. Сравнивайте несколько статей (как минимум русскую и английскую) и читайте первоисточники. 
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
-terms <- read.csv("data/glossary.csv", header = TRUE)
-terms <- as.matrix(terms)
-dim(terms) <- c(95, 3)
-terms <- as.data.frame(terms)
-kable(terms, col.names = rep("Термины", 3))
+library(readxl)
+terms <- read_excel("data/glossary_wiki.xlsx", na =  "NA")
+
+terms$Wiki_ru <- ifelse(is.na(terms$Wiki_ru), "", paste("[Wiki Ru]","(",terms$Wiki_ru,")", sep = ""))
+
+terms$Wiki_en <- ifelse(is.na(terms$Wiki_en), "", paste("[Wiki En]","(",terms$Wiki_en,")", sep = ""))
+
+# 
+# 
+# terms <- as.matrix(terms)
+# dim(terms) <- c(95, 3)
+# terms <- as.data.frame(terms)
+# 
+kable(terms, col.names = c("Термины", "Википедия", "Wikipedia"))
 ```
 
 

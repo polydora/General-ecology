@@ -508,7 +508,6 @@ library(stringr)
 
 
 d1 <- credits_print %>% select(Login, Exam)
-
 d1$Exam <- round(d1$Exam*3, 2)
 
 
@@ -535,7 +534,7 @@ d6 <- seminars_print %>% select(Login, Exam)
 d6$Exam <- round(d6$Exam * 3, 2)
 
 
-Results <- merge(d1, d2, by = "Login") %>% merge(., d3, by = "Login") %>% merge(., d4, by = "Login") %>%  merge(., d5, by = "Login") %>%  merge(., d6, by = "Login")
+Results <- merge(d1, d2, by = "Login", all = T) %>% merge(., d3, by = "Login", all = T) %>% merge(., d4, by = "Login", all = T) %>%  merge(., d5, by = "Login", all = T) %>%  merge(., d6, by = "Login", all = T)
 
 
 names(Results) <- c("Login", "Lecture_test (max 3)", "Control_1(max 1.5)", "Control_2 (max 1.5)", "Home Work 1 (max 1.5)", "Home Work 2 (max 1.5)", "Seminars (max 21)")
@@ -543,7 +542,7 @@ names(Results) <- c("Login", "Lecture_test (max 3)", "Control_1(max 1.5)", "Cont
 
 Results_print <- Results
 
-Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = sum ), 1)
+Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1)
 
 
 ```

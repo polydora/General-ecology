@@ -16,9 +16,9 @@ library(broom)
 library(tidyr)
 
 
-class <- read_xlsx("data/Classess_2021_biology.xlsx", col_names = T)
+class <- read_xlsx("data/Classess_2022_biotech.xlsx", col_names = T)
 # class <- class %>% filter(!is.na(Login)|!is.na(Group) )
-class <- class %>% select(St_Mail, Login)
+# class <- class %>% select(St_Mail, Login)
 
 
 opts_chunk$set(echo = FALSE)
@@ -32,136 +32,142 @@ opts_chunk$set(echo = FALSE)
 
 # **Анализ тестов по материалам лекций**
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- credits <- class %>% select(Login, St_Mail) -->
+credits <- class %>% select(Login, St_Mail)
 
-<!-- # credits[credits$Login == "st092164", ] -->
-<!-- # credits[credits$Login == "st092135", ] -->
+# credits[credits$Login == "st092164", ]
+# credits[credits$Login == "st092135", ]
 
-<!-- # Тест по Лекции 1 -->
-<!-- test_lecture_1 <- read_excel("data/Основы ОТС и Предмет экологии  (Общая экология 2021)(1-106).xlsx") -->
-<!-- test_lecture_1 <- test_lecture_1 %>% select(c(1,3)) -->
+# Тест по Лекции 1
+# test_lecture_1 <- read_excel("data/Основы ОТС и Предмет экологии  (Общая экология 2021)(1-106).xlsx")
 
-<!-- # test_lecture_1 <- read_xlsx("data/Суть экологии. Теория систем. Живые системы.  (Общая экология для Биотехнологов)(1-28).xlsx") -->
+# test_lecture_1 <- test_lecture_1 %>% select(c(1,3))
 
-<!-- names(test_lecture_1) <- c("St_Mail", "Score_lecture_1") -->
+test_lecture_1 <- read_xlsx("data/Основы ОТС и Предмет экологии  (Общая экология для биоинженеров 2022)(1-26).xlsx")
 
-<!-- # test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ] -->
-
-
-<!-- credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
-
-<!-- # credits[credits$St_Mail == "st092164@student.spbu.ru", ] -->
+test_lecture_1 <- test_lecture_1 %>% select(c(1,3))
 
 
-<!-- # add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1) -->
+names(test_lecture_1) <- c("St_Mail", "Score_lecture_1")
 
-<!-- # credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE) -->
+# test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ]
 
 
+credits <- merge(credits, test_lecture_1, all.x = TRUE)
 
-<!-- #Тест по Лекции 2 -->
-
-<!-- # test_lecture_2 <- read_xlsx("data/Аутэкология (биотехнологи). (Общая экология для Биотехнологов)(1-26).xlsx") -->
-
-<!-- test_lecture_2 <- read_xlsx("data/Аутэкология (Общая экология 2021)(1-98).xlsx") -->
+# credits[credits$St_Mail == "st092164@student.spbu.ru", ]
+# add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1)
+# credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE)
 
 
 
+#Тест по Лекции 2
 
-<!-- test_lecture_2 <- test_lecture_2 %>% select(1,2) -->
-<!-- names(test_lecture_2) <- c("St_Mail", "Score_lecture_2") -->
+# test_lecture_2 <- read_xlsx("data/Аутэкология (биотехнологи). (Общая экология для Биотехнологов)(1-26).xlsx")
 
-<!-- credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
-
-
-
-<!-- #Тест по Лекции 3_4 -->
-<!-- # test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология для Биотехнологов)(1-26).xlsx") -->
-
-<!-- test_lecture_3 <- read_xlsx("data/Структура и динамика популяций  (Общая экология 2021)(1-87).xlsx") -->
-
-
-<!-- test_lecture_3 <- test_lecture_3 %>% select(1,2) -->
-<!-- names(test_lecture_3) <- c("St_Mail", "Score_lecture_3") -->
-
-<!-- credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
-
-<!-- # credits$Addition_2 <- 1 -->
-
-<!-- #  -->
-<!-- # #Тест по Лекции 4 -->
-<!-- # test_lecture_4 <- read_xlsx("data/Динамика популяции (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx") -->
-<!-- # test_lecture_4 <- test_lecture_4 %>% select(1,2) -->
-<!-- # names(test_lecture_4) <- c("St_Mail", "Score_lecture_4") -->
-<!-- #  -->
-<!-- # credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
-<!-- #  -->
-<!-- #  -->
-
-<!-- #Тест по Лекции 5-6 -->
-
-<!-- test_lecture_5 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2021)(1-79).xlsx") -->
-<!-- test_lecture_5 <- test_lecture_5 %>% select(1,2) -->
-<!-- names(test_lecture_5) <- c("St_Mail", "Score_lecture_5") -->
-
-<!-- credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
-
-
-<!-- #Тест по Лекции 7-8 -->
-<!-- # test_lecture_6 <- read_xlsx("data/Конкуренция (биотехнологи) (Общая экология для Биотехнологов)(1-24).xlsx") -->
-
-<!-- test_lecture_6 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология 2021)(1-85).xlsx") -->
-
-
-<!-- test_lecture_6 <- test_lecture_6 %>% select(1,2) -->
-<!-- names(test_lecture_6) <- c("St_Mail", "Score_lecture_6") -->
-
-<!-- credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
-
-
-
-<!-- #Тест по Лекции 9-10 -->
-<!-- # test_lecture_7 <- read_xlsx("data/Трофические связи (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx") -->
-
-<!-- test_lecture_7 <- read_xlsx("data/Симбиозы и структура сообществ (Общая экология 2021)(1-73).xlsx") -->
-
-<!-- test_lecture_7 <- test_lecture_7 %>% select(1,3) -->
-<!-- names(test_lecture_7) <- c("St_Mail", "Score_lecture_7") -->
-
-<!-- credits <- merge(credits, test_lecture_7, all.x = TRUE) -->
-
-
-
-
-
-<!-- #Вывод общей таблицы с баллами -->
-
-<!-- credits_sum <- 10 + 10 + 19 + 9 + 14 + 9 -->
-<!-- # + 10 + 10 + 10 + 10 + 10 + 8 -->
-
-<!-- credits_print <- credits %>% select(-St_Mail) -->
-
-<!-- credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE) -->
-
-<!-- credits_print$Credit_Sum <- credits_sum -->
-
-<!-- credits_print$Exam <- credits_print$Sum / credits_print$Credit_Sum -->
-
-<!-- # credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки -->
+# test_lecture_2 <- read_xlsx("data/Аутэкология (Общая экология 2021)(1-98).xlsx")
+# 
+# 
+# 
+# 
+# test_lecture_2 <- test_lecture_2 %>% select(1,2)
+# names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
+# 
+# credits <- merge(credits, test_lecture_2, all.x = TRUE)
+# 
+# 
+# 
+# #Тест по Лекции 3_4
+# # test_lecture_3 <- read_xlsx("data/Демэкология. Структура популяции. (Общая экология для Биотехнологов)(1-26).xlsx")
+# 
+# test_lecture_3 <- read_xlsx("data/Структура и динамика популяций  (Общая экология 2021)(1-87).xlsx")
+# 
+# 
+# test_lecture_3 <- test_lecture_3 %>% select(1,2)
+# names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
+# 
+# credits <- merge(credits, test_lecture_3, all.x = TRUE)
+# 
+# # credits$Addition_2 <- 1
+# 
+# #
+# # #Тест по Лекции 4
+# # test_lecture_4 <- read_xlsx("data/Динамика популяции (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx")
+# # test_lecture_4 <- test_lecture_4 %>% select(1,2)
+# # names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
+# #
+# # credits <- merge(credits, test_lecture_4, all.x = TRUE)
+# #
+# #
+# 
+# #Тест по Лекции 5-6
+# 
+# test_lecture_5 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2021)(1-79).xlsx")
+# test_lecture_5 <- test_lecture_5 %>% select(1,2)
+# names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
+# 
+# credits <- merge(credits, test_lecture_5, all.x = TRUE)
+# 
+# 
+# #Тест по Лекции 7-8
+# # test_lecture_6 <- read_xlsx("data/Конкуренция (биотехнологи) (Общая экология для Биотехнологов)(1-24).xlsx")
+# 
+# test_lecture_6 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология 2021)(1-85).xlsx")
+# 
+# 
+# test_lecture_6 <- test_lecture_6 %>% select(1,2)
+# names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+# 
+# credits <- merge(credits, test_lecture_6, all.x = TRUE)
+# 
+# 
+# 
+# #Тест по Лекции 9-10
+# # test_lecture_7 <- read_xlsx("data/Трофические связи (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx")
+# 
+# test_lecture_7 <- read_xlsx("data/Симбиозы и структура сообществ (Общая экология 2021)(1-73).xlsx")
+# 
+# test_lecture_7 <- test_lecture_7 %>% select(1,3)
+# names(test_lecture_7) <- c("St_Mail", "Score_lecture_7")
+# 
+# credits <- merge(credits, test_lecture_7, all.x = TRUE)
 
 
-<!-- ``` -->
+
+
+
+#Вывод общей таблицы с баллами
+
+credits_sum <- 9 
+# + 10 + 10 + 10 + 10 + 10 + 8
+
+credits_print <- credits %>% select(-St_Mail)
+
+credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE)
+
+credits_print$Credit_Sum <- credits_sum
+
+credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2)
+
+credits_print$Exam <- credits_print$Proportion * 8
+
+# credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
+
+
+```
 
 **Состояние индивидуального счета студентов**
 
-<!-- ```{r, echo=F} -->
+```{r, echo=F}
 
-<!-- options(knitr.kable.NA = '-') -->
-<!-- kable(credits_print) -->
+options(knitr.kable.NA = '-')
 
-<!-- ``` -->
+credits_print <- credits_print %>% select(-Sum, -Credit_Sum)
+  
+kable(credits_print)
+
+```
 
 
 

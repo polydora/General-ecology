@@ -32,6 +32,10 @@ opts_chunk$set(echo = FALSE)
 
 # **Анализ тестов по материалам лекций**
 
+Максимальное количество баллов для экзамена: 8%
+
+
+
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
 credits <- class %>% select(Login, St_Mail)
@@ -97,14 +101,16 @@ credits <- merge(credits, test_lecture_3, all.x = TRUE)
 # 
 # # credits$Addition_2 <- 1
 # 
-# #
-# # #Тест по Лекции 4
-# # test_lecture_4 <- read_xlsx("data/Динамика популяции (биотехнологи) (Общая экология для Биотехнологов)(1-27).xlsx")
-# # test_lecture_4 <- test_lecture_4 %>% select(1,2)
-# # names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
-# #
-# # credits <- merge(credits, test_lecture_4, all.x = TRUE)
-# #
+
+#Тест по Лекции 4
+
+test_lecture_4 <- read_xlsx("data/Структура и динамика популяций  (Общая экология для биоинженеров 2022)(1-28).xlsx")
+
+test_lecture_4 <- test_lecture_4 %>% select(1,3)
+names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
+
+credits <- merge(credits, test_lecture_4, all.x = TRUE)
+
 # #
 # 
 # #Тест по Лекции 5-6
@@ -145,7 +151,7 @@ credits <- merge(credits, test_lecture_3, all.x = TRUE)
 
 #Вывод общей таблицы с баллами
 
-credits_sum <- 9 + 10 + 8
+credits_sum <- 9 + 10 + 8 + 10
 # + 10 + 10 + 10 + 10 + 10 + 8
 
 credits_print <- credits %>% select(-St_Mail)
@@ -381,39 +387,40 @@ kable(credits_print)
 
 ## **Анализ контрольной работы № 1**
 
+Максимальное количество баллов для экзамена: 3%
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология для биоинженеров 2022)(1-28).xlsx")
 
-<!-- cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2021)(1-99).xlsx") -->
-<!-- names(cont1) <- c("St_Mail", "Score", "Name")  -->
+# cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2021)(1-99).xlsx")
+names(cont1) <- c("St_Mail","Name", "Score")
 
-<!-- cont1_print <- merge(class, cont1 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = Score / 24) -->
+cont1_print <- merge(class, cont1 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 21 * 3, 1) ) %>% select(-Family, -Name, -Otch, -Group )
 
-<!-- # correl <- tidy(cor.test(cont1$Incorrect, cont1$Time)) -->
+# correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 
-<!-- #  cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
+#  cont_reg[!(cont_reg$Login %in% cont$Login), ]
 
-<!-- # table(cont_reg$Login) -->
-<!-- # -->
-<!-- # -->
-<!-- # cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-<!-- # -->
-<!-- # cont1$Add <- 1 -->
-<!-- # -->
-<!-- # cont1$Total <- (cont1$Score + cont1$Add)/18 -->
-<!-- # -->
-<!-- # cont1$Exam <- round(cont1$Total * 2.5, 1) -->
-<!-- # -->
-<!-- # cont1_print <- class %>% select(Login) -->
-<!-- # -->
-<!-- # cont1_print <- merge(cont1_print, cont1, all.x = T) -->
+# table(cont_reg$Login)
+#
+#
+# cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+#
+# cont1$Add <- 1
+#
+# cont1$Total <- (cont1$Score + cont1$Add)/18
+#
+# cont1$Exam <- round(cont1$Total * 2.5, 1)
+#
+# cont1_print <- class %>% select(Login)
+#
+# cont1_print <- merge(cont1_print, cont1, all.x = T)
 
-<!-- kable(cont1_print) -->
+kable(cont1_print)
 
 
-<!-- ``` -->
+```
 
 
 <!-- ## **Семинар-конференция № 1** -->

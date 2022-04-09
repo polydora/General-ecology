@@ -546,7 +546,7 @@ kable(class, col.names = c("Фамилия", "Имя", "Тема"))
 
 ```{r echo=FALSE, message=FALSE}
 
-set.seed(123459)
+set.seed(56789)
 
 class <- read_xlsx("data/Classess_2022_biotech.xlsx", col_names = T)
 

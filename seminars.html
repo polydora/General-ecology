@@ -44,6 +44,96 @@
     </style>
 
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -685,6 +775,106 @@ td {  /* Table  */
 <td align="left">Петров</td>
 <td align="left">Владимир</td>
 <td align="left">Экологическая лицензия</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="распределение-тем-для-группы-1-1" class="section level3">
+<h3>Распределение тем для группы № 1</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123459</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>class <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;data/Classess_2022_biotech.xlsx&quot;</span>, <span class="at">col_names =</span> T)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>class <span class="ot">&lt;-</span> class <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Group <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># class &lt;- read_xlsx(&quot;data/Classess_2021_biology.xlsx&quot;, col_names = T)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>topics <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;data/topics for reading.xlsx&quot;</span>, <span class="at">col_names =</span> T)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># class &lt;- class %&gt;% select(Family, Name )  %&gt;% mutate(Topic_1 = sample(topics$Term, nrow(class)), Topic_2 = sample(topics$Term, nrow(class)))</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>class <span class="ot">&lt;-</span> class <span class="sc">%&gt;%</span> <span class="fu">select</span>(Family, Name )  <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Topic_1 =</span> <span class="fu">sample</span>(topics<span class="sc">$</span>Term, <span class="fu">nrow</span>(class), <span class="at">replace =</span> T))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># class$Topic_1 == class$Topic_2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] &lt;- sample(topics$Term,1)}</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(class, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Фамилия&quot;</span>, <span class="st">&quot;Имя&quot;</span>, <span class="st">&quot;Тема&quot;</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Фамилия</th>
+<th align="left">Имя</th>
+<th align="left">Тема</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Артемюк</td>
+<td align="left">Анастасия</td>
+<td align="left">Стенобионты</td>
+</tr>
+<tr class="even">
+<td align="left">Арустамова</td>
+<td align="left">Дарья</td>
+<td align="left">Эффект Олли</td>
+</tr>
+<tr class="odd">
+<td align="left">Коноплёва</td>
+<td align="left">Софья</td>
+<td align="left">Азотфиксирующие бактерии</td>
+</tr>
+<tr class="even">
+<td align="left">Лященко</td>
+<td align="left">Мария</td>
+<td align="left">Эндогенные изменения</td>
+</tr>
+<tr class="odd">
+<td align="left">Орлова</td>
+<td align="left">Александра</td>
+<td align="left">Групповое распределение особей</td>
+</tr>
+<tr class="even">
+<td align="left">Орлова</td>
+<td align="left">Виктория</td>
+<td align="left">Эврибионты</td>
+</tr>
+<tr class="odd">
+<td align="left">Пелле</td>
+<td align="left">Дарья</td>
+<td align="left">Кривая выживания</td>
+</tr>
+<tr class="even">
+<td align="left">Соболь</td>
+<td align="left">Ксения</td>
+<td align="left">Мальтузианский параметр</td>
+</tr>
+<tr class="odd">
+<td align="left">Филиппова</td>
+<td align="left">Арина</td>
+<td align="left">Температурно-зависимое определение пола</td>
+</tr>
+<tr class="even">
+<td align="left">Шурова</td>
+<td align="left">Алёна</td>
+<td align="left">Саркофагия</td>
+</tr>
+<tr class="odd">
+<td align="left">Юрасова</td>
+<td align="left">Дарья</td>
+<td align="left">Мутуалистический симбиоз</td>
+</tr>
+<tr class="even">
+<td align="left">Токарева</td>
+<td align="left">Лидия</td>
+<td align="left">Фундаментальная ниша</td>
+</tr>
+<tr class="odd">
+<td align="left">Казарин</td>
+<td align="left">Семён</td>
+<td align="left">Паразитоиды</td>
 </tr>
 </tbody>
 </table>

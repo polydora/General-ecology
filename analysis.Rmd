@@ -430,39 +430,41 @@ kable(cont1_print)
 ```
 
 
-<!-- ## **Семинар-конференция № 1** -->
+## **Оценки за семинары**
 
 
-<!-- ```{r} -->
+```{r}
 
-<!-- sem_1 <- read_excel("data/Conference_seminar_1.xlsx") -->
+sem <- read_excel("data/Семинары по экологии биотехнологи 2022.xlsx", na = "NA")
 
-<!-- sem_1_print <- merge(class, sem_1) %>% select(-St_Mail) %>% mutate(Exam = Presentation + Presence + Speech + Bonus) -->
+sem <- sem %>% select(Login, Seminar_1)
 
-<!-- ``` -->
+sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1) %>% mutate(Exam = Seminar_1 * 8) 
 
-<!-- ```{r} -->
-<!-- kable(sem_1_print) -->
+```
+
+```{r}
+kable(sem_print)
 
 
-<!-- ``` -->
+```
 
 
 ## **Анализ контрольной работы № 2**
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2021)(1-11).xlsx") -->
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score")  -->
+cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология для биоинженеров 2022)(1-27).xlsx")
+names(cont2) <- c("St_Mail",  "Name", "Score")
 
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = Score / 14) -->
+cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 13*3, 1))
 
-<!-- kable(cont2_print) -->
+kable(cont2_print)
 
-<!-- ``` -->
+```
 
 <!-- ## **Семинар-конференция № 2** -->
 
@@ -482,7 +484,7 @@ kable(cont1_print)
 
 
 
-## **Результаты семинаров**
+<!-- ## **Результаты семинаров** -->
 
 <!-- **Коллеги!** -->
 

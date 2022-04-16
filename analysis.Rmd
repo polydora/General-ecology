@@ -437,9 +437,9 @@ kable(cont1_print)
 
 sem <- read_excel("data/Семинары по экологии биотехнологи 2022.xlsx", na = "NA")
 
-sem <- sem %>% select(Login, Seminar_1)
+sem <- sem %>% select(Login, Seminar_1, Seminar_2)
 
-sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1) %>% mutate(Exam = Seminar_1 * 8) 
+sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1, Seminar_2) %>% mutate(Exam = (Seminar_1 * 8 + Seminar_2 * 8) ) 
 
 ```
 
@@ -460,9 +460,10 @@ kable(sem_print)
 cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология для биоинженеров 2022)(1-27).xlsx")
 names(cont2) <- c("St_Mail",  "Name", "Score")
 
-cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 13*3, 1))
+cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 12*3, 1))
 
 kable(cont2_print)
+
 
 ```
 
@@ -518,7 +519,35 @@ kable(cont2_print)
 
 
 
-## **Итоговый счет**
+## **Итоговый счет группа биоинженеров**
+
+
+```{r}
+
+tests <- credits_print %>% select(Login, Exam) 
+
+cont1 <- cont1_print %>% select(Login, Exam)
+
+cont2 <- cont2_print %>% select(Login, Exam)
+
+sems <- sem_print %>% select(Login, Exam)
+
+d <- merge(tests, cont1, by = "Login")
+dd <- merge(d, cont2, by = "Login")
+final <- merge(dd, sems, by = "Login")
+
+names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) 
+
+Exam <- rowSums(final[,-1], na.rm = T)
+
+final$Exam <- Exam
+
+kable(final)
+
+```
+
+
+
 
 
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
@@ -583,6 +612,9 @@ kable(cont2_print)
 
 
 
+
+
+
 <!-- ## Частотное распределение накопленных баллов перед экзаменом -->
 
 <!-- ```{r} -->
@@ -628,31 +660,6 @@ kable(cont2_print)
 
 <!-- ``` -->
 
-
-
-<!-- ## **Частотное распределение результатов** -->
-
-
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(ggplot2) -->
-<!-- library(patchwork) -->
-
-<!-- Pl_lect <- ggplot(credits_print, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Тесты по материалам лекций")+xlim(0, 1) -->
-
-<!-- Pl_hw1 <- ggplot(hw1_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №1")+xlim(0, 1) -->
-
-
-<!-- Pl_cw1 <- ggplot(cont1, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №1")+xlim(0, 2.5) -->
-
-<!-- Pl_hw2 <- ggplot(hw2_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №2")+xlim(0, 1) -->
-
-<!-- Pl_hw3 <- ggplot(hw3_score, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Самостоятельная работа №3")+xlim(0, 1) -->
-
-<!-- Pl_cw2 <- ggplot(cont2, aes(x = Exam)) + stat_count(geom = "col") + labs(x = "% от экзаменационной оценки") + ggtitle("Контрольная работа №2") + xlim(0, 2.5) -->
-
-<!-- (Pl_lect + Pl_hw1 + Pl_hw2 )/(Pl_hw3 + Pl_cw1 + Pl_cw2 ) -->
-
-<!-- ``` -->
 
 
 <!-- ## **Результаты семинаров** -->

@@ -433,13 +433,13 @@ kable(cont1_print)
 ## **Оценки за семинары**
 
 
-```{r}
+```{r warning = FALSE}
 
 sem <- read_excel("data/Семинары по экологии биотехнологи 2022.xlsx", na = "NA")
 
 sem <- sem %>% select(Login, Seminar_1, Seminar_2)
 
-sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1, Seminar_2) %>% mutate(Exam = (Seminar_1 * 8 + Seminar_2 * 8) ) 
+sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1, Seminar_2) %>% rowwise() %>% mutate(Exam = sum(Seminar_1 * 8,  Seminar_2 * 8, na.rm = T) ) 
 
 ```
 
@@ -522,7 +522,7 @@ kable(cont2_print)
 ## **Итоговый счет группа биоинженеров**
 
 
-```{r}
+```{r warning = FALSE}
 
 tests <- credits_print %>% select(Login, Exam) 
 

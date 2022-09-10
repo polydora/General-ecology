@@ -13,9 +13,9 @@ title: Презентации к лекциям
 
 - [Правила игры](Presentations/Lecture Introduction.pdf)
 
-<!-- ## Лекция 1. -->
+## Лекция 1.
 
-<!-- - [Предмет экологии](Presentations//Lecture 1 Предмет экологии.pdf) -->
+- [Предмет экологии](Presentations//Lecture 1 Предмет экологии.pdf)
 
 <!-- ## Лекция 2. -->
 

@@ -7,26 +7,26 @@ title: Анализ работы
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(dplyr) -->
-<!-- library(readxl) -->
-<!-- library(ggplot2) -->
-<!-- library(broom) -->
-<!-- library(tidyr) -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(dplyr)
+library(readxl)
+library(ggplot2)
+library(broom)
+library(tidyr)
 
 
-<!-- # class <- read_xlsx("data/Classess_2022_biotech.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- # class <- class %>% select(St_Mail, Login) -->
+class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
+class <- class %>% filter(!is.na(Login)|!is.na(Group) )
+class <- class %>% select(St_Mail, Login)
 
 
-<!-- opts_chunk$set(echo = FALSE) -->
-<!-- # class[class$Login == "st092164", ] -->
+opts_chunk$set(echo = FALSE)
+# class[class$Login == "st092164", ]
 
 
-<!-- # class[is.na(class$St_Mail),] -->
-<!-- ``` -->
+# class[is.na(class$St_Mail),]
+```
 
 
 
@@ -36,35 +36,57 @@ title: Анализ работы
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- credits <- class %>% select(Login, St_Mail) -->
+credits <- class %>% select(Login, St_Mail)
 
-<!-- # credits[credits$Login == "st092164", ] -->
-<!-- # credits[credits$Login == "st092135", ] -->
+# credits[credits$Login == "st092164", ]
+# credits[credits$Login == "st092135", ]
 
-<!-- # Тест по Лекции 1 -->
-<!-- # test_lecture_1 <- read_excel("data/Основы ОТС и Предмет экологии  (Общая экология 2021)(1-106).xlsx") -->
+# Тест по Лекции 1
+test_lecture_1 <- read_excel("data/Основы ОТС и Предмет экологии  (Общая экология 2022)(1-103).xlsx")
 
-<!-- # test_lecture_1 <- test_lecture_1 %>% select(c(1,3)) -->
-
-<!-- test_lecture_1 <- read_xlsx("data/Основы ОТС и Предмет экологии  (Общая экология для биоинженеров 2022)(1-26).xlsx") -->
-
-<!-- test_lecture_1 <- test_lecture_1 %>% select(c(1,3)) -->
+test_lecture_1 <- test_lecture_1 %>% select(c(1,3))
 
 
-<!-- names(test_lecture_1) <- c("St_Mail", "Score_lecture_1") -->
-
-<!-- # test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ] -->
-
-
-<!-- credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
-
-<!-- # credits[credits$St_Mail == "st092164@student.spbu.ru", ] -->
-<!-- # add_score <- data.frame(St_Mail = "st078729@student.spbu.ru", Addition = 1) -->
-<!-- # credits <- merge(credits, add_score, by.x = "St_Mail", all.x = TRUE) -->
+# 
+# test_lecture_1 <- read_xlsx("data/Основы ОТС и Предмет экологии  (Общая экология для биоинженеров 2022)(1-26).xlsx")
+# 
+# test_lecture_1 <- test_lecture_1 %>% select(c(1,3))
 
 
+names(test_lecture_1) <- c("St_Mail", "Score_lecture_1")
+
+# test_lecture_1[test_lecture_1$St_Mail == "st092164@student.spbu.ru", ]
+
+
+credits <- merge(credits, test_lecture_1, all.x = TRUE)
+
+
+
+
+
+
+##########################
+#Вывод общей таблицы с баллами
+
+credits_sum <- 9
+
+credits_print <- credits %>% select(-St_Mail)
+
+credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE)
+
+credits_print$Credit_Sum <- credits_sum
+
+credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2)
+
+credits_print$Exam <- credits_print$Proportion * 3
+
+# credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
+
+
+
+```
 
 <!-- #Тест по Лекции 2 -->
 
@@ -156,37 +178,22 @@ title: Анализ работы
 
 
 
-<!-- #Вывод общей таблицы с баллами -->
 
-<!-- credits_sum <- 9 + 10 + 8 + 10 + 7 + 7 + 12 -->
-<!-- # + 10 + 10 + 10 + 10 + 10 + 8 -->
-
-<!-- credits_print <- credits %>% select(-St_Mail) -->
-
-<!-- credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE) -->
-
-<!-- credits_print$Credit_Sum <- credits_sum -->
-
-<!-- credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2) -->
-
-<!-- credits_print$Exam <- credits_print$Proportion * 8 -->
-
-<!-- # credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки -->
 
 
 <!-- ``` -->
 
 <!-- **Состояние индивидуального счета студентов** -->
 
-<!-- ```{r, echo=F} -->
+```{r, echo=F}
 
-<!-- options(knitr.kable.NA = '-') -->
+options(knitr.kable.NA = '-')
 
-<!-- credits_print <- credits_print %>% select(-Sum, -Credit_Sum) -->
+credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum) 
 
-<!-- kable(credits_print) -->
+kable(credits_print)
 
-<!-- ``` -->
+```
 
 
 

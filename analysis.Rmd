@@ -93,11 +93,21 @@ credits <- merge(credits, test_lecture_3, all.x = TRUE)
 
 
 
+#Тест по Лекции 4
+
+test_lecture_4 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2022)(1-102).xlsx")
+test_lecture_4 <- test_lecture_4 %>% select(1,3)
+names(test_lecture_4) <- c("St_Mail", "Score_lecture_5")
+
+credits <- merge(credits, test_lecture_4, all.x = TRUE)
+
+
+
 ##########################
 #Вывод общей таблицы с баллами
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 9 + 10 + 20
+credits_sum <- 9 + 10 + 20 + 10
 
 credits_print <- credits %>% select(-St_Mail)
 
@@ -116,32 +126,7 @@ credits_print$Exam <- credits_print$Proportion * 3
 ```
 
 
-<!-- #  -->
-<!-- #  -->
 
-
-<!-- #  -->
-<!-- # # credits$Addition_2 <- 1 -->
-<!-- #  -->
-
-<!-- #Тест по Лекции 4 -->
-
-<!-- test_lecture_4 <- read_xlsx("data/Структура и динамика популяций  (Общая экология для биоинженеров 2022)(1-28).xlsx") -->
-
-<!-- test_lecture_4 <- test_lecture_4 %>% select(1,3) -->
-<!-- names(test_lecture_4) <- c("St_Mail", "Score_lecture_4") -->
-
-<!-- credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
-
-<!-- # -->
-
-<!-- #Тест по Лекции 5 -->
-
-<!-- test_lecture_5 <- read_xlsx("data/Взаимоотношения организмов (Общая экология для биоинженеров 2022)(1-26).xlsx") -->
-<!-- test_lecture_5 <- test_lecture_5 %>% select(1,3) -->
-<!-- names(test_lecture_5) <- c("St_Mail", "Score_lecture_5") -->
-
-<!-- credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
 
 
 
@@ -219,46 +204,6 @@ kable(credits_print)
 <!-- # **Анализ отчетов по самостоятельной работе № 1** -->
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-
-<!-- hw1 <- read_xlsx("data/Тест по самостоятельной работе №1 (Общая экология 2021)(1-108).xlsx") -->
-<!-- hw1 <- hw1[1:2] -->
-<!-- names(hw1) <- c("Login", "Score") -->
-
-<!-- hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-
-<!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
-<!-- # names(add_hw1) <- c("Login", "add_score") -->
-<!-- #  -->
-<!-- # add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
-<!-- #  -->
-<!-- # # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
-<!-- #  -->
-
-<!-- # hw1_score <- class %>% select(St_Mail, Login) -->
-<!-- #  -->
-<!-- # hw1_score <- merge(hw1_score, hw1, all.x = T) -->
-<!-- #  -->
-<!-- # hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
-<!-- #  -->
-<!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
-
-<!-- hw1_score <- hw1 -->
-
-<!-- hw1_score$Total <- 15 -->
-
-<!-- hw1_score$Exam <- round(hw1_score$Score / hw1_score$Total, 1) -->
-
-<!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
-
-<!-- hw1_score_print <- hw1_score  -->
-
-<!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
-
-<!-- kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки")) -->
-
-
-<!-- ``` -->
 
 <!-- <br> -->
 <!-- <br> -->
@@ -403,38 +348,40 @@ kable(credits_print)
 
 Максимальное количество баллов для экзамена: 1.5%
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+Коллеги! Я приношу свои извинения за ошибку в вопросе про накопленную сумму температур. Те, кто не ответил на этот вопрос, поступили единственно правильным способом. Поэтому им я добавил один балл. Всем остальным я ответы на этот вопрос не зачел, но (!) общее количество вопросов сократил на один. Так что никто ничего не потерял, а те, кто не ответил на "кривой" вопрос, смогли получить даже больше 1.5% от финальной оценки.
 
-<!-- cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология для биоинженеров 2022)(1-28).xlsx") -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- # cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2021)(1-99).xlsx") -->
-<!-- names(cont1) <- c("St_Mail","Name", "Score") -->
+# cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология для биоинженеров 2022)(1-28).xlsx")
 
-<!-- cont1_print <- merge(class, cont1 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 21 * 3, 1) ) %>% select(-Family, -Name, -Otch, -Group ) -->
+cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2022)(1-104).xlsx")
+names(cont1) <- c("St_Mail","Name", "Score")
 
-<!-- # correl <- tidy(cor.test(cont1$Incorrect, cont1$Time)) -->
+cont1_print <- merge(class, cont1 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 24 * 1.5, 1) ) 
 
-<!-- #  cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
+# correl <- tidy(cor.test(cont1$Incorrect, cont1$Time))
 
-<!-- # table(cont_reg$Login) -->
-<!-- # -->
-<!-- # -->
-<!-- # cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-<!-- # -->
-<!-- # cont1$Add <- 1 -->
-<!-- # -->
-<!-- # cont1$Total <- (cont1$Score + cont1$Add)/18 -->
-<!-- # -->
-<!-- # cont1$Exam <- round(cont1$Total * 2.5, 1) -->
-<!-- # -->
-<!-- # cont1_print <- class %>% select(Login) -->
-<!-- # -->
-<!-- # cont1_print <- merge(cont1_print, cont1, all.x = T) -->
+#  cont_reg[!(cont_reg$Login %in% cont$Login), ]
 
-<!-- kable(cont1_print) -->
+# table(cont_reg$Login)
+#
+#
+# cont1 <- cont %>% group_by(Login) %>% summarise(Score = max(Score))
+#
+# cont1$Add <- 1
+#
+# cont1$Total <- (cont1$Score + cont1$Add)/18
+#
+# cont1$Exam <- round(cont1$Total * 2.5, 1)
+#
+# cont1_print <- class %>% select(Login)
+#
+# cont1_print <- merge(cont1_print, cont1, all.x = T)
+
+kable(cont1_print)
 
 
-<!-- ``` -->
+```
 
 
 
@@ -465,6 +412,51 @@ kable(credits_print)
 ## **Анализ самостоятельной работы № 1**
 
 Максимальное количество баллов для экзамена 1.5%
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+hw1 <- read_xlsx("data/Тест по самостоятельной работе №1 (Общая экология 2022)(1-98).xlsx")
+hw1 <- hw1 %>% select(1, 3)
+names(hw1) <- c("Login", "Score")
+
+# hw1 <- hw1 %>% group_by(Login) %>% summarise(Score = max(Score))
+
+# add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T)
+# names(add_hw1) <- c("Login", "add_score")
+#
+# add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score))
+#
+# # hw1[!(hw1$Login %in% add_hw1$Login), ]
+#
+
+# hw1_score <- class %>% select(St_Mail, Login)
+#
+# hw1_score <- merge(hw1_score, hw1, all.x = T)
+#
+# hw1_score <- merge(hw1_score, add_hw1, all.x = T)
+#
+# hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T)
+
+hw1_score <- hw1
+
+hw1_score$Total <- 15
+
+hw1_score$Exam <- round(hw1_score$Score / hw1_score$Total * 1.5 , 1)
+
+# hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
+
+hw1_score_print <- hw1_score %>% select(-Total)
+
+# kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки"))
+
+kable(hw1_score_print, col.names = c("Login", "Сумма",  "% от экзаменационной оценки"))
+
+
+```
+
+
+
+
 
 ## **Анализ самостоятельной работы № 2**
 

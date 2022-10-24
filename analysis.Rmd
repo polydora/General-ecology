@@ -112,12 +112,20 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 
 
+test_lecture_6 <- read_xlsx("data/Симбиозы и структура сообществ (Общая экология 2022)(1-64).xlsx")
+
+test_lecture_6 <- test_lecture_6 %>% select(1,3)
+names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+
+credits <-  merge(credits, test_lecture_6, all.x = TRUE)
+
+
 
 ##########################
 #Вывод общей таблицы с баллами
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 9 + 10 + 20 + 10 + 14
+credits_sum <- 9 + 10 + 20 + 10 + 14 + 10
 
 credits_print <- credits %>% select(-St_Mail)
 

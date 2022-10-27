@@ -315,21 +315,26 @@ kable(cont1_print)
 
 Максимальное количество баллов для экзамена 1.5%
 
+Внимание! В одном из вопросов (про эффект Олли) был технический сбой. Поэтому этот вопрос не будет учитываться, общее количество вопросов будет 14.
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология для биоинженеров 2022)(1-27).xlsx") -->
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 12*3, 1)) -->
+cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2022)(1-100).xlsx")
+names(cont2) <- c("St_Mail",  "Name", "Score")
 
-<!-- kable(cont2_print) -->
+cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 14*1.5, 1))
+
+kable(cont2_print)
 
 
-<!-- ``` -->
+```
+
+
+
 
 
 
@@ -348,6 +353,9 @@ hw1_score <- hw1
 names(hw1_score) <- c("St_Mail","Name", "Score")
 
 
+hw1_score <- merge(class, hw1_score) %>% select(-c(St_Mail, Name))
+
+
 hw1_score$Total <- hw1_score$Score / 15 * 1.5
 
 
@@ -355,7 +363,7 @@ hw1_score$Exam <- round(hw1_score$Total, 1)
 
 
 
-hw1_score_print <- hw1_score %>% select(-Total, -Name)
+hw1_score_print <- hw1_score %>% select(-Total)
 
 kable(hw1_score_print, col.names = c("Login", "Score", "Exam"))
 
@@ -372,9 +380,9 @@ kable(hw1_score_print, col.names = c("Login", "Score", "Exam"))
 
 
 
-## **Оценки за семинары**
+<!-- ## **Оценки за семинары** -->
 
-Максимальное количество баллов для экзамена 21%
+<!-- Максимальное количество баллов для экзамена 21% -->
 
 <!-- ```{r warning = FALSE} -->
 
@@ -414,33 +422,35 @@ kable(hw1_score_print, col.names = c("Login", "Score", "Exam"))
 
 
 
-<!-- ## **Результаты семинаров** -->
+## **Результаты семинаров**
 
-<!-- **Коллеги!** -->
+Семинары приносят в экзаменационную оценку 27%
 
-<!-- Оценки, которые вы видите ниже, это результат автоматической обработки базы, которую заполняют преподаватели после семинаров.  Проверяйте, пожалуйста, все ваши текущие оценки. Если вы видите, что вам что-то не проставлено, то срочно связывайтесь с соответствующим преподавателем.  -->
+**Коллеги!**
 
-<!-- Поверьте, у нас колоссальная нагрузка (особенно теперь...) и мы не всегда успеваем внести оценки в ведомость. Контролируйте этот процесс, пожалуйста.   -->
+Оценки, которые вы видите ниже, это результат автоматической обработки базы, которую заполняют преподаватели после семинаров.  Проверяйте, пожалуйста, все ваши текущие оценки. Если вы видите, что вам что-то не проставлено, то срочно связывайтесь с соответствующим преподавателем.
 
-
-
-<!-- ```{r} -->
-<!-- seminars <- read_excel("data/Семинары по общей экологии (биологи) 2021.xlsx") -->
-
-<!-- names(seminars)[1:3] <- c( "Family", "Name", "St_Mail")  -->
-
-<!-- seminars_print <- merge(class, seminars) -->
-
-<!-- seminars_print <- seminars_print %>% select(-St_Mail, -Family, -Name) %>% arrange((Login)) -->
+Поверьте, у нас колоссальная нагрузка и мы не всегда успеваем внести оценки в ведомость. Контролируйте этот процесс, пожалуйста.
 
 
-<!-- seminars_print$Exam <- seminars_print %>% select(- c(Login, Group) ) %>% mutate(Sum = rowSums(., na.rm = T), Exam = Sum) %>% pull(Exam) -->
+
+```{r}
+seminars <- read_excel("data/Семинары биологи 2022.xlsx")
+
+names(seminars)[1:3] <- c( "Family", "Name", "Login")
+
+seminars_print <- seminars %>% select(-Family, -Name)
+  
+  
+
+seminars_print$Exam <- seminars_print %>% select(- c(Login, Group) ) %>% mutate(Sum = rowSums(., na.rm = T), Exam = Sum) %>% pull(Exam) 
+
+seminars_print$Exam <- seminars_print$Exam*3
+
+kable(seminars_print)
 
 
-<!-- kable(seminars_print) -->
-
-
-<!-- ``` -->
+```
 
 
 

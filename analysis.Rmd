@@ -326,7 +326,7 @@ kable(cont1_print)
 cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2022)(1-100).xlsx")
 names(cont2) <- c("St_Mail",  "Name", "Score")
 
-cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 14*1.5, 1))
+cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 13*1.5, 1))
 
 kable(cont2_print)
 

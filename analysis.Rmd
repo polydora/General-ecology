@@ -380,6 +380,35 @@ kable(hw1_score_print, col.names = c("Login", "Score", "Exam"))
 
 
 
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+hw2 <- read_excel("data/Самостоятельная работа № 2 (Общая экология 2021) (Общая экология 2022)(1-78).xlsx")
+
+hw2_score <- hw2
+
+names(hw2_score) <- c("St_Mail","Name", "Score")
+
+
+hw2_score <- merge(class, hw2_score) %>% select(-c(St_Mail, Name))
+
+
+hw2_score$Total <- hw2_score$Score / 21 * 1.5
+
+
+hw2_score$Exam <- round(hw2_score$Total, 1)
+
+
+
+hw2_score_print <- hw2_score %>% select(-Total)
+
+kable(hw2_score_print, col.names = c("Login", "Score", "Exam"))
+
+
+```
+
+
+
 <!-- ## **Оценки за семинары** -->
 
 <!-- Максимальное количество баллов для экзамена 21% -->

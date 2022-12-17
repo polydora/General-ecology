@@ -517,54 +517,70 @@ kable(seminars_print)
 
 
 
-
-
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(stringr) -->
-
-
-<!-- d1 <- credits_print %>% select(Login, Exam) -->
-<!-- d1$Exam <- round(d1$Exam*3, 2) -->
-
-
-<!-- d2 <- cont1_print %>% select(Login, Exam) -->
-<!-- d2$Exam <- round(d2$Exam * 1.5, 2) -->
+## **Итоговый счет биологи 2022**
 
 
 
-<!-- d3 <- cont2_print %>% select(Login, Exam) -->
-<!-- d3$Exam <- round(d3$Exam * 1.5, 2) -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+library(stringr)
 
 
-<!-- d4 <- hw1_score_print %>% select(Login, Exam) -->
-<!-- d4$Login <- word(d4$Login, 1 ,sep = "\\@") -->
-<!-- d4$Exam <- round(d4$Exam * 1.5, 2) -->
+d1 <- credits_print %>% select(Login, Exam)
+d1$Exam <- round(d1$Exam, 2)
 
 
-<!-- d5 <- hw2_score_print %>% select(Login, Exam) -->
-<!-- d5$Login <- word(d5$Login, 1 ,sep = "\\@") -->
-<!-- d5$Exam <- round(d5$Exam * 1.5, 2) -->
+d2 <- cont1_print %>% select(Login, Exam)
+d2$Exam <- round(d2$Exam, 2)
 
 
-<!-- d6 <- seminars_print %>% select(Login, Exam) -->
-<!-- d6$Exam <- round(d6$Exam * 3, 2) -->
+
+d3 <- cont2_print %>% select(Login, Exam)
+d3$Exam <- round(d3$Exam, 2)
 
 
-<!-- Results <- merge(d1, d2, by = "Login", all = T) %>% merge(., d3, by = "Login", all = T) %>% merge(., d4, by = "Login", all = T) %>%  merge(., d5, by = "Login", all = T) %>%  merge(., d6, by = "Login", all = T) -->
+d4 <- hw1_score_print %>% select(Login, Exam)
+d4$Login <- word(d4$Login, 1 ,sep = "\\@")
+d4$Exam <- round(d4$Exam, 2)
 
 
-<!-- names(Results) <- c("Login", "Lecture_test (max 3)", "Control_1(max 1.5)", "Control_2 (max 1.5)", "Home Work 1 (max 1.5)", "Home Work 2 (max 1.5)", "Seminars (max 21)") -->
+d5 <- hw2_score_print %>% select(Login, Exam)
+d5$Login <- word(d5$Login, 1 ,sep = "\\@")
+d5$Exam <- round(d5$Exam, 2)
 
 
-<!-- Results_print <- Results -->
+d6 <- seminars_print %>% select(Login, Exam)
+d6$Exam <- round(d6$Exam, 2)
 
-<!-- Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1) -->
 
-<!-- ``` -->
+Results <- merge(d1, d2, by = "Login", all = T) %>% merge(., d3, by = "Login", all = T) %>% merge(., d4, by = "Login", all = T) %>%  merge(., d5, by = "Login", all = T) %>%  merge(., d6, by = "Login", all = T)
 
-<!-- ```{r} -->
-<!-- kable(Results_print) -->
-<!-- ``` -->
+
+names(Results) <- c("Login", "Lecture_test (max 3)", "Control_1(max 1.5)", "Control_2 (max 1.5)", "Home Work 1 (max 1.5)", "Home Work 2 (max 1.5)", "Seminars (max 21)")
+
+
+Results_print <- Results
+
+Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1)
+
+Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA")
+
+
+
+
+# Код для вывода суммарных оценок с именами.
+class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
+
+final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T) 
+
+write.table(final_results, "clipboard", sep = "\t", row.names = F)
+
+```
+
+```{r}
+
+options(knitr.kable.NA = '-')
+kable(Results_print)
+```
 
 
 <!-- ```{r} -->
@@ -580,111 +596,4 @@ kable(seminars_print)
 <!-- ``` -->
 
 
-
-
-
-
-<!-- ## Частотное распределение накопленных баллов перед экзаменом -->
-
-<!-- ```{r} -->
-<!-- library(ggplot2) -->
-
-
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-<!-- class2 <- read_xlsx("data/Classess_2021_biotech.xlsx", col_names = T) -->
-
-<!-- merge(class2, Results_print) %>% select(Family,Name,Login, Exam) %>% write.csv(.,"before_exam_2021_biotech.csv") -->
-<!-- ``` -->
-
-<!-- ## **Анализ контрольной работы № 2** -->
-
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- #  -->
-<!-- # cont_reg2 <- read_excel("data/Регистрационная форма для выполнения контрольной работы № 1 (Responses).xlsx") -->
-
-<!-- cont <- read_excel("data/Контрольная работа №2 (Responses).xlsx") -->
-
-<!-- # cont_reg[!(cont_reg$Login %in% cont$Login), ] -->
-
-<!-- # table(cont_reg$Login) -->
-
-
-<!-- cont2 <- cont %>% group_by(Login) %>% summarise(Score = max(Score)) -->
-
-
-<!-- # cont2$Add <- 0 -->
-
-<!-- cont2$Total <- (cont2$Score)/18 -->
-
-<!-- cont2$Exam <- round(cont2$Total * 2.5, 1)   -->
-
-<!-- cont2_print <- class %>% select(Login) -->
-
-<!-- cont2_print <- merge(cont2_print, cont2, all.x = T) -->
-
-<!-- kable(cont2_print) -->
-
-<!-- ``` -->
-
-
-
-<!-- ## **Результаты семинаров** -->
-
-<!-- **Внимание!** -->
-
-<!-- ```{r} -->
-<!-- seminars <- read.csv("data/Семинары по общей экологии - Sheet1.csv", header = TRUE) -->
-<!-- Groups <- seminars %>% select(c(Group)) -->
-
-<!-- seminars <- seminars %>% select(-c(Family, Name, Group)) -->
-
-<!-- seminars$Sum <- rowSums(seminars[, 2:9], na.rm = T) -->
-
-
-<!-- seminars$Exam <- seminars$Sum * 3 -->
-
-<!-- Groups$Exam <-seminars$Exam  -->
-<!-- ``` -->
-
-
-<!-- ```{r} -->
-<!-- kable(seminars) -->
-<!-- ``` -->
-
-<!-- ### **"Групповой зачет"** -->
-
-<!-- Этот график иллюстрирует общую активность группы (ну или строгость преподавателя...) -->
-
-<!-- ```{r} -->
-<!-- ggplot(Groups, aes(x = factor(Group), y = Exam)) + geom_violin() + labs(x = "Группа")  -->
-<!-- ``` -->
-
-<!-- # **Финальный счет** -->
-
-<!-- ```{r, message=FALSE} -->
-
-<!-- tests <- credits_print %>% select(Login, Exam)  -->
-
-<!-- hw1 <- hw1_score_print %>% select(Login, Exam)  -->
-
-<!-- hw2 <- hw2_score_print %>% select(Login, Exam)  -->
-
-<!-- hw3 <- hw3_score_print %>% select(Login, Exam)  -->
-
-<!-- cont1 <- cont1_print %>%  select(Login, Exam) -->
-
-<!-- cont2 <- cont2_print %>%  select(Login, Exam) -->
-
-<!-- seminars <- seminars %>%  select(Login, Exam) -->
-
-
-<!-- Total <- rbind(tests, hw1, hw2, hw3, cont1, cont2, seminars) -->
-
-<!-- Result <-Total %>% group_by(Login) %>% summarize(Total = sum(Exam, na.rm = TRUE)) -->
-
-<!-- kable(Result) -->
-<!-- ``` -->
 

@@ -567,12 +567,12 @@ Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA
 
 
 
-# Код для вывода суммарных оценок с именами.
-class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
-
-final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T) 
-
-write.table(final_results, "clipboard", sep = "\t", row.names = F)
+# # Код для вывода суммарных оценок с именами.
+# class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
+# 
+# final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T) 
+# 
+# write.table(final_results, "clipboard", sep = "\t", row.names = F)
 
 ```
 
@@ -583,17 +583,17 @@ kable(Results_print)
 ```
 
 
-<!-- ```{r} -->
-<!-- # Результаты в сумме для создания файла-ведомости экзамена -->
+```{r}
+# Результаты в сумме для создания файла-ведомости экзамена
 
-<!-- class <- read_xlsx("data/Classess_2021_biology.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class %>% select(St_Mail, Login, Family, Name, Otch ) -->
-<!-- res <- merge(class, Results_print) -->
+class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
+# class <- class %>% filter(!is.na(Login)|!is.na(Group) )
+class <- class %>% select(St_Mail, Login, Family, Name, Otch )
+res <- merge(class, Results_print)
 
-<!-- write.table(res, "data/results_for_examen.csv", sep = ",", row.names = F, fileEncoding = "UTF-8" ) -->
+write.table(res, "data/results_for_examen.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
 
-<!-- ``` -->
+```
 
 
 

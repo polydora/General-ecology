@@ -69,22 +69,21 @@ credits <- merge(credits, test_lecture_2, all.x = TRUE)
 #Тест по Лекции 3
 
 
-# test_lecture_3 <- read_xlsx("data/Структура и динамика популяций  (Общая экология 2022)(1-98).xlsx")
-# 
-# test_lecture_3 <- test_lecture_3 %>% select(1,3)
-# names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
-# 
-# credits <- merge(credits, test_lecture_3, all.x = TRUE)
-# 
-# 
-# 
-# test_lecture_4 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2022)(1-102).xlsx")
-# 
-# test_lecture_4 <- test_lecture_4 %>% select(1,3)
-# names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
-# 
-# credits <- merge(credits, test_lecture_4, all.x = TRUE)
-# 
+test_lecture_3 <- read_xlsx("data/Структура популяций  (Общая экология для биоинженеров 2023)(1-10).xlsx")
+
+test_lecture_3 <- test_lecture_3 %>% select(1,3)
+names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
+
+credits <- merge(credits, test_lecture_3, all.x = TRUE)
+
+#
+test_lecture_4 <- read_xlsx("data/Динамика популяций  (Общая экология для биоинженеров 2023)(1-10).xlsx")
+
+test_lecture_4 <- test_lecture_4 %>% select(1,3)
+names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
+
+credits <- merge(credits, test_lecture_4, all.x = TRUE)
+#
 # 
 # 
 # test_lecture_5 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология 2022)(1-85).xlsx")
@@ -111,7 +110,7 @@ credits <- merge(credits, test_lecture_2, all.x = TRUE)
 
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 10 + 10 
+credits_sum <- 10 + 10 + 8 + 10 
 
 credits_print <- credits %>% select(-St_Mail)
 
@@ -140,6 +139,7 @@ options(knitr.kable.NA = '-')
 credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum)
 
 kable(credits_print)
+
 
 ```
 

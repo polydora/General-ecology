@@ -86,12 +86,34 @@ credits <- merge(credits, test_lecture_4, all.x = TRUE)
 #
 # 
 # 
-# test_lecture_5 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология 2022)(1-85).xlsx")
-# 
-# test_lecture_5 <- test_lecture_5 %>% select(1,3)
-# names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
-# 
-# credits <- merge(credits, test_lecture_5, all.x = TRUE)
+
+test_lecture_5 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология для биоинженеров 2023)(1-10).xlsx")
+
+test_lecture_5 <- test_lecture_5 %>% select(1,3)
+names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
+
+credits <- merge(credits, test_lecture_5, all.x = TRUE)
+
+
+test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология для биоинженеров 2023)(1-10).xlsx")
+
+test_lecture_6 <- test_lecture_6 %>% select(1,3)
+names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+
+credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
+
+
+test_lecture_7 <- read_xlsx("data/Взаимоотношения организмов (Общая экология для биоинженеров 2023)(1-10).xlsx")
+
+
+test_lecture_7 <- test_lecture_7 %>% select(1,3)
+names(test_lecture_7) <- c("St_Mail", "Score_lecture_7")
+
+credits <- merge(credits, test_lecture_7, all.x = TRUE)
+
+
+
 # 
 # 
 # 
@@ -110,7 +132,7 @@ credits <- merge(credits, test_lecture_4, all.x = TRUE)
 
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 10 + 10 + 8 + 10 
+credits_sum <- 10 + 10 + 8 + 10 + 10 + 5 + 7
 
 credits_print <- credits %>% select(-St_Mail)
 
@@ -293,19 +315,22 @@ kable(cont1_print)
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2022)(1-100).xlsx") -->
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
+cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология для биоинженеров 2023)(1-10).xlsx")
 
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 13*1.5, 1)) -->
+cont2 <- cont2 %>% select(1:3)
 
-<!-- kable(cont2_print) -->
+names(cont2) <- c("St_Mail",  "Name", "Score")
+
+cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 9*3, 1))
+
+kable(cont2_print)
 
 
-<!-- ``` -->
+```
 
 
 
@@ -387,21 +412,21 @@ kable(cont1_print)
 
 Максимальное количество баллов для экзамена 16%
 
-<!-- ```{r warning = FALSE, eval=FALSE} -->
+```{r warning = FALSE}
 
-<!-- sem <- read_excel("data/Семинары по экологии биотехнологи 2022.xlsx", na = "NA") -->
+sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA")
 
-<!-- sem <- sem %>% select(Login, Seminar_1, Seminar_2) -->
+sem <- sem %>% select(Login, Seminar_1, Seminar_2)
 
-<!-- sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1, Seminar_2) %>% rowwise() %>% mutate(Exam = sum(Seminar_1 * 8,  Seminar_2 * 8, na.rm = T) ) -->
+sem_print <- merge(class, sem, all.x = TRUE ) %>% select(Login, Seminar_1, Seminar_2) %>% rowwise() %>% mutate(Exam = sum(Seminar_1 * 8,  Seminar_2 * 8, na.rm = T) ) %>% filter(Exam != 0)
 
-<!-- ``` -->
+```
 
-<!-- ```{r eval=FALSE} -->
-<!-- kable(sem_print) -->
+```{r }
+kable(sem_print)
 
 
-<!-- ``` -->
+```
 
 
 
@@ -465,29 +490,39 @@ kable(cont1_print)
 ## **Итоговый счет группа биоинженеров**
 
 
-<!-- ```{r warning = FALSE} -->
+```{r warning = FALSE}
 
-<!-- tests <- credits_print %>% select(Login, Exam) -->
+tests <- credits_print %>% select(Login, Exam)
+names(tests) <- c("Login", "Тесты по лекциям")
 
-<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
 
-<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
+cont1 <- cont1_print %>% select(Login, Exam)
+names(cont1) <- c("Login", "Контрольная 1")
 
-<!-- sems <- sem_print %>% select(Login, Exam) -->
 
-<!-- d <- merge(tests, cont1, by = "Login") -->
-<!-- dd <- merge(d, cont2, by = "Login") -->
-<!-- final <- merge(dd, sems, by = "Login") -->
 
-<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
+cont2 <- cont2_print %>% select(Login, Exam)
+names(cont2) <- c("Login", "Контрольная 2")
 
-<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
 
-<!-- final$Exam <- Exam -->
+sems <- sem_print %>% select(Login, Exam)
 
-<!-- kable(final) -->
+names(sems) <- c("Login", "Семинары" )
 
-<!-- ``` -->
+
+d <- merge(tests, cont1, by = "Login", all.x = TRUE)
+dd <- merge(d, cont2, by = "Login", all.x = TRUE)
+final <- merge(dd, sems, by = "Login", all.x = TRUE)
+
+names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" )
+
+Exam <- rowSums(final[,-1], na.rm = T)
+
+final$Exam <- Exam
+
+kable(final)
+
+```
 
 
 

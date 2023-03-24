@@ -13,7 +13,7 @@
 
 <title>Анализ работы</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -48,6 +48,7 @@
 
 
 
+
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
 
@@ -72,6 +73,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -129,11 +133,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -162,8 +170,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -171,16 +179,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -347,15 +348,18 @@ div.tocify {
 <h1><strong>Анализ тестов по материалам лекций</strong></h1>
 <p>Максимальное количество баллов для экзамена: 8%</p>
 <p><strong>Состояние индивидуального счета студентов</strong></p>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="10%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-<col width="12%" />
-<col width="5%" />
+<col width="6%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="8%" />
+<col width="3%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -364,6 +368,9 @@ div.tocify {
 <th align="right">Score_lecture_2</th>
 <th align="right">Score_lecture_3</th>
 <th align="right">Score_lecture_4</th>
+<th align="right">Score_lecture_5</th>
+<th align="right">Score_lecture_6</th>
+<th align="right">Score_lecture_7</th>
 <th align="right">Proportion</th>
 <th align="right">Exam</th>
 </tr>
@@ -371,12 +378,15 @@ div.tocify {
 <tbody>
 <tr class="odd">
 <td align="left">st090455</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
+<td align="right">7</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">10</td>
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">0.88</td>
+<td align="right">7.04</td>
 </tr>
 <tr class="even">
 <td align="left">st108601</td>
@@ -384,8 +394,11 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">8</td>
 <td align="right">10</td>
-<td align="right">0.92</td>
-<td align="right">7.36</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">0.95</td>
+<td align="right">7.60</td>
 </tr>
 <tr class="odd">
 <td align="left">st108602</td>
@@ -393,8 +406,11 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">8</td>
 <td align="right">6</td>
-<td align="right">0.84</td>
-<td align="right">6.72</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">0.90</td>
+<td align="right">7.20</td>
 </tr>
 <tr class="even">
 <td align="left">st108603</td>
@@ -402,8 +418,11 @@ div.tocify {
 <td align="right">4</td>
 <td align="right">7</td>
 <td align="right">10</td>
-<td align="right">0.61</td>
-<td align="right">4.88</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">0.73</td>
+<td align="right">5.84</td>
 </tr>
 <tr class="odd">
 <td align="left">st108603</td>
@@ -411,8 +430,11 @@ div.tocify {
 <td align="right">4</td>
 <td align="right">7</td>
 <td align="right">10</td>
-<td align="right">0.61</td>
-<td align="right">4.88</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">0.73</td>
+<td align="right">5.84</td>
 </tr>
 <tr class="even">
 <td align="left">st108881</td>
@@ -420,11 +442,17 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">7</td>
 <td align="right">10</td>
-<td align="right">0.95</td>
-<td align="right">7.60</td>
+<td align="right">10</td>
+<td align="right">4</td>
+<td align="right">6</td>
+<td align="right">0.93</td>
+<td align="right">7.44</td>
 </tr>
 <tr class="odd">
 <td align="left">st108898</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
 <td align="right">-</td>
 <td align="right">-</td>
 <td align="right">-</td>
@@ -438,8 +466,11 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">7</td>
 <td align="right">9</td>
-<td align="right">0.92</td>
-<td align="right">7.36</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">0.95</td>
+<td align="right">7.60</td>
 </tr>
 <tr class="odd">
 <td align="left">st109018</td>
@@ -447,8 +478,11 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">8</td>
 <td align="right">9</td>
-<td align="right">0.95</td>
-<td align="right">7.60</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">7</td>
+<td align="right">0.98</td>
+<td align="right">7.84</td>
 </tr>
 <tr class="even">
 <td align="left">st109092</td>
@@ -456,8 +490,11 @@ div.tocify {
 <td align="right">8</td>
 <td align="right">6</td>
 <td align="right">9</td>
-<td align="right">0.84</td>
-<td align="right">6.72</td>
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">0.88</td>
+<td align="right">7.04</td>
 </tr>
 <tr class="odd">
 <td align="left">st109105</td>
@@ -465,8 +502,11 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">4</td>
 <td align="right">10</td>
-<td align="right">0.87</td>
-<td align="right">6.96</td>
+<td align="right">11</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">0.92</td>
+<td align="right">7.36</td>
 </tr>
 <tr class="even">
 <td align="left">st109119</td>
@@ -474,8 +514,11 @@ div.tocify {
 <td align="right">5</td>
 <td align="right">5</td>
 <td align="right">8</td>
-<td align="right">0.66</td>
-<td align="right">5.28</td>
+<td align="right">7</td>
+<td align="right">4</td>
+<td align="right">6</td>
+<td align="right">0.70</td>
+<td align="right">5.60</td>
 </tr>
 <tr class="odd">
 <td align="left">st109652</td>
@@ -483,8 +526,11 @@ div.tocify {
 <td align="right">9</td>
 <td align="right">8</td>
 <td align="right">10</td>
-<td align="right">0.87</td>
-<td align="right">6.96</td>
+<td align="right">9</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="right">0.88</td>
+<td align="right">7.04</td>
 </tr>
 </tbody>
 </table>
@@ -565,8 +611,8 @@ div.tocify {
 <tbody>
 <tr class="odd">
 <td align="left">st090455</td>
-<td align="right">-</td>
-<td align="right">-</td>
+<td align="right">19</td>
+<td align="right">3.0</td>
 </tr>
 <tr class="even">
 <td align="left">st108601</td>
@@ -634,13 +680,82 @@ div.tocify {
 <div id="анализ-контрольной-работы-2" class="section level2">
 <h2><strong>Анализ контрольной работы № 2</strong></h2>
 <p>Максимальное количество баллов для экзамена 3%</p>
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE} -->
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2022)(1-100).xlsx") -->
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ) ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 13*1.5, 1)) -->
-<!-- kable(cont2_print) -->
-<!-- ``` -->
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Score</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st090455</td>
+<td align="right">9</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="even">
+<td align="left">st108601</td>
+<td align="right">5</td>
+<td align="right">1.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st108602</td>
+<td align="right">9</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">7</td>
+<td align="right">2.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">7</td>
+<td align="right">2.3</td>
+</tr>
+<tr class="even">
+<td align="left">st108881</td>
+<td align="right">8</td>
+<td align="right">2.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st108898</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st108932</td>
+<td align="right">9</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st109018</td>
+<td align="right">9</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="even">
+<td align="left">st109092</td>
+<td align="right">9</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st109105</td>
+<td align="right">9</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="even">
+<td align="left">st109119</td>
+<td align="right">8</td>
+<td align="right">2.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st109652</td>
+<td align="right">8</td>
+<td align="right">2.7</td>
+</tr>
+</tbody>
+</table>
 <!-- ## **Анализ самостоятельной работы № 1** -->
 <!-- Максимальное количество баллов для экзамена 1.5% -->
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE} -->
@@ -669,14 +784,72 @@ div.tocify {
 <div id="оценки-за-семинары" class="section level2">
 <h2><strong>Оценки за семинары</strong></h2>
 <p>Максимальное количество баллов для экзамена 16%</p>
-<!-- ```{r warning = FALSE, eval=FALSE} -->
-<!-- sem <- read_excel("data/Семинары по экологии биотехнологи 2022.xlsx", na = "NA") -->
-<!-- sem <- sem %>% select(Login, Seminar_1, Seminar_2) -->
-<!-- sem_print <- merge(class, sem) %>% select(Login, Group, Seminar_1, Seminar_2) %>% rowwise() %>% mutate(Exam = sum(Seminar_1 * 8,  Seminar_2 * 8, na.rm = T) ) -->
-<!-- ``` -->
-<!-- ```{r eval=FALSE} -->
-<!-- kable(sem_print) -->
-<!-- ``` -->
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Seminar_1</th>
+<th align="right">Seminar_2</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st108602</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left">st108881</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">st108932</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left">st109018</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">st109105</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="left">st109119</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">st109652</td>
+<td align="right">1.5</td>
+<td align="right">1</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table>
 <!-- ## **Семинар-конференция № 2** -->
 <!-- ```{r} -->
 <!-- sem_2 <- read_excel("data/Conference_seminar_2.xlsx") -->
@@ -701,19 +874,244 @@ div.tocify {
 </div>
 <div id="итоговый-счет-группа-биоинженеров" class="section level2">
 <h2><strong>Итоговый счет группа биоинженеров</strong></h2>
-<!-- ```{r warning = FALSE} -->
-<!-- tests <- credits_print %>% select(Login, Exam) -->
-<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
-<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
-<!-- sems <- sem_print %>% select(Login, Exam) -->
-<!-- d <- merge(tests, cont1, by = "Login") -->
-<!-- dd <- merge(d, cont2, by = "Login") -->
-<!-- final <- merge(dd, sems, by = "Login") -->
-<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
-<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
-<!-- final$Exam <- Exam -->
-<!-- kable(final) -->
-<!-- ``` -->
+<table>
+<colgroup>
+<col width="13%" />
+<col width="24%" />
+<col width="20%" />
+<col width="20%" />
+<col width="13%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Тесты по лекциям</th>
+<th align="right">Контрольная 1</th>
+<th align="right">Контрольная 2</th>
+<th align="right">Семинары</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st090455</td>
+<td align="right">7.04</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">-</td>
+<td align="right">13.04</td>
+</tr>
+<tr class="even">
+<td align="left">st108601</td>
+<td align="right">7.60</td>
+<td align="right">2.8</td>
+<td align="right">1.7</td>
+<td align="right">-</td>
+<td align="right">12.10</td>
+</tr>
+<tr class="odd">
+<td align="left">st108602</td>
+<td align="right">7.20</td>
+<td align="right">2.8</td>
+<td align="right">3.0</td>
+<td align="right">20</td>
+<td align="right">33.00</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st108603</td>
+<td align="right">5.84</td>
+<td align="right">2.7</td>
+<td align="right">2.3</td>
+<td align="right">20</td>
+<td align="right">30.84</td>
+</tr>
+<tr class="even">
+<td align="left">st108881</td>
+<td align="right">7.44</td>
+<td align="right">3.0</td>
+<td align="right">2.7</td>
+<td align="right">20</td>
+<td align="right">33.14</td>
+</tr>
+<tr class="odd">
+<td align="left">st108898</td>
+<td align="right">0.00</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">st108932</td>
+<td align="right">7.60</td>
+<td align="right">2.8</td>
+<td align="right">3.0</td>
+<td align="right">20</td>
+<td align="right">33.40</td>
+</tr>
+<tr class="odd">
+<td align="left">st109018</td>
+<td align="right">7.84</td>
+<td align="right">2.7</td>
+<td align="right">3.0</td>
+<td align="right">20</td>
+<td align="right">33.54</td>
+</tr>
+<tr class="even">
+<td align="left">st109092</td>
+<td align="right">7.04</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">-</td>
+<td align="right">13.04</td>
+</tr>
+<tr class="odd">
+<td align="left">st109105</td>
+<td align="right">7.36</td>
+<td align="right">3.0</td>
+<td align="right">3.0</td>
+<td align="right">20</td>
+<td align="right">33.36</td>
+</tr>
+<tr class="even">
+<td align="left">st109119</td>
+<td align="right">5.60</td>
+<td align="right">2.2</td>
+<td align="right">2.7</td>
+<td align="right">20</td>
+<td align="right">30.50</td>
+</tr>
+<tr class="odd">
+<td align="left">st109652</td>
+<td align="right">7.04</td>
+<td align="right">3.0</td>
+<td align="right">2.7</td>
+<td align="right">20</td>
+<td align="right">32.74</td>
+</tr>
+</tbody>
+</table>
 <!-- ## **Итоговый счет биологи 2022** -->
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- library(stringr) -->

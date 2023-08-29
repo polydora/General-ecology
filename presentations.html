@@ -13,7 +13,7 @@
 
 <title>Презентации к лекциям</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -48,6 +48,7 @@
 
 
 
+
 <link rel="stylesheet" href="my_styles.css" type="text/css" />
 
 
@@ -72,6 +73,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -129,11 +133,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -162,8 +170,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -171,16 +179,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -346,7 +347,7 @@ div.tocify {
 <p><strong>Внимание! Важно!</strong> Не рекомендуется использовать
 презентации (и особенно видеозаписи), которые скачали ваши
 предшественники, проходя этот курс в прошлые годы. Все материалы каждый
-год переабатываются, иногда коренным образом. Материалы по некоторым
+год перерабатываются, иногда коренным образом. Материалы по некоторым
 темам могут быть существенно дополнены и расширены. Особенно обращаем
 внимание на то, что содержание тестов по лекциям тоже меняется год от
 года.</p>
@@ -381,84 +382,30 @@ div.tocify {
 <!-- ## Презентация для семинара по теме "Экологические группировки гидробионтов" -->
 <!-- - [Экологические группировки гидробионтов](Presentations//Экологические группы гидробионтов Презентация к семинару Чернова 2022.pdf) -->
 <!-- Версия для биотехнологов -->
-<div id="введение" class="section level2">
-<h2>Введение</h2>
-<ul>
-<li><a
-href="Presentations/Lecture%20Introduction%20(биотехнологи).pdf">Правила
-игры</a></li>
-</ul>
-</div>
-<div id="лекция-1.-предмет-экологии." class="section level2">
-<h2>Лекция 1. Предмет экологии.</h2>
-<ul>
-<li><a
-href="Presentations//Введение%20в%20ОТС.%20Суть%20экологии%20(биотехнологи).pdf">Предмет
-экологии</a></li>
-</ul>
-</div>
-<div id="лекция-2.-аутоэкология." class="section level2">
-<h2>Лекция 2. Аутоэкология.</h2>
-<ul>
-<li><a
-href="Presentations/Аутэкология%20(биотехнологи).pdf">Аутэкология</a></li>
-</ul>
-</div>
-<div id="лекция-3.-структура-популяций." class="section level2">
-<h2>Лекция 3. Структура популяций.</h2>
-<ul>
-<li><a
-href="Presentations//Популяции%20и%20их%20структура%20(биотехнологи).pdf">Демэкология</a></li>
-</ul>
-</div>
-<div id="лекция-4.-динамика-популяций." class="section level2">
-<h2>Лекция 4. Динамика популяций.</h2>
-<ul>
-<li><a
-href="Presentations//Динамика%20популяции%20(биотехнологи).pdf">Динамика
-популяции</a></li>
-</ul>
-</div>
-<div id="лекции-5-6.-взаимоотношения-организмов-и-структура-сообществ."
-class="section level2">
-<h2>Лекции 5-6. Взаимоотношения организмов и структура сообществ.</h2>
-<ul>
-<li><a
-href="Presentations//Взаимоотношения%20организмов%20и%20структура%20сообщества%20(биотехнологи).pdf">Взаимоотношения
-организмов и структура сообществ</a></li>
-</ul>
-<p><strong>Дополнительные материалы</strong></p>
-<ul>
-<li><p><a
-href="Presentations//Lecture%205%20Взаимоотношения%20часть%201.pdf">Классификация
-симфизиологических связей (по В. Н. Белемишеву)</a></p></li>
-<li><p><a
-href="https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing">Видео
-лекции про симфизиологические связи</a></p></li>
-</ul>
+<!-- ## Введение -->
+<!-- - [Правила игры](Presentations/Lecture Introduction (биотехнологи).pdf) -->
+<!-- ## Лекция 1. Предмет экологии.  -->
+<!-- - [Предмет экологии](Presentations//Введение в ОТС. Суть экологии (биотехнологи).pdf) -->
+<!-- ## Лекция 2. Аутоэкология. -->
+<!-- - [Аутэкология](Presentations/Аутэкология (биотехнологи).pdf) -->
+<!-- ## Лекция 3. Структура популяций.  -->
+<!-- - [Демэкология](Presentations//Популяции и их структура (биотехнологи).pdf) -->
+<!-- ## Лекция 4. Динамика популяций.  -->
+<!-- - [Динамика популяции](Presentations//Динамика популяции (биотехнологи).pdf) -->
+<!-- ## Лекции 5-6. Взаимоотношения организмов и структура сообществ. -->
+<!-- - [Взаимоотношения организмов и структура сообществ](Presentations//Взаимоотношения организмов и структура сообщества (биотехнологи).pdf) -->
+<!-- **Дополнительные материалы**  -->
+<!-- - [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf) -->
+<!-- - [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing) -->
 <!-- ## Лекция 6. Трофические связи. -->
 <!-- - [Трофические связи](Presentations//Трофические связи (биотехнологи).pdf) -->
-<ul>
-<li><a
-href="Presentations//Lecture%209%20Симбиозы.pdf">Симбиозы</a></li>
-<li><a
-href="https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing">Симбиозы.
-Видео</a></li>
-</ul>
+<!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
+<!-- - [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing) -->
 <!-- ## Лекция 7. Конкурентные отношения и структура сообществ. -->
 <!-- - [Конкуренция, экологические ниши и структура сообществ](Presentations//Конкурентные отношения и структура сообществ (биотехнологи).pdf) -->
-</div>
-<div id="лекции-7-8.-экосистемы-и-глобальные-круговороты"
-class="section level2">
-<h2>Лекции 7-8. Экосистемы и глобальные круговороты</h2>
-<ul>
-<li><p><a
-href="Presentations//Структура%20и%20динамика%20экосистем%20(биотехнологи).pdf">Структура
-и динамика экоситсем</a></p></li>
-<li><p><a
-href="Presentations//Биогеохимические%20циклы%20(биотехнологи).pdf">Глобальные
-круговороты (дополнительные материалы)</a></p></li>
-</ul>
+<!-- ## Лекции 7-8. Экосистемы и  глобальные круговороты -->
+<!-- - [Структура и динамика экоситсем](Presentations//Структура и динамика экосистем (биотехнологи).pdf) -->
+<!-- - [Глобальные круговороты (дополнительные материалы)](Presentations//Биогеохимические циклы (биотехнологи).pdf) -->
 <!-- ## Лекция 8. -->
 <!-- - [Структура и динамика сообщества](Presentations//Структура и динамика сообществ (биотехнологи).pdf) -->
 <!-- ## Лекция 7. -->
@@ -474,7 +421,6 @@ href="Presentations//Биогеохимические%20циклы%20(биоте
 <!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
 <!-- ## Презентация для семинара по теме "Температура и живые системы" -->
 <!-- - [Температура](Presentations//Temperature living systems.pdf) -->
-</div>
 
 
 

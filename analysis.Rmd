@@ -52,17 +52,14 @@ credits <- merge(credits, test_lecture_1, all.x = TRUE)
 
 #Тест по Лекции 2
 
-# test_lecture_2 <- read_xlsx("data/Аутэкология (Общая экология для биоинженеров 2023)(1-10).xlsx")
-# 
-# 
-# #
-# #
-# #
-# 
-# test_lecture_2 <- test_lecture_2 %>% select(1,3)
-# names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
-# 
-# credits <- merge(credits, test_lecture_2, all.x = TRUE)
+test_lecture_2 <- read_xlsx("data/Аутэкология (Общая экология 2023)(1-105).xlsx")
+
+
+test_lecture_2 <- test_lecture_2 %>% select(1,3)
+names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
+
+credits <- merge(credits, test_lecture_2, all.x = TRUE)
+
 # 
 # 
 # 
@@ -132,7 +129,7 @@ credits <- merge(credits, test_lecture_1, all.x = TRUE)
 
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 9 
+credits_sum <- 9 + 10
 # + 10 + 8 + 10 + 10 + 5 + 7
 
 credits_print <- credits %>% select(-St_Mail)

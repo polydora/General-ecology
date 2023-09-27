@@ -79,15 +79,14 @@ names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
 
 credits <- merge(credits, test_lecture_4, all.x = TRUE)
 # #
-# #
-# #
-# 
-# test_lecture_5 <- read_xlsx("data/Конкуренция и трофические связи (Общая экология для биоинженеров 2023)(1-10).xlsx")
-# 
-# test_lecture_5 <- test_lecture_5 %>% select(1,3)
-# names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
-# 
-# credits <- merge(credits, test_lecture_5, all.x = TRUE)
+
+
+test_lecture_5 <- read_xlsx("data/Конкуренция (Общая экология 2023)(1-89).xlsx")
+
+test_lecture_5 <- test_lecture_5 %>% select(1,3)
+names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
+
+credits <- merge(credits, test_lecture_5, all.x = TRUE)
 # 
 # 
 # test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология для биоинженеров 2023)(1-10).xlsx")
@@ -127,7 +126,7 @@ credits <- merge(credits, test_lecture_4, all.x = TRUE)
 
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 9 + 10 + 22 + 10
+credits_sum <- 9 + 10 + 22 + 10 + 9
 # + 10 + 8 + 10 + 10 + 5 + 7
 
 credits_print <- credits %>% select(-St_Mail)

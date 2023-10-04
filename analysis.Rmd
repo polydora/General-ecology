@@ -87,14 +87,14 @@ test_lecture_5 <- test_lecture_5 %>% select(1,3)
 names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
 
 credits <- merge(credits, test_lecture_5, all.x = TRUE)
-# 
-# 
-# test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология для биоинженеров 2023)(1-10).xlsx")
-# 
-# test_lecture_6 <- test_lecture_6 %>% select(1,3)
-# names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
-# 
-# credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
+
+test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология 2023)(1-100).xlsx")
+
+test_lecture_6 <- test_lecture_6 %>% select(1,3)
+names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+
+credits <- merge(credits, test_lecture_6, all.x = TRUE)
 # 
 # 
 # 
@@ -126,7 +126,7 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 9 + 10 + 22 + 10 + 9
+credits_sum <- 9 + 10 + 22 + 10 + 9 + 6
 # + 10 + 8 + 10 + 10 + 5 + 7
 
 credits_print <- credits %>% select(-St_Mail)
@@ -159,13 +159,6 @@ kable(credits_print)
 
 
 ```
-
-
-
-
-
-
-
 
 
 
@@ -268,22 +261,25 @@ kable(credits_print)
 
 ## **Анализ контрольной работы № 1**
 
-<!-- Максимальное количество баллов для экзамена: 3% -->
+Максимальное количество баллов для экзамена: 1.5%
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология для биоинженеров 2023)(1-10).xlsx") -->
+cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2023)(1-111) (1).xlsx")
 
-<!-- cont1 <- cont1 %>% select(1:3) -->
+cont1 <- cont1 %>% select(1:3)
 
-<!-- names(cont1) <- c("St_Mail","Name", "Score") -->
+names(cont1) <- c("St_Mail","Name", "Score")
 
-<!-- cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 19 * 3, 1) ) -->
+cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 1.5, 1) )
 
-<!-- kable(cont1_print) -->
+# cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 19 * 3, 1) )
 
 
-<!-- ``` -->
+kable(cont1_print)
+
+
+```
 
 
 

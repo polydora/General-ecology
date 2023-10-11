@@ -192,7 +192,9 @@ hw1_score <- hw1
 
 hw1_score$Total <- 19
 
-hw1_score$Exam <- round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1)
+hw1_score$Exam <- ifelse(is.na(hw1_score$Add_Score), 
+                         round((hw1_score$Score) / hw1_score$Total * 1.5, 1),
+                         round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1))
 
 # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
 

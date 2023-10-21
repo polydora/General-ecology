@@ -388,21 +388,33 @@ kable(cont1_print)
 
 <!-- Максимальное количество баллов для экзамена 16% -->
 
-<!-- ```{r warning = FALSE} -->
+```{r warning = FALSE, message=FALSE}
 
-<!-- sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA") -->
-
-<!-- sem <- sem %>% select(Login, Seminar_1, Seminar_2) -->
-
-<!-- sem_print <- merge(class, sem, all.x = TRUE ) %>% select(Login, Seminar_1, Seminar_2) %>% rowwise() %>% mutate(Exam = sum(Seminar_1 * 8,  Seminar_2 * 8, na.rm = T) ) %>% filter(Exam != 0) -->
-
-<!-- ``` -->
-
-<!-- ```{r } -->
-<!-- kable(sem_print) -->
+library(googlesheets4)
+sem <- read_sheet('https://docs.google.com/spreadsheets/d/1nOF5zamIBuOS99KluyJEwPnbvu0oUhx_uPu0q7O9Kx4/edit?usp=sharing')
 
 
-<!-- ``` -->
+
+
+# sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA")
+
+sem <- sem %>% select(-c(Family, Name, Otch))
+
+sem_print <- 
+  merge(class, sem, all.x = TRUE ) %>% 
+  arrange(Group)%>% 
+  mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>% 
+  select(-St_Mail)
+
+
+# %>% filter(Exam != 0)
+
+```
+
+```{r }
+kable(sem_print)
+
+```
 
 
 

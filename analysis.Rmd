@@ -291,22 +291,22 @@ kable(cont1_print)
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология для биоинженеров 2023)(1-10).xlsx") -->
+cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2023)(1-106).xlsx")
 
-<!-- cont2 <- cont2 %>% select(1:3) -->
+cont2 <- cont2 %>% select(1:3)
 
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
+names(cont2) <- c("St_Mail",  "Name", "Score")
 
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 9*3, 1)) -->
+cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 20 * 1.5, 1))
 
-<!-- kable(cont2_print) -->
+kable(cont2_print)
 
 
-<!-- ``` -->
+```
 
 
 

@@ -518,79 +518,87 @@ kable(sem_print)
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(stringr) -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+library(stringr)
 
 
-<!-- d1 <- credits_print %>% select(Login, Exam) -->
-<!-- d1$Exam <- round(d1$Exam, 2) -->
+d1 <- credits_print %>% select(Login, Exam)
+d1$Exam <- round(d1$Exam, 2)
 
 
-<!-- d2 <- cont1_print %>% select(Login, Exam) -->
-<!-- d2$Exam <- round(d2$Exam, 2) -->
-
-
-
-<!-- d3 <- cont2_print %>% select(Login, Exam) -->
-<!-- d3$Exam <- round(d3$Exam, 2) -->
-
-
-<!-- d4 <- hw1_score_print %>% select(Login, Exam) -->
-<!-- d4$Login <- word(d4$Login, 1 ,sep = "\\@") -->
-<!-- d4$Exam <- round(d4$Exam, 2) -->
-
-
-<!-- d5 <- hw2_score_print %>% select(Login, Exam) -->
-<!-- d5$Login <- word(d5$Login, 1 ,sep = "\\@") -->
-<!-- d5$Exam <- round(d5$Exam, 2) -->
-
-
-<!-- d6 <- seminars_print %>% select(Login, Exam) -->
-<!-- d6$Exam <- round(d6$Exam, 2) -->
-
-
-<!-- Results <- merge(d1, d2, by = "Login", all = T) %>% merge(., d3, by = "Login", all = T) %>% merge(., d4, by = "Login", all = T) %>%  merge(., d5, by = "Login", all = T) %>%  merge(., d6, by = "Login", all = T) -->
-
-
-<!-- names(Results) <- c("Login", "Lecture_test (max 3)", "Control_1(max 1.5)", "Control_2 (max 1.5)", "Home Work 1 (max 1.5)", "Home Work 2 (max 1.5)", "Seminars (max 21)") -->
-
-
-<!-- Results_print <- Results -->
-
-<!-- Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1) -->
-
-<!-- Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA") -->
+d2 <- cont1_print %>% select(Login, Exam)
+d2$Exam <- round(d2$Exam, 2)
 
 
 
-
-<!-- # # Код для вывода суммарных оценок с именами. -->
-<!-- # class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T) -->
-<!-- #  -->
-<!-- # final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T)  -->
-<!-- #  -->
-<!-- # write.table(final_results, "clipboard", sep = "\t", row.names = F) -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- options(knitr.kable.NA = '-') -->
-<!-- kable(Results_print) -->
-<!-- ``` -->
+d3 <- cont2_print %>% select(Login, Exam)
+d3$Exam <- round(d3$Exam, 2)
 
 
-<!-- ```{r} -->
-<!-- # Результаты в сумме для создания файла-ведомости экзамена -->
+d4 <- hw1_score_print %>% select(St_Mail, Exam)
+d4$Login <- word(d4$St_Mail, 1 ,sep = "\\@")
+d4$Exam <- round(d4$Exam, 2)
 
-<!-- class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class %>% select(St_Mail, Login, Family, Name, Otch ) -->
-<!-- res <- merge(class, Results_print) -->
 
-<!-- write.table(res, "data/results_for_examen.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
+d5 <- hw2_score_print %>% select(Login, Exam)
+d5$Login <- word(d5$Login, 1 ,sep = "\\@")
+d5$Exam <- round(d5$Exam, 2)
 
-<!-- ``` -->
 
+d6 <- sem_print %>% select(Login, Exam)
+d6$Exam <- round(d6$Exam, 2)
+
+
+Results <- 
+  merge(d1, d2, by = "Login", all = T) %>% 
+  merge(., d3, by = "Login", all = T) %>% 
+  merge(., d4, by = "Login", all = T) %>%  
+  merge(., d5, by = "Login", all = T) %>%  
+  merge(., d6, by = "Login", all = T)
+
+
+names(Results) <- c("Login", "Lecture_test", "Control_1", "Control_2", "St_Mail", "Home Work 1", "Home Work 2", "Seminars")
+
+Results <-
+  Results %>% 
+  select(-St_Mail)
+
+
+
+
+Results_print <- Results
+
+Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1)
+
+Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA")
+
+
+# # Код для вывода суммарных оценок с именами.
+# class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
+#
+# final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T)
+#
+# write.table(final_results, "clipboard", sep = "\t", row.names = F)
+
+```
+
+```{r}
+
+options(knitr.kable.NA = '-')
+kable(Results_print)
+```
+
+
+```{r}
+# Результаты в сумме для создания файла-ведомости экзамена
+
+class <- read_xlsx("data/Classess_2023_biology.xlsx", col_names = T)
+# class <- class %>% filter(!is.na(Login)|!is.na(Group) )
+class <- class %>% select(St_Mail, Login, Family, Name, Otch )
+res <- merge(class, Results_print)
+
+write.table(res, "data/results_for_examen.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
+
+```
 
 

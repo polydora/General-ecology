@@ -113,21 +113,23 @@ title: Презентации к лекциям
 
 ## Лекции 5-6. Взаимоотношения организмов.
 
-<!-- - [Взаимоотношения организмов и структура сообществ](Presentations//Взаимоотношения организмов и структура сообщества (биотехнологи).pdf) -->
+- [Взаимоотношения организмов. Часть 1.](Presentations//05_06_Взаимоотношения организмов (биотехнологи).pdf)
 
-<!-- **Дополнительные материалы**  -->
+**Дополнительные материалы**
 
-<!-- - [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf) -->
+- [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf)
 
-<!-- - [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing) -->
+- [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing)
+
+- [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf)
+- [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing)
+
 
 
 <!-- ## Лекция 6. Трофические связи. -->
 
 <!-- - [Трофические связи](Presentations//Трофические связи (биотехнологи).pdf) -->
 
-<!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
-<!-- - [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing) -->
 
 
 ## Лекция 7. Конкурентные отношения и структура сообществ.

@@ -639,27 +639,84 @@ class="uri">http://www.library.spbu.ru/</a>). Если уж совсем не
 
 
 <!-- *Участники семинара идут в главное здание (аудитория уточняется) и встречаются с О. В. Князевой* -->
-<!-- ### Распределение тем для семинара №1 -->
-<!-- ```{r, echo=FALSE, message=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(dplyr) -->
-<!-- library(readxl) -->
-<!-- library(ggplot2) -->
-<!-- library(broom) -->
-<!-- library(tidyr) -->
-<!-- set.seed(123459) -->
-<!-- class <- read_xlsx("data/Classess_2023_biotech.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(Group == 1) -->
-<!-- # class <- read_xlsx("data/Classess_2021_biology.xlsx", col_names = T) -->
-<!-- topics <- read_xlsx("data/topics for reading.xlsx", col_names = T) -->
-<!-- # -->
-<!-- # class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class)), Topic_2 = sample(topics$Term, nrow(class))) -->
-<!-- class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class), replace = T)) -->
-<!-- # class$Topic_1 == class$Topic_2 -->
-<!-- # -->
-<!-- # while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] <- sample(topics$Term,1)} -->
-<!-- kable(class, col.names = c("Фамилия", "Имя", "Тема")) -->
-<!-- ``` -->
+<div id="распределение-тем-для-семинара-1" class="section level3">
+<h3>Распределение тем для семинара №1</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Фамилия</th>
+<th align="left">Имя</th>
+<th align="left">Тема</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Алексеева</td>
+<td align="left">Александра</td>
+<td align="left">Стенобионты</td>
+</tr>
+<tr class="even">
+<td align="left">Асадуллин</td>
+<td align="left">Арслан</td>
+<td align="left">Эффект Олли</td>
+</tr>
+<tr class="odd">
+<td align="left">Воробьева</td>
+<td align="left">Виктория</td>
+<td align="left">Азотфиксирующие бактерии</td>
+</tr>
+<tr class="even">
+<td align="left">Караева</td>
+<td align="left">Дарья</td>
+<td align="left">Эндогенные изменения</td>
+</tr>
+<tr class="odd">
+<td align="left">Коренькова</td>
+<td align="left">Александра</td>
+<td align="left">Групповое распределение особей</td>
+</tr>
+<tr class="even">
+<td align="left">Куйбида</td>
+<td align="left">Алёна</td>
+<td align="left">Эврибионты</td>
+</tr>
+<tr class="odd">
+<td align="left">Легкая</td>
+<td align="left">Вероника</td>
+<td align="left">Кривая выживания</td>
+</tr>
+<tr class="even">
+<td align="left">Литвина</td>
+<td align="left">Екатерина</td>
+<td align="left">Мальтузианский параметр</td>
+</tr>
+<tr class="odd">
+<td align="left">Муранов</td>
+<td align="left">Егор</td>
+<td align="left">Температурно-зависимое определение пола</td>
+</tr>
+<tr class="even">
+<td align="left">Подопригора</td>
+<td align="left">Софья</td>
+<td align="left">Саркофагия</td>
+</tr>
+<tr class="odd">
+<td align="left">Хижняк</td>
+<td align="left">Никита</td>
+<td align="left">Мутуалистический симбиоз</td>
+</tr>
+<tr class="even">
+<td align="left">Хотько</td>
+<td align="left">Дарья</td>
+<td align="left">Фундаментальная ниша</td>
+</tr>
+<tr class="odd">
+<td align="left">Чермошенцев</td>
+<td align="left">Артём</td>
+<td align="left">Паразитоиды</td>
+</tr>
+</tbody>
+</table>
 <!-- ### Распределение тем для группы № 2 -->
 <!-- ```{r echo=FALSE, message=FALSE} -->
 <!-- set.seed(56789) -->
@@ -675,6 +732,7 @@ class="uri">http://www.library.spbu.ru/</a>). Если уж совсем не
 <!-- # while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] <- sample(topics$Term,1)} -->
 <!-- kable(class, col.names = c("Фамилия", "Имя", "Тема")) -->
 <!-- ``` -->
+</div>
 </div>
 <div id="тема-2.-поиск-экологических-закономерностей"
 class="section level2">

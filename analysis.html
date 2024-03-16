@@ -508,8 +508,8 @@ div.tocify {
 <!-- <!-- <br> -->
 <!-- # **Анализ отчетов по самостоятельной работе № 2** -->
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- hw2 <- read_xlsx("data/Тест по  материалам самостоятельной работы №2 (Общая экология 2023)(1-83).xlsx") -->
-<!-- hw2 <- hw2 %>% select(1, 3) -->
+<!-- hw2 <- read_xlsx("data/Контрольная работа № 2 (Экология для биоинженеров 2024)(1-13).xlsx") -->
+<!-- hw2 <- hw2 %>% select(4, 6) -->
 <!-- names(hw2) <- c("Login", "Score") -->
 <!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
 <!-- # names(add_hw1) <- c("Login", "add_score") -->
@@ -526,8 +526,8 @@ div.tocify {
 <!-- # -->
 <!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
 <!-- hw2_score <- hw2 -->
-<!-- hw2_score$Total <- 23 -->
-<!-- hw2_score$Exam <- round(hw2_score$Score / hw2_score$Total * 1.5, 1) -->
+<!-- hw2_score$Total <- 13 -->
+<!-- hw2_score$Exam <- round(hw2_score$Score / hw2_score$Total * 3, 1) -->
 <!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
 <!-- hw2_score_print <- hw2_score -->
 <!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
@@ -613,16 +613,86 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<!-- ## **Анализ контрольной работы № 2** -->
-<!-- <!-- Максимальное количество баллов для экзамена 3% -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2023)(1-106).xlsx") -->
-<!-- cont2 <- cont2 %>% select(1:3) -->
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 20 * 1.5, 1)) -->
-<!-- kable(cont2_print) -->
-<!-- ``` -->
+</div>
+<div id="анализ-контрольной-работы-2" class="section level2">
+<h2><strong>Анализ контрольной работы № 2</strong></h2>
+<p>Максимальное количество баллов для экзамена 3%</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Score</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st099476</td>
+<td align="right">8</td>
+<td align="right">1.8</td>
+</tr>
+<tr class="even">
+<td align="left">st117640</td>
+<td align="right">7</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118855</td>
+<td align="right">9</td>
+<td align="right">2.1</td>
+</tr>
+<tr class="even">
+<td align="left">st118857</td>
+<td align="right">8</td>
+<td align="right">1.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st118859</td>
+<td align="right">7</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118860</td>
+<td align="right">6</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118862</td>
+<td align="right">11</td>
+<td align="right">2.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118863</td>
+<td align="right">6</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118864</td>
+<td align="right">7</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118865</td>
+<td align="right">7</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118866</td>
+<td align="right">12</td>
+<td align="right">2.8</td>
+</tr>
+<tr class="even">
+<td align="left">st118867</td>
+<td align="right">8</td>
+<td align="right">1.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st118870</td>
+<td align="right">4</td>
+<td align="right">0.9</td>
+</tr>
+</tbody>
+</table>
 <!-- ## **Оценки за семинары** -->
 <!-- <!-- Максимальное количество баллов для экзамена 16% -->
 <!-- ```{r warning = FALSE, message=FALSE} -->

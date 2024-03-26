@@ -370,9 +370,9 @@ kable(cont2_print)
 
 
 
-<!-- ## **Результаты семинаров** -->
+## **Результаты семинаров**
 
-<!-- Семинары приносят в экзаменационную оценку 27% -->
+Семинары приносят в экзаменационную оценку 16%
 
 <!-- **Коллеги!** -->
 
@@ -382,67 +382,71 @@ kable(cont2_print)
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- seminars <- read_excel("data/Семинары биологи 2022.xlsx") -->
+seminars <- read_excel("data/Seminars_biotech.xlsx")
+# 
+# names(seminars)[1:3] <- c( "Family", "Name", "Login")
+# 
+# seminars_print <- seminars %>% select(-Family, -Name)
 
-<!-- names(seminars)[1:3] <- c( "Family", "Name", "Login") -->
+seminars <-
+  seminars %>%
+  select(-c(Family, Name, Otch, Group, St_Mail))
 
-<!-- seminars_print <- seminars %>% select(-Family, -Name) -->
+seminars_print <- seminars 
 
+seminars_print <- seminars_print %>%  mutate(Sum = Seminar_1 + Seminar_2, Exam = Sum) 
 
+seminars_print$Exam <- seminars_print$Exam/2*16
 
-<!-- seminars_print$Exam <- seminars_print %>% select(- c(Login, Group) ) %>% mutate(Sum = rowSums(., na.rm = T), Exam = Sum) %>% pull(Exam)  -->
-
-<!-- seminars_print$Exam <- seminars_print$Exam*3 -->
-
-<!-- kable(seminars_print) -->
-
-
-<!-- ``` -->
-
-
-
+kable(seminars_print)
 
 
-
-
-<!-- ## **Итоговый счет группа биоинженеров** -->
-
-
-<!-- ```{r warning = FALSE} -->
-
-<!-- tests <- credits_print %>% select(Login, Exam) -->
-<!-- names(tests) <- c("Login", "Тесты по лекциям") -->
-
-
-<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
-<!-- names(cont1) <- c("Login", "Контрольная 1") -->
+```
 
 
 
-<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
-<!-- names(cont2) <- c("Login", "Контрольная 2") -->
 
 
-<!-- sems <- sem_print %>% select(Login, Exam) -->
-
-<!-- names(sems) <- c("Login", "Семинары" ) -->
 
 
-<!-- d <- merge(tests, cont1, by = "Login", all.x = TRUE) -->
-<!-- dd <- merge(d, cont2, by = "Login", all.x = TRUE) -->
-<!-- final <- merge(dd, sems, by = "Login", all.x = TRUE) -->
+## **Итоговый счет группа биоинженеров**
 
-<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
 
-<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
+```{r warning = FALSE}
 
-<!-- final$Exam <- Exam -->
+tests <- credits_print %>% select(Login, Exam)
+names(tests) <- c("Login", "Тесты по лекциям")
 
-<!-- kable(final) -->
 
-<!-- ``` -->
+cont1 <- cont1_print %>% select(Login, Exam)
+names(cont1) <- c("Login", "Контрольная 1")
+
+
+
+cont2 <- cont2_print %>% select(Login, Exam)
+names(cont2) <- c("Login", "Контрольная 2")
+
+
+sems <- seminars_print %>% select(Login, Exam)
+
+names(sems) <- c("Login", "Семинары" )
+
+
+d <- merge(tests, cont1, by = "Login", all.x = TRUE)
+dd <- merge(d, cont2, by = "Login", all.x = TRUE)
+final <- merge(dd, sems, by = "Login", all.x = TRUE)
+
+names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" )
+
+Exam <- rowSums(final[,-1], na.rm = T)
+
+final$Exam <- Exam
+
+kable(final)
+
+```
 
 
 

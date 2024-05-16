@@ -396,7 +396,7 @@ seminars <-
 
 seminars_print <- seminars 
 
-seminars_print <- seminars_print %>%  mutate(Sum = Seminar_1 + Seminar_2, Exam = Sum) 
+seminars_print <- seminars_print %>%  mutate(Sum = ifelse(!is.na(Seminar_2), Seminar_1 + Seminar_2, Seminar_1 ), Exam = Sum) 
 
 seminars_print$Exam <- seminars_print$Exam/2*16
 
@@ -525,16 +525,16 @@ kable(final)
 <!-- ``` -->
 
 
-<!-- ```{r} -->
-<!-- # Результаты в сумме для создания файла-ведомости экзамена -->
+```{r}
+# Результаты в сумме для создания файла-ведомости экзамена
 
-<!-- class <- read_xlsx("data/Classess_2023_biology.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class %>% select(St_Mail, Login, Family, Name, Otch ) -->
-<!-- res <- merge(class, Results_print) -->
+class <- read_xlsx("data/Classess_2024_biotech.xlsx", col_names = T)
+# class <- class %>% filter(!is.na(Login)|!is.na(Group) )
+class <- class %>% select(St_Mail, Login, Family, Name, Otch )
+res <- merge(class, final)
 
-<!-- write.table(res, "data/results_for_examen.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
+write.table(res, "data/results_for_examen_2024_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
 
-<!-- ``` -->
+```
 
 

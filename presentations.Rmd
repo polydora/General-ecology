@@ -11,11 +11,11 @@ title: Презентации к лекциям
 
 ## Введение
 
-<!-- - [Правила игры](Presentations/Lecture Introduction.pdf) -->
+- [Правила игры](Presentations/Lecture Introduction.pdf)
 
 ## Лекция 1.
 
-<!-- - [Предмет экологии](Presentations//Lecture 1 Предмет экологии.pdf) -->
+- [Предмет экологии](Presentations//Lecture 1 Предмет экологии.pdf)
 
 ## Лекция 2.
 

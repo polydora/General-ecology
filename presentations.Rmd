@@ -48,13 +48,13 @@ title: Презентации к лекциям
 
 ## Лекция 8.
 
-<!-- - [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf) -->
+- [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf)
 
 
 
 ## Лекция 9.
 
-<!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
+- [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf)
 
 
 

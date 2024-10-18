@@ -817,9 +817,9 @@ div.tocify {
 <td align="right">8</td>
 <td align="right">9</td>
 <td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0.92</td>
-<td align="right">2.76</td>
+<td align="right">7</td>
+<td align="right">0.93</td>
+<td align="right">2.79</td>
 </tr>
 <tr class="even">
 <td align="left">st118899</td>
@@ -1441,9 +1441,9 @@ div.tocify {
 <td align="right">8</td>
 <td align="right">8</td>
 <td align="right">6</td>
-<td align="right">6</td>
-<td align="right">0.86</td>
-<td align="right">2.58</td>
+<td align="right">7</td>
+<td align="right">0.88</td>
+<td align="right">2.64</td>
 </tr>
 <tr class="even">
 <td align="left">st118957</td>
@@ -1831,35 +1831,721 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<!-- # **Анализ отчетов по самостоятельной работе № 1** -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- hw1 <- read_xlsx("data/Соответствие между организмом и средой, адаптации (Общая экология 2023)(1-98).xlsx") -->
-<!-- hw1 <- hw1[c(1,3,4)] -->
-<!-- names(hw1) <- c("St_Mail", "Score", "Add_Score") -->
-<!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
-<!-- # names(add_hw1) <- c("Login", "add_score") -->
-<!-- # -->
-<!-- # add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
-<!-- # -->
-<!-- # # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
-<!-- # -->
-<!-- # hw1_score <- class %>% select(St_Mail, Login) -->
-<!-- # -->
-<!-- # hw1_score <- merge(hw1_score, hw1, all.x = T) -->
-<!-- # -->
-<!-- # hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
-<!-- # -->
-<!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
-<!-- hw1_score <- hw1 -->
-<!-- hw1_score$Total <- 19 -->
-<!-- hw1_score$Exam <- ifelse(is.na(hw1_score$Add_Score),  -->
-<!--                          round((hw1_score$Score) / hw1_score$Total * 1.5, 1), -->
-<!--                          round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1)) -->
-<!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
-<!-- hw1_score_print <- hw1_score -->
-<!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
-<!-- kable(hw1_score_print, col.names = c("Login", "Сумма","Доп. вопрос", "Всего вопросов",  "% от экзаменационной оценки")) -->
-<!-- ``` -->
+</div>
+<div id="анализ-отчетов-по-самостоятельной-работе-1"
+class="section level1">
+<h1><strong>Анализ отчетов по самостоятельной работе № 1</strong></h1>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="8%" />
+<col width="20%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Сумма</th>
+<th align="right">Всего вопросов</th>
+<th align="right">% от экзаменационной оценки</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="mailto:st118963@student.spbu.ru"
+class="email">st118963@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st113115@student.spbu.ru"
+class="email">st113115@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118902@student.spbu.ru"
+class="email">st118902@student.spbu.ru</a></td>
+<td align="right">5</td>
+<td align="right">11</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st114825@student.spbu.ru"
+class="email">st114825@student.spbu.ru</a></td>
+<td align="right">5</td>
+<td align="right">11</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118976@student.spbu.ru"
+class="email">st118976@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118905@student.spbu.ru"
+class="email">st118905@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118953@student.spbu.ru"
+class="email">st118953@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118929@student.spbu.ru"
+class="email">st118929@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118972@student.spbu.ru"
+class="email">st118972@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118966@student.spbu.ru"
+class="email">st118966@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st114325@student.spbu.ru"
+class="email">st114325@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118965@student.spbu.ru"
+class="email">st118965@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118924@student.spbu.ru"
+class="email">st118924@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118914@student.spbu.ru"
+class="email">st118914@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118925@student.spbu.ru"
+class="email">st118925@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118942@student.spbu.ru"
+class="email">st118942@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118947@student.spbu.ru"
+class="email">st118947@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118948@student.spbu.ru"
+class="email">st118948@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118888@student.spbu.ru"
+class="email">st118888@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118984@student.spbu.ru"
+class="email">st118984@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118940@student.spbu.ru"
+class="email">st118940@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st116427@student.spbu.ru"
+class="email">st116427@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118970@student.spbu.ru"
+class="email">st118970@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118957@student.spbu.ru"
+class="email">st118957@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st096433@student.spbu.ru"
+class="email">st096433@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118916@student.spbu.ru"
+class="email">st118916@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118969@student.spbu.ru"
+class="email">st118969@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118899@student.spbu.ru"
+class="email">st118899@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st094844@student.spbu.ru"
+class="email">st094844@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118964@student.spbu.ru"
+class="email">st118964@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118946@student.spbu.ru"
+class="email">st118946@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118922@student.spbu.ru"
+class="email">st118922@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118960@student.spbu.ru"
+class="email">st118960@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118938@student.spbu.ru"
+class="email">st118938@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118915@student.spbu.ru"
+class="email">st118915@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118897@student.spbu.ru"
+class="email">st118897@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118956@student.spbu.ru"
+class="email">st118956@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118918@student.spbu.ru"
+class="email">st118918@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118937@student.spbu.ru"
+class="email">st118937@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118920@student.spbu.ru"
+class="email">st118920@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st122076@student.spbu.ru"
+class="email">st122076@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118911@student.spbu.ru"
+class="email">st118911@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118975@student.spbu.ru"
+class="email">st118975@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118949@student.spbu.ru"
+class="email">st118949@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st122083@student.spbu.ru"
+class="email">st122083@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118939@student.spbu.ru"
+class="email">st118939@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118933@student.spbu.ru"
+class="email">st118933@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118880@student.spbu.ru"
+class="email">st118880@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st116472@student.spbu.ru"
+class="email">st116472@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118900@student.spbu.ru"
+class="email">st118900@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118889@student.spbu.ru"
+class="email">st118889@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st089943@student.spbu.ru"
+class="email">st089943@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118977@student.spbu.ru"
+class="email">st118977@student.spbu.ru</a></td>
+<td align="right">5</td>
+<td align="right">11</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118962@student.spbu.ru"
+class="email">st118962@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118906@student.spbu.ru"
+class="email">st118906@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st113190@student.spbu.ru"
+class="email">st113190@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118892@student.spbu.ru"
+class="email">st118892@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st094831@student.spbu.ru"
+class="email">st094831@student.spbu.ru</a></td>
+<td align="right">2</td>
+<td align="right">11</td>
+<td align="right">0.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118901@student.spbu.ru"
+class="email">st118901@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118973@student.spbu.ru"
+class="email">st118973@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st122053@student.spbu.ru"
+class="email">st122053@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st116545@student.spbu.ru"
+class="email">st116545@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st122042@student.spbu.ru"
+class="email">st122042@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118974@student.spbu.ru"
+class="email">st118974@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118943@student.spbu.ru"
+class="email">st118943@student.spbu.ru</a></td>
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118895@student.spbu.ru"
+class="email">st118895@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st116450@student.spbu.ru"
+class="email">st116450@student.spbu.ru</a></td>
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118954@student.spbu.ru"
+class="email">st118954@student.spbu.ru</a></td>
+<td align="right">11</td>
+<td align="right">11</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118936@student.spbu.ru"
+class="email">st118936@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118896@student.spbu.ru"
+class="email">st118896@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118944@student.spbu.ru"
+class="email">st118944@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118932@student.spbu.ru"
+class="email">st118932@student.spbu.ru</a></td>
+<td align="right">5</td>
+<td align="right">11</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st094827@student.spbu.ru"
+class="email">st094827@student.spbu.ru</a></td>
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118877@student.spbu.ru"
+class="email">st118877@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118978@student.spbu.ru"
+class="email">st118978@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118971@student.spbu.ru"
+class="email">st118971@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118873@student.spbu.ru"
+class="email">st118873@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118979@student.spbu.ru"
+class="email">st118979@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118961@student.spbu.ru"
+class="email">st118961@student.spbu.ru</a></td>
+<td align="right">6</td>
+<td align="right">11</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118909@student.spbu.ru"
+class="email">st118909@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118919@student.spbu.ru"
+class="email">st118919@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118926@student.spbu.ru"
+class="email">st118926@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118923@student.spbu.ru"
+class="email">st118923@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118921@student.spbu.ru"
+class="email">st118921@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118934@student.spbu.ru"
+class="email">st118934@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118858@student.spbu.ru"
+class="email">st118858@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118945@student.spbu.ru"
+class="email">st118945@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118928@student.spbu.ru"
+class="email">st118928@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st116742@student.spbu.ru"
+class="email">st116742@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118878@student.spbu.ru"
+class="email">st118878@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st097585@student.spbu.ru"
+class="email">st097585@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118907@student.spbu.ru"
+class="email">st118907@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118955@student.spbu.ru"
+class="email">st118955@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118950@student.spbu.ru"
+class="email">st118950@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118931@student.spbu.ru"
+class="email">st118931@student.spbu.ru</a></td>
+<td align="right">7</td>
+<td align="right">11</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118980@student.spbu.ru"
+class="email">st118980@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118903@student.spbu.ru"
+class="email">st118903@student.spbu.ru</a></td>
+<td align="right">9</td>
+<td align="right">11</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118985@student.spbu.ru"
+class="email">st118985@student.spbu.ru</a></td>
+<td align="right">8</td>
+<td align="right">11</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118872@student.spbu.ru"
+class="email">st118872@student.spbu.ru</a></td>
+<td align="right">10</td>
+<td align="right">11</td>
+<td align="right">1.4</td>
+</tr>
+</tbody>
+</table>
 <!-- <!-- <br> -->
 <!-- <!-- <br> -->
 <!-- # **Анализ отчетов по самостоятельной работе № 2** -->

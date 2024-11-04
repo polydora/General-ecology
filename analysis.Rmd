@@ -328,37 +328,40 @@ kable(cont1_print)
 
 
 
-<!-- ## **Оценки за семинары** -->
+## **Оценки за семинары**
 
-<!-- <!-- Максимальное количество баллов для экзамена 16% -->
+Максимальное количество баллов для экзамена 27
 
-<!-- ```{r warning = FALSE, message=FALSE} -->
+```{r warning = FALSE, message=FALSE}
 
-<!-- library(googlesheets4) -->
-<!-- sem <- read_sheet('https://docs.google.com/spreadsheets/d/1nOF5zamIBuOS99KluyJEwPnbvu0oUhx_uPu0q7O9Kx4/edit?usp=sharing') -->
+library(googlesheets4)
+# detach(googlesheets4)
 
+sem <- read_sheet('https://docs.google.com/spreadsheets/d/1lOO6ECeAcU_h2lFvrYiLF5Zj7hGV4QiOVQaAF0p6Yxg/edit?usp=sharing')
 
-
-
-<!-- # sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA") -->
-
-<!-- sem <- sem %>% select(-c(Family, Name, Otch)) -->
-
-<!-- sem_print <-  -->
-<!--   merge(class, sem, all.x = TRUE ) %>%  -->
-<!--   arrange(Group)%>%  -->
-<!--   mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>%  -->
-<!--   select(-St_Mail) -->
+names(sem)[1:5] <- c("Family", "Name", "Otch", "St_Mail", "Group")
 
 
-<!-- # %>% filter(Exam != 0) -->
+# sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA")
 
-<!-- ``` -->
+sem <- sem %>% select(-c(Family, Name, Otch))
 
-<!-- ```{r } -->
-<!-- kable(sem_print) -->
+sem_print <- 
+merge(class, sem, all.x = TRUE ) %>% 
+arrange(Group)%>% 
+mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>% 
+select(-St_Mail)
 
-<!-- ``` -->
+
+
+```
+
+
+
+```{r }
+kable(sem_print)
+
+```
 
 
 

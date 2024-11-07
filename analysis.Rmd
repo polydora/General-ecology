@@ -127,12 +127,20 @@ credits <-  merge(credits, test_lecture_8, all.x = TRUE)
 
 
 
+test_lecture_9 <- read_xlsx("data/Экосистемы (Общая экология 2024-2025).xlsx")
+
+test_lecture_9 <- test_lecture_9 %>% select(4,6)
+names(test_lecture_9) <- c("St_Mail", "Score_lecture_8")
+
+credits <-  merge(credits, test_lecture_9, all.x = TRUE)
+
+
 ##########################
 #Вывод общей таблицы с баллами
 
 # credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 19 + 9 + 14 + 10 + 9 +6 + 7 + 8
+credits_sum <- 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
 # + 10 + 8 + 10 + 10 + 5 + 7
 
 credits_print <- credits %>% select(-St_Mail)
@@ -337,7 +345,7 @@ kable(cont1_print)
 library(googlesheets4)
 # detach(googlesheets4)
 
-sem <- read_sheet('https://docs.google.com/spreadsheets/d/1lOO6ECeAcU_h2lFvrYiLF5Zj7hGV4QiOVQaAF0p6Yxg/edit?usp=sharing')
+sem <- read_sheet('https://docs.google.com/spreadsheets/d/1lOO6ECeAcU_h2lFvrYiLF5Zj7hGV4QiOVQaAF0p6Yxg/edit?usp=sharing', col_types = "?")
 
 names(sem)[1:5] <- c("Family", "Name", "Otch", "St_Mail", "Group")
 
@@ -346,8 +354,10 @@ names(sem)[1:5] <- c("Family", "Name", "Otch", "St_Mail", "Group")
 
 sem <- sem %>% select(-c(Family, Name, Otch))
 
+
+
 sem_print <- 
-merge(class, sem, all.x = TRUE ) %>% 
+merge(class, sem, all = T) %>% 
 arrange(Group)%>% 
 mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>% 
 select(-St_Mail)

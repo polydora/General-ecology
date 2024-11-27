@@ -2684,33 +2684,693 @@ class="email">st118872@student.spbu.ru</a></td>
 </table>
 <!-- <!-- <br> -->
 <!-- <!-- <br> -->
-<!-- # **Анализ отчетов по самостоятельной работе № 2** -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- hw2 <- read_xlsx("data/Контрольная работа № 2 (Экология для биоинженеров 2024)(1-13).xlsx") -->
-<!-- hw2 <- hw2 %>% select(4, 6) -->
-<!-- names(hw2) <- c("Login", "Score") -->
-<!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
-<!-- # names(add_hw1) <- c("Login", "add_score") -->
-<!-- # -->
-<!-- # add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
-<!-- # -->
-<!-- # # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
-<!-- # -->
-<!-- # hw1_score <- class %>% select(St_Mail, Login) -->
-<!-- # -->
-<!-- # hw1_score <- merge(hw1_score, hw1, all.x = T) -->
-<!-- # -->
-<!-- # hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
-<!-- # -->
-<!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
-<!-- hw2_score <- hw2 -->
-<!-- hw2_score$Total <- 13 -->
-<!-- hw2_score$Exam <- round(hw2_score$Score / hw2_score$Total * 3, 1) -->
-<!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
-<!-- hw2_score_print <- hw2_score -->
-<!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
-<!-- kable(hw2_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки")) -->
-<!-- ``` -->
+</div>
+<div id="анализ-отчетов-по-самостоятельной-работе-2"
+class="section level1">
+<h1><strong>Анализ отчетов по самостоятельной работе № 2</strong></h1>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="8%" />
+<col width="20%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Сумма</th>
+<th align="right">Всего вопросов</th>
+<th align="right">% от экзаменационной оценки</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="mailto:st096433@student.spbu.ru"
+class="email">st096433@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118916@student.spbu.ru"
+class="email">st118916@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st113115@student.spbu.ru"
+class="email">st113115@student.spbu.ru</a></td>
+<td align="right">12</td>
+<td align="right">24</td>
+<td align="right">0.8</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118944@student.spbu.ru"
+class="email">st118944@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st114825@student.spbu.ru"
+class="email">st114825@student.spbu.ru</a></td>
+<td align="right">17</td>
+<td align="right">24</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118915@student.spbu.ru"
+class="email">st118915@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118899@student.spbu.ru"
+class="email">st118899@student.spbu.ru</a></td>
+<td align="right">17</td>
+<td align="right">24</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118942@student.spbu.ru"
+class="email">st118942@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118905@student.spbu.ru"
+class="email">st118905@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st112207@student.spbu.ru"
+class="email">st112207@student.spbu.ru</a></td>
+<td align="right">16</td>
+<td align="right">24</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118895@student.spbu.ru"
+class="email">st118895@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118914@student.spbu.ru"
+class="email">st118914@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118943@student.spbu.ru"
+class="email">st118943@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118858@student.spbu.ru"
+class="email">st118858@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118938@student.spbu.ru"
+class="email">st118938@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st114325@student.spbu.ru"
+class="email">st114325@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118971@student.spbu.ru"
+class="email">st118971@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118946@student.spbu.ru"
+class="email">st118946@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st116472@student.spbu.ru"
+class="email">st116472@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118937@student.spbu.ru"
+class="email">st118937@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118963@student.spbu.ru"
+class="email">st118963@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st094831@student.spbu.ru"
+class="email">st094831@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st116545@student.spbu.ru"
+class="email">st116545@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118902@student.spbu.ru"
+class="email">st118902@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118900@student.spbu.ru"
+class="email">st118900@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118976@student.spbu.ru"
+class="email">st118976@student.spbu.ru</a></td>
+<td align="right">15</td>
+<td align="right">24</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118929@student.spbu.ru"
+class="email">st118929@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118892@student.spbu.ru"
+class="email">st118892@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118949@student.spbu.ru"
+class="email">st118949@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118969@student.spbu.ru"
+class="email">st118969@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118911@student.spbu.ru"
+class="email">st118911@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118924@student.spbu.ru"
+class="email">st118924@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118925@student.spbu.ru"
+class="email">st118925@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118974@student.spbu.ru"
+class="email">st118974@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118960@student.spbu.ru"
+class="email">st118960@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118919@student.spbu.ru"
+class="email">st118919@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118921@student.spbu.ru"
+class="email">st118921@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118897@student.spbu.ru"
+class="email">st118897@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118956@student.spbu.ru"
+class="email">st118956@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st122083@student.spbu.ru"
+class="email">st122083@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118906@student.spbu.ru"
+class="email">st118906@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118939@student.spbu.ru"
+class="email">st118939@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118954@student.spbu.ru"
+class="email">st118954@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118977@student.spbu.ru"
+class="email">st118977@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118918@student.spbu.ru"
+class="email">st118918@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st113190@student.spbu.ru"
+class="email">st113190@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118955@student.spbu.ru"
+class="email">st118955@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118880@student.spbu.ru"
+class="email">st118880@student.spbu.ru</a></td>
+<td align="right">14</td>
+<td align="right">24</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st136599@student.spbu.ru"
+class="email">st136599@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118964@student.spbu.ru"
+class="email">st118964@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118901@student.spbu.ru"
+class="email">st118901@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118947@student.spbu.ru"
+class="email">st118947@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118883@student.spbu.ru"
+class="email">st118883@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118950@student.spbu.ru"
+class="email">st118950@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118935@student.spbu.ru"
+class="email">st118935@student.spbu.ru</a></td>
+<td align="right">15</td>
+<td align="right">24</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118926@student.spbu.ru"
+class="email">st118926@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st116742@student.spbu.ru"
+class="email">st116742@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118873@student.spbu.ru"
+class="email">st118873@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st122076@student.spbu.ru"
+class="email">st122076@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118984@student.spbu.ru"
+class="email">st118984@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st089943@student.spbu.ru"
+class="email">st089943@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118966@student.spbu.ru"
+class="email">st118966@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118980@student.spbu.ru"
+class="email">st118980@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118881@student.spbu.ru"
+class="email">st118881@student.spbu.ru</a></td>
+<td align="right">15</td>
+<td align="right">24</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118979@student.spbu.ru"
+class="email">st118979@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118909@student.spbu.ru"
+class="email">st118909@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st136654@student.spbu.ru"
+class="email">st136654@student.spbu.ru</a></td>
+<td align="right">16</td>
+<td align="right">24</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st122042@student.spbu.ru"
+class="email">st122042@student.spbu.ru</a></td>
+<td align="right">15</td>
+<td align="right">24</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118934@student.spbu.ru"
+class="email">st118934@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118933@student.spbu.ru"
+class="email">st118933@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st097585@student.spbu.ru"
+class="email">st097585@student.spbu.ru</a></td>
+<td align="right">17</td>
+<td align="right">24</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118878@student.spbu.ru"
+class="email">st118878@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st094844@student.spbu.ru"
+class="email">st094844@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118965@student.spbu.ru"
+class="email">st118965@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118896@student.spbu.ru"
+class="email">st118896@student.spbu.ru</a></td>
+<td align="right">23</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118936@student.spbu.ru"
+class="email">st118936@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118928@student.spbu.ru"
+class="email">st118928@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118903@student.spbu.ru"
+class="email">st118903@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118975@student.spbu.ru"
+class="email">st118975@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118877@student.spbu.ru"
+class="email">st118877@student.spbu.ru</a></td>
+<td align="right">18</td>
+<td align="right">24</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118982@student.spbu.ru"
+class="email">st118982@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118932@student.spbu.ru"
+class="email">st118932@student.spbu.ru</a></td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118957@student.spbu.ru"
+class="email">st118957@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118970@student.spbu.ru"
+class="email">st118970@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118922@student.spbu.ru"
+class="email">st118922@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118940@student.spbu.ru"
+class="email">st118940@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118917@student.spbu.ru"
+class="email">st118917@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118973@student.spbu.ru"
+class="email">st118973@student.spbu.ru</a></td>
+<td align="right">14</td>
+<td align="right">24</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st108092@student.spbu.ru"
+class="email">st108092@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118888@student.spbu.ru"
+class="email">st118888@student.spbu.ru</a></td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118985@student.spbu.ru"
+class="email">st118985@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118978@student.spbu.ru"
+class="email">st118978@student.spbu.ru</a></td>
+<td align="right">21</td>
+<td align="right">24</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118961@student.spbu.ru"
+class="email">st118961@student.spbu.ru</a></td>
+<td align="right">17</td>
+<td align="right">24</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="mailto:st118953@student.spbu.ru"
+class="email">st118953@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="mailto:st118923@student.spbu.ru"
+class="email">st118923@student.spbu.ru</a></td>
+<td align="right">19</td>
+<td align="right">24</td>
+<td align="right">1.2</td>
+</tr>
+</tbody>
+</table>
 <p><br> <br></p>
 <div id="анализ-контрольной-работы-1" class="section level2">
 <h2><strong>Анализ контрольной работы № 1</strong></h2>
@@ -3336,16 +3996,631 @@ class="email">st118872@student.spbu.ru</a></td>
 </tr>
 </tbody>
 </table>
-<!-- ## **Анализ контрольной работы № 2** -->
-<!-- Максимальное количество баллов для экзамена 3% -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Экология для биоинженеров 2024)(1-13).xlsx") -->
-<!-- cont2 <- cont2 %>% select(4:6) -->
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 13 * 3, 1)) -->
-<!-- kable(cont2_print) -->
-<!-- ``` -->
+</div>
+<div id="анализ-контрольной-работы-2" class="section level2">
+<h2><strong>Анализ контрольной работы № 2</strong></h2>
+<p>Максимальное количество баллов для экзамена 1.5%</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Score</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st089943</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st094827</td>
+<td align="right">15</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="odd">
+<td align="left">st094831</td>
+<td align="right">15</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left">st094844</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st096433</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st097585</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st106945</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st108092</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st112207</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st113115</td>
+<td align="right">13</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st113190</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st114325</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st114825</td>
+<td align="right">14</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left">st116427</td>
+<td align="right">16</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st116430</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st116450</td>
+<td align="right">13</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st116472</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st116545</td>
+<td align="right">14</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st116706</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st116742</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118858</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118872</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118873</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st118877</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118878</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st118879</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="odd">
+<td align="left">st118880</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st118881</td>
+<td align="right">14</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st118883</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118885</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118888</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118889</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118892</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118893</td>
+<td align="right">12</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st118895</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118896</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118897</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118899</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118900</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118901</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118902</td>
+<td align="right">16</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st118903</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118904</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st118905</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118906</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118907</td>
+<td align="right">16</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118908</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118909</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118911</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118912</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="odd">
+<td align="left">st118914</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118915</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118916</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118917</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118918</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118919</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118920</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118921</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118922</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st118923</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118924</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118925</td>
+<td align="right">16</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118926</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118927</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="odd">
+<td align="left">st118928</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118929</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118931</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st118932</td>
+<td align="right">16</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118933</td>
+<td align="right">12</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="even">
+<td align="left">st118934</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118935</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st118936</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118937</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118938</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118939</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118940</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118942</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118943</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118944</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118945</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118946</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118947</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118948</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118949</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118950</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118953</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118954</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118955</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118956</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118957</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118958</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st118960</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118961</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st118962</td>
+<td align="right">14</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="odd">
+<td align="left">st118963</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118964</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="odd">
+<td align="left">st118965</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118966</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118967</td>
+<td align="right">15</td>
+<td align="right">1.2</td>
+</tr>
+<tr class="even">
+<td align="left">st118969</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118970</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st118971</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st118972</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st118973</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118974</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118975</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118976</td>
+<td align="right">14</td>
+<td align="right">1.1</td>
+</tr>
+<tr class="even">
+<td align="left">st118977</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118978</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st118979</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118980</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st118981</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="odd">
+<td align="left">st118982</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118983</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="odd">
+<td align="left">st118984</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118985</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st122042</td>
+<td align="right">17</td>
+<td align="right">1.3</td>
+</tr>
+<tr class="even">
+<td align="left">st122053</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st122076</td>
+<td align="right">18</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st122083</td>
+<td align="right">19</td>
+<td align="right">1.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st126704</td>
+<td align="right">20</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st136654</td>
+<td align="right">14</td>
+<td align="right">1.1</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="оценки-за-семинары" class="section level2">
 <h2><strong>Оценки за семинары</strong></h2>
@@ -3370,8 +4645,8 @@ class="email">st118872@student.spbu.ru</a></td>
 <th align="right">Group</th>
 <th align="right">05.11.2024</th>
 <th align="right">12.11.2024</th>
-<th align="left">19.11.2024</th>
-<th align="left">26.11.2024</th>
+<th align="right">19.11.2024</th>
+<th align="right">26.11.2024</th>
 <th align="left">03.12.2024</th>
 <th align="left">10.12.2024</th>
 <th align="left">17.12.2024</th>
@@ -3384,659 +4659,737 @@ class="email">st118872@student.spbu.ru</a></td>
 <td align="left">st094827</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="even">
 <td align="left">st094831</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118880</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">15.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118901</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">10.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118919</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118920</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118922</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118939</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118945</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118957</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118958</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="right">0.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">7.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118960</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118962</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118964</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118970</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118977</td>
 <td align="right">1</td>
 <td align="right">1.5</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">4.5</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118982</td>
 <td align="right">1</td>
 <td align="right">1.0</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="even">
 <td align="left">st108092</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">15.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st116450</td>
 <td align="right">2</td>
 <td align="right">0.0</td>
 <td align="right">0.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">7.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118879</td>
 <td align="right">2</td>
 <td align="right">0.0</td>
 <td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
 <td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">4.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118892</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">0.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">10.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118893</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118896</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118905</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">0.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">10.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118907</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118909</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">15.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118924</td>
 <td align="right">2</td>
 <td align="right">0.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">10.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118928</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">0.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">10.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118936</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">15.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118954</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118963</td>
 <td align="right">2</td>
 <td align="right">0.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">10.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118972</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118976</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">15.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118979</td>
 <td align="right">2</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">0.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118981</td>
 <td align="right">2</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st089943</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st094844</td>
 <td align="right">3</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st116430</td>
 <td align="right">3</td>
 <td align="right">0.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">0.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">3.0</td>
+<td align="right">6.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118858</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">15.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118878</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118889</td>
 <td align="right">3</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">0.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">9.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118903</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118911</td>
 <td align="right">3</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118940</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118943</td>
 <td align="right">3</td>
 <td align="right">1.3</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.9</td>
+<td align="right">14.4</td>
 </tr>
 <tr class="even">
 <td align="left">st118947</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">16.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118953</td>
 <td align="right">3</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="even">
 <td align="left">st118973</td>
 <td align="right">3</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118974</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">18.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118980</td>
 <td align="right">3</td>
 <td align="right">1.0</td>
 <td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118984</td>
 <td align="right">3</td>
 <td align="right">1.5</td>
 <td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">16.5</td>
+</tr>
+<tr class="even">
+<td align="left">st122042</td>
+<td align="right">3</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">18.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st122053</td>
+<td align="right">3</td>
+<td align="right">1.2</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">14.1</td>
+</tr>
+<tr class="even">
+<td align="left">st096433</td>
+<td align="right">4</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">9.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st113190</td>
+<td align="right">4</td>
+<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st116472</td>
+<td align="right">4</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">10.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118872</td>
+<td align="right">4</td>
+<td align="right">-</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
@@ -4044,103 +5397,25 @@ class="email">st118872@student.spbu.ru</a></td>
 <td align="right">7.5</td>
 </tr>
 <tr class="even">
-<td align="left">st122042</td>
-<td align="right">3</td>
+<td align="left">st118899</td>
+<td align="right">4</td>
+<td align="right">-</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st122053</td>
-<td align="right">3</td>
-<td align="right">1.2</td>
 <td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">6.6</td>
-</tr>
-<tr class="even">
-<td align="left">st096433</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st113190</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st116472</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118872</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118899</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118904</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
@@ -4151,763 +5426,763 @@ class="email">st118872@student.spbu.ru</a></td>
 <td align="left">st118914</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">9.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118915</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118916</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118918</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.3</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">11.4</td>
 </tr>
 <tr class="even">
 <td align="left">st118925</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
 <td align="right">0.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">6.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118929</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">9.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118935</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">9.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118942</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118950</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="odd">
 <td align="left">st118955</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">12.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118975</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
 <td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">7.5</td>
 </tr>
 <tr class="odd">
 <td align="left">st118978</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">9.0</td>
 </tr>
 <tr class="even">
 <td align="left">st118985</td>
 <td align="right">4</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">13.5</td>
 </tr>
 <tr class="odd">
 <td align="left">-</td>
 <td align="right">5</td>
 <td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
 <td align="right">0.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">6.0</td>
 </tr>
 <tr class="even">
 <td align="left">st097585</td>
 <td align="right">5</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.1</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">10.8</td>
 </tr>
 <tr class="odd">
 <td align="left">st116742</td>
 <td align="right">5</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.1</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">9.3</td>
 </tr>
 <tr class="even">
 <td align="left">st118877</td>
 <td align="right">5</td>
 <td align="right">-</td>
-<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.1</td>
+<td align="right">1.0</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
+<td align="right">10.8</td>
 </tr>
 <tr class="odd">
 <td align="left">st118885</td>
 <td align="right">5</td>
 <td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118895</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118900</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118902</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118906</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118917</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118921</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118926</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118934</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118937</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118938</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118944</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118946</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118949</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118971</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">-</td>
-<td align="right">6</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">-</td>
-<td align="right">6</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st114825</td>
-<td align="right">6</td>
-<td align="right">1.0</td>
 <td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
-</tr>
-<tr class="odd">
-<td align="left">st116545</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118873</td>
-<td align="right">6</td>
-<td align="right">1.0</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">7.5</td>
-</tr>
-<tr class="odd">
-<td align="left">st118881</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118883</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118897</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118932</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118933</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118948</td>
-<td align="right">6</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118956</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118961</td>
-<td align="right">6</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118965</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118966</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118969</td>
-<td align="right">6</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st136654</td>
-<td align="right">6</td>
-<td align="right">0.0</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">-</td>
-<td align="right">7</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">-</td>
-<td align="right">7</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">-</td>
-<td align="right">7</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st106945</td>
-<td align="right">7</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st112207</td>
-<td align="right">7</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st113115</td>
-<td align="right">7</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st114325</td>
-<td align="right">7</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
-</tr>
-<tr class="even">
-<td align="left">st116427</td>
-<td align="right">7</td>
 <td align="right">1.5</td>
 <td align="right">1.2</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
+<td align="right">12.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118895</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.3</td>
+<td align="right">1.3</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="right">8.1</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">10.8</td>
 </tr>
 <tr class="odd">
+<td align="left">st118900</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118902</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">1.1</td>
+<td align="right">1.2</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">6.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st118906</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118917</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">12.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st118921</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.1</td>
+<td align="right">1.1</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">9.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118926</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.3</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">11.4</td>
+</tr>
+<tr class="odd">
+<td align="left">st118934</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.3</td>
+<td align="right">0.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">6.9</td>
+</tr>
+<tr class="even">
+<td align="left">st118937</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">10.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118938</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.1</td>
+<td align="right">1.1</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">9.6</td>
+</tr>
+<tr class="even">
+<td align="left">st118944</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.1</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">12.3</td>
+</tr>
+<tr class="odd">
+<td align="left">st118946</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.1</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">10.8</td>
+</tr>
+<tr class="even">
+<td align="left">st118949</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">9.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st118971</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.1</td>
+<td align="right">1.5</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">10.8</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="right">5</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">1.0</td>
+<td align="right">1.0</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="right">6</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="right">6</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st114825</td>
+<td align="right">6</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">7.5</td>
+</tr>
+<tr class="even">
+<td align="left">st116545</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">12.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st118873</td>
+<td align="right">6</td>
+<td align="right">1.0</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">12.0</td>
+</tr>
+<tr class="even">
+<td align="left">st118881</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">9.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st118883</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118897</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118932</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118933</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118948</td>
+<td align="right">6</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st118956</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118961</td>
+<td align="right">6</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">1.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="even">
+<td align="left">st118965</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st118966</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st118969</td>
+<td align="right">6</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">9.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st136654</td>
+<td align="right">6</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="right">7</td>
+<td align="right">-</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="right">7</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="right">7</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st106945</td>
+<td align="right">7</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="left">st112207</td>
+<td align="right">7</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st113115</td>
+<td align="right">7</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="left">st114325</td>
+<td align="right">7</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="odd">
+<td align="left">st116427</td>
+<td align="right">7</td>
+<td align="right">1.5</td>
+<td align="right">1.2</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">12.6</td>
+</tr>
+<tr class="even">
 <td align="left">st116706</td>
 <td align="right">7</td>
 <td align="right">0.0</td>
 <td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
 <td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st118888</td>
-<td align="right">7</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
@@ -4915,116 +6190,116 @@ class="email">st118872@student.spbu.ru</a></td>
 <td align="right">0.0</td>
 </tr>
 <tr class="odd">
+<td align="left">st118888</td>
+<td align="right">7</td>
+<td align="right">1.0</td>
+<td align="right">0.0</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">7.5</td>
+</tr>
+<tr class="even">
 <td align="left">st118908</td>
 <td align="right">7</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">13.5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">st118923</td>
 <td align="right">7</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">13.5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">st118931</td>
 <td align="right">7</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
+<td align="right">1.5</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">9.0</td>
+<td align="right">13.5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">st118967</td>
 <td align="right">7</td>
 <td align="right">1.5</td>
 <td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="right">9.0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">st122076</td>
 <td align="right">7</td>
 <td align="right">0.0</td>
 <td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="right">0.0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">st122083</td>
 <td align="right">7</td>
 <td align="right">1.5</td>
 <td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="right">4.5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">st126704</td>
 <td align="right">7</td>
 <td align="right">0.0</td>
 <td align="right">0.0</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">0.0</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="right">0.0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">st118912</td>
 <td align="right">-</td>
 <td align="right">-</td>
 <td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st118927</td>
 <td align="right">-</td>
 <td align="right">-</td>
-<td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
@@ -5032,12 +6307,12 @@ class="email">st118872@student.spbu.ru</a></td>
 <td align="right">0.0</td>
 </tr>
 <tr class="even">
-<td align="left">st118983</td>
+<td align="left">st118927</td>
 <td align="right">-</td>
 <td align="right">-</td>
 <td align="right">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
@@ -5045,12 +6320,25 @@ class="email">st118872@student.spbu.ru</a></td>
 <td align="right">0.0</td>
 </tr>
 <tr class="odd">
+<td align="left">st118983</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
 <td align="left">-</td>
 <td align="right">-</td>
 <td align="right">-</td>
 <td align="right">1.5</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
 <td align="left">-</td>
 <td align="left">-</td>
 <td align="left">-</td>

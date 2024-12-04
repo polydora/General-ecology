@@ -130,7 +130,7 @@ credits <-  merge(credits, test_lecture_8, all.x = TRUE)
 test_lecture_9 <- read_xlsx("data/Экосистемы (Общая экология 2024-2025).xlsx")
 
 test_lecture_9 <- test_lecture_9 %>% select(4,6)
-names(test_lecture_9) <- c("St_Mail", "Score_lecture_8")
+names(test_lecture_9) <- c("St_Mail", "Score_lecture_9")
 
 credits <-  merge(credits, test_lecture_9, all.x = TRUE)
 

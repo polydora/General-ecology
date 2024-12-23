@@ -560,7 +560,7 @@ class <- read_excel("data/Classess_2024_biology.xls")
 
 # class <- class %>% filter(!is.na(Login)|!is.na(Group) )
 class <- class %>% select(St_Mail, Login, Family, Name, Otch )
-res <- merge(class, Results_print)
+res <- merge(class, Results_print, by = "Login")
 
 write.table(res, "data/results_for_examen_2024-2025_biology.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
 

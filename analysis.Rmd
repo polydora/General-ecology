@@ -30,303 +30,303 @@ opts_chunk$set(echo = FALSE)
 
 <!-- ############## Биологи ################# -->
 
-# **Анализ тестов по материалам лекций**
+<!-- # **Анализ тестов по материалам лекций** -->
 
-Максимальное количество баллов для экзамена: 3%
+<!-- Максимальное количество баллов для экзамена: 3% -->
 
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-credits <- class %>% select(Login, St_Mail)
+<!-- credits <- class %>% select(Login, St_Mail) -->
 
-# Тест по Лекции 1
-test_lecture_1 <- read_excel("data/Общая экология 2024-2025 grades - 09_16_2024, 08_12 PM.xlsx", col_names = TRUE)
+<!-- # Тест по Лекции 1 -->
+<!-- test_lecture_1 <- read_excel("data/Общая экология 2024-2025 grades - 09_16_2024, 08_12 PM.xlsx", col_names = TRUE) -->
 
-test_lecture_1 <- test_lecture_1 %>% select(c(4,10))
+<!-- test_lecture_1 <- test_lecture_1 %>% select(c(4,10)) -->
 
 
-names(test_lecture_1) <- c("St_Mail", "Score_lecture_1")
+<!-- names(test_lecture_1) <- c("St_Mail", "Score_lecture_1") -->
 
 
-credits <- merge(credits, test_lecture_1, all.x = TRUE)
+<!-- credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
 
 
 
-#Тест по Лекции 2
+<!-- #Тест по Лекции 2 -->
 
-test_lecture_2 <- read_xlsx("data/Демэкология (часть 1) (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_2 <- read_xlsx("data/Демэкология (часть 1) (Общая экология 2024-2025).xlsx") -->
 
 
-test_lecture_2 <- test_lecture_2 %>% select(4,6)
+<!-- test_lecture_2 <- test_lecture_2 %>% select(4,6) -->
 
-names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
+<!-- names(test_lecture_2) <- c("St_Mail", "Score_lecture_2") -->
 
-credits <- merge(credits, test_lecture_2, all.x = TRUE)
+<!-- credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
 
 
 
-# #Тест по Лекции 3
+<!-- # #Тест по Лекции 3 -->
 
 
-test_lecture_3 <- read_xlsx("data/Демэкология (Часть 2) (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_3 <- read_xlsx("data/Демэкология (Часть 2) (Общая экология 2024-2025).xlsx") -->
 
-test_lecture_3 <- test_lecture_3 %>% select(4,6)
-names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
+<!-- test_lecture_3 <- test_lecture_3 %>% select(4,6) -->
+<!-- names(test_lecture_3) <- c("St_Mail", "Score_lecture_3") -->
 
-credits <- merge(credits, test_lecture_3, all.x = TRUE)
+<!-- credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
 
 
-#
-test_lecture_4 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2024-2025).xlsx")
+<!-- # -->
+<!-- test_lecture_4 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2024-2025).xlsx") -->
 
-test_lecture_4 <- test_lecture_4 %>% select(4,6)
-names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
+<!-- test_lecture_4 <- test_lecture_4 %>% select(4,6) -->
+<!-- names(test_lecture_4) <- c("St_Mail", "Score_lecture_4") -->
 
-credits <- merge(credits, test_lecture_4, all.x = TRUE)
-#
+<!-- credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
+<!-- # -->
 
 
-test_lecture_5 <- read_xlsx("data/Конкуренция (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_5 <- read_xlsx("data/Конкуренция (Общая экология 2024-2025).xlsx") -->
 
-test_lecture_5 <- test_lecture_5 %>% select(4,6)
-names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
+<!-- test_lecture_5 <- test_lecture_5 %>% select(4,6) -->
+<!-- names(test_lecture_5) <- c("St_Mail", "Score_lecture_5") -->
 
-credits <- merge(credits, test_lecture_5, all.x = TRUE)
+<!-- credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
 
 
-test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология 2024-2025).xlsx") -->
 
-test_lecture_6 <- test_lecture_6 %>% select(4,6)
-names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
+<!-- test_lecture_6 <- test_lecture_6 %>% select(4,6) -->
+<!-- names(test_lecture_6) <- c("St_Mail", "Score_lecture_6") -->
 
-credits <- merge(credits, test_lecture_6, all.x = TRUE)
+<!-- credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
 
 
 
-test_lecture_7 <- read_xlsx("data/Симбиозы (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_7 <- read_xlsx("data/Симбиозы (Общая экология 2024-2025).xlsx") -->
 
 
-test_lecture_7 <- test_lecture_7 %>% select(4,6)
-names(test_lecture_7) <- c("St_Mail", "Score_lecture_7")
+<!-- test_lecture_7 <- test_lecture_7 %>% select(4,6) -->
+<!-- names(test_lecture_7) <- c("St_Mail", "Score_lecture_7") -->
 
-credits <- merge(credits, test_lecture_7, all.x = TRUE)
+<!-- credits <- merge(credits, test_lecture_7, all.x = TRUE) -->
 
 
 
-#
-#
+<!-- # -->
+<!-- # -->
 
 
-test_lecture_8 <- read_xlsx("data/Структура и динамика сообществ (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_8 <- read_xlsx("data/Структура и динамика сообществ (Общая экология 2024-2025).xlsx") -->
 
-test_lecture_8 <- test_lecture_8 %>% select(4,6)
-names(test_lecture_8) <- c("St_Mail", "Score_lecture_8")
+<!-- test_lecture_8 <- test_lecture_8 %>% select(4,6) -->
+<!-- names(test_lecture_8) <- c("St_Mail", "Score_lecture_8") -->
 
-credits <-  merge(credits, test_lecture_8, all.x = TRUE)
+<!-- credits <-  merge(credits, test_lecture_8, all.x = TRUE) -->
 
 
 
-test_lecture_9 <- read_xlsx("data/Экосистемы (Общая экология 2024-2025).xlsx")
+<!-- test_lecture_9 <- read_xlsx("data/Экосистемы (Общая экология 2024-2025).xlsx") -->
 
-test_lecture_9 <- test_lecture_9 %>% select(4,6)
-names(test_lecture_9) <- c("St_Mail", "Score_lecture_9")
+<!-- test_lecture_9 <- test_lecture_9 %>% select(4,6) -->
+<!-- names(test_lecture_9) <- c("St_Mail", "Score_lecture_9") -->
 
-credits <-  merge(credits, test_lecture_9, all.x = TRUE)
+<!-- credits <-  merge(credits, test_lecture_9, all.x = TRUE) -->
 
 
-##########################
-#Вывод общей таблицы с баллами
+<!-- ########################## -->
+<!-- #Вывод общей таблицы с баллами -->
 
-# credits <- credits %>% filter(Login != "NA")
+<!-- # credits <- credits %>% filter(Login != "NA") -->
 
-credits_sum <- 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
-# + 10 + 8 + 10 + 10 + 5 + 7
+<!-- credits_sum <- 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10 -->
+<!-- # + 10 + 8 + 10 + 10 + 5 + 7 -->
 
-credits_print <- credits %>% select(-St_Mail)
+<!-- credits_print <- credits %>% select(-St_Mail) -->
 
-credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE)
+<!-- credits_print$Sum <- credits_print %>% select(-c("Login")) %>% rowSums(na.rm=TRUE) -->
 
-credits_print$Credit_Sum <- credits_sum
+<!-- credits_print$Credit_Sum <- credits_sum -->
 
-credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2)
+<!-- credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2) -->
 
-credits_print$Exam <- credits_print$Proportion * 3
+<!-- credits_print$Exam <- credits_print$Proportion * 3 -->
 
-# credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
+<!-- # credits_print$Exam <- round(credits_print$Exam, 1) * 10 #умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки -->
 
 
 
-```
+<!-- ``` -->
 
 
 
-**Состояние индивидуального счета студентов**
-```{r, echo=F}
+<!-- **Состояние индивидуального счета студентов** -->
+<!-- ```{r, echo=F} -->
 
-options(knitr.kable.NA = '-')
+<!-- options(knitr.kable.NA = '-') -->
 
-credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum)
+<!-- credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum) -->
 
-kable(credits_print)
+<!-- kable(credits_print) -->
 
 
-```
+<!-- ``` -->
 
 
 
 
-# **Анализ отчетов по самостоятельной работе № 1**
+<!-- # **Анализ отчетов по самостоятельной работе № 1** -->
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-hw1 <- read_xlsx("data/Самостоятельная работа №1 (Общая экология 2024-2025).xlsx")
+<!-- hw1 <- read_xlsx("data/Самостоятельная работа №1 (Общая экология 2024-2025).xlsx") -->
 
-hw1 <- hw1 %>% select(4,6)
+<!-- hw1 <- hw1 %>% select(4,6) -->
 
-names(hw1) <- c("St_Mail", "Score")
+<!-- names(hw1) <- c("St_Mail", "Score") -->
 
-# add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T)
-# names(add_hw1) <- c("Login", "add_score")
-#
-# add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score))
-#
-# # hw1[!(hw1$Login %in% add_hw1$Login), ]
-#
+<!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
+<!-- # names(add_hw1) <- c("Login", "add_score") -->
+<!-- # -->
+<!-- # add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
+<!-- # -->
+<!-- # # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
+<!-- # -->
 
-# hw1_score <- class %>% select(St_Mail, Login)
-#
-# hw1_score <- merge(hw1_score, hw1, all.x = T)
-#
-# hw1_score <- merge(hw1_score, add_hw1, all.x = T)
-#
-# hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T)
+<!-- # hw1_score <- class %>% select(St_Mail, Login) -->
+<!-- # -->
+<!-- # hw1_score <- merge(hw1_score, hw1, all.x = T) -->
+<!-- # -->
+<!-- # hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
+<!-- # -->
+<!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
 
-hw1_score <- hw1
+<!-- hw1_score <- hw1 -->
 
-hw1_score$Total <- 11
+<!-- hw1_score$Total <- 11 -->
 
-# hw1_score$Exam <- ifelse(is.na(hw1_score$Add_Score),
-#                          round((hw1_score$Score) / hw1_score$Total * 1.5, 1),
-#                          round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1))
+<!-- # hw1_score$Exam <- ifelse(is.na(hw1_score$Add_Score), -->
+<!-- #                          round((hw1_score$Score) / hw1_score$Total * 1.5, 1), -->
+<!-- #                          round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1)) -->
 
-hw1_score$Exam <- round((hw1_score$Score) / hw1_score$Total * 1.5, 1)
+<!-- hw1_score$Exam <- round((hw1_score$Score) / hw1_score$Total * 1.5, 1) -->
 
-# hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
+<!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
 
-hw1_score_print <- hw1_score
+<!-- hw1_score_print <- hw1_score -->
 
-# kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки"))
-# 
-# kable(hw1_score_print, col.names = c("Login", "Сумма","Доп. вопрос", "Всего вопросов",  "% от экзаменационной оценки"))
+<!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
+<!-- #  -->
+<!-- # kable(hw1_score_print, col.names = c("Login", "Сумма","Доп. вопрос", "Всего вопросов",  "% от экзаменационной оценки")) -->
 
-kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки"))
+<!-- kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки")) -->
 
 
 
-```
+<!-- ``` -->
 
-<!-- <!-- <br> -->
-<!-- <!-- <br> -->
+<!-- <!-- <!-- <br> --> -->
+<!-- <!-- <!-- <br> --> -->
 
 
-# **Анализ отчетов по самостоятельной работе № 2**
+<!-- # **Анализ отчетов по самостоятельной работе № 2** -->
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-hw2 <- read_xlsx("data/Тест по  материалам самостоятельной работы №2 (Общая экология 2024-2025).xlsx")
-hw2 <- hw2 %>% select(4, 6)
-names(hw2) <- c("Login", "Score")
+<!-- hw2 <- read_xlsx("data/Тест по  материалам самостоятельной работы №2 (Общая экология 2024-2025).xlsx") -->
+<!-- hw2 <- hw2 %>% select(4, 6) -->
+<!-- names(hw2) <- c("Login", "Score") -->
 
 
-# add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T)
-# names(add_hw1) <- c("Login", "add_score")
-#
-# add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score))
-#
-# # hw1[!(hw1$Login %in% add_hw1$Login), ]
-#
+<!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
+<!-- # names(add_hw1) <- c("Login", "add_score") -->
+<!-- # -->
+<!-- # add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
+<!-- # -->
+<!-- # # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
+<!-- # -->
 
-# hw1_score <- class %>% select(St_Mail, Login)
-#
-# hw1_score <- merge(hw1_score, hw1, all.x = T)
-#
-# hw1_score <- merge(hw1_score, add_hw1, all.x = T)
-#
-# hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T)
+<!-- # hw1_score <- class %>% select(St_Mail, Login) -->
+<!-- # -->
+<!-- # hw1_score <- merge(hw1_score, hw1, all.x = T) -->
+<!-- # -->
+<!-- # hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
+<!-- # -->
+<!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
 
-hw2_score <- hw2
+<!-- hw2_score <- hw2 -->
 
-hw2_score$Total <- 24
+<!-- hw2_score$Total <- 24 -->
 
-hw2_score$Exam <- round(hw2_score$Score / hw2_score$Total * 1.5, 1)
+<!-- hw2_score$Exam <- round(hw2_score$Score / hw2_score$Total * 1.5, 1) -->
 
-# hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
+<!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
 
-hw2_score_print <- hw2_score
+<!-- hw2_score_print <- hw2_score -->
 
-# kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки"))
+<!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
 
-kable(hw2_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки"))
+<!-- kable(hw2_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки")) -->
 
 
-```
+<!-- ``` -->
 
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
 
 
-## **Анализ контрольной работы № 1**
+<!-- ## **Анализ контрольной работы № 1** -->
 
-Максимальное количество баллов для экзамена: 1.5%
+<!-- Максимальное количество баллов для экзамена: 1.5% -->
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2024-2025).xlsx")
+<!-- cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2024-2025).xlsx") -->
 
-cont1 <- cont1 %>% select(4, 6)
+<!-- cont1 <- cont1 %>% select(4, 6) -->
 
-names(cont1) <- c("St_Mail", "Score")
+<!-- names(cont1) <- c("St_Mail", "Score") -->
 
-# cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) )
+<!-- # cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) ) -->
 
-cont1_print <- merge(class, cont1, all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 23 * 1.5, 1) )
+<!-- cont1_print <- merge(class, cont1, all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 23 * 1.5, 1) ) -->
 
 
-kable(cont1_print)
+<!-- kable(cont1_print) -->
 
 
-```
+<!-- ``` -->
 
 
 
 
-## **Анализ контрольной работы № 2**
+<!-- ## **Анализ контрольной работы № 2** -->
 
 
-Максимальное количество баллов для экзамена 1.5%
+<!-- Максимальное количество баллов для экзамена 1.5% -->
 
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
+<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
 
-cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2024-2025).xlsx")
+<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2024-2025).xlsx") -->
 
-cont2 <- cont2 %>% select(4:6)
+<!-- cont2 <- cont2 %>% select(4:6) -->
 
-names(cont2) <- c("St_Mail",  "Name", "Score")
+<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
 
-cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 19 * 1.5, 1))
+<!-- cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 19 * 1.5, 1)) -->
 
-kable(cont2_print)
+<!-- kable(cont2_print) -->
 
 
-```
+<!-- ``` -->
 
 
 
@@ -336,42 +336,42 @@ kable(cont2_print)
 
 
 
-## **Оценки за семинары**
+<!-- ## **Оценки за семинары** -->
 
-Максимальное количество баллов для экзамена 27
+<!-- Максимальное количество баллов для экзамена 27 -->
 
-```{r warning = FALSE, message=FALSE}
+<!-- ```{r warning = FALSE, message=FALSE} -->
 
-library(googlesheets4)
-# detach(googlesheets4)
+<!-- library(googlesheets4) -->
+<!-- # detach(googlesheets4) -->
 
-sem <- read_sheet('https://docs.google.com/spreadsheets/d/1lOO6ECeAcU_h2lFvrYiLF5Zj7hGV4QiOVQaAF0p6Yxg/edit?usp=sharing', col_types = "?")
+<!-- sem <- read_sheet('https://docs.google.com/spreadsheets/d/1lOO6ECeAcU_h2lFvrYiLF5Zj7hGV4QiOVQaAF0p6Yxg/edit?usp=sharing', col_types = "?") -->
 
-names(sem)[1:5] <- c("Family", "Name", "Otch", "St_Mail", "Group")
+<!-- names(sem)[1:5] <- c("Family", "Name", "Otch", "St_Mail", "Group") -->
 
 
-# sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA")
+<!-- # sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA") -->
 
-sem <- sem %>% select(-c(Family, Name, Otch))
+<!-- sem <- sem %>% select(-c(Family, Name, Otch)) -->
 
 
 
-sem_print <- 
-merge(class, sem, all = T) %>% 
-arrange(Group)%>% 
-mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>% 
-select(-St_Mail)
+<!-- sem_print <-  -->
+<!-- merge(class, sem, all = T) %>%  -->
+<!-- arrange(Group)%>%  -->
+<!-- mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>%  -->
+<!-- select(-St_Mail) -->
 
 
 
-```
+<!-- ``` -->
 
 
 
-```{r }
-kable(sem_print)
+<!-- ```{r } -->
+<!-- kable(sem_print) -->
 
-```
+<!-- ``` -->
 
 
 
@@ -475,95 +475,95 @@ kable(sem_print)
 
 
 
-## **Итоговый счет биологи 2024-2025**
+<!-- ## **Итоговый счет биологи 2024-2025** -->
 
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
-library(stringr)
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- library(stringr) -->
 
 
-d1 <- credits_print %>% select(Login, Exam)
-d1$Exam <- round(d1$Exam, 2)
+<!-- d1 <- credits_print %>% select(Login, Exam) -->
+<!-- d1$Exam <- round(d1$Exam, 2) -->
 
 
-d2 <- cont1_print %>% select(Login, Exam)
-d2$Exam <- round(d2$Exam, 2)
-
-
-
-d3 <- cont2_print %>% select(Login, Exam)
-d3$Exam <- round(d3$Exam, 2)
-
-
-d4 <- hw1_score_print %>% select(St_Mail, Exam)
-d4$Login <- word(d4$St_Mail, 1 ,sep = "\\@")
-d4$Exam <- round(d4$Exam, 2)
-d4 <-
-  d4 %>% 
-  select(- St_Mail)
-
-
-d5 <- hw2_score_print %>% select(Login, Exam)
-d5$Login <- word(d5$Login, 1 ,sep = "\\@")
-d5$Exam <- round(d5$Exam, 2)
-
-
-d6 <- sem_print %>% select(Login, Exam)
-d6$Exam <- round(d6$Exam, 2)
-
-
-Results <-
-  merge(d1, d2, by = "Login", all = T) %>%
-  merge(., d3, by = "Login", all = T) %>%
-  merge(., d4, by = "Login", all = T) %>%
-  merge(., d5, by = "Login", all = T) %>%
-  merge(., d6, by = "Login", all = T)
-
-
-names(Results) <- c("Login", "Lecture_test", "Control_1", "Control_2", "Home Work 1", "Home Work 2", "Seminars")
-
-# Results <-
-  # Results %>%
-  # select(-St_Mail)
+<!-- d2 <- cont1_print %>% select(Login, Exam) -->
+<!-- d2$Exam <- round(d2$Exam, 2) -->
 
 
 
-
-Results_print <- Results
-
-Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1)
-
-Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA")
+<!-- d3 <- cont2_print %>% select(Login, Exam) -->
+<!-- d3$Exam <- round(d3$Exam, 2) -->
 
 
-# # Код для вывода суммарных оценок с именами.
-# class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
-#
-# final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T)
-#
-# write.table(final_results, "clipboard", sep = "\t", row.names = F)
-
-```
-
-```{r}
-
-options(knitr.kable.NA = '-')
-kable(Results_print)
-```
+<!-- d4 <- hw1_score_print %>% select(St_Mail, Exam) -->
+<!-- d4$Login <- word(d4$St_Mail, 1 ,sep = "\\@") -->
+<!-- d4$Exam <- round(d4$Exam, 2) -->
+<!-- d4 <- -->
+<!--   d4 %>%  -->
+<!--   select(- St_Mail) -->
 
 
-```{r}
-# Результаты в сумме для создания файла-ведомости экзамена
+<!-- d5 <- hw2_score_print %>% select(Login, Exam) -->
+<!-- d5$Login <- word(d5$Login, 1 ,sep = "\\@") -->
+<!-- d5$Exam <- round(d5$Exam, 2) -->
 
-class <- read_excel("data/Classess_2024_biology.xls")
 
-# class <- class %>% filter(!is.na(Login)|!is.na(Group) )
-class <- class %>% select(St_Mail, Login, Family, Name, Otch )
-res <- merge(class, Results_print, by = "Login")
+<!-- d6 <- sem_print %>% select(Login, Exam) -->
+<!-- d6$Exam <- round(d6$Exam, 2) -->
 
-write.table(res, "data/results_for_examen_2024-2025_biology.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
 
-```
+<!-- Results <- -->
+<!--   merge(d1, d2, by = "Login", all = T) %>% -->
+<!--   merge(., d3, by = "Login", all = T) %>% -->
+<!--   merge(., d4, by = "Login", all = T) %>% -->
+<!--   merge(., d5, by = "Login", all = T) %>% -->
+<!--   merge(., d6, by = "Login", all = T) -->
+
+
+<!-- names(Results) <- c("Login", "Lecture_test", "Control_1", "Control_2", "Home Work 1", "Home Work 2", "Seminars") -->
+
+<!-- # Results <- -->
+<!--   # Results %>% -->
+<!--   # select(-St_Mail) -->
+
+
+
+
+<!-- Results_print <- Results -->
+
+<!-- Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1) -->
+
+<!-- Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA") -->
+
+
+<!-- # # Код для вывода суммарных оценок с именами. -->
+<!-- # class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T) -->
+<!-- # -->
+<!-- # final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T) -->
+<!-- # -->
+<!-- # write.table(final_results, "clipboard", sep = "\t", row.names = F) -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- options(knitr.kable.NA = '-') -->
+<!-- kable(Results_print) -->
+<!-- ``` -->
+
+
+<!-- ```{r} -->
+<!-- # Результаты в сумме для создания файла-ведомости экзамена -->
+
+<!-- class <- read_excel("data/Classess_2024_biology.xls") -->
+
+<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
+<!-- class <- class %>% select(St_Mail, Login, Family, Name, Otch ) -->
+<!-- res <- merge(class, Results_print, by = "Login") -->
+
+<!-- write.table(res, "data/results_for_examen_2024-2025_biology.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
+
+<!-- ``` -->
 
 

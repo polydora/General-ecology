@@ -13,7 +13,7 @@
 
 <title>Анализ работы</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -514,16 +514,95 @@ div.tocify {
 <!-- ``` -->
 <!-- <br> -->
 <!-- <br> -->
-<!-- ## **Анализ контрольной работы № 1** -->
-<!-- Максимальное количество баллов для экзамена: 1.5% -->
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2024-2025).xlsx") -->
-<!-- cont1 <- cont1 %>% select(4, 6) -->
-<!-- names(cont1) <- c("St_Mail", "Score") -->
-<!-- # cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) ) -->
-<!-- cont1_print <- merge(class, cont1, all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 23 * 1.5, 1) ) -->
-<!-- kable(cont1_print) -->
-<!-- ``` -->
+<div id="анализ-контрольной-работы-1" class="section level2">
+<h2><strong>Анализ контрольной работы № 1</strong></h2>
+<p>Максимальное количество баллов для экзамена: 3%</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Score</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st094812</td>
+<td align="right">8</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st118861</td>
+<td align="right">15</td>
+<td align="right">2.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st120275</td>
+<td align="right">8</td>
+<td align="right">1.4</td>
+</tr>
+<tr class="even">
+<td align="left">st131016</td>
+<td align="right">17</td>
+<td align="right">3.0</td>
+</tr>
+<tr class="odd">
+<td align="left">st131224</td>
+<td align="right">11</td>
+<td align="right">1.9</td>
+</tr>
+<tr class="even">
+<td align="left">st131236</td>
+<td align="right">16</td>
+<td align="right">2.8</td>
+</tr>
+<tr class="odd">
+<td align="left">st131553</td>
+<td align="right">13</td>
+<td align="right">2.3</td>
+</tr>
+<tr class="even">
+<td align="left">st132028</td>
+<td align="right">4</td>
+<td align="right">0.7</td>
+</tr>
+<tr class="odd">
+<td align="left">st132049</td>
+<td align="right">-</td>
+<td align="right">-</td>
+</tr>
+<tr class="even">
+<td align="left">st132096</td>
+<td align="right">15</td>
+<td align="right">2.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st132204</td>
+<td align="right">14</td>
+<td align="right">2.5</td>
+</tr>
+<tr class="even">
+<td align="left">st132283</td>
+<td align="right">5</td>
+<td align="right">0.9</td>
+</tr>
+<tr class="odd">
+<td align="left">st132352</td>
+<td align="right">9</td>
+<td align="right">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">st132763</td>
+<td align="right">15</td>
+<td align="right">2.6</td>
+</tr>
+<tr class="odd">
+<td align="left">st132799</td>
+<td align="right">3</td>
+<td align="right">0.5</td>
+</tr>
+</tbody>
+</table>
 <!-- ## **Анализ контрольной работы № 2** -->
 <!-- Максимальное количество баллов для экзамена 1.5% -->
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
@@ -649,6 +728,7 @@ div.tocify {
 <!-- res <- merge(class, Results_print, by = "Login") -->
 <!-- write.table(res, "data/results_for_examen_2024-2025_biology.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
 <!-- ``` -->
+</div>
 </div>
 
 

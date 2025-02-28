@@ -280,27 +280,27 @@ kable(credits_print)
 
 
 
-<!-- ## **Анализ контрольной работы № 1** -->
+## **Анализ контрольной работы № 1**
 
-<!-- Максимальное количество баллов для экзамена: 1.5% -->
+Максимальное количество баллов для экзамена: 3%
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- cont1 <- read_excel("data/Контрольная работа № 1 (Общая экология 2024-2025).xlsx") -->
+cont1 <- read_excel("data/Контрольная работа № 1 (Экология для биоинженеров 2025)(1-14).xlsx")
 
-<!-- cont1 <- cont1 %>% select(4, 6) -->
+cont1 <- cont1 %>% select(4, 6)
 
-<!-- names(cont1) <- c("St_Mail", "Score") -->
+names(cont1) <- c("St_Mail", "Score")
 
-<!-- # cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) ) -->
+# cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) )
 
-<!-- cont1_print <- merge(class, cont1, all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 23 * 1.5, 1) ) -->
-
-
-<!-- kable(cont1_print) -->
+cont1_print <- merge(class, cont1, all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 17 * 3, 1) )
 
 
-<!-- ``` -->
+kable(cont1_print)
+
+
+```
 
 
 

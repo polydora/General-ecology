@@ -515,40 +515,40 @@ td {  /* Table  */
 
 
 
-<!-- ### Распределение тем для семинара №1 -->
+### Распределение тем для семинара №1
 
-<!-- ```{r, echo=FALSE, message=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(dplyr) -->
-<!-- library(readxl) -->
-<!-- library(ggplot2) -->
-<!-- library(broom) -->
-<!-- library(tidyr) -->
-
-
-<!-- set.seed(123459) -->
-
-<!-- class <- read_xlsx("data/Classess_2024_biotech.xlsx", col_names = T) -->
-
-<!-- # class <- class %>% filter(Group == 1) -->
-
-<!-- # class <- read_xlsx("data/Classess_2021_biology.xlsx", col_names = T) -->
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+library(dplyr)
+library(readxl)
+library(ggplot2)
+library(broom)
+library(tidyr)
 
 
-<!-- topics <- read_xlsx("data/topics for reading.xlsx", col_names = T) -->
-<!-- # -->
-<!-- # class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class)), Topic_2 = sample(topics$Term, nrow(class))) -->
+set.seed(123459)
 
-<!-- class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class), replace = T)) -->
+class <- read_xlsx("data/classes_biotech_2025.xlsx", col_names = T)
+
+# class <- class %>% filter(Group == 1)
+
+# class <- read_xlsx("data/Classess_2021_biology.xlsx", col_names = T)
 
 
-<!-- # class$Topic_1 == class$Topic_2 -->
-<!-- # -->
-<!-- # while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] <- sample(topics$Term,1)} -->
+topics <- read_xlsx("data/topics for reading.xlsx", col_names = T)
+#
+# class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class)), Topic_2 = sample(topics$Term, nrow(class)))
 
-<!-- kable(class, col.names = c("Фамилия", "Имя", "Тема")) -->
+class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class), replace = T))
 
-<!-- ``` -->
+
+# class$Topic_1 == class$Topic_2
+#
+# while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] <- sample(topics$Term,1)}
+
+kable(class, col.names = c("Фамилия", "Имя", "Тема"))
+
+```
 
 
 <!-- ### Распределение тем для группы № 2 -->

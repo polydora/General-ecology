@@ -305,29 +305,29 @@ kable(cont1_print)
 
 
 
-<!-- ## **Анализ контрольной работы № 2** -->
+## **Анализ контрольной работы № 2**
 
 
-<!-- Максимальное количество баллов для экзамена 1.5% -->
+Максимальное количество баллов для экзамена 3 %
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
+# cont1 <- read_excel("data/Control_work_1_biotech.xlsx")
 
-<!-- cont2 <- read_excel("data/Контрольная работа № 2 (Общая экология 2024-2025).xlsx") -->
+cont2 <- read_excel("data/Контрольная работа №2 (Ответы).xlsx")
 
-<!-- cont2 <- cont2 %>% select(4:6) -->
+cont2 <- cont2 %>% select(2:3)
 
-<!-- names(cont2) <- c("St_Mail",  "Name", "Score") -->
+names(cont2) <- c("St_Mail", "Score")
 
-<!-- cont2_print <- merge(class, cont2 %>% select(-Name ), all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 19 * 1.5, 1)) -->
+cont2_print <- merge(class, cont2 , all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 11 * 3, 1))
 
-<!-- kable(cont2_print) -->
+kable(cont2_print)
 
 
-<!-- ``` -->
+```
 
 
 
@@ -396,9 +396,9 @@ kable(cont1_print)
 
 
 
-<!-- ## **Результаты семинаров** -->
+## **Результаты семинаров**
 
-<!-- Семинары приносят в экзаменационную оценку 16% -->
+Семинары приносят в экзаменационную оценку 16%
 
 <!-- **Коллеги!** -->
 
@@ -408,28 +408,28 @@ kable(cont1_print)
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- seminars <- read_excel("data/Seminars_biotech.xlsx") -->
-<!-- #  -->
-<!-- # names(seminars)[1:3] <- c( "Family", "Name", "Login") -->
-<!-- #  -->
-<!-- # seminars_print <- seminars %>% select(-Family, -Name) -->
+seminars <- read_excel("data/seminars_biotech_2025.xlsx")
+#
+# names(seminars)[1:3] <- c( "Family", "Name", "Login")
+#
+# seminars_print <- seminars %>% select(-Family, -Name)
 
-<!-- seminars <- -->
-<!--   seminars %>% -->
-<!--   select(-c(Family, Name, Otch, Group, St_Mail)) -->
+seminars <-
+  seminars %>%
+  select(-c(Family, Name, Otch, Group, St_Mail))
 
-<!-- seminars_print <- seminars  -->
+seminars_print <- seminars
 
-<!-- seminars_print <- seminars_print %>%  mutate(Sum = ifelse(!is.na(Seminar_2), Seminar_1 + Seminar_2, Seminar_1 ), Exam = Sum)  -->
+seminars_print <- seminars_print %>%  mutate(Sum = ifelse(!is.na(Seminar_2), Seminar_1 + Seminar_2, Seminar_1 ), Exam = Sum)
 
-<!-- seminars_print$Exam <- seminars_print$Exam/2*16 -->
+seminars_print$Exam <- seminars_print$Exam/2*16
 
-<!-- kable(seminars_print) -->
+kable(seminars_print)
 
 
-<!-- ``` -->
+```
 
 
 

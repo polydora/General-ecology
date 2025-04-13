@@ -13,7 +13,7 @@
 
 <title>Анализ работы</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -354,6 +354,7 @@ div.tocify {
 <tr class="header">
 <th align="left">Login</th>
 <th align="right">Score_lecture_1</th>
+<th align="right">Score_lecture_2</th>
 <th align="right">Proportion</th>
 <th align="right">Exam</th>
 </tr>
@@ -362,53 +363,62 @@ div.tocify {
 <tr class="odd">
 <td align="left">st094812</td>
 <td align="right">10</td>
-<td align="right">0.59</td>
-<td align="right">4.72</td>
+<td align="right">11</td>
+<td align="right">0.55</td>
+<td align="right">4.40</td>
 </tr>
 <tr class="even">
 <td align="left">st118861</td>
 <td align="right">12</td>
-<td align="right">0.71</td>
-<td align="right">5.68</td>
+<td align="right">-</td>
+<td align="right">0.32</td>
+<td align="right">2.56</td>
 </tr>
 <tr class="odd">
 <td align="left">st120275</td>
 <td align="right">3</td>
-<td align="right">0.18</td>
-<td align="right">1.44</td>
+<td align="right">14</td>
+<td align="right">0.45</td>
+<td align="right">3.60</td>
 </tr>
 <tr class="even">
 <td align="left">st131016</td>
 <td align="right">15</td>
-<td align="right">0.88</td>
-<td align="right">7.04</td>
+<td align="right">20</td>
+<td align="right">0.92</td>
+<td align="right">7.36</td>
 </tr>
 <tr class="odd">
 <td align="left">st131224</td>
 <td align="right">12</td>
-<td align="right">0.71</td>
-<td align="right">5.68</td>
+<td align="right">20</td>
+<td align="right">0.84</td>
+<td align="right">6.72</td>
 </tr>
 <tr class="even">
 <td align="left">st131236</td>
 <td align="right">12</td>
-<td align="right">0.71</td>
-<td align="right">5.68</td>
+<td align="right">14</td>
+<td align="right">0.68</td>
+<td align="right">5.44</td>
 </tr>
 <tr class="odd">
 <td align="left">st131553</td>
 <td align="right">14</td>
-<td align="right">0.82</td>
-<td align="right">6.56</td>
+<td align="right">19</td>
+<td align="right">0.87</td>
+<td align="right">6.96</td>
 </tr>
 <tr class="even">
 <td align="left">st132028</td>
 <td align="right">1</td>
-<td align="right">0.06</td>
-<td align="right">0.48</td>
+<td align="right">-</td>
+<td align="right">0.03</td>
+<td align="right">0.24</td>
 </tr>
 <tr class="odd">
 <td align="left">st132049</td>
+<td align="right">-</td>
 <td align="right">-</td>
 <td align="right">0.00</td>
 <td align="right">0.00</td>
@@ -416,38 +426,44 @@ div.tocify {
 <tr class="even">
 <td align="left">st132096</td>
 <td align="right">5</td>
-<td align="right">0.29</td>
-<td align="right">2.32</td>
+<td align="right">16</td>
+<td align="right">0.55</td>
+<td align="right">4.40</td>
 </tr>
 <tr class="odd">
 <td align="left">st132204</td>
 <td align="right">3</td>
-<td align="right">0.18</td>
-<td align="right">1.44</td>
+<td align="right">-</td>
+<td align="right">0.08</td>
+<td align="right">0.64</td>
 </tr>
 <tr class="even">
 <td align="left">st132283</td>
 <td align="right">3</td>
-<td align="right">0.18</td>
-<td align="right">1.44</td>
+<td align="right">-</td>
+<td align="right">0.08</td>
+<td align="right">0.64</td>
 </tr>
 <tr class="odd">
 <td align="left">st132352</td>
 <td align="right">1</td>
-<td align="right">0.06</td>
-<td align="right">0.48</td>
+<td align="right">-</td>
+<td align="right">0.03</td>
+<td align="right">0.24</td>
 </tr>
 <tr class="even">
 <td align="left">st132763</td>
 <td align="right">8</td>
-<td align="right">0.47</td>
-<td align="right">3.76</td>
+<td align="right">20</td>
+<td align="right">0.74</td>
+<td align="right">5.92</td>
 </tr>
 <tr class="odd">
 <td align="left">st132799</td>
 <td align="right">3</td>
-<td align="right">0.18</td>
-<td align="right">1.44</td>
+<td align="right">-</td>
+<td align="right">0.08</td>
+<td align="right">0.64</td>
 </tr>
 </tbody>
 </table>
@@ -844,24 +860,151 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<!-- ## **Итоговый счет группа биоинженеров** -->
-<!-- ```{r warning = FALSE} -->
-<!-- tests <- credits_print %>% select(Login, Exam) -->
-<!-- names(tests) <- c("Login", "Тесты по лекциям") -->
-<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
-<!-- names(cont1) <- c("Login", "Контрольная 1") -->
-<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
-<!-- names(cont2) <- c("Login", "Контрольная 2") -->
-<!-- sems <- seminars_print %>% select(Login, Exam) -->
-<!-- names(sems) <- c("Login", "Семинары" ) -->
-<!-- d <- merge(tests, cont1, by = "Login", all.x = TRUE) -->
-<!-- dd <- merge(d, cont2, by = "Login", all.x = TRUE) -->
-<!-- final <- merge(dd, sems, by = "Login", all.x = TRUE) -->
-<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
-<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
-<!-- final$Exam <- Exam -->
-<!-- kable(final) -->
-<!-- ``` -->
+</div>
+<div id="итоговый-счет-группа-биоинженеров" class="section level2">
+<h2><strong>Итоговый счет группа биоинженеров</strong></h2>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="24%" />
+<col width="20%" />
+<col width="20%" />
+<col width="13%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Login</th>
+<th align="right">Тесты по лекциям</th>
+<th align="right">Контрольная 1</th>
+<th align="right">Контрольная 2</th>
+<th align="right">Семинары</th>
+<th align="right">Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">st094812</td>
+<td align="right">4.40</td>
+<td align="right">1.4</td>
+<td align="right">1.4</td>
+<td align="right">-</td>
+<td align="right">7.20</td>
+</tr>
+<tr class="even">
+<td align="left">st118861</td>
+<td align="right">2.56</td>
+<td align="right">2.6</td>
+<td align="right">1.9</td>
+<td align="right">8</td>
+<td align="right">15.06</td>
+</tr>
+<tr class="odd">
+<td align="left">st120275</td>
+<td align="right">3.60</td>
+<td align="right">1.4</td>
+<td align="right">0.8</td>
+<td align="right">18</td>
+<td align="right">23.80</td>
+</tr>
+<tr class="even">
+<td align="left">st131016</td>
+<td align="right">7.36</td>
+<td align="right">3.0</td>
+<td align="right">2.2</td>
+<td align="right">20</td>
+<td align="right">32.56</td>
+</tr>
+<tr class="odd">
+<td align="left">st131224</td>
+<td align="right">6.72</td>
+<td align="right">1.9</td>
+<td align="right">2.2</td>
+<td align="right">18</td>
+<td align="right">28.82</td>
+</tr>
+<tr class="even">
+<td align="left">st131236</td>
+<td align="right">5.44</td>
+<td align="right">2.8</td>
+<td align="right">0.8</td>
+<td align="right">20</td>
+<td align="right">29.04</td>
+</tr>
+<tr class="odd">
+<td align="left">st131553</td>
+<td align="right">6.96</td>
+<td align="right">2.3</td>
+<td align="right">1.9</td>
+<td align="right">18</td>
+<td align="right">29.16</td>
+</tr>
+<tr class="even">
+<td align="left">st132028</td>
+<td align="right">0.24</td>
+<td align="right">0.7</td>
+<td align="right">-</td>
+<td align="right">8</td>
+<td align="right">8.94</td>
+</tr>
+<tr class="odd">
+<td align="left">st132049</td>
+<td align="right">0.00</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">st132096</td>
+<td align="right">4.40</td>
+<td align="right">2.6</td>
+<td align="right">1.6</td>
+<td align="right">18</td>
+<td align="right">26.60</td>
+</tr>
+<tr class="odd">
+<td align="left">st132204</td>
+<td align="right">0.64</td>
+<td align="right">2.5</td>
+<td align="right">1.1</td>
+<td align="right">10</td>
+<td align="right">14.24</td>
+</tr>
+<tr class="even">
+<td align="left">st132283</td>
+<td align="right">0.64</td>
+<td align="right">0.9</td>
+<td align="right">0.3</td>
+<td align="right">18</td>
+<td align="right">19.84</td>
+</tr>
+<tr class="odd">
+<td align="left">st132352</td>
+<td align="right">0.24</td>
+<td align="right">1.6</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">1.84</td>
+</tr>
+<tr class="even">
+<td align="left">st132763</td>
+<td align="right">5.92</td>
+<td align="right">2.6</td>
+<td align="right">2.5</td>
+<td align="right">20</td>
+<td align="right">31.02</td>
+</tr>
+<tr class="odd">
+<td align="left">st132799</td>
+<td align="right">0.64</td>
+<td align="right">0.5</td>
+<td align="right">1.6</td>
+<td align="right">-</td>
+<td align="right">2.74</td>
+</tr>
+</tbody>
+</table>
 <!-- ## **Итоговый счет биологи 2024-2025** -->
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- library(stringr) -->

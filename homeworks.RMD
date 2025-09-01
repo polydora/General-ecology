@@ -112,8 +112,8 @@ https://drive.google.com/file/d/1BMRC-PZy2gUmL2DtUessL5o2tHT36rSs/view?usp=shari
 *Очень рекомендуется прочитать*
 Smith, R. L., Smith, T. M. Elements of ecology. - 2012. **Chapter 23 Biogeochemical Cycles**
 
-Очень рекоментуется посмотреть видео:
-- [Видеозапись лекции К. Ю. Еськова, посвященной происхождению жизни](https://www.youtube.com/watch?v=ylAOzdXEbaA)
+<!-- Очень рекоментуется посмотреть видео: -->
+<!-- - [Видеозапись лекции К. Ю. Еськова, посвященной происхождению жизни](https://www.youtube.com/watch?v=ylAOzdXEbaA) -->
 
 
 

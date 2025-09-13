@@ -34,19 +34,25 @@ title: Презентации к лекциям
 + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header)
 
 
-<!-- ## Лекция 4. -->
+## Лекция 4.
 
-<!-- - [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf) -->
+- [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf)
 
-
-<!-- ## Лекция 5. -->
-
-<!-- - [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Симфизиология.pdf) -->
+[**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header)
 
 
-<!-- ## Лекция 6. -->
+## Лекция 5.
 
-<!-- - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Классификация отношений.pdf) -->
+- [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Симфизиология.pdf)
+
+[**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header)
+
+## Лекция 6.
+
+- [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Классификация отношений.pdf)
+
+[**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header)
+
 
 <!-- ## Лекция 7. -->
 

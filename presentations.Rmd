@@ -54,9 +54,12 @@ title: Презентации к лекциям
 [**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header)
 
 
-<!-- ## Лекция 7. -->
+## Лекция 7.
 
-<!-- - [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf) -->
+- [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf)
+
+[**Тест по теме "Конкурентные отношения"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview)
+
 
 
 <!-- ## Лекция 8. -->

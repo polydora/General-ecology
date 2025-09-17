@@ -62,11 +62,12 @@ title: Презентации к лекциям
 
 
 
-<!-- ## Лекция 8. -->
+## Лекция 8.
 
-<!-- - [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf) -->
+- [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf)
 
 
+[**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header)
 
 <!-- ## Лекция 9. -->
 

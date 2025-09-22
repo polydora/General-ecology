@@ -46,80 +46,101 @@ credits <- class %>% select(Login)
 test_lecture_1 <- read_excel("data/Тест по темам _Предмет экологии_ и _Аутэкология_ (Ответы Биологи 2025).xlsx", col_names = TRUE)
 
 test_lecture_1 <- test_lecture_1 %>% 
-  select(c(1, 3, 4))
+  select(c(3, 4))
 
 
-names(test_lecture_1) <- c("Time", "Score_lecture_1", "Login")
+names(test_lecture_1) <- c("Score_lecture_1", "Login")
 
 
 credits <- merge(credits, test_lecture_1, all.x = TRUE)
 
 
 
-# # Тест по оставшимся Лекцииям
-# test_lecture_2 <- read_excel("data/Тест по лекциям _Трофические связи_ и _Структура и динамика сообществ_  (Ответы).xlsx", col_names = TRUE)
-# 
-# test_lecture_2 <- test_lecture_2 %>% select(2:3)
-# 
-# 
-# names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
-# 
-# 
-# credits <- merge(credits, test_lecture_2, all.x = TRUE)
+
+#Тест по Лекции 2
+
+test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Ответы Биологи 2025).xlsx")
 
 
+test_lecture_2 <- test_lecture_2 %>% 
+  select(c(2, 3))
 
-# #Тест по Лекции 2
-#
-# test_lecture_2 <- read_xlsx("data/Демэкология (часть 1) (Общая экология 2024-2025).xlsx")
-#
-#
-# test_lecture_2 <- test_lecture_2 %>% select(4,6)
-#
-# names(test_lecture_2) <- c("St_Mail", "Score_lecture_2")
-#
-# credits <- merge(credits, test_lecture_2, all.x = TRUE)
-#
-#
-#
+
+names(test_lecture_2) <- c("Score_lecture_2", "Login")
+
+
+credits <- merge(credits, test_lecture_2, all.x = TRUE)
+
+
 # # #Тест по Лекции 3
 #
-#
-# test_lecture_3 <- read_xlsx("data/Демэкология (Часть 2) (Общая экология 2024-2025).xlsx")
-#
-# test_lecture_3 <- test_lecture_3 %>% select(4,6)
-# names(test_lecture_3) <- c("St_Mail", "Score_lecture_3")
-#
-# credits <- merge(credits, test_lecture_3, all.x = TRUE)
-#
+
+test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Ответы Биологи 2025).xlsx")
+
+
+test_lecture_3 <- test_lecture_3 %>% 
+  select(c(2, 3))
+
+
+names(test_lecture_3) <- c("Score_lecture_3", "Login")
+
+
+credits <- merge(credits, test_lecture_3, all.x = TRUE)
+
+
+
 #
 # #
-# test_lecture_4 <- read_xlsx("data/Взаимоотношения организмов (Общая экология 2024-2025).xlsx")
-#
-# test_lecture_4 <- test_lecture_4 %>% select(4,6)
-# names(test_lecture_4) <- c("St_Mail", "Score_lecture_4")
-#
-# credits <- merge(credits, test_lecture_4, all.x = TRUE)
-# #
-#
-#
-# test_lecture_5 <- read_xlsx("data/Конкуренция (Общая экология 2024-2025).xlsx")
-#
-# test_lecture_5 <- test_lecture_5 %>% select(4,6)
-# names(test_lecture_5) <- c("St_Mail", "Score_lecture_5")
-#
-# credits <- merge(credits, test_lecture_5, all.x = TRUE)
-#
-#
-# test_lecture_6 <- read_xlsx("data/Трофические связи (Общая экология 2024-2025).xlsx")
-#
-# test_lecture_6 <- test_lecture_6 %>% select(4,6)
-# names(test_lecture_6) <- c("St_Mail", "Score_lecture_6")
-#
-# credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
+test_lecture_4 <- read_xlsx("data/Тест по теме Симфизиологические связи (Ответы Биологи 2025).xlsx")
+
+
+test_lecture_4 <- test_lecture_4 %>% 
+  select(c(2, 3))
+
+
+names(test_lecture_4) <- c("Score_lecture_4", "Login")
+
+
+credits <- merge(credits, test_lecture_4, all.x = TRUE)
+
+
+
 #
 #
+
+test_lecture_5 <- read_xlsx("data/Тест по теме Симфизиологические связи (Ответы Биологи 2025).xlsx")
+
+
+test_lecture_5 <- test_lecture_5 %>% 
+  select(c(2, 3))
+
+
+names(test_lecture_5) <- c("Score_lecture_5", "Login")
+
+
+credits <- merge(credits, test_lecture_5, all.x = TRUE)
+
+
 #
+#
+
+test_lecture_6 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
+
+
+test_lecture_6 <- test_lecture_6 %>% 
+  select(c(2, 3))
+
+
+names(test_lecture_6) <- c("Score_lecture_6", "Login")
+
+
+credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
+
+
+
+
 # test_lecture_7 <- read_xlsx("data/Симбиозы (Общая экология 2024-2025).xlsx")
 #
 #
@@ -156,11 +177,12 @@ credits <- merge(credits, test_lecture_1, all.x = TRUE)
 
 # credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 20
+credits_sum <- 20 + 12 +10 + 4 + 6
 # 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
 # + 10 + 8 + 10 + 10 + 5 + 7
 
-credits_print <- credits %>% select(-Time)
+credits_print <- credits 
+# %>% select(-Time)
 
 credits_print$Sum <- credits_print %>% 
   select(-c("Login")) %>% 

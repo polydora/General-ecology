@@ -109,7 +109,7 @@ credits <- merge(credits, test_lecture_4, all.x = TRUE)
 #
 #
 
-test_lecture_5 <- read_xlsx("data/Тест по теме Симфизиологические связи (Ответы Биологи 2025).xlsx")
+test_lecture_5 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
 
 
 test_lecture_5 <- test_lecture_5 %>% 
@@ -124,19 +124,19 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 #
 #
-
-test_lecture_6 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
-
-
-test_lecture_6 <- test_lecture_6 %>% 
-  select(c(2, 3))
-
-
-names(test_lecture_6) <- c("Score_lecture_6", "Login")
-
-
-credits <- merge(credits, test_lecture_6, all.x = TRUE)
-
+# 
+# test_lecture_6 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
+# 
+# 
+# test_lecture_6 <- test_lecture_6 %>% 
+#   select(c(2, 3))
+# 
+# 
+# names(test_lecture_6) <- c("Score_lecture_6", "Login")
+# 
+# 
+# credits <- merge(credits, test_lecture_6, all.x = TRUE)
+# 
 
 
 

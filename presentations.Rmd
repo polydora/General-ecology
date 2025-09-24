@@ -75,6 +75,18 @@ title: Презентации к лекциям
 
 [**Тест по теме "Симбиозы"** дата окончания **4 октября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSey8J018UdlMYsVC__gS_w1YRld6Y3dhIUaUpVJNss90gIXyw/viewform?usp=preview)
 
+
+<font color='red'>
+<font size=8px>
+
+[Контрольная работа №1]()
+
+</font>
+
+
+
+
+
 <!-- ## Лекция 10. -->
 
 <!-- - [Структура сообщества](Presentations//Lecture 10 Структура сообщества.pdf) -->

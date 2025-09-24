@@ -79,7 +79,7 @@ title: Презентации к лекциям
 <font color='red'>
 <font size=8px>
 
-[Контрольная работа №1]()
+[Контрольная работа №1](https://docs.google.com/forms/d/e/1FAIpQLSeIAQRnihTXHseM90dIld4eN21dvKSxmlDTysG0Qtg8CDdRag/viewform?usp=header)
 
 </font>
 

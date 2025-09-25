@@ -177,7 +177,7 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 # credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 20 + 12 +10 + 4 + 6
+credits_sum <- 20 + 11 +10 + 4 + 6
 # 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
 # + 10 + 8 + 10 + 10 + 5 + 7
 

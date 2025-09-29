@@ -122,21 +122,33 @@ names(test_lecture_5) <- c("Score_lecture_5", "Login")
 credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 
-#
-#
-# 
-# test_lecture_6 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
-# 
-# 
-# test_lecture_6 <- test_lecture_6 %>% 
-#   select(c(2, 3))
-# 
-# 
-# names(test_lecture_6) <- c("Score_lecture_6", "Login")
-# 
-# 
-# credits <- merge(credits, test_lecture_6, all.x = TRUE)
-# 
+
+
+
+test_lecture_6 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
+
+test_lecture_6 <- test_lecture_6 %>% 
+  select(c(2, 3))
+
+
+names(test_lecture_6) <- c("Score_lecture_6", "Login")
+
+
+credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
+
+
+
+test_lecture_7 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
+
+test_lecture_7 <- test_lecture_7 %>% 
+  select(c(2, 3))
+
+
+names(test_lecture_7) <- c("Score_lecture_7", "Login")
+
+
+credits <- merge(credits, test_lecture_7, all.x = TRUE)
 
 
 
@@ -177,7 +189,7 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 # credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 20 + 11 +10 + 4 + 6
+credits_sum <- 20 + 11 +10 + 4 + 6 + 6 + 10
 # 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
 # + 10 + 8 + 10 + 10 + 5 + 7
 

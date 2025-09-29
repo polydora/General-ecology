@@ -31,34 +31,34 @@ title: Презентации к лекциям
 
 - [Демэкология](Presentations//Lecture 3 Популяция и ее структура.pdf)
 
-+ [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header)
+<!-- + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
 
 
 ## Лекция 4.
 
 - [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf)
 
-[**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header)
+<!-- [**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header) -->
 
 
 ## Лекция 5.
 
 - [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Симфизиология.pdf)
 
-[**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header)
+<!-- [**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header) -->
 
 ## Лекция 6.
 
 - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Классификация отношений.pdf)
 
-[**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header)
+<!-- [**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header) -->
 
 
 ## Лекция 7.
 
 - [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf)
 
-[**Тест по теме "Конкурентные отношения"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview)
+<!-- [**Тест по теме "Конкурентные отношения"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview) -->
 
 
 
@@ -67,7 +67,7 @@ title: Презентации к лекциям
 - [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf)
 
 
-[**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header)
+<!-- [**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header) -->
 
 ## Лекция 9.
 
@@ -76,12 +76,12 @@ title: Презентации к лекциям
 [**Тест по теме "Симбиозы"** дата окончания **4 октября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSey8J018UdlMYsVC__gS_w1YRld6Y3dhIUaUpVJNss90gIXyw/viewform?usp=preview)
 
 
-<font color='red'>
-<font size=8px>
+<!-- <font color='red'> -->
+<!-- <font size=8px> -->
 
-[Контрольная работа №1](https://docs.google.com/forms/d/e/1FAIpQLSeIAQRnihTXHseM90dIld4eN21dvKSxmlDTysG0Qtg8CDdRag/viewform?usp=header)
+<!-- [Контрольная работа №1](https://docs.google.com/forms/d/e/1FAIpQLSeIAQRnihTXHseM90dIld4eN21dvKSxmlDTysG0Qtg8CDdRag/viewform?usp=header) -->
 
-</font>
+<!-- </font> -->
 
 
 

@@ -31,6 +31,8 @@ title: Презентации к лекциям
 
 - [Демэкология](Presentations//Lecture 3 Популяция и ее структура.pdf)
 
+
+
 <!-- + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
 
 
@@ -67,7 +69,45 @@ title: Презентации к лекциям
 - [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf)
 
 
-<!-- [**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header) -->
+## Тeсты для должников (будут открыты до 4 октября)
+
+Внимание! Те, кто уже писал тесты, не смогут пройти их еще раз. При обработке данных будут учитываться только те студенты, которые заявили о своем желании. Вот список
+
+- st128936
+- st132303
+- st129519
+- st132359
+- st094840
+- st128616
+- st132414
+- st132013
+- st130022
+- st132182
+- st128980 
+- st128904
+- st132421
+
+[**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header)
+
+
++ [**Тест по лекциям 1 и 2** дата окончания **13 сентября** (23:59)](https://forms.gle/R3wFo1wphqEoqh2H9) Дедлайн для данного теста **13.09.2025 в 23:59**. Работы, сданные после этого времени, **оцениваться не будут**.
+
+
++ [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header)
+
+[**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header)
+
+
+[**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header)
+
+[**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header)
+
+[**Тест по теме "Конкурентные отношения"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview)
+
+
+[**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header)
+
+
 
 ## Лекция 9.
 

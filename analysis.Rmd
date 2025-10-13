@@ -125,7 +125,7 @@ credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
 
 
-test_lecture_6 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
+test_lecture_6 <- read_xlsx("data/Тест по теме Конкурентные отношения (Ответы Биологи 2025).xlsx")
 
 test_lecture_6 <- test_lecture_6 %>% 
   select(c(2, 3))
@@ -139,7 +139,7 @@ credits <- merge(credits, test_lecture_6, all.x = TRUE)
 
 
 
-test_lecture_7 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
+test_lecture_7 <- read_xlsx("data/Тест по теме Трофические связи (Ответы Биологи 2025).xlsx")
 
 test_lecture_7 <- test_lecture_7 %>% 
   select(c(2, 3))
@@ -153,35 +153,31 @@ credits <- merge(credits, test_lecture_7, all.x = TRUE)
 
 
 
-# test_lecture_7 <- read_xlsx("data/Симбиозы (Общая экология 2024-2025).xlsx")
-#
-#
-# test_lecture_7 <- test_lecture_7 %>% select(4,6)
-# names(test_lecture_7) <- c("St_Mail", "Score_lecture_7")
-#
-# credits <- merge(credits, test_lecture_7, all.x = TRUE)
-#
-#
-#
-# #
-# #
-#
-#
-# test_lecture_8 <- read_xlsx("data/Структура и динамика сообществ (Общая экология 2024-2025).xlsx")
-#
-# test_lecture_8 <- test_lecture_8 %>% select(4,6)
-# names(test_lecture_8) <- c("St_Mail", "Score_lecture_8")
-#
-# credits <-  merge(credits, test_lecture_8, all.x = TRUE)
-#
-#
-#
-# test_lecture_9 <- read_xlsx("data/Экосистемы (Общая экология 2024-2025).xlsx")
-#
-# test_lecture_9 <- test_lecture_9 %>% select(4,6)
-# names(test_lecture_9) <- c("St_Mail", "Score_lecture_9")
-#
-# credits <-  merge(credits, test_lecture_9, all.x = TRUE)
+
+test_lecture_8 <- read_xlsx("data/Тест по теме _Симбиозы_ (Ответы Биологи 2025).xlsx")
+
+test_lecture_8 <- test_lecture_8 %>% 
+  select(c(3, 4))
+
+
+names(test_lecture_8) <- c("Score_lecture_8", "Login")
+
+
+credits <- merge(credits, test_lecture_8, all.x = TRUE)
+
+
+
+test_lecture_9 <- read_xlsx("data/Тест по теме _Структура сообществ_  (Ответы Биологи 2025).xlsx")
+
+test_lecture_9 <- test_lecture_9 %>% 
+  select(c(3, 4))
+
+
+names(test_lecture_9) <- c("Score_lecture_9", "Login")
+
+
+credits <- merge(credits, test_lecture_9, all.x = TRUE)
+
 
 
 ##########################
@@ -189,14 +185,15 @@ credits <- merge(credits, test_lecture_7, all.x = TRUE)
 
 # credits <- credits %>% filter(Login != "NA")
 
-credits_sum <- 20 + 11 +10 + 4 + 6 + 6 + 10
+credits_sum <- 20 + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8
 # 19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
 # + 10 + 8 + 10 + 10 + 5 + 7
 
 credits_print <- credits 
 # %>% select(-Time)
 
-credits_print$Sum <- credits_print %>% 
+credits_print$Sum <- 
+  credits_print %>% 
   select(-c("Login")) %>% 
   rowSums(na.rm=TRUE)
 
@@ -252,53 +249,53 @@ kable(credits_print)
 Максимальное количество баллов для экзамена: 1.5%
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!-- hw1 <- read_xlsx("data/Самостоятельная работа №1 (Общая экология 2024-2025).xlsx") -->
+hw1 <- read_xlsx("data/Самостоятельная работа № 1 (Ответы Биологи 2025).xlsx")
 
-<!-- hw1 <- hw1 %>% select(4,6) -->
+hw1 <- hw1 %>% select(3, 2)
 
-<!-- names(hw1) <- c("St_Mail", "Score") -->
+names(hw1) <- c("Login", "Score")
 
-<!-- # add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T) -->
-<!-- # names(add_hw1) <- c("Login", "add_score") -->
-<!-- # -->
-<!-- # add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score)) -->
-<!-- # -->
-<!-- # # hw1[!(hw1$Login %in% add_hw1$Login), ] -->
-<!-- # -->
+# add_hw1 <- read.csv("data/Самостоятельная работа №1 Дополнительный вопрос.csv", header = T)
+# names(add_hw1) <- c("Login", "add_score")
+#
+# add_hw1 <- add_hw1 %>% group_by(Login) %>% summarise(add_score = max(add_score))
+#
+# # hw1[!(hw1$Login %in% add_hw1$Login), ]
+#
 
-<!-- # hw1_score <- class %>% select(St_Mail, Login) -->
-<!-- # -->
-<!-- # hw1_score <- merge(hw1_score, hw1, all.x = T) -->
-<!-- # -->
-<!-- # hw1_score <- merge(hw1_score, add_hw1, all.x = T) -->
-<!-- # -->
-<!-- # hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T) -->
+# hw1_score <- class %>% select(St_Mail, Login)
+#
+# hw1_score <- merge(hw1_score, hw1, all.x = T)
+#
+# hw1_score <- merge(hw1_score, add_hw1, all.x = T)
+#
+# hw1_score$Sum <- hw1_score %>% select(Score, add_score) %>% rowSums(., na.rm = T)
 
-<!-- hw1_score <- hw1 -->
+hw1_score <- hw1
 
-<!-- hw1_score$Total <- 11 -->
+hw1_score$Total <- 16
 
-<!-- # hw1_score$Exam <- ifelse(is.na(hw1_score$Add_Score), -->
-<!-- #                          round((hw1_score$Score) / hw1_score$Total * 1.5, 1), -->
-<!-- #                          round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1)) -->
+# hw1_score$Exam <- ifelse(is.na(hw1_score$Add_Score),
+#                          round((hw1_score$Score) / hw1_score$Total * 1.5, 1),
+#                          round((hw1_score$Score + hw1_score$Add_Score) / hw1_score$Total * 1.5, 1))
 
-<!-- hw1_score$Exam <- round((hw1_score$Score) / hw1_score$Total * 1.5, 1) -->
+hw1_score$Exam <- round((hw1_score$Score) / hw1_score$Total * 1.5, 1)
 
-<!-- # hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam) -->
+# hw1_score_print <- hw1_score %>% select(Login, Score, add_score, Sum, Exam)
 
-<!-- hw1_score_print <- hw1_score -->
+hw1_score_print <- hw1_score
 
-<!-- # kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки")) -->
-<!-- #  -->
-<!-- # kable(hw1_score_print, col.names = c("Login", "Сумма","Доп. вопрос", "Всего вопросов",  "% от экзаменационной оценки")) -->
+# kable(hw1_score_print, col.names = c("Login", "Основные вопросы", "Доп. вопр. 1", "Сумма",  "% от экзаменационной оценки"))
+#
+# kable(hw1_score_print, col.names = c("Login", "Сумма","Доп. вопрос", "Всего вопросов",  "% от экзаменационной оценки"))
 
-<!-- kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки")) -->
+kable(hw1_score_print, col.names = c("Login", "Сумма", "Всего вопросов",  "% от экзаменационной оценки"))
 
 
 
-<!-- ``` -->
+```
 
 <br>
 <br>

@@ -143,12 +143,12 @@ title: Презентации к лекциям
 
 
 
-<!-- <font color='red'> -->
-<!-- <font size=8px> -->
+<font color='red'>
+<font size=8px>
 
-<!-- [Контрольная работа №2](https://docs.google.com/forms/d/e/1FAIpQLScleAHt8lgpqou5jRdCvZOgNSxwGW8A5Yx3omBeqo_7BMH9Wg/viewform?usp=header) -->
+[Контрольная работа №2](https://docs.google.com/forms/d/e/1FAIpQLScleAHt8lgpqou5jRdCvZOgNSxwGW8A5Yx3omBeqo_7BMH9Wg/viewform?usp=header)
 
-<!-- </font> -->
+</font>
 
 
 

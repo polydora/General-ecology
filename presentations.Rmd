@@ -134,12 +134,24 @@ title: Презентации к лекциям
 [**Тест по теме "Структура сообщества"** дата окончания **4 октября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSex5TSoeZR3milp9n90cI2lRUHhyQ9Y3P-CmMF7hkjudHjb3Q/viewform?usp=header)
 
 
-<!-- ## Лекция 11 и 12. -->
+## Лекция 11 и 12.
 
-<!-- - [Экосистемы и сукцессии](Presentations//Lecture 11 Экосистема19.pdf) -->
+- [Экосистемы и сукцессии](Presentations//Lecture 11 Экосистема19.pdf)
 
 
-<!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
+- [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf)
+
+
+
+<!-- <font color='red'> -->
+<!-- <font size=8px> -->
+
+<!-- [Контрольная работа №2](https://docs.google.com/forms/d/e/1FAIpQLScleAHt8lgpqou5jRdCvZOgNSxwGW8A5Yx3omBeqo_7BMH9Wg/viewform?usp=header) -->
+
+<!-- </font> -->
+
+
+
 
 
 <!-- ## Презентация для семинара по теме "Температура и живые системы" -->

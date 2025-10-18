@@ -156,6 +156,11 @@ credits <- merge(credits, test_lecture_7, all.x = TRUE)
 
 test_lecture_8 <- read_xlsx("data/Тест по теме _Симбиозы_ (Ответы Биологи 2025).xlsx")
 
+
+student_id <- test_lecture_8 %>% select(2, 4)  
+names(student_id) <- c("mail", "Login")
+
+
 test_lecture_8 <- test_lecture_8 %>% 
   select(c(3, 4))
 
@@ -168,6 +173,7 @@ credits <- merge(credits, test_lecture_8, all.x = TRUE)
 
 
 test_lecture_9 <- read_xlsx("data/Тест по теме _Структура сообществ_  (Ответы Биологи 2025).xlsx")
+
 
 test_lecture_9 <- test_lecture_9 %>% 
   select(c(3, 4))
@@ -403,27 +409,47 @@ kable(cont1_print)
 Максимальное количество баллов для экзамена: 1.5%
 
 
+<font color='red'>
 
+**Коллеги!**
+К сожалению, произошел технический сбой. Все ответы получены, но у ряда респондентов не записались st. Поэтому исправляем проблему следующим образом. Если в приведенном ниже списке вместо вашего st стоит полный адрес электронной почты (даже такого типа st123456@student.spbu.ru), то вам необходимо срочно пройти вот по этой [**ссылке**](https://docs.google.com/forms/d/e/1FAIpQLSeFBm4lAnXeksEQUfbSbAQbbAJ3awBOLQ9p3mKjvlI_fIhidA/viewform?usp=header) и внести в открывшуюся форму свой st. Без этого результаты контрольной не могут быть записаны в общий счет. В процеты от экзаменационной оценки я переведу все, когда соберем информацию по st.
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+Извините за технические неполадки!
 
-<!-- # cont1 <- read_excel("data/Control_work_1_biotech.xlsx") -->
-
-<!-- cont2 <- read_excel("data/Контрольная работа №2 (Ответы).xlsx") -->
-
-<!-- cont2 <- cont2 %>% select(2:3) -->
-
-<!-- names(cont2) <- c("St_Mail", "Score") -->
-
-<!-- cont2_print <- merge(class, cont2 , all.x = TRUE ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 11 * 3, 1)) -->
-
-<!-- kable(cont2_print) -->
-
-
-<!-- ``` -->
+</font>
 
 
 
+
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+cont2 <- read_excel("data/Контрольная работа №2 (Ответы Биологи 2025).xlsx")
+
+cont2 <- cont2 %>% select(2, 3)
+
+names(cont2) <- c("mail", "Score")
+
+cont2 <- merge(student_id, cont2, all.y = TRUE)
+
+cont2$Login <-  ifelse(is.na(cont2$Login), cont2$mail, cont2$Login)
+
+cont2_print <- cont2 %>% select(-mail)
+
+write.table(cont2_print, "clipboard", sep = "\t", row.names = F)
+
+# cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) )
+
+# cont1_print <- 
+#   merge(class, cont1, all.x = T ) %>% 
+#   select(Login, Score) %>% 
+#   mutate(Exam = round(Score / 24 * 1.5, 1) )
+
+
+kable(cont2_print)
+
+
+```
 
 
 

@@ -432,11 +432,34 @@ names(cont2) <- c("mail", "Score")
 
 cont2 <- merge(student_id, cont2, all.y = TRUE)
 
+cont2_full <-
+  cont2 %>% 
+  filter(!is.na(Login))
+
+cont2_lost <-
+  cont2 %>% 
+  filter(is.na(Login)) %>% 
+  select(-Login)
+
+
+lost_id <- read_excel("data/lost_id_control_work_2.xlsx")
+
+lost_id <- 
+  lost_id %>% 
+  select(mail, Login)
+
+merge(lost_id, cont2_lost, by = "mail", all.x = T) %>% 
+  select(mail, Login, Score) %>% 
+  rbind(., cont2_full) %>% 
+  mutate(Exam = Score/15*1.5) ->
+  cont2
+
+
 cont2$Login <-  ifelse(is.na(cont2$Login), cont2$mail, cont2$Login)
 
 cont2_print <- cont2 %>% select(-mail)
 
-write.table(cont2_print, "clipboard", sep = "\t", row.names = F)
+# write.table(cont2_print, "clipboard", sep = "\t", row.names = F)
 
 # cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) )
 
@@ -485,38 +508,38 @@ kable(cont2_print)
 
 Максимальное количество баллов для экзамена 27
 
-<!-- ```{r warning = FALSE, message=FALSE} -->
+```{r warning = FALSE, message=FALSE}
 
-<!-- library(googlesheets4) -->
-<!-- # detach(googlesheets4) -->
+library(googlesheets4)
+# detach(googlesheets4)
 
-<!-- sem <- read_sheet('https://docs.google.com/spreadsheets/d/1lOO6ECeAcU_h2lFvrYiLF5Zj7hGV4QiOVQaAF0p6Yxg/edit?usp=sharing', col_types = "?") -->
+sem <- read_sheet('https://docs.google.com/spreadsheets/d/1VoXiPykKt8hH3TLelmhAv8ws2CRzF6T1AMchM7-V5UY/edit?usp=sharing', col_types = "?")
 
-<!-- names(sem)[1:5] <- c("Family", "Name", "Otch", "St_Mail", "Group") -->
-
-
-<!-- # sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA") -->
-
-<!-- sem <- sem %>% select(-c(Family, Name, Otch)) -->
+names(sem)[1:3] <- c("Name", "Login", "Group")
 
 
+# sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA")
 
-<!-- sem_print <-  -->
-<!-- merge(class, sem, all = T) %>%  -->
-<!-- arrange(Group)%>%  -->
-<!-- mutate(Exam = rowSums(.[4:ncol(.)], na.rm = T) * 3 ) %>%  -->
-<!-- select(-St_Mail) -->
+sem <- sem %>% select(-c(Name))
 
 
 
-<!-- ``` -->
+sem_print <-
+merge(class, sem, all = T, by = "Login") %>%
+select(-c(Family, Name, Otch)) %>% 
+arrange(Group)%>%
+mutate(Exam = rowSums(.[3:ncol(.)], na.rm = T) * 3 )
 
 
 
-<!-- ```{r } -->
-<!-- kable(sem_print) -->
+```
 
-<!-- ``` -->
+
+
+```{r }
+kable(sem_print)
+
+```
 
 
 

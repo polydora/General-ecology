@@ -644,82 +644,80 @@ kable(sem_print)
 
 
 
-<!-- ## **Итоговый счет биологи 2024-2025** -->
+## **Итоговый счет биологи 2025-2026**
 
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- library(stringr) -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+library(stringr)
 
 
-<!-- d1 <- credits_print %>% select(Login, Exam) -->
-<!-- d1$Exam <- round(d1$Exam, 2) -->
+d1 <- credits_print %>% select(Login, Exam)
+d1$Exam <- round(d1$Exam, 2)
 
 
-<!-- d2 <- cont1_print %>% select(Login, Exam) -->
-<!-- d2$Exam <- round(d2$Exam, 2) -->
+d2 <- cont1_print %>% select(Login, Exam)
+d2$Exam <- round(d2$Exam, 2)
 
 
 
-<!-- d3 <- cont2_print %>% select(Login, Exam) -->
-<!-- d3$Exam <- round(d3$Exam, 2) -->
+d3 <- cont2_print %>% select(Login, Exam)
+d3$Exam <- round(d3$Exam, 2)
 
 
-<!-- d4 <- hw1_score_print %>% select(St_Mail, Exam) -->
-<!-- d4$Login <- word(d4$St_Mail, 1 ,sep = "\\@") -->
-<!-- d4$Exam <- round(d4$Exam, 2) -->
-<!-- d4 <- -->
-<!--   d4 %>%  -->
-<!--   select(- St_Mail) -->
+d4 <- hw1_score_print %>% select(Login, Exam)
+# d4$Login <- word(d4$St_Mail, 1 ,sep = "\\@")
+d4$Exam <- round(d4$Exam, 2)
+d4 <-
+  d4 
+
+d5 <- hw2_score_print %>% select(Login, Exam)
+d5$Login <- word(d5$Login, 1 ,sep = "\\@")
+d5$Exam <- round(d5$Exam, 2)
 
 
-<!-- d5 <- hw2_score_print %>% select(Login, Exam) -->
-<!-- d5$Login <- word(d5$Login, 1 ,sep = "\\@") -->
-<!-- d5$Exam <- round(d5$Exam, 2) -->
+d6 <- sem_print %>% select(Login, Exam)
+d6$Exam <- round(d6$Exam, 2)
 
 
-<!-- d6 <- sem_print %>% select(Login, Exam) -->
-<!-- d6$Exam <- round(d6$Exam, 2) -->
+Results <-
+  merge(d1, d2, by = "Login", all = T) %>%
+  merge(., d3, by = "Login", all = T) %>%
+  merge(., d4, by = "Login", all = T) %>%
+  merge(., d5, by = "Login", all = T) %>%
+  merge(., d6, by = "Login", all = T)
 
 
-<!-- Results <- -->
-<!--   merge(d1, d2, by = "Login", all = T) %>% -->
-<!--   merge(., d3, by = "Login", all = T) %>% -->
-<!--   merge(., d4, by = "Login", all = T) %>% -->
-<!--   merge(., d5, by = "Login", all = T) %>% -->
-<!--   merge(., d6, by = "Login", all = T) -->
+names(Results) <- c("Login", "Lecture_test", "Control_1", "Control_2", "Home Work 1", "Home Work 2", "Seminars")
 
-
-<!-- names(Results) <- c("Login", "Lecture_test", "Control_1", "Control_2", "Home Work 1", "Home Work 2", "Seminars") -->
-
-<!-- # Results <- -->
-<!--   # Results %>% -->
-<!--   # select(-St_Mail) -->
+# Results <-
+  # Results %>%
+  # select(-St_Mail)
 
 
 
 
-<!-- Results_print <- Results -->
+Results_print <- Results
 
-<!-- Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1) -->
+Results_print$Exam <- round(apply(Results[,-1], MARGIN = 1, FUN = function(x) sum(x, na.rm = T) ), 1)
 
-<!-- Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA") -->
+Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA")
 
 
-<!-- # # Код для вывода суммарных оценок с именами. -->
-<!-- # class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T) -->
-<!-- # -->
-<!-- # final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T) -->
-<!-- # -->
-<!-- # write.table(final_results, "clipboard", sep = "\t", row.names = F) -->
+# # Код для вывода суммарных оценок с именами.
+# class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
+#
+# final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T)
+#
+# write.table(final_results, "clipboard", sep = "\t", row.names = F)
 
-<!-- ``` -->
+```
 
-<!-- ```{r} -->
+```{r}
 
-<!-- options(knitr.kable.NA = '-') -->
-<!-- kable(Results_print) -->
-<!-- ``` -->
+options(knitr.kable.NA = '-')
+kable(Results_print)
+```
 
 
 

@@ -705,11 +705,13 @@ Results_print <- Results_print %>% filter(!is.na(Login)) %>% filter(Login != "NA
 
 
 # # Код для вывода суммарных оценок с именами.
-# class <- read_xlsx("data/Classess_2022_biology.xlsx", col_names = T)
-#
-# final_results <- class %>% select(Family, Name, Otch, Login) %>% merge(., Results_print, all.x = T)
-#
-# write.table(final_results, "clipboard", sep = "\t", row.names = F)
+# class <- read_xlsx("data/", col_names = T)
+
+final_results <- 
+  class %>% select(Family, Name, Otch, Login) %>% 
+  merge(., Results_print)
+
+write.table(final_results, "clipboard", sep = "\t", row.names = F, dec = ",")
 
 ```
 

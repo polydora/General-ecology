@@ -349,7 +349,7 @@ td {  /* Table  */
   font-size: 12px;
 }
 </style>
-<p>Информация скоро появится….</p>
+<!-- Информация скоро появится.... -->
 <!-- Семинары в рамках курса «Основы общей экологии» будут построены по принципу «вертушки». Вам необходимо будет разделиться на 7 групп (по числу тем семинаров). Первая группа начнет с темы №1, вторая с темы №2 и т.д.. На следующую неделе группы сдвигаются в соответствии с расписанием. -->
 <!-- # **Таблица расписания семинаров** -->
 <!-- **Если вы заметите какие-то накладки, то сразу пишите В. М. Хайтову** -->
@@ -605,7 +605,7 @@ class="uri">http://www.library.spbu.ru/</a>). Если уж совсем не
 <p>Крайне приветствуется коллективная работа и взаимопомощь при поиске
 статей!</p>
 <p><strong>Важно!</strong> Статья должна быть согласована с инструктором
-семинара (связь через MS Teams или по электронной почте).</p>
+семинара (связь по электронной почте).</p>
 <p>Во время семинара инструктор оценит качество освоения источников,
 качество подготовки презентации, качество ответов на вопросы, а также
 активность и грамотность в задавании вопросов коллегам. По итогам
@@ -623,27 +623,89 @@ class="uri">http://www.library.spbu.ru/</a>). Если уж совсем не
 его электронный адрес (обязательно укажите тему (subject) письма «доклад
 на семинаре по экологии»)</p>
 <!-- *Участники семинара идут в главное здание (аудитория уточняется) и встречаются с О. В. Князевой* -->
-<!-- ### Распределение тем для семинара №1 -->
-<!-- ```{r, echo=FALSE, message=FALSE} -->
-<!-- library(knitr) -->
-<!-- library(dplyr) -->
-<!-- library(readxl) -->
-<!-- library(ggplot2) -->
-<!-- library(broom) -->
-<!-- library(tidyr) -->
-<!-- set.seed(123459) -->
-<!-- class <- read_xlsx("data/classes_biotech_2025.xlsx", col_names = T) -->
-<!-- # class <- class %>% filter(Group == 1) -->
-<!-- # class <- read_xlsx("data/Classess_2021_biology.xlsx", col_names = T) -->
-<!-- topics <- read_xlsx("data/topics for reading.xlsx", col_names = T) -->
-<!-- # -->
-<!-- # class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class)), Topic_2 = sample(topics$Term, nrow(class))) -->
-<!-- class <- class %>% select(Family, Name )  %>% mutate(Topic_1 = sample(topics$Term, nrow(class), replace = T)) -->
-<!-- # class$Topic_1 == class$Topic_2 -->
-<!-- # -->
-<!-- # while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] <- sample(topics$Term,1)} -->
-<!-- kable(class, col.names = c("Фамилия", "Имя", "Тема")) -->
-<!-- ``` -->
+<div id="распределение-тем-для-семинара-1" class="section level3">
+<h3>Распределение тем для семинара №1</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Фамилия</th>
+<th align="left">Имя</th>
+<th align="left">Тема</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Власова</td>
+<td align="left">Эрика</td>
+<td align="left">Емкость среды</td>
+</tr>
+<tr class="even">
+<td align="left">Гаврилов</td>
+<td align="left">Владислав</td>
+<td align="left">Лимитирующие факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">Герасимов</td>
+<td align="left">Илья</td>
+<td align="left">r-стратегия</td>
+</tr>
+<tr class="even">
+<td align="left">Калашникова</td>
+<td align="left">Карина</td>
+<td align="left">Температурно-зависимое определение пола</td>
+</tr>
+<tr class="odd">
+<td align="left">Кызыкова</td>
+<td align="left">Эльвира</td>
+<td align="left">Паразитоиды</td>
+</tr>
+<tr class="even">
+<td align="left">Леухин</td>
+<td align="left">Дмитрий</td>
+<td align="left">r-стратегия</td>
+</tr>
+<tr class="odd">
+<td align="left">Лунева</td>
+<td align="left">Алиса</td>
+<td align="left">Фотопериодизм</td>
+</tr>
+<tr class="even">
+<td align="left">Нягин</td>
+<td align="left">Павел</td>
+<td align="left">Групповое распределение особей</td>
+</tr>
+<tr class="odd">
+<td align="left">Павлецова</td>
+<td align="left">Анфиса</td>
+<td align="left">Коэволюция</td>
+</tr>
+<tr class="even">
+<td align="left">Синяева</td>
+<td align="left">Полина</td>
+<td align="left">Аллелопатия</td>
+</tr>
+<tr class="odd">
+<td align="left">Тебенькова</td>
+<td align="left">Елизавета</td>
+<td align="left">Теория оптимального фуражирования</td>
+</tr>
+<tr class="even">
+<td align="left">Тимофеева</td>
+<td align="left">Татьяна</td>
+<td align="left">Лимитирующие факторы</td>
+</tr>
+<tr class="odd">
+<td align="left">Тимофеева</td>
+<td align="left">Яна</td>
+<td align="left">Гемипопуляция</td>
+</tr>
+<tr class="even">
+<td align="left">Фадеева</td>
+<td align="left">Екатерина</td>
+<td align="left">Модулярные организмы</td>
+</tr>
+</tbody>
+</table>
 <!-- ### Распределение тем для группы № 2 -->
 <!-- ```{r echo=FALSE, message=FALSE} -->
 <!-- set.seed(56789) -->
@@ -659,6 +721,7 @@ class="uri">http://www.library.spbu.ru/</a>). Если уж совсем не
 <!-- # while(sum(class$Topic_1 == class$Topic_2)){class$Topic_2[class$Topic_1 == class$Topic_2] <- sample(topics$Term,1)} -->
 <!-- kable(class, col.names = c("Фамилия", "Имя", "Тема")) -->
 <!-- ``` -->
+</div>
 </div>
 <div id="тема-2.-поиск-экологических-закономерностей"
 class="section level2">

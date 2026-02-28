@@ -188,18 +188,27 @@ title: Презентации к лекциям
 
 [Контрольная работа № 1](https://docs.google.com/forms/d/e/1FAIpQLSeCjt0XGwNiuW2jKP1FyOA18Hh_wkKZPiYA9K5adht8aze2Pg/viewform?usp=publish-editor)
 
-<!-- ## Лекции 5-6. Взаимоотношения организмов. -->
+## Лекции 5-6. Взаимоотношения организмов.
 
-<!-- - [Взаимоотношения организмов. Часть 1.](Presentations//05_06_Взаимоотношения организмов (биотехнологи).pdf) -->
+- [Взаимоотношения организмов. Часть 1.](Presentations//05_06_Взаимоотношения организмов (биотехнологи).pdf)
 
-<!-- **Дополнительные материалы** -->
+**Дополнительные материалы**
 
-<!-- - [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf) -->
+- [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf)
 
-<!-- - [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing) -->
+- [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing)
 
-<!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
-<!-- - [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing) -->
+- [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf)
+- [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing)
+
+
+[Тест по теме "Взаимоотношения организмов"](https://docs.google.com/forms/d/e/1FAIpQLSdftHf6QewoJLtIbJkGZpkY3XQ3J4kRMJ7q--loLMOQ9cC_KA/viewform?usp=publish-editor)
+
+
+[Тест по теме "Трофические связи"](https://docs.google.com/forms/d/e/1FAIpQLSdlfJvEFJNElLCHyWAr6BNtu3d1Mmq_qdPXmdRuuv3iwqB63g/viewform?usp=publish-editor)
+
+[Тест по теме "Конкурентные отношения"](https://docs.google.com/forms/d/e/1FAIpQLSfWfJfos4E3iGRmj489zadPA7eWNkGgz32bfEl7ucTtwPI9wg/viewform?usp=publish-editor)
+
 
 
 

@@ -34,6 +34,8 @@ opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ## **Анализ тестов по материалам лекций**
 
+Максимальное количество баллов для экзамена - 8%
+
 <!-- # Максимальное количество баллов для экзамена: 3% -->
 
 
@@ -60,34 +62,34 @@ test_lecture_1 <-
 
  # Тест по Лекции 2
 
- # test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Ответы Биологи 2025).xlsx")
- # 
- # 
- # test_lecture_2 <- test_lecture_2 %>%
- #   select(c(2, 3))
- # 
- # 
- # names(test_lecture_2) <- c("Score_lecture_2", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_2, all.x = TRUE)
- # 
- # 
+ test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Биоинженеры) (Ответы).xlsx")
+
+
+ test_lecture_2 <- test_lecture_2 %>%
+   select(c(3, 2))
+
+
+ names(test_lecture_2) <- c("Score_lecture_2", "Login")
+
+
+ credits <- merge(credits, test_lecture_2, all.x = TRUE)
+
+
  #   Тест по Лекции 3
- # 
- # 
- # test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Ответы Биологи 2025).xlsx")
- # 
- # 
- # test_lecture_3 <- test_lecture_3 %>%
- #   select(c(2, 3))
- # 
- # 
- # names(test_lecture_3) <- c("Score_lecture_3", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_3, all.x = TRUE)
- # 
+
+
+ test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Биоинженеры) (Ответы).xlsx")
+
+
+ test_lecture_3 <- test_lecture_3 %>%
+   select(c(3,2))
+
+
+ names(test_lecture_3) <- c("Score_lecture_3", "Login")
+
+
+ credits <- merge(credits, test_lecture_3, all.x = TRUE)
+
  # 
  # 
  # 
@@ -192,7 +194,7 @@ test_lecture_1 <-
 
   credits <- credits %>% filter(Login != "NA")
 
- credits_sum <- 16
+ credits_sum <- 16 + 10 + 10
  # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8
  #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
  #  + 10 + 8 + 10 + 10 + 5 + 7
@@ -360,30 +362,36 @@ test_lecture_1 <-
 <!-- #  -->
 <!-- #  -->
 <!-- #  -->
-<!-- # # **Анализ контрольной работы № 1** -->
-<!-- #  -->
-<!-- # Максимальное количество баллов для экзамена: 1.5% -->
-<!-- #  -->
-<!-- # ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- #  -->
-<!-- # cont1 <- read_excel("data/Контрольная работа № 1 (Ответы Биологи 2025).xlsx") -->
-<!-- #  -->
-<!-- # cont1 <- cont1 %>% select(3, 4) -->
-<!-- #  -->
-<!-- # names(cont1) <- c("Score", "Login") -->
-<!-- #  -->
-<!-- # # cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) ) -->
-<!-- #  -->
-<!-- # cont1_print <-  -->
-<!-- #   merge(class, cont1, all.x = T ) %>%  -->
-<!-- #   select(Login, Score) %>%  -->
-<!-- #   mutate(Exam = round(Score / 24 * 1.5, 1) ) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # kable(cont1_print) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # ``` -->
+
+## **Анализ контрольной работы № 1**
+
+Максимальное количество баллов для экзамена: 3%
+
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+ cont1 <- read_excel("data/Контрольная работа № 1 (Биоинженеры) (Ответы).xlsx")
+
+ cont1 <- cont1 %>% select(3, 4)
+
+ names(cont1) <- c("Score", "Login")
+
+  cont1_print <- merge(class, cont1) 
+  
+  cont1_print <- 
+    cont1_print %>% 
+    select(Login, Score) %>% 
+    mutate(Exam = round(Score / 25 * 3, 1) )
+
+ 
+
+ kable(cont1_print)
+
+
+```
+
+
+
 <!-- #  -->
 <!-- #  -->
 <!-- # ## Комментарии к вопросам по контрольной работе №1 -->

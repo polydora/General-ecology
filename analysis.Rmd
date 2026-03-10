@@ -90,55 +90,45 @@ test_lecture_1 <-
 
  credits <- merge(credits, test_lecture_3, all.x = TRUE)
 
- # 
- # 
- # 
- #  
- # 
- # test_lecture_4 <- read_xlsx("data/Тест по теме Симфизиологические связи (Ответы Биологи 2025).xlsx")
- # 
- # 
- # test_lecture_4 <- test_lecture_4 %>%
- #   select(c(2, 3))
- # 
- # 
- # names(test_lecture_4) <- c("Score_lecture_4", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_4, all.x = TRUE)
- # 
- # 
- # 
- # 
- # 
- # 
- # test_lecture_5 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Ответы Биологи 2025).xlsx")
- # 
- # 
- # test_lecture_5 <- test_lecture_5 %>%
- #   select(c(2, 3))
- # 
- # 
- # names(test_lecture_5) <- c("Score_lecture_5", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_5, all.x = TRUE)
- # 
- # 
- # 
- # 
- # 
- # test_lecture_6 <- read_xlsx("data/Тест по теме Конкурентные отношения (Ответы Биологи 2025).xlsx")
- # 
- # test_lecture_6 <- test_lecture_6 %>%
- #   select(c(2, 3))
- # 
- # 
- # names(test_lecture_6) <- c("Score_lecture_6", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_6, all.x = TRUE)
- # 
+
+ test_lecture_4 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Биоинженеры) (Ответы).xlsx")
+
+ #
+ test_lecture_4 <- test_lecture_4 %>%
+   select(c(2, 3))
+
+
+ names(test_lecture_4) <- c("Score_lecture_4", "Login")
+
+
+ credits <- merge(credits, test_lecture_4, all.x = TRUE)
+
+
+ test_lecture_5 <- read_xlsx("data/Тест по теме Трофические связи (Биоинженеры) (Ответы).xlsx")
+
+
+ test_lecture_5 <- test_lecture_5 %>%
+   select(c(2, 3))
+
+
+ names(test_lecture_5) <- c("Score_lecture_5", "Login")
+
+
+ credits <- merge(credits, test_lecture_5, all.x = TRUE)
+
+  
+
+ test_lecture_6 <- read_xlsx("data/Тест по теме Конкурентные отношения (Биоинженеры) (Ответы).xlsx")
+
+ test_lecture_6 <- test_lecture_6 %>%
+   select(c(2, 3))
+
+
+ names(test_lecture_6) <- c("Score_lecture_6", "Login")
+
+
+ credits <- merge(credits, test_lecture_6, all.x = TRUE)
+
  # 
  # 
  # 
@@ -194,7 +184,7 @@ test_lecture_1 <-
 
   credits <- credits %>% filter(Login != "NA")
 
- credits_sum <- 16 + 10 + 10
+ credits_sum <- 16 + 10 + 10 + 6 + 4 + 10
  # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8
  #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
  #  + 10 + 8 + 10 + 10 + 5 + 7

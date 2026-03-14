@@ -129,20 +129,18 @@ test_lecture_1 <-
 
  credits <- merge(credits, test_lecture_6, all.x = TRUE)
 
- # 
- # 
- # 
- # test_lecture_7 <- read_xlsx("data/Тест по теме Трофические связи (Ответы Биологи 2025).xlsx")
- # 
- # test_lecture_7 <- test_lecture_7 %>%
- #   select(c(2, 3))
- # 
- # 
- # names(test_lecture_7) <- c("Score_lecture_7", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_7, all.x = TRUE)
- # 
+
+ test_lecture_7 <- read_xlsx("data/Тест по теме _Структура сообществ_ (биоинженеры)  (Ответы).xlsx")
+
+ test_lecture_7 <- test_lecture_7 %>%
+   select(c(3, 4))
+
+
+ names(test_lecture_7) <- c("Score_lecture_7", "Login")
+
+
+ credits <- merge(credits, test_lecture_7, all.x = TRUE)
+
  # 
  # 
  # 
@@ -184,7 +182,7 @@ test_lecture_1 <-
 
   credits <- credits %>% filter(Login != "NA")
 
- credits_sum <- 16 + 10 + 10 + 6 + 4 + 10
+ credits_sum <- 16 + 10 + 10 + 6 + 4 + 10 + 5
  # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8
  #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
  #  + 10 + 8 + 10 + 10 + 5 + 7
@@ -402,78 +400,41 @@ test_lecture_1 <-
 <!-- # В вопросе "Представьте, что на некий остров попало 100 особей вида-вселенца, ранее не обитавшего на этой территории. Если известно, что в среднем за минимально возможный промежуток времени (один год) на одну особь в популяции приходится 0.1 потомка, но за тот же промежуток времени удельная смертность составляет 0.01, то сколько особей будет представлено в популяции через 10 лет если учесть, что емкость среды составляет 200000 особей данного вида. Ответ округлите до целых". -->
 <!-- #  -->
 <!-- # Мной была допущена техническая ошибка (не поставил галочку). Поэтому всем этот вопрос зачтен, как правильный. Я вместо 25 вопросов при вычислениях использовал 24. Так что на сайте у вас будет больше, чем в отчете, который пришел по почте.   -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- # # **Анализ контрольной работы № 2** -->
-<!-- #  -->
-<!-- # Максимальное количество баллов для экзамена: 1.5% -->
-<!-- #  -->
-<!-- #  -->
-<!-- # <!-- <font color='red'> --> -->
-<!-- #  -->
-<!-- # <!-- </font> --> -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- # ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
-<!-- #  -->
-<!-- # cont2 <- read_excel("data/Контрольная работа №2 (Ответы Биологи 2025).xlsx") -->
-<!-- #  -->
-<!-- # cont2 <- cont2 %>% select(2, 3) -->
-<!-- #  -->
-<!-- # names(cont2) <- c("mail", "Score") -->
-<!-- #  -->
-<!-- # cont2 <- merge(student_id, cont2, all.y = TRUE) -->
-<!-- #  -->
-<!-- # cont2_full <- -->
-<!-- #   cont2 %>%  -->
-<!-- #   filter(!is.na(Login)) -->
-<!-- #  -->
-<!-- # cont2_lost <- -->
-<!-- #   cont2 %>%  -->
-<!-- #   filter(is.na(Login)) %>%  -->
-<!-- #   select(-Login) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # lost_id <- read_excel("data/lost_id_control_work_2.xlsx") -->
-<!-- #  -->
-<!-- # lost_id <-  -->
-<!-- #   lost_id %>%  -->
-<!-- #   select(mail, Login) -->
-<!-- #  -->
-<!-- # merge(lost_id, cont2_lost, by = "mail", all.x = T) %>%  -->
-<!-- #   select(mail, Login, Score) %>%  -->
-<!-- #   rbind(., cont2_full) %>%  -->
-<!-- #   mutate(Exam = Score/15*1.5) -> -->
-<!-- #   cont2 -->
-<!-- #  -->
-<!-- #  -->
-<!-- # cont2$Login <-  ifelse(is.na(cont2$Login), cont2$mail, cont2$Login) -->
-<!-- #  -->
-<!-- # cont2_print <- cont2 %>% select(-mail) -->
-<!-- #  -->
-<!-- # # write.table(cont2_print, "clipboard", sep = "\t", row.names = F) -->
-<!-- #  -->
-<!-- # # cont1_print <- merge(class, cont1 %>% select(-Name ), all.x = T ) %>% select(-St_Mail) %>% mutate(Exam = round(Score / 22 * 3, 1) ) -->
-<!-- #  -->
-<!-- # # cont1_print <-  -->
-<!-- # #   merge(class, cont1, all.x = T ) %>%  -->
-<!-- # #   select(Login, Score) %>%  -->
-<!-- # #   mutate(Exam = round(Score / 24 * 1.5, 1) ) -->
-<!-- #  -->
-<!-- #  -->
-<!-- # kable(cont2_print) -->
-<!-- #  -->
-
-<!-- ``` -->
 
 
-<!-- # **Оценки за семинары** -->
 
-<!-- Максимальное количество баллов для экзамена 27 -->
+# **Анализ контрольной работы № 2**
+
+Максимальное количество баллов для экзамена: 3%
+
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+
+cont2 <- read_excel("data/Контрольная работа №2 (Биоинженеры) (Ответы).xlsx")
+
+cont2 <- cont2 %>% select(3, 4)
+
+names(cont2) <- c("Score", "Login")
+
+cont2_print <- merge(class, cont2) 
+  
+  cont2_print <- 
+    cont2_print %>% 
+    select(Login, Score) %>% 
+    mutate(Exam = round(Score / 13 * 3, 1) )
+
+ 
+
+ kable(cont2_print)
+
+```
+
+
+# **Оценки за семинары**
+
+Максимальное количество баллов для экзамена 16%
+
+<!-- Семинары Биологи -->
 
 <!-- ```{r warning = FALSE, message=FALSE} -->
 
@@ -497,9 +458,30 @@ test_lecture_1 <-
 <!-- arrange(Group)%>% -->
 <!-- mutate(Exam = rowSums(.[3:ncol(.)], na.rm = T) * 3 ) -->
 
-
-
 <!-- ``` -->
+
+
+<!-- Семинары Биоинженеры -->
+
+```{r}
+
+sem <- read_excel("data/Семинары(Биоинженеры).xlsx")
+
+sem <- sem %>% select(4:6)
+
+
+sem_print <- sem 
+  
+  sem_print <- 
+    sem_print %>% 
+    mutate(Exam = sum(c(round(Seminar_1 / 1 * 8, 1), round(Seminar_2 / 1 * 8,1)), na.rm = T) )
+
+ 
+
+ kable(sem_print)
+
+```
+
 
 
 

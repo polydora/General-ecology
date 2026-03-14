@@ -235,7 +235,7 @@ title: Презентации к лекциям
 [Тест по теме "Структура и динамика экосистем"](https://docs.google.com/forms/d/e/1FAIpQLSd_gPvOHnMa3n7_5JrWwWd-sMWP4rTQ46BXrME9LbmVxnzttQ/viewform?usp=header)
 
 
-[**КОНТРОЛЬНАЯ РАБОТА № 2**](https://docs.google.com/forms/d/e/1FAIpQLSceOf3i4DU0v8gvEK3qibe6CbOlo_RpgwZELI-rzn4cXaT-kA/viewform?usp=publish-editor)
+<!-- [**КОНТРОЛЬНАЯ РАБОТА № 2**](https://docs.google.com/forms/d/e/1FAIpQLSceOf3i4DU0v8gvEK3qibe6CbOlo_RpgwZELI-rzn4cXaT-kA/viewform?usp=publish-editor) -->
 
 
 

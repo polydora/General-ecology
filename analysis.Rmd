@@ -474,7 +474,7 @@ sem_print <- sem
   
   sem_print <- 
     sem_print %>% 
-    mutate(Exam = sum(c(round(Seminar_1 / 1 * 8, 1), round(Seminar_2 / 1 * 8,1)), na.rm = T) )
+    mutate(Exam = rowSums(across(-1), na.rm = TRUE)/2*8)
 
  
 
@@ -485,18 +485,8 @@ sem_print <- sem
 
 
 
-<!-- ```{r } -->
-<!-- kable(sem_print) -->
-
-<!-- ``` -->
 
 
-
-
-
-## **Результаты семинаров**
-
-Семинары приносят в экзаменационную оценку 16%
 
 
 
@@ -538,42 +528,42 @@ sem_print <- sem
 
 
 
-<!-- ## **Итоговый счет группа биоинженеров** -->
+## **Итоговый счет группа биоинженеров**
 
 
-<!-- ```{r warning = FALSE} -->
+```{r warning = FALSE}
 
-<!-- tests <- credits_print %>% select(Login, Exam) -->
-<!-- names(tests) <- c("Login", "Тесты по лекциям") -->
-
-
-<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
-<!-- names(cont1) <- c("Login", "Контрольная 1") -->
+tests <- credits_print %>% select(Login, Exam)
+names(tests) <- c("Login", "Тесты по лекциям")
 
 
-
-<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
-<!-- names(cont2) <- c("Login", "Контрольная 2") -->
-
-
-<!-- sems <- seminars_print %>% select(Login, Exam) -->
-
-<!-- names(sems) <- c("Login", "Семинары" ) -->
+cont1 <- cont1_print %>% select(Login, Exam)
+names(cont1) <- c("Login", "Контрольная 1")
 
 
-<!-- d <- merge(tests, cont1, by = "Login", all.x = TRUE) -->
-<!-- dd <- merge(d, cont2, by = "Login", all.x = TRUE) -->
-<!-- final <- merge(dd, sems, by = "Login", all.x = TRUE) -->
 
-<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
+cont2 <- cont2_print %>% select(Login, Exam)
+names(cont2) <- c("Login", "Контрольная 2")
 
-<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
 
-<!-- final$Exam <- Exam -->
+sems <- sem_print %>% select(Login, Exam)
 
-<!-- kable(final) -->
+names(sems) <- c("Login", "Семинары" )
 
-<!-- ``` -->
+
+d <- merge(tests, cont1, by = "Login", all.x = TRUE)
+dd <- merge(d, cont2, by = "Login", all.x = TRUE)
+final <- merge(dd, sems, by = "Login", all.x = TRUE)
+
+names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" )
+
+Exam <- rowSums(final[,-1], na.rm = T)
+
+final$Exam <- Exam
+
+kable(final)
+
+```
 
 
 

@@ -647,17 +647,17 @@ kable(final)
 
 
 
-<!-- ```{r} -->
-<!-- # Результаты в сумме для создания файла-ведомости экзамена -->
+```{r}
+# Результаты в сумме для создания файла-ведомости экзамена
 
-<!-- class <- read_excel("data/classes_biotech_2025.xlsx") -->
+class <- read_excel("data/Classes_2026_biotech.xlsx")
 
-<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class %>% select(St_Mail, Login, Family, Name, Otch ) -->
-<!-- res <- merge(class, final, by = "Login") -->
+# class <- class %>% filter(!is.na(Login)|!is.na(Group) )
+class <- class %>% select(Login, Family, Name, Otch )
+res <- merge(class, final, by = "Login")
 
-<!-- write.table(res, "data/results_for_examen_2025_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
+write.table(res, "data/results_for_examen_2026_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
 
-<!-- ``` -->
+```
 
 

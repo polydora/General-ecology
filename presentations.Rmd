@@ -9,62 +9,64 @@ title: Презентации к лекциям
 
 <!-- Версия для биологов -->
 
-<!-- ## Введение -->
+## Введение
 
-<!-- - [Правила игры](Presentations/Lecture Introduction.pdf) -->
+- [Правила игры](Presentations/Lecture Introduction.pdf)
 
-<!-- ## Лекция 1. -->
+## Лекция 1. Предмет экологии
 
 <!-- - [Предмет экологии](Presentations//Lecture 1 Предмет экологии.pdf) -->
 
-<!-- ## Лекция 2. -->
+## Лекция 2.Аутэкология Часть 1.
 
 <!-- - [Аутэкология](Presentations/Lecture 2 Аутэкология .pdf) -->
 
-<!-- <!-- + [**Тест по лекциям 1 и 2** дата окончания **13 сентября** (23:59)](https://forms.gle/R3wFo1wphqEoqh2H9) Дедлайн для данного теста **13.09.2025 в 23:59**. Работы, сданные после этого времени, **оцениваться не будут**. -->
+<!-- + [**Тест по лекциям 1 и 2** дата окончания **13 сентября** (23:59)](https://forms.gle/R3wFo1wphqEoqh2H9) Дедлайн для данного теста **13.09.2025 в 23:59**. Работы, сданные после этого времени, **оцениваться не будут* -->
 
-<!-- Если вдруг, вы обнаружили, что вас нет в списке, то срочно пишите об этом в чате нашего ТГ-канала или в личном письме.  -->
+<!-- Если вдруг, вы обнаружили, что вас нет в списке, то срочно пишите об этом в чате нашего ТГ-канала или в личном письме. -->
 
 
+## Лекция 3.Аутэкология  Часть 2.
 
-<!-- ## Лекция 3. -->
+
+## Лекция 4. Структура популяционных группировок
 
 <!-- - [Демэкология](Presentations//Lecture 3 Популяция и ее структура.pdf) -->
 
 
 
-<!-- <!-- + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
+<!-- + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
 
 
-<!-- ## Лекция 4. -->
+## Лекция 5. Динамика популяционных группировок
 
 <!-- - [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf) -->
 
-<!-- <!-- [**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header) -->
+<!-- [**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header) -->
 
 
-<!-- ## Лекция 5. -->
+## Лекция 6. Взаимоотношения организмов (часть 1)
 
 <!-- - [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Симфизиология.pdf) -->
 
-<!-- <!-- [**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header) -->
+<!-- [**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header) -->
 
-<!-- ## Лекция 6. -->
+## Лекция 7. Взаимоотношения организмов (часть 2)
 
 <!-- - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Классификация отношений.pdf) -->
 
-<!-- <!-- [**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header) -->
+<!-- [**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header) -->
 
 
-<!-- ## Лекция 7. -->
+## Лекция 8.Конкурентные отношения
 
 <!-- - [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf) -->
 
-<!-- <!-- [**Тест по теме "Конкурентные отношения"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview) -->
+<!-- [**Тест по теме "Конкурентные отношения"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview) -->
 
 
 
-<!-- ## Лекция 8. -->
+## Лекция 9.Трофические связи
 
 <!-- - [Трофические связи](Presentations//Lecture 8 Трофические связи.pdf) -->
 
@@ -73,10 +75,10 @@ title: Презентации к лекциям
 <!-- [**Тест по теме "Трофические связи"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSfMhDkL9Skp-NSIo7cJ_4yYXQOg2_vUrZetblsgWWkO64Gomg/viewform?usp=header) -->
 
 
-<!-- + [**Тест по лекциям 1 и 2** дата окончания **13 сентября** (23:59)](https://forms.gle/R3wFo1wphqEoqh2H9) Дедлайн для данного теста **13.09.2025 в 23:59**. Работы, сданные после этого времени, **оцениваться не будут**. -->
+<!-- [**Тест по лекциям 1 и 2** дата окончания **13 сентября** (23:59)](https://forms.gle/R3wFo1wphqEoqh2H9) Дедлайн для данного теста **13.09.2025 в 23:59**. Работы, сданные после этого времени, **оцениваться не будут**. -->
 
 
-<!-- + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
+<!-- [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
 
 <!-- [**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header) -->
 
@@ -92,7 +94,7 @@ title: Презентации к лекциям
 
 
 
-<!-- ## Лекция 9. -->
+## Лекция 10. Симбиозы
 
 <!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
 
@@ -110,17 +112,19 @@ title: Презентации к лекциям
 
 
 
-<!-- ## Лекция 10. -->
+## Лекция 11. Структура сообщества
 
 <!-- - [Структура сообщества](Presentations//Lecture 10 Структура сообщества.pdf) -->
 
 <!-- [**Тест по теме "Структура сообщества"** дата окончания **4 октября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSex5TSoeZR3milp9n90cI2lRUHhyQ9Y3P-CmMF7hkjudHjb3Q/viewform?usp=header) -->
 
 
-<!-- ## Лекция 11 и 12. -->
+## Лекция 12. Экосистемы и сукцессии
 
 <!-- - [Экосистемы и сукцессии](Presentations//Lecture 11 Экосистема19.pdf) -->
 
+
+<!-- ## Лекция 12. -->
 
 <!-- - [Экосистемы хорологические единицы](Presentations//Lecture 13 Экосистемы хорологические единицы.pdf) -->
 
@@ -137,9 +141,9 @@ title: Презентации к лекциям
 
 
 
-<!-- ## Презентация для семинара по теме "Температура и живые системы" -->
+## Презентация для семинара по теме "Температура и живые системы"
 
-<!-- - [Температура](Presentations//Temperature living systems.pdf) -->
+- [Температура](Presentations//Temperature living systems.pdf)
 
 
 <!-- ## Презентация для семинара по теме "Экологические группировки гидробионтов" -->
@@ -149,65 +153,65 @@ title: Презентации к лекциям
 
 
 
-
+<!-- ############################################# -->
 <!-- Версия для биотехнологов -->
 
-## Введение
+<!-- ## Введение -->
 
-- [Правила игры](Presentations/Lecture Introduction (биотехнологи).pdf)
+<!-- - [Правила игры](Presentations/Lecture Introduction (биотехнологи).pdf) -->
 
-## Лекция 1. Предмет экологии.
+<!-- ## Лекция 1. Предмет экологии. -->
 
-- [Предмет экологии](Presentations//Введение в ОТС. Суть экологии (биотехнологи).pdf)
+<!-- - [Предмет экологии](Presentations//Введение в ОТС. Суть экологии (биотехнологи).pdf) -->
 
-## Лекция 2. Аутоэкология.
+<!-- ## Лекция 2. Аутоэкология. -->
 
-- [Аутэкология](Presentations/Аутэкология (биотехнологи).pdf)
+<!-- - [Аутэкология](Presentations/Аутэкология (биотехнологи).pdf) -->
 
-### Тест по лекциям 
-
-
-[Тест по лекциям "Пердмет экологии" и "Аутэкология"](https://docs.google.com/forms/d/e/1FAIpQLSceueXfYtr_ueoZmViUAtj28nJjuDeJmQi6sCHMHqLlxk1w5Q/viewform?usp=publish-editor)
-
-Этот тест можно пройти в любое удобное время до даты его окончания: **20 февраля 23:59**.  Не забудьте сохранить результаты!
-
-## Лекция 3. Структура популяций.
-
-- [Демэкология](Presentations//Популяции и их структура (биотехнологи).pdf)
+<!-- ### Тест по лекциям  -->
 
 
-## Лекция 4. Динамика популяций.
+<!-- [Тест по лекциям "Пердмет экологии" и "Аутэкология"](https://docs.google.com/forms/d/e/1FAIpQLSceueXfYtr_ueoZmViUAtj28nJjuDeJmQi6sCHMHqLlxk1w5Q/viewform?usp=publish-editor) -->
+
+<!-- Этот тест можно пройти в любое удобное время до даты его окончания: **20 февраля 23:59**.  Не забудьте сохранить результаты! -->
+
+<!-- ## Лекция 3. Структура популяций. -->
+
+<!-- - [Демэкология](Presentations//Популяции и их структура (биотехнологи).pdf) -->
 
 
-- [Динамика популяции](Presentations//Динамика популяции (биотехнологи).pdf)
+<!-- ## Лекция 4. Динамика популяций. -->
 
 
-[Тест по теме "Популяционные группировки и их струкутра"](https://docs.google.com/forms/d/e/1FAIpQLSdHRfxBVmymWkaCza0cNNoa9HsHVS90FfdaBYdVCzupGoJGdg/viewform?usp=header)
-
-[Тест по теме "Динамика популяции"](https://docs.google.com/forms/d/e/1FAIpQLScDeos6i4aW2zL_bdAfZcG5goc5PxH7G_lmcWnGuXPafIdRBw/viewform?usp=publish-editor)
-
-[Контрольная работа № 1](https://docs.google.com/forms/d/e/1FAIpQLSeCjt0XGwNiuW2jKP1FyOA18Hh_wkKZPiYA9K5adht8aze2Pg/viewform?usp=publish-editor)
-
-## Лекции 5-6. Взаимоотношения организмов.
-
-- [Взаимоотношения организмов. Часть 1.](Presentations//05_06_Взаимоотношения организмов (биотехнологи).pdf)
-
-**Дополнительные материалы**
-
-- [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf)
-
-- [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing)
-
-- [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf)
-- [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing)
+<!-- - [Динамика популяции](Presentations//Динамика популяции (биотехнологи).pdf) -->
 
 
-[Тест по теме "Взаимоотношения организмов"](https://docs.google.com/forms/d/e/1FAIpQLSdftHf6QewoJLtIbJkGZpkY3XQ3J4kRMJ7q--loLMOQ9cC_KA/viewform?usp=publish-editor)
+<!-- [Тест по теме "Популяционные группировки и их струкутра"](https://docs.google.com/forms/d/e/1FAIpQLSdHRfxBVmymWkaCza0cNNoa9HsHVS90FfdaBYdVCzupGoJGdg/viewform?usp=header) -->
+
+<!-- [Тест по теме "Динамика популяции"](https://docs.google.com/forms/d/e/1FAIpQLScDeos6i4aW2zL_bdAfZcG5goc5PxH7G_lmcWnGuXPafIdRBw/viewform?usp=publish-editor) -->
+
+<!-- [Контрольная работа № 1](https://docs.google.com/forms/d/e/1FAIpQLSeCjt0XGwNiuW2jKP1FyOA18Hh_wkKZPiYA9K5adht8aze2Pg/viewform?usp=publish-editor) -->
+
+<!-- ## Лекции 5-6. Взаимоотношения организмов. -->
+
+<!-- - [Взаимоотношения организмов. Часть 1.](Presentations//05_06_Взаимоотношения организмов (биотехнологи).pdf) -->
+
+<!-- **Дополнительные материалы** -->
+
+<!-- - [Классификация симфизиологических связей (по В. Н. Белемишеву)](Presentations//Lecture 5 Взаимоотношения часть 1.pdf) -->
+
+<!-- - [Видео лекции про симфизиологические связи](https://drive.google.com/file/d/1qkhwZqhE-mmFarFXI5Vgyts-hiCnNuA4/view?usp=sharing) -->
+
+<!-- - [Симбиозы](Presentations//Lecture 9 Симбиозы.pdf) -->
+<!-- - [Симбиозы. Видео](https://drive.google.com/file/d/1ikI8bSG5vgUVa_CZpeQvYBeJ8jqUoKk0/view?usp=sharing) -->
 
 
-[Тест по теме "Трофические связи"](https://docs.google.com/forms/d/e/1FAIpQLSdlfJvEFJNElLCHyWAr6BNtu3d1Mmq_qdPXmdRuuv3iwqB63g/viewform?usp=publish-editor)
+<!-- [Тест по теме "Взаимоотношения организмов"](https://docs.google.com/forms/d/e/1FAIpQLSdftHf6QewoJLtIbJkGZpkY3XQ3J4kRMJ7q--loLMOQ9cC_KA/viewform?usp=publish-editor) -->
 
-[Тест по теме "Конкурентные отношения"](https://docs.google.com/forms/d/e/1FAIpQLSfWfJfos4E3iGRmj489zadPA7eWNkGgz32bfEl7ucTtwPI9wg/viewform?usp=publish-editor)
+
+<!-- [Тест по теме "Трофические связи"](https://docs.google.com/forms/d/e/1FAIpQLSdlfJvEFJNElLCHyWAr6BNtu3d1Mmq_qdPXmdRuuv3iwqB63g/viewform?usp=publish-editor) -->
+
+<!-- [Тест по теме "Конкурентные отношения"](https://docs.google.com/forms/d/e/1FAIpQLSfWfJfos4E3iGRmj489zadPA7eWNkGgz32bfEl7ucTtwPI9wg/viewform?usp=publish-editor) -->
 
 
 <!-- [**КОНТРОЛЬНАЯ РАБОТА № 2**](https://docs.google.com/forms/d/e/1FAIpQLSceOf3i4DU0v8gvEK3qibe6CbOlo_RpgwZELI-rzn4cXaT-kA/viewform?usp=publish-editor) -->
@@ -223,16 +227,16 @@ title: Презентации к лекциям
 <!-- - [Конкуренция, экологические ниши и структура сообществ](Presentations//07_Конкуренция и структура сообществ (биотехнологи).pdf) -->
 
 
-## Лекции 8. Струкутра и динамика экосистем
+<!-- ## Лекции 8. Струкутра и динамика экосистем -->
 
 
-- [Структура и динамика экоситсем](Presentations//08_Структура и динамика экосистем (биотехнологи).pdf)
+<!-- - [Структура и динамика экоситсем](Presentations//08_Структура и динамика экосистем (биотехнологи).pdf) -->
 
-- [Глобальные круговороты (дополнительные материалы)](Presentations//Биогеохимические циклы (биотехнологи).pdf)
+<!-- - [Глобальные круговороты (дополнительные материалы)](Presentations//Биогеохимические циклы (биотехнологи).pdf) -->
 
 
 
-[Тест по теме "Структура и динамика экосистем"](https://docs.google.com/forms/d/e/1FAIpQLSd_gPvOHnMa3n7_5JrWwWd-sMWP4rTQ46BXrME9LbmVxnzttQ/viewform?usp=header)
+<!-- [Тест по теме "Структура и динамика экосистем"](https://docs.google.com/forms/d/e/1FAIpQLSd_gPvOHnMa3n7_5JrWwWd-sMWP4rTQ46BXrME9LbmVxnzttQ/viewform?usp=header) -->
 
 
 <!-- [**КОНТРОЛЬНАЯ РАБОТА № 2**](https://docs.google.com/forms/d/e/1FAIpQLSceOf3i4DU0v8gvEK3qibe6CbOlo_RpgwZELI-rzn4cXaT-kA/viewform?usp=publish-editor) -->

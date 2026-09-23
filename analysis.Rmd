@@ -7,25 +7,25 @@ title: Анализ работы
 
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(dplyr)
-library(readxl)
-library(ggplot2)
-library(broom)
-library(tidyr)
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- library(knitr) -->
+<!-- library(dplyr) -->
+<!-- library(readxl) -->
+<!-- library(ggplot2) -->
+<!-- library(broom) -->
+<!-- library(tidyr) -->
 
 
-class <- read_excel(path = "data/Classes_2026_biotech.xlsx", col_names = T)
+<!-- class <- read_excel(path = "data/Classes_2026_biotech.xlsx", col_names = T) -->
 
-class <- class %>% filter(!is.na(Login))
+<!-- class <- class %>% filter(!is.na(Login)) -->
 
-class <- class %>% select(Family,	Name,	Otch,	Login)
+<!-- class <- class %>% select(Family,	Name,	Otch,	Login) -->
 
 
-opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+<!-- opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE) -->
 
-```
+<!-- ``` -->
 
 
 
@@ -34,220 +34,200 @@ opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ## **Анализ тестов по материалам лекций**
 
-Максимальное количество баллов для экзамена - 8%
+Максимальное количество баллов для экзамена - 3%
 
-<!-- # Максимальное количество баллов для экзамена: 3% -->
 
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- credits <- class %>% select(Login) -->
 
-credits <- class %>% select(Login)
+<!-- # Тест по Лекции 1 и 2 -->
 
-# Тест по Лекции 1 и 2
+<!-- test_lecture_1 <- read_excel("data/Тест по темам _Предмет экологии_ и _Аутэкология_ (Биоинженеры) (Ответы).xlsx", col_names = TRUE) -->
 
-test_lecture_1 <- read_excel("data/Тест по темам _Предмет экологии_ и _Аутэкология_ (Биоинженеры) (Ответы).xlsx", col_names = TRUE)
+<!-- test_lecture_1 <-  -->
+<!--   test_lecture_1 %>% -->
+<!--    select(c(3, 4)) -->
 
-test_lecture_1 <- 
-  test_lecture_1 %>%
-   select(c(3, 4))
 
+<!--  names(test_lecture_1) <- c("Score_lecture_1", "Login") -->
 
- names(test_lecture_1) <- c("Score_lecture_1", "Login")
 
+<!--  credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
 
- credits <- merge(credits, test_lecture_1, all.x = TRUE)
 
 
 
+<!--  # Тест по Лекции 2 -->
 
- # Тест по Лекции 2
+<!--  test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Биоинженеры) (Ответы).xlsx") -->
 
- test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Биоинженеры) (Ответы).xlsx")
 
+<!--  test_lecture_2 <- test_lecture_2 %>% -->
+<!--    select(c(3, 2)) -->
 
- test_lecture_2 <- test_lecture_2 %>%
-   select(c(3, 2))
 
+<!--  names(test_lecture_2) <- c("Score_lecture_2", "Login") -->
 
- names(test_lecture_2) <- c("Score_lecture_2", "Login")
 
+<!--  credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
 
- credits <- merge(credits, test_lecture_2, all.x = TRUE)
 
+<!--  #   Тест по Лекции 3 -->
 
- #   Тест по Лекции 3
 
+<!--  test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Биоинженеры) (Ответы).xlsx") -->
 
- test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Биоинженеры) (Ответы).xlsx")
 
+<!--  test_lecture_3 <- test_lecture_3 %>% -->
+<!--    select(c(3,2)) -->
 
- test_lecture_3 <- test_lecture_3 %>%
-   select(c(3,2))
 
+<!--  names(test_lecture_3) <- c("Score_lecture_3", "Login") -->
 
- names(test_lecture_3) <- c("Score_lecture_3", "Login")
 
+<!--  credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
 
- credits <- merge(credits, test_lecture_3, all.x = TRUE)
 
+<!--  test_lecture_4 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Биоинженеры) (Ответы).xlsx") -->
 
- test_lecture_4 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Биоинженеры) (Ответы).xlsx")
+<!--  # -->
+<!--  test_lecture_4 <- test_lecture_4 %>% -->
+<!--    select(c(2, 3)) -->
 
- #
- test_lecture_4 <- test_lecture_4 %>%
-   select(c(2, 3))
 
+<!--  names(test_lecture_4) <- c("Score_lecture_4", "Login") -->
 
- names(test_lecture_4) <- c("Score_lecture_4", "Login")
 
+<!--  credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
 
- credits <- merge(credits, test_lecture_4, all.x = TRUE)
 
+<!--  test_lecture_5 <- read_xlsx("data/Тест по теме Трофические связи (Биоинженеры) (Ответы).xlsx") -->
 
- test_lecture_5 <- read_xlsx("data/Тест по теме Трофические связи (Биоинженеры) (Ответы).xlsx")
 
+<!--  test_lecture_5 <- test_lecture_5 %>% -->
+<!--    select(c(2, 3)) -->
 
- test_lecture_5 <- test_lecture_5 %>%
-   select(c(2, 3))
 
+<!--  names(test_lecture_5) <- c("Score_lecture_5", "Login") -->
 
- names(test_lecture_5) <- c("Score_lecture_5", "Login")
 
+<!--  credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
 
- credits <- merge(credits, test_lecture_5, all.x = TRUE)
 
-  
 
- test_lecture_6 <- read_xlsx("data/Тест по теме Конкурентные отношения (Биоинженеры) (Ответы).xlsx")
+<!--  test_lecture_6 <- read_xlsx("data/Тест по теме Конкурентные отношения (Биоинженеры) (Ответы).xlsx") -->
 
- test_lecture_6 <- test_lecture_6 %>%
-   select(c(2, 3))
+<!--  test_lecture_6 <- test_lecture_6 %>% -->
+<!--    select(c(2, 3)) -->
 
 
- names(test_lecture_6) <- c("Score_lecture_6", "Login")
+<!--  names(test_lecture_6) <- c("Score_lecture_6", "Login") -->
 
 
- credits <- merge(credits, test_lecture_6, all.x = TRUE)
+<!--  credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
 
 
- test_lecture_7 <- read_xlsx("data/Тест по теме _Структура сообществ_ (биоинженеры)  (Ответы).xlsx")
+<!--  test_lecture_7 <- read_xlsx("data/Тест по теме _Структура сообществ_ (биоинженеры)  (Ответы).xlsx") -->
 
- test_lecture_7 <- test_lecture_7 %>%
-   select(c(3, 4))
+<!--  test_lecture_7 <- test_lecture_7 %>% -->
+<!--    select(c(3, 4)) -->
 
 
- names(test_lecture_7) <- c("Score_lecture_7", "Login")
+<!--  names(test_lecture_7) <- c("Score_lecture_7", "Login") -->
 
 
- credits <- merge(credits, test_lecture_7, all.x = TRUE)
+<!--  credits <- merge(credits, test_lecture_7, all.x = TRUE) -->
 
- # 
- # 
- # 
- # 
- # test_lecture_8 <- read_xlsx("data/Тест по теме _Симбиозы_ (Ответы Биологи 2025).xlsx")
- # 
- # 
- # student_id <- test_lecture_8 %>% select(2, 4)
- # names(student_id) <- c("mail", "Login")
- # 
- # 
- # test_lecture_8 <- test_lecture_8 %>%
- #   select(c(3, 4))
- # 
- # 
- # names(test_lecture_8) <- c("Score_lecture_8", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_8, all.x = TRUE)
- # 
- # 
- # 
- # test_lecture_9 <- read_xlsx("data/Тест по теме _Структура сообществ_  (Ответы Биологи 2025).xlsx")
- # 
- # 
- # test_lecture_9 <- test_lecture_9 %>%
- #   select(c(3, 4))
- # 
- # 
- # names(test_lecture_9) <- c("Score_lecture_9", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_9, all.x = TRUE)
+<!--  #  -->
+<!--  #  -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_8 <- read_xlsx("data/Тест по теме _Симбиозы_ (Ответы Биологи 2025).xlsx") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # student_id <- test_lecture_8 %>% select(2, 4) -->
+<!--  # names(student_id) <- c("mail", "Login") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_8 <- test_lecture_8 %>% -->
+<!--  #   select(c(3, 4)) -->
+<!--  #  -->
+<!--  #  -->
+<!--  # names(test_lecture_8) <- c("Score_lecture_8", "Login") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # credits <- merge(credits, test_lecture_8, all.x = TRUE) -->
+<!--  #  -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_9 <- read_xlsx("data/Тест по теме _Структура сообществ_  (Ответы Биологи 2025).xlsx") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_9 <- test_lecture_9 %>% -->
+<!--  #   select(c(3, 4)) -->
+<!--  #  -->
+<!--  #  -->
+<!--  # names(test_lecture_9) <- c("Score_lecture_9", "Login") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # credits <- merge(credits, test_lecture_9, all.x = TRUE) -->
 
 
 
- 
- # Вывод общей таблицы с баллами
 
-  credits <- credits %>% filter(Login != "NA")
+<!--  # Вывод общей таблицы с баллами -->
 
- credits_sum <- 16 + 10 + 10 + 6 + 4 + 10 + 5
- # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8
- #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
- #  + 10 + 8 + 10 + 10 + 5 + 7
+<!--   credits <- credits %>% filter(Login != "NA") -->
 
- credits_print <-
-   credits
- #  %>% select(-Time)
+<!--  credits_sum <- 16 + 10 + 10 + 6 + 4 + 10 + 5 -->
+<!--  # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8 -->
+<!--  #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10 -->
+<!--  #  + 10 + 8 + 10 + 10 + 5 + 7 -->
 
- credits_print$Sum <-
-   credits_print %>%
-   select(-c("Login")) %>%
-   rowSums(na.rm=TRUE)
+<!--  credits_print <- -->
+<!--    credits -->
+<!--  #  %>% select(-Time) -->
 
- credits_print$Credit_Sum <- credits_sum
+<!--  credits_print$Sum <- -->
+<!--    credits_print %>% -->
+<!--    select(-c("Login")) %>% -->
+<!--    rowSums(na.rm=TRUE) -->
 
- credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2)
+<!--  credits_print$Credit_Sum <- credits_sum -->
 
- credits_print$Exam <- credits_print$Proportion * 8
+<!--  credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2) -->
 
-  # credits_print$Exam <- round(credits_print$Exam, 1)  
-  # умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки
+<!--  credits_print$Exam <- credits_print$Proportion * 8 -->
 
+<!--   # credits_print$Exam <- round(credits_print$Exam, 1)   -->
+<!--   # умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки -->
 
 
-```
 
+<!-- ``` -->
 
 
-**Состояние индивидуального счета студентов**
-```{r, echo=F}
 
- options(knitr.kable.NA = '-')
+<!-- **Состояние индивидуального счета студентов** -->
 
- credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum)
+<!-- ```{r, echo=F} -->
 
- kable(credits_print)
+<!--  options(knitr.kable.NA = '-') -->
 
-```
+<!--  credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum) -->
 
+<!--  kable(credits_print) -->
 
+<!-- ``` -->
 
-<!-- # ## Комментарии к тесту "Предмет экологии" и "Аутэкология" -->
-<!-- #  -->
-<!-- # Здесь даются комментарии к тем вопросам, на которые правильные ответы дало менее 50% респондентов. -->
-<!-- #  -->
-<!-- # + **"Если вы собираетесь изучать структуру популяционных группировок людей, то что бы вы могли  рассматривать в качестве первичных элементов в этой системе?"** -->
-<!-- #  -->
-<!-- # Изучая структуру популяционных группировок мы должны расчленять их на какие-то субпопуляционные группировки. Поэтому ответ "Все человечество в целом" неправильный. Здесь нет расчленения. -->
-<!-- #  -->
-<!-- # + **"Живые системы какого уровня можно изучать, собирая материал в месте, которое изображено на данном рисунке?"** -->
-<!-- #  -->
-<!-- # На рисунке было изображено **конкретное** сообщество. Поэтому системы более высокого уровня изучить на этом примере нельзя.  -->
-<!-- #  -->
-<!-- # + **"Найдите такие компоненты среды, которые можно отнести к числу экологических факторов"** -->
-<!-- #  -->
-<!-- # Вспомните разговор на лекции. Мы разбирали пример про глубину водоема в отношении водных организмов. -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- # # **Анализ отчетов по самостоятельной работе № 1** -->
-<!-- #  -->
-<!-- # Максимальное количество баллов для экзамена: 1.5% -->
-<!-- #  -->
-<!-- #  -->
+
+
+
+# **Анализ отчетов по самостоятельной работе № 1**
+
+Максимальное количество баллов для экзамена: 1.5%
+
 <!-- # ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- #  -->
 <!-- # hw1 <- read_xlsx("data/Самостоятельная работа № 1 (Ответы Биологи 2025).xlsx") -->
@@ -296,15 +276,13 @@ test_lecture_1 <-
 <!-- #  -->
 <!-- # ``` -->
 <!-- #  -->
-<!-- # <br> -->
-<!-- # <br> -->
-<!-- #  -->
-<!-- #  -->
-<!-- # # **Анализ отчетов по самостоятельной работе № 2** -->
-<!-- #  -->
-<!-- # Максимальное количество баллов для экзамена: 1.5% -->
-<!-- #  -->
-<!-- #  -->
+ <br>
+ <br>
+
+# **Анализ отчетов по самостоятельной работе № 2**
+
+Максимальное количество баллов для экзамена: 1.5%
+
 <!-- # ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- #  -->
 <!-- # hw2 <- read_xlsx("data/Самостоятельная работа №2  (Ответы иологи 2025).xlsx") -->
@@ -353,86 +331,75 @@ test_lecture_1 <-
 
 ## **Анализ контрольной работы № 1**
 
-Максимальное количество баллов для экзамена: 3%
+Максимальное количество баллов для экзамена: 1.5%
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
- cont1 <- read_excel("data/Контрольная работа № 1 (Биоинженеры) (Ответы).xlsx")
+<!--  cont1 <- read_excel("data/Контрольная работа № 1 (Биоинженеры) (Ответы).xlsx") -->
 
- cont1 <- cont1 %>% select(3, 4)
+<!--  cont1 <- cont1 %>% select(3, 4) -->
 
- names(cont1) <- c("Score", "Login")
+<!--  names(cont1) <- c("Score", "Login") -->
 
-  cont1_print <- merge(class, cont1) 
-  
-  cont1_print <- 
-    cont1_print %>% 
-    select(Login, Score) %>% 
-    mutate(Exam = round(Score / 25 * 3, 1) )
+<!--   cont1_print <- merge(class, cont1)  -->
 
- 
-
- kable(cont1_print)
-
-
-```
+<!--   cont1_print <-  -->
+<!--     cont1_print %>%  -->
+<!--     select(Login, Score) %>%  -->
+<!--     mutate(Exam = round(Score / 25 * 3, 1) ) -->
 
 
 
-<!-- #  -->
-<!-- #  -->
-<!-- # ## Комментарии к вопросам по контрольной работе №1 -->
-<!-- #  -->
-<!-- # Было всего два вопроса, на которые неправильно дали ответ более 50% респондентов -->
-<!-- #  -->
-<!-- # *Какие из следующих утверждений верны для модели логистического роста популяции (модели Ферхюльста)?* -->
-<!-- #  -->
-<!-- # Многие отметили как правильное решение "Это модель динамического процесса второго порядка". То есть справедливо выражение $N_t = f(N_{t-1}, N_{t-2})$. Разве это так? Смотрите слайд 26 в презентации. Разве там есть $N_{t-2}$? -->
-<!-- #  -->
-<!-- # *Какие из следующих утверждений точно описывают мальтузианский параметр (r)?* -->
-<!-- #  -->
-<!-- # Многие ответили неправильно, выбрав "В модели логистического роста популяции этот параметр остаётся постоянным, даже когда размер популяции приближается к ёмкости среды (K)." -->
-<!-- #  -->
-<!-- # Формально такой ответ правильный, так как сам по себе мальтузианский параметр - это характеристика вида. Однако, как я про это специально отмечал на лекции,  правильно говорить про *per-capita growth rate*. Именно этот показатель убывает по мере приближения к $K$. Но я также специально подчеркивал, что обычно в моделях динамики численности говорят про мальтузианский параметр, который НЕ остается постоянным.   -->
-<!-- #  -->
-<!-- #  -->
-<!-- # В вопросе "Представьте, что на некий остров попало 100 особей вида-вселенца, ранее не обитавшего на этой территории. Если известно, что в среднем за минимально возможный промежуток времени (один год) на одну особь в популяции приходится 0.1 потомка, но за тот же промежуток времени удельная смертность составляет 0.01, то сколько особей будет представлено в популяции через 10 лет если учесть, что емкость среды составляет 200000 особей данного вида. Ответ округлите до целых". -->
-<!-- #  -->
-<!-- # Мной была допущена техническая ошибка (не поставил галочку). Поэтому всем этот вопрос зачтен, как правильный. Я вместо 25 вопросов при вычислениях использовал 24. Так что на сайте у вас будет больше, чем в отчете, который пришел по почте.   -->
+<!--  kable(cont1_print) -->
+
+
+<!-- ``` -->
+
+
 
 
 
 # **Анализ контрольной работы № 2**
 
-Максимальное количество баллов для экзамена: 3%
+Максимальное количество баллов для экзамена: 1.5%
 
 
-```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 
-cont2 <- read_excel("data/Контрольная работа №2 (Биоинженеры) (Ответы).xlsx")
+<!-- cont2 <- read_excel("data/Контрольная работа №2 (Биоинженеры) (Ответы).xlsx") -->
 
-cont2 <- cont2 %>% select(3, 4)
+<!-- cont2 <- cont2 %>% select(3, 4) -->
 
-names(cont2) <- c("Score", "Login")
+<!-- names(cont2) <- c("Score", "Login") -->
 
-cont2_print <- merge(class, cont2) 
-  
-  cont2_print <- 
-    cont2_print %>% 
-    select(Login, Score) %>% 
-    mutate(Exam = round(Score / 13 * 3, 1) )
+<!-- cont2_print <- merge(class, cont2)  -->
 
- 
+<!--   cont2_print <-  -->
+<!--     cont2_print %>%  -->
+<!--     select(Login, Score) %>%  -->
+<!--     mutate(Exam = round(Score / 13 * 3, 1) ) -->
 
- kable(cont2_print)
 
-```
+
+<!--  kable(cont2_print) -->
+
+<!-- ``` -->
 
 
 # **Оценки за семинары**
 
-Максимальное количество баллов для экзамена 16%
+Максимальное количество баллов для экзамена 21%
+
+
+
+**Коллеги!**
+
+Оценки, которые вы видите на этой страничке, это результат автоматической обработки базы, которую заполняют преподаватели после семинаров.  Проверяйте, пожалуйста, все ваши текущие оценки. Если вы видите, что вам что-то не проставлено, то срочно связывайтесь с соответствующим преподавателем.
+
+Поверьте, у нас колоссальная нагрузка и мы не всегда успеваем внести оценки в ведомость. Контролируйте этот процесс, пожалуйста.
+
+
 
 <!-- Семинары Биологи -->
 
@@ -463,26 +430,24 @@ cont2_print <- merge(class, cont2)
 
 <!-- Семинары Биоинженеры -->
 
-```{r}
+<!-- ```{r} -->
 
-sem <- read_excel("data/Семинары(Биоинженеры).xlsx")
+<!-- sem <- read_excel("data/Семинары(Биоинженеры).xlsx") -->
 
-sem <- sem %>% select(4:6)
-
-
-sem_print <- sem 
-  
-  sem_print <- 
-    sem_print %>% 
-    mutate(Exam = rowSums(across(-1), na.rm = TRUE)/2*8)
-
- 
-
- kable(sem_print)
-
-```
+<!-- sem <- sem %>% select(4:6) -->
 
 
+<!-- sem_print <- sem  -->
+
+<!--   sem_print <-  -->
+<!--     sem_print %>%  -->
+<!--     mutate(Exam = rowSums(across(-1), na.rm = TRUE)/2*8) -->
+
+
+
+<!--  kable(sem_print) -->
+
+<!-- ``` -->
 
 
 
@@ -490,11 +455,6 @@ sem_print <- sem
 
 
 
-<!-- **Коллеги!** -->
-
-<!-- Оценки, которые вы видите ниже, это результат автоматической обработки базы, которую заполняют преподаватели после семинаров.  Проверяйте, пожалуйста, все ваши текущие оценки. Если вы видите, что вам что-то не проставлено, то срочно связывайтесь с соответствующим преподавателем. -->
-
-<!-- Поверьте, у нас колоссальная нагрузка и мы не всегда успеваем внести оценки в ведомость. Контролируйте этот процесс, пожалуйста. -->
 
 
 
@@ -528,46 +488,47 @@ sem_print <- sem
 
 
 
-## **Итоговый счет группа биоинженеров**
+<!-- ## **Итоговый счет группа биоинженеров** -->
 
 
-```{r warning = FALSE}
+<!-- ```{r warning = FALSE} -->
 
-tests <- credits_print %>% select(Login, Exam)
-names(tests) <- c("Login", "Тесты по лекциям")
-
-
-cont1 <- cont1_print %>% select(Login, Exam)
-names(cont1) <- c("Login", "Контрольная 1")
+<!-- tests <- credits_print %>% select(Login, Exam) -->
+<!-- names(tests) <- c("Login", "Тесты по лекциям") -->
 
 
-
-cont2 <- cont2_print %>% select(Login, Exam)
-names(cont2) <- c("Login", "Контрольная 2")
-
-
-sems <- sem_print %>% select(Login, Exam)
-
-names(sems) <- c("Login", "Семинары" )
-
-
-d <- merge(tests, cont1, by = "Login", all.x = TRUE)
-dd <- merge(d, cont2, by = "Login", all.x = TRUE)
-final <- merge(dd, sems, by = "Login", all.x = TRUE)
-
-names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" )
-
-Exam <- rowSums(final[,-1], na.rm = T)
-
-final$Exam <- Exam
-
-kable(final)
-
-```
+<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
+<!-- names(cont1) <- c("Login", "Контрольная 1") -->
 
 
 
-<!-- ## **Итоговый счет биологи 2025-2026** -->
+<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
+<!-- names(cont2) <- c("Login", "Контрольная 2") -->
+
+
+<!-- sems <- sem_print %>% select(Login, Exam) -->
+
+<!-- names(sems) <- c("Login", "Семинары" ) -->
+
+
+<!-- d <- merge(tests, cont1, by = "Login", all.x = TRUE) -->
+<!-- dd <- merge(d, cont2, by = "Login", all.x = TRUE) -->
+<!-- final <- merge(dd, sems, by = "Login", all.x = TRUE) -->
+
+<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
+
+<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
+
+<!-- final$Exam <- Exam -->
+
+<!-- kable(final) -->
+
+<!-- ``` -->
+
+
+
+## **Итоговый счет биологи 2026-2027**
+
 
 
 
@@ -647,17 +608,17 @@ kable(final)
 
 
 
-```{r}
-# Результаты в сумме для создания файла-ведомости экзамена
+<!-- ```{r} -->
+<!-- # Результаты в сумме для создания файла-ведомости экзамена -->
 
-class <- read_excel("data/Classes_2026_biotech.xlsx")
+<!-- class <- read_excel("data/Classes_2026_biotech.xlsx") -->
 
-# class <- class %>% filter(!is.na(Login)|!is.na(Group) )
-class <- class %>% select(Login, Family, Name, Otch )
-res <- merge(class, final, by = "Login")
+<!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
+<!-- class <- class %>% select(Login, Family, Name, Otch ) -->
+<!-- res <- merge(class, final, by = "Login") -->
 
-write.table(res, "data/results_for_examen_2026_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," )
+<!-- write.table(res, "data/results_for_examen_2026_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
 
-```
+<!-- ``` -->
 
 

@@ -344,282 +344,127 @@ div.tocify {
 
 
 <!-- Здесь будут выкладываться текущие результаты ваших работ. -->
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- library(knitr) -->
+<!-- library(dplyr) -->
+<!-- library(readxl) -->
+<!-- library(ggplot2) -->
+<!-- library(broom) -->
+<!-- library(tidyr) -->
+<!-- class <- read_excel(path = "data/Classes_2026_biotech.xlsx", col_names = T) -->
+<!-- class <- class %>% filter(!is.na(Login)) -->
+<!-- class <- class %>% select(Family,  Name,   Otch,   Login) -->
+<!-- opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE) -->
+<!-- ``` -->
 <!-- ############## Биологи ################# -->
 <div id="анализ-тестов-по-материалам-лекций" class="section level2">
 <h2><strong>Анализ тестов по материалам лекций</strong></h2>
-<p>Максимальное количество баллов для экзамена - 8%</p>
-<!-- # Максимальное количество баллов для экзамена: 3% -->
-<p><strong>Состояние индивидуального счета студентов</strong></p>
-<table style="width:100%;">
-<colgroup>
-<col width="6%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="8%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Login</th>
-<th align="right">Score_lecture_1</th>
-<th align="right">Score_lecture_2</th>
-<th align="right">Score_lecture_3</th>
-<th align="right">Score_lecture_4</th>
-<th align="right">Score_lecture_5</th>
-<th align="right">Score_lecture_6</th>
-<th align="right">Score_lecture_7</th>
-<th align="right">Proportion</th>
-<th align="right">Exam</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">st097958</td>
-<td align="right">13</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">10</td>
-<td align="right">2</td>
-<td align="right">0.77</td>
-<td align="right">6.16</td>
-</tr>
-<tr class="even">
-<td align="left">st097958</td>
-<td align="right">14</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">10</td>
-<td align="right">2</td>
-<td align="right">0.79</td>
-<td align="right">6.32</td>
-</tr>
-<tr class="odd">
-<td align="left">st106945</td>
-<td align="right">5</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">0</td>
-<td align="right">0.30</td>
-<td align="right">2.40</td>
-</tr>
-<tr class="even">
-<td align="left">st142524</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-</tr>
-<tr class="odd">
-<td align="left">st142730</td>
-<td align="right">3</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">-</td>
-<td align="right">3</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.33</td>
-<td align="right">2.64</td>
-</tr>
-<tr class="even">
-<td align="left">st142856</td>
-<td align="right">1</td>
-<td align="right">-</td>
-<td align="right">9</td>
-<td align="right">2</td>
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">0.30</td>
-<td align="right">2.40</td>
-</tr>
-<tr class="odd">
-<td align="left">st142856</td>
-<td align="right">1</td>
-<td align="right">-</td>
-<td align="right">9</td>
-<td align="right">2</td>
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">0.30</td>
-<td align="right">2.40</td>
-</tr>
-<tr class="even">
-<td align="left">st142998</td>
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">-</td>
-<td align="right">0.36</td>
-<td align="right">2.88</td>
-</tr>
-<tr class="odd">
-<td align="left">st142999</td>
-<td align="right">11</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">5</td>
-<td align="right">3</td>
-<td align="right">10</td>
-<td align="right">-</td>
-<td align="right">0.70</td>
-<td align="right">5.60</td>
-</tr>
-<tr class="even">
-<td align="left">st143210</td>
-<td align="right">7</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">-</td>
-<td align="right">0.28</td>
-<td align="right">2.24</td>
-</tr>
-<tr class="odd">
-<td align="left">st143705</td>
-<td align="right">7</td>
-<td align="right">5</td>
-<td align="right">10</td>
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">2</td>
-<td align="right">0.66</td>
-<td align="right">5.28</td>
-</tr>
-<tr class="even">
-<td align="left">st143728</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">-</td>
-<td align="right">0.49</td>
-<td align="right">3.92</td>
-</tr>
-<tr class="odd">
-<td align="left">st143761</td>
-<td align="right">5</td>
-<td align="right">-</td>
-<td align="right">7</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">-</td>
-<td align="right">0.39</td>
-<td align="right">3.12</td>
-</tr>
-<tr class="even">
-<td align="left">st143996</td>
-<td align="right">6</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">5</td>
-<td align="right">1</td>
-<td align="right">0.52</td>
-<td align="right">4.16</td>
-</tr>
-<tr class="odd">
-<td align="left">st144209</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.00</td>
-<td align="right">0.00</td>
-</tr>
-<tr class="even">
-<td align="left">st144243</td>
-<td align="right">7</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">-</td>
-<td align="right">0.51</td>
-<td align="right">4.08</td>
-</tr>
-<tr class="odd">
-<td align="left">st144664</td>
-<td align="right">0</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">1</td>
-<td align="right">0.46</td>
-<td align="right">3.68</td>
-</tr>
-<tr class="even">
-<td align="left">st150414</td>
-<td align="right">8</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">10</td>
-<td align="right">1</td>
-<td align="right">0.66</td>
-<td align="right">5.28</td>
-</tr>
-</tbody>
-</table>
-<!-- # ## Комментарии к тесту "Предмет экологии" и "Аутэкология" -->
-<!-- #  -->
-<!-- # Здесь даются комментарии к тем вопросам, на которые правильные ответы дало менее 50% респондентов. -->
-<!-- #  -->
-<!-- # + **"Если вы собираетесь изучать структуру популяционных группировок людей, то что бы вы могли  рассматривать в качестве первичных элементов в этой системе?"** -->
-<!-- #  -->
-<!-- # Изучая структуру популяционных группировок мы должны расчленять их на какие-то субпопуляционные группировки. Поэтому ответ "Все человечество в целом" неправильный. Здесь нет расчленения. -->
-<!-- #  -->
-<!-- # + **"Живые системы какого уровня можно изучать, собирая материал в месте, которое изображено на данном рисунке?"** -->
-<!-- #  -->
-<!-- # На рисунке было изображено **конкретное** сообщество. Поэтому системы более высокого уровня изучить на этом примере нельзя.  -->
-<!-- #  -->
-<!-- # + **"Найдите такие компоненты среды, которые можно отнести к числу экологических факторов"** -->
-<!-- #  -->
-<!-- # Вспомните разговор на лекции. Мы разбирали пример про глубину водоема в отношении водных организмов. -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- #  -->
-<!-- # # **Анализ отчетов по самостоятельной работе № 1** -->
-<!-- #  -->
-<!-- # Максимальное количество баллов для экзамена: 1.5% -->
-<!-- #  -->
-<!-- #  -->
+<p>Максимальное количество баллов для экзамена - 3%</p>
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- credits <- class %>% select(Login) -->
+<!-- # Тест по Лекции 1 и 2 -->
+<!-- test_lecture_1 <- read_excel("data/Тест по темам _Предмет экологии_ и _Аутэкология_ (Биоинженеры) (Ответы).xlsx", col_names = TRUE) -->
+<!-- test_lecture_1 <-  -->
+<!--   test_lecture_1 %>% -->
+<!--    select(c(3, 4)) -->
+<!--  names(test_lecture_1) <- c("Score_lecture_1", "Login") -->
+<!--  credits <- merge(credits, test_lecture_1, all.x = TRUE) -->
+<!--  # Тест по Лекции 2 -->
+<!--  test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Биоинженеры) (Ответы).xlsx") -->
+<!--  test_lecture_2 <- test_lecture_2 %>% -->
+<!--    select(c(3, 2)) -->
+<!--  names(test_lecture_2) <- c("Score_lecture_2", "Login") -->
+<!--  credits <- merge(credits, test_lecture_2, all.x = TRUE) -->
+<!--  #   Тест по Лекции 3 -->
+<!--  test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Биоинженеры) (Ответы).xlsx") -->
+<!--  test_lecture_3 <- test_lecture_3 %>% -->
+<!--    select(c(3,2)) -->
+<!--  names(test_lecture_3) <- c("Score_lecture_3", "Login") -->
+<!--  credits <- merge(credits, test_lecture_3, all.x = TRUE) -->
+<!--  test_lecture_4 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Биоинженеры) (Ответы).xlsx") -->
+<!--  # -->
+<!--  test_lecture_4 <- test_lecture_4 %>% -->
+<!--    select(c(2, 3)) -->
+<!--  names(test_lecture_4) <- c("Score_lecture_4", "Login") -->
+<!--  credits <- merge(credits, test_lecture_4, all.x = TRUE) -->
+<!--  test_lecture_5 <- read_xlsx("data/Тест по теме Трофические связи (Биоинженеры) (Ответы).xlsx") -->
+<!--  test_lecture_5 <- test_lecture_5 %>% -->
+<!--    select(c(2, 3)) -->
+<!--  names(test_lecture_5) <- c("Score_lecture_5", "Login") -->
+<!--  credits <- merge(credits, test_lecture_5, all.x = TRUE) -->
+<!--  test_lecture_6 <- read_xlsx("data/Тест по теме Конкурентные отношения (Биоинженеры) (Ответы).xlsx") -->
+<!--  test_lecture_6 <- test_lecture_6 %>% -->
+<!--    select(c(2, 3)) -->
+<!--  names(test_lecture_6) <- c("Score_lecture_6", "Login") -->
+<!--  credits <- merge(credits, test_lecture_6, all.x = TRUE) -->
+<!--  test_lecture_7 <- read_xlsx("data/Тест по теме _Структура сообществ_ (биоинженеры)  (Ответы).xlsx") -->
+<!--  test_lecture_7 <- test_lecture_7 %>% -->
+<!--    select(c(3, 4)) -->
+<!--  names(test_lecture_7) <- c("Score_lecture_7", "Login") -->
+<!--  credits <- merge(credits, test_lecture_7, all.x = TRUE) -->
+<!--  #  -->
+<!--  #  -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_8 <- read_xlsx("data/Тест по теме _Симбиозы_ (Ответы Биологи 2025).xlsx") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # student_id <- test_lecture_8 %>% select(2, 4) -->
+<!--  # names(student_id) <- c("mail", "Login") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_8 <- test_lecture_8 %>% -->
+<!--  #   select(c(3, 4)) -->
+<!--  #  -->
+<!--  #  -->
+<!--  # names(test_lecture_8) <- c("Score_lecture_8", "Login") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # credits <- merge(credits, test_lecture_8, all.x = TRUE) -->
+<!--  #  -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_9 <- read_xlsx("data/Тест по теме _Структура сообществ_  (Ответы Биологи 2025).xlsx") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # test_lecture_9 <- test_lecture_9 %>% -->
+<!--  #   select(c(3, 4)) -->
+<!--  #  -->
+<!--  #  -->
+<!--  # names(test_lecture_9) <- c("Score_lecture_9", "Login") -->
+<!--  #  -->
+<!--  #  -->
+<!--  # credits <- merge(credits, test_lecture_9, all.x = TRUE) -->
+<!--  # Вывод общей таблицы с баллами -->
+<!--   credits <- credits %>% filter(Login != "NA") -->
+<!--  credits_sum <- 16 + 10 + 10 + 6 + 4 + 10 + 5 -->
+<!--  # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8 -->
+<!--  #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10 -->
+<!--  #  + 10 + 8 + 10 + 10 + 5 + 7 -->
+<!--  credits_print <- -->
+<!--    credits -->
+<!--  #  %>% select(-Time) -->
+<!--  credits_print$Sum <- -->
+<!--    credits_print %>% -->
+<!--    select(-c("Login")) %>% -->
+<!--    rowSums(na.rm=TRUE) -->
+<!--  credits_print$Credit_Sum <- credits_sum -->
+<!--  credits_print$Proportion <- round(credits_print$Sum / credits_print$Credit_Sum, 2) -->
+<!--  credits_print$Exam <- credits_print$Proportion * 8 -->
+<!--   # credits_print$Exam <- round(credits_print$Exam, 1)   -->
+<!--   # умножаем на это число, так как от каждой из 8 лекций приходит 10/8 финальной оценки -->
+<!-- ``` -->
+<!-- **Состояние индивидуального счета студентов** -->
+<!-- ```{r, echo=F} -->
+<!--  options(knitr.kable.NA = '-') -->
+<!--  credits_print <- credits_print %>% filter(!is.na(Login)) %>% select(-Sum, -Credit_Sum) -->
+<!--  kable(credits_print) -->
+<!-- ``` -->
+</div>
+<div id="анализ-отчетов-по-самостоятельной-работе-1"
+class="section level1">
+<h1><strong>Анализ отчетов по самостоятельной работе № 1</strong></h1>
+<p>Максимальное количество баллов для экзамена: 1.5%</p>
 <!-- # ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- #  -->
 <!-- # hw1 <- read_xlsx("data/Самостоятельная работа № 1 (Ответы Биологи 2025).xlsx") -->
@@ -668,15 +513,12 @@ div.tocify {
 <!-- #  -->
 <!-- # ``` -->
 <!-- #  -->
-<!-- # <br> -->
-<!-- # <br> -->
-<!-- #  -->
-<!-- #  -->
-<!-- # # **Анализ отчетов по самостоятельной работе № 2** -->
-<!-- #  -->
-<!-- # Максимальное количество баллов для экзамена: 1.5% -->
-<!-- #  -->
-<!-- #  -->
+<p><br> <br></p>
+</div>
+<div id="анализ-отчетов-по-самостоятельной-работе-2"
+class="section level1">
+<h1><strong>Анализ отчетов по самостоятельной работе № 2</strong></h1>
+<p>Максимальное количество баллов для экзамена: 1.5%</p>
 <!-- # ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- #  -->
 <!-- # hw2 <- read_xlsx("data/Самостоятельная работа №2  (Ответы иологи 2025).xlsx") -->
@@ -722,200 +564,48 @@ div.tocify {
 <!-- #  -->
 <!-- #  -->
 <!-- #  -->
-</div>
 <div id="анализ-контрольной-работы-1" class="section level2">
 <h2><strong>Анализ контрольной работы № 1</strong></h2>
-<p>Максимальное количество баллов для экзамена: 3%</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Login</th>
-<th align="right">Score</th>
-<th align="right">Exam</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">st097958</td>
-<td align="right">17</td>
-<td align="right">2.0</td>
-</tr>
-<tr class="even">
-<td align="left">st106945</td>
-<td align="right">1</td>
-<td align="right">0.1</td>
-</tr>
-<tr class="odd">
-<td align="left">st142730</td>
-<td align="right">8</td>
-<td align="right">1.0</td>
-</tr>
-<tr class="even">
-<td align="left">st142856</td>
-<td align="right">4</td>
-<td align="right">0.5</td>
-</tr>
-<tr class="odd">
-<td align="left">st142998</td>
-<td align="right">11</td>
-<td align="right">1.3</td>
-</tr>
-<tr class="even">
-<td align="left">st142999</td>
-<td align="right">13</td>
-<td align="right">1.6</td>
-</tr>
-<tr class="odd">
-<td align="left">st143210</td>
-<td align="right">10</td>
-<td align="right">1.2</td>
-</tr>
-<tr class="even">
-<td align="left">st143705</td>
-<td align="right">4</td>
-<td align="right">0.5</td>
-</tr>
-<tr class="odd">
-<td align="left">st143728</td>
-<td align="right">9</td>
-<td align="right">1.1</td>
-</tr>
-<tr class="even">
-<td align="left">st143761</td>
-<td align="right">13</td>
-<td align="right">1.6</td>
-</tr>
-<tr class="odd">
-<td align="left">st143996</td>
-<td align="right">11</td>
-<td align="right">1.3</td>
-</tr>
-<tr class="even">
-<td align="left">st144243</td>
-<td align="right">7</td>
-<td align="right">0.8</td>
-</tr>
-<tr class="odd">
-<td align="left">st144664</td>
-<td align="right">6</td>
-<td align="right">0.7</td>
-</tr>
-<tr class="even">
-<td align="left">st150414</td>
-<td align="right">19</td>
-<td align="right">2.3</td>
-</tr>
-</tbody>
-</table>
-<!-- #  -->
-<!-- #  -->
-<!-- # ## Комментарии к вопросам по контрольной работе №1 -->
-<!-- #  -->
-<!-- # Было всего два вопроса, на которые неправильно дали ответ более 50% респондентов -->
-<!-- #  -->
-<!-- # *Какие из следующих утверждений верны для модели логистического роста популяции (модели Ферхюльста)?* -->
-<!-- #  -->
-<!-- # Многие отметили как правильное решение "Это модель динамического процесса второго порядка". То есть справедливо выражение $N_t = f(N_{t-1}, N_{t-2})$. Разве это так? Смотрите слайд 26 в презентации. Разве там есть $N_{t-2}$? -->
-<!-- #  -->
-<!-- # *Какие из следующих утверждений точно описывают мальтузианский параметр (r)?* -->
-<!-- #  -->
-<!-- # Многие ответили неправильно, выбрав "В модели логистического роста популяции этот параметр остаётся постоянным, даже когда размер популяции приближается к ёмкости среды (K)." -->
-<!-- #  -->
-<!-- # Формально такой ответ правильный, так как сам по себе мальтузианский параметр - это характеристика вида. Однако, как я про это специально отмечал на лекции,  правильно говорить про *per-capita growth rate*. Именно этот показатель убывает по мере приближения к $K$. Но я также специально подчеркивал, что обычно в моделях динамики численности говорят про мальтузианский параметр, который НЕ остается постоянным.   -->
-<!-- #  -->
-<!-- #  -->
-<!-- # В вопросе "Представьте, что на некий остров попало 100 особей вида-вселенца, ранее не обитавшего на этой территории. Если известно, что в среднем за минимально возможный промежуток времени (один год) на одну особь в популяции приходится 0.1 потомка, но за тот же промежуток времени удельная смертность составляет 0.01, то сколько особей будет представлено в популяции через 10 лет если учесть, что емкость среды составляет 200000 особей данного вида. Ответ округлите до целых". -->
-<!-- #  -->
-<!-- # Мной была допущена техническая ошибка (не поставил галочку). Поэтому всем этот вопрос зачтен, как правильный. Я вместо 25 вопросов при вычислениях использовал 24. Так что на сайте у вас будет больше, чем в отчете, который пришел по почте.   -->
+<p>Максимальное количество баллов для экзамена: 1.5%</p>
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!--  cont1 <- read_excel("data/Контрольная работа № 1 (Биоинженеры) (Ответы).xlsx") -->
+<!--  cont1 <- cont1 %>% select(3, 4) -->
+<!--  names(cont1) <- c("Score", "Login") -->
+<!--   cont1_print <- merge(class, cont1)  -->
+<!--   cont1_print <-  -->
+<!--     cont1_print %>%  -->
+<!--     select(Login, Score) %>%  -->
+<!--     mutate(Exam = round(Score / 25 * 3, 1) ) -->
+<!--  kable(cont1_print) -->
+<!-- ``` -->
+</div>
 </div>
 <div id="анализ-контрольной-работы-2" class="section level1">
 <h1><strong>Анализ контрольной работы № 2</strong></h1>
-<p>Максимальное количество баллов для экзамена: 3%</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Login</th>
-<th align="right">Score</th>
-<th align="right">Exam</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">st097958</td>
-<td align="right">8</td>
-<td align="right">1.8</td>
-</tr>
-<tr class="even">
-<td align="left">st106945</td>
-<td align="right">2</td>
-<td align="right">0.5</td>
-</tr>
-<tr class="odd">
-<td align="left">st142730</td>
-<td align="right">8</td>
-<td align="right">1.8</td>
-</tr>
-<tr class="even">
-<td align="left">st142856</td>
-<td align="right">3</td>
-<td align="right">0.7</td>
-</tr>
-<tr class="odd">
-<td align="left">st142998</td>
-<td align="right">1</td>
-<td align="right">0.2</td>
-</tr>
-<tr class="even">
-<td align="left">st142999</td>
-<td align="right">9</td>
-<td align="right">2.1</td>
-</tr>
-<tr class="odd">
-<td align="left">st143210</td>
-<td align="right">1</td>
-<td align="right">0.2</td>
-</tr>
-<tr class="even">
-<td align="left">st143705</td>
-<td align="right">7</td>
-<td align="right">1.6</td>
-</tr>
-<tr class="odd">
-<td align="left">st143728</td>
-<td align="right">4</td>
-<td align="right">0.9</td>
-</tr>
-<tr class="even">
-<td align="left">st143761</td>
-<td align="right">3</td>
-<td align="right">0.7</td>
-</tr>
-<tr class="odd">
-<td align="left">st143996</td>
-<td align="right">6</td>
-<td align="right">1.4</td>
-</tr>
-<tr class="even">
-<td align="left">st144243</td>
-<td align="right">3</td>
-<td align="right">0.7</td>
-</tr>
-<tr class="odd">
-<td align="left">st144664</td>
-<td align="right">4</td>
-<td align="right">0.9</td>
-</tr>
-<tr class="even">
-<td align="left">st150414</td>
-<td align="right">7</td>
-<td align="right">1.6</td>
-</tr>
-</tbody>
-</table>
+<p>Максимальное количество баллов для экзамена: 1.5%</p>
+<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+<!-- cont2 <- read_excel("data/Контрольная работа №2 (Биоинженеры) (Ответы).xlsx") -->
+<!-- cont2 <- cont2 %>% select(3, 4) -->
+<!-- names(cont2) <- c("Score", "Login") -->
+<!-- cont2_print <- merge(class, cont2)  -->
+<!--   cont2_print <-  -->
+<!--     cont2_print %>%  -->
+<!--     select(Login, Score) %>%  -->
+<!--     mutate(Exam = round(Score / 13 * 3, 1) ) -->
+<!--  kable(cont2_print) -->
+<!-- ``` -->
 </div>
 <div id="оценки-за-семинары" class="section level1">
 <h1><strong>Оценки за семинары</strong></h1>
-<p>Максимальное количество баллов для экзамена 16%</p>
+<p>Максимальное количество баллов для экзамена 21%</p>
+<p><strong>Коллеги!</strong></p>
+<p>Оценки, которые вы видите на этой страничке, это результат
+автоматической обработки базы, которую заполняют преподаватели после
+семинаров. Проверяйте, пожалуйста, все ваши текущие оценки. Если вы
+видите, что вам что-то не проставлено, то срочно связывайтесь с
+соответствующим преподавателем.</p>
+<p>Поверьте, у нас колоссальная нагрузка и мы не всегда успеваем внести
+оценки в ведомость. Контролируйте этот процесс, пожалуйста.</p>
 <!-- Семинары Биологи -->
 <!-- ```{r warning = FALSE, message=FALSE} -->
 <!-- library(googlesheets4) -->
@@ -932,123 +622,15 @@ div.tocify {
 <!-- mutate(Exam = rowSums(.[3:ncol(.)], na.rm = T) * 3 ) -->
 <!-- ``` -->
 <!-- Семинары Биоинженеры -->
-<table>
-<thead>
-<tr class="header">
-<th align="left">Login</th>
-<th align="right">Seminar_1</th>
-<th align="right">Seminar_2</th>
-<th align="right">Exam</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">st142856</td>
-<td align="right">1.0</td>
-<td align="right">1.5</td>
-<td align="right">10.0</td>
-</tr>
-<tr class="even">
-<td align="left">st143210</td>
-<td align="right">0.8</td>
-<td align="right">1.5</td>
-<td align="right">9.2</td>
-</tr>
-<tr class="odd">
-<td align="left">st144664</td>
-<td align="right">0.9</td>
-<td align="right">1.5</td>
-<td align="right">9.6</td>
-</tr>
-<tr class="even">
-<td align="left">st143705</td>
-<td align="right">1.1</td>
-<td align="right">1.5</td>
-<td align="right">10.4</td>
-</tr>
-<tr class="odd">
-<td align="left">st142730</td>
-<td align="right">1.2</td>
-<td align="right">1.5</td>
-<td align="right">10.8</td>
-</tr>
-<tr class="even">
-<td align="left">st143728</td>
-<td align="right">1.0</td>
-<td align="right">1.5</td>
-<td align="right">10.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st143996</td>
-<td align="right">1.1</td>
-<td align="right">1.5</td>
-<td align="right">10.4</td>
-</tr>
-<tr class="even">
-<td align="left">st106945</td>
-<td align="right">1.0</td>
-<td align="right">1.5</td>
-<td align="right">10.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st143761</td>
-<td align="right">1.1</td>
-<td align="right">1.5</td>
-<td align="right">10.4</td>
-</tr>
-<tr class="even">
-<td align="left">st144209</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st144243</td>
-<td align="right">1.5</td>
-<td align="right">1.5</td>
-<td align="right">12.0</td>
-</tr>
-<tr class="even">
-<td align="left">st142998</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st142524</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.0</td>
-</tr>
-<tr class="even">
-<td align="left">st142999</td>
-<td align="right">-</td>
-<td align="right">1.5</td>
-<td align="right">6.0</td>
-</tr>
-<tr class="odd">
-<td align="left">st150414</td>
-<td align="right">1.0</td>
-<td align="right">1.5</td>
-<td align="right">10.0</td>
-</tr>
-<tr class="even">
-<td align="left">st097958</td>
-<td align="right">1.3</td>
-<td align="right">1.5</td>
-<td align="right">11.2</td>
-</tr>
-<tr class="odd">
-<td align="left">-</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.0</td>
-</tr>
-</tbody>
-</table>
-<!-- **Коллеги!** -->
-<!-- Оценки, которые вы видите ниже, это результат автоматической обработки базы, которую заполняют преподаватели после семинаров.  Проверяйте, пожалуйста, все ваши текущие оценки. Если вы видите, что вам что-то не проставлено, то срочно связывайтесь с соответствующим преподавателем. -->
-<!-- Поверьте, у нас колоссальная нагрузка и мы не всегда успеваем внести оценки в ведомость. Контролируйте этот процесс, пожалуйста. -->
+<!-- ```{r} -->
+<!-- sem <- read_excel("data/Семинары(Биоинженеры).xlsx") -->
+<!-- sem <- sem %>% select(4:6) -->
+<!-- sem_print <- sem  -->
+<!--   sem_print <-  -->
+<!--     sem_print %>%  -->
+<!--     mutate(Exam = rowSums(across(-1), na.rm = TRUE)/2*8) -->
+<!--  kable(sem_print) -->
+<!-- ``` -->
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- seminars <- read_excel("data/seminars_biotech_2025.xlsx") -->
 <!-- # -->
@@ -1063,175 +645,26 @@ div.tocify {
 <!-- seminars_print$Exam <- seminars_print$Exam/2*16 -->
 <!-- kable(seminars_print) -->
 <!-- ``` -->
-<div id="итоговый-счет-группа-биоинженеров" class="section level2">
-<h2><strong>Итоговый счет группа биоинженеров</strong></h2>
-<table>
-<colgroup>
-<col width="13%" />
-<col width="24%" />
-<col width="20%" />
-<col width="20%" />
-<col width="13%" />
-<col width="8%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Login</th>
-<th align="right">Тесты по лекциям</th>
-<th align="right">Контрольная 1</th>
-<th align="right">Контрольная 2</th>
-<th align="right">Семинары</th>
-<th align="right">Exam</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">st097958</td>
-<td align="right">6.16</td>
-<td align="right">2.0</td>
-<td align="right">1.8</td>
-<td align="right">11.2</td>
-<td align="right">21.16</td>
-</tr>
-<tr class="even">
-<td align="left">st097958</td>
-<td align="right">6.32</td>
-<td align="right">2.0</td>
-<td align="right">1.8</td>
-<td align="right">11.2</td>
-<td align="right">21.32</td>
-</tr>
-<tr class="odd">
-<td align="left">st106945</td>
-<td align="right">2.40</td>
-<td align="right">0.1</td>
-<td align="right">0.5</td>
-<td align="right">10.0</td>
-<td align="right">13.00</td>
-</tr>
-<tr class="even">
-<td align="left">st142524</td>
-<td align="right">0.00</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.0</td>
-<td align="right">0.00</td>
-</tr>
-<tr class="odd">
-<td align="left">st142730</td>
-<td align="right">2.64</td>
-<td align="right">1.0</td>
-<td align="right">1.8</td>
-<td align="right">10.8</td>
-<td align="right">16.24</td>
-</tr>
-<tr class="even">
-<td align="left">st142856</td>
-<td align="right">2.40</td>
-<td align="right">0.5</td>
-<td align="right">0.7</td>
-<td align="right">10.0</td>
-<td align="right">13.60</td>
-</tr>
-<tr class="odd">
-<td align="left">st142856</td>
-<td align="right">2.40</td>
-<td align="right">0.5</td>
-<td align="right">0.7</td>
-<td align="right">10.0</td>
-<td align="right">13.60</td>
-</tr>
-<tr class="even">
-<td align="left">st142998</td>
-<td align="right">2.88</td>
-<td align="right">1.3</td>
-<td align="right">0.2</td>
-<td align="right">0.0</td>
-<td align="right">4.38</td>
-</tr>
-<tr class="odd">
-<td align="left">st142999</td>
-<td align="right">5.60</td>
-<td align="right">1.6</td>
-<td align="right">2.1</td>
-<td align="right">6.0</td>
-<td align="right">15.30</td>
-</tr>
-<tr class="even">
-<td align="left">st143210</td>
-<td align="right">2.24</td>
-<td align="right">1.2</td>
-<td align="right">0.2</td>
-<td align="right">9.2</td>
-<td align="right">12.84</td>
-</tr>
-<tr class="odd">
-<td align="left">st143705</td>
-<td align="right">5.28</td>
-<td align="right">0.5</td>
-<td align="right">1.6</td>
-<td align="right">10.4</td>
-<td align="right">17.78</td>
-</tr>
-<tr class="even">
-<td align="left">st143728</td>
-<td align="right">3.92</td>
-<td align="right">1.1</td>
-<td align="right">0.9</td>
-<td align="right">10.0</td>
-<td align="right">15.92</td>
-</tr>
-<tr class="odd">
-<td align="left">st143761</td>
-<td align="right">3.12</td>
-<td align="right">1.6</td>
-<td align="right">0.7</td>
-<td align="right">10.4</td>
-<td align="right">15.82</td>
-</tr>
-<tr class="even">
-<td align="left">st143996</td>
-<td align="right">4.16</td>
-<td align="right">1.3</td>
-<td align="right">1.4</td>
-<td align="right">10.4</td>
-<td align="right">17.26</td>
-</tr>
-<tr class="odd">
-<td align="left">st144209</td>
-<td align="right">0.00</td>
-<td align="right">-</td>
-<td align="right">-</td>
-<td align="right">0.0</td>
-<td align="right">0.00</td>
-</tr>
-<tr class="even">
-<td align="left">st144243</td>
-<td align="right">4.08</td>
-<td align="right">0.8</td>
-<td align="right">0.7</td>
-<td align="right">12.0</td>
-<td align="right">17.58</td>
-</tr>
-<tr class="odd">
-<td align="left">st144664</td>
-<td align="right">3.68</td>
-<td align="right">0.7</td>
-<td align="right">0.9</td>
-<td align="right">9.6</td>
-<td align="right">14.88</td>
-</tr>
-<tr class="even">
-<td align="left">st150414</td>
-<td align="right">5.28</td>
-<td align="right">2.3</td>
-<td align="right">1.6</td>
-<td align="right">10.0</td>
-<td align="right">19.18</td>
-</tr>
-</tbody>
-</table>
-<!-- ## **Итоговый счет биологи 2025-2026** -->
+<!-- ## **Итоговый счет группа биоинженеров** -->
+<!-- ```{r warning = FALSE} -->
+<!-- tests <- credits_print %>% select(Login, Exam) -->
+<!-- names(tests) <- c("Login", "Тесты по лекциям") -->
+<!-- cont1 <- cont1_print %>% select(Login, Exam) -->
+<!-- names(cont1) <- c("Login", "Контрольная 1") -->
+<!-- cont2 <- cont2_print %>% select(Login, Exam) -->
+<!-- names(cont2) <- c("Login", "Контрольная 2") -->
+<!-- sems <- sem_print %>% select(Login, Exam) -->
+<!-- names(sems) <- c("Login", "Семинары" ) -->
+<!-- d <- merge(tests, cont1, by = "Login", all.x = TRUE) -->
+<!-- dd <- merge(d, cont2, by = "Login", all.x = TRUE) -->
+<!-- final <- merge(dd, sems, by = "Login", all.x = TRUE) -->
+<!-- names(final) <- c("Login", "Тесты по лекциям", "Контрольная 1", "Контрольная 2","Семинары" ) -->
+<!-- Exam <- rowSums(final[,-1], na.rm = T) -->
+<!-- final$Exam <- Exam -->
+<!-- kable(final) -->
+<!-- ``` -->
+<div id="итоговый-счет-биологи-2026-2027" class="section level2">
+<h2><strong>Итоговый счет биологи 2026-2027</strong></h2>
 <!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
 <!-- library(stringr) -->
 <!-- d1 <- credits_print %>% select(Login, Exam) -->
@@ -1276,11 +709,11 @@ div.tocify {
 <!-- ``` -->
 <!-- ```{r} -->
 <!-- # Результаты в сумме для создания файла-ведомости экзамена -->
-<!-- class <- read_excel("data/classes_biotech_2025.xlsx") -->
+<!-- class <- read_excel("data/Classes_2026_biotech.xlsx") -->
 <!-- # class <- class %>% filter(!is.na(Login)|!is.na(Group) ) -->
-<!-- class <- class %>% select(St_Mail, Login, Family, Name, Otch ) -->
+<!-- class <- class %>% select(Login, Family, Name, Otch ) -->
 <!-- res <- merge(class, final, by = "Login") -->
-<!-- write.table(res, "data/results_for_examen_2025_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
+<!-- write.table(res, "data/results_for_examen_2026_biotech.csv", sep = ";", row.names = F, fileEncoding = "UTF-8", dec = "," ) -->
 <!-- ``` -->
 </div>
 </div>

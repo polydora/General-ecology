@@ -33,11 +33,15 @@ title: Презентации к лекциям
 
 ## Лекция 4. Структура популяционных группировок
 
-<!-- - [Демэкология](Presentations//Lecture 3 Популяция и ее структура.pdf) -->
+- [Демэкология. Часть 1](Presentations/Lecture 03 Популяция и ее структура. Часть 1.pdf)
+
+<!-- - [Демэкология. Часть 2](Presentations/Lecture 03 Популяция и ее структура. Часть 2.pdf) -->
 
 
 
-<!-- + [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=header) -->
++ [**Тест по теме "Популяционные группировки и их струкутра"** дата окончания **28 октября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf8mYPyo77Pl64xWXDBSBBVJyIRnP8bjhfXc1pS48M0k1tXWg/viewform?usp=dialog)
+
+
 
 
 ## Лекция 5. Динамика популяционных группировок

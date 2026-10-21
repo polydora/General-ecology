@@ -35,7 +35,7 @@ title: Презентации к лекциям
 
 - [Демэкология. Часть 1](Presentations/Lecture 03 Популяция и ее структура. Часть 1.pdf)
 
-<!-- - [Демэкология. Часть 2](Presentations/Lecture 03 Популяция и ее структура. Часть 2.pdf) -->
+- [Демэкология. Часть 2](Presentations/Lecture 03 Популяция и ее структура. Часть 2.pdf)
 
 
 
@@ -46,9 +46,9 @@ title: Презентации к лекциям
 
 ## Лекция 5. Динамика популяционных группировок
 
-<!-- - [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf) -->
+- [Динамика популяции](Presentations//Lecture 4 Динамика популяции.pdf)
 
-<!-- [**Тест по теме "Динамика популций"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=header) -->
+[**Тест по теме "Динамика популяций"** дата окончания **28 октября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLScLLBtTCkam29hECovbyTzS3OJgSY96eXy2KU6kP6K3gMB-yg/viewform?usp=dialog)
 
 
 ## Лекция 6. Взаимоотношения организмов (часть 1)

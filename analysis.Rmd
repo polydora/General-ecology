@@ -63,36 +63,37 @@ test_lecture_1 <-
 
 
  # 
- # # Тест по Лекции 2
- # 
- # test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Биоинженеры) (Ответы).xlsx")
- # 
- # 
- # test_lecture_2 <- test_lecture_2 %>%
- #   select(c(3, 2))
- # 
- # 
- # names(test_lecture_2) <- c("Score_lecture_2", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_2, all.x = TRUE)
- # 
+ # Тест по Лекции 2
+
+ test_lecture_2 <- read_xlsx("data/Тест по теме Популяционные группировки (Ответы).xlsx")
+
+
+ test_lecture_2 <- 
+   test_lecture_2 %>%
+   select(c(2, 3))
+
+
+ names(test_lecture_2) <- c("Score_lecture_2", "Login")
+
+
+ credits <- merge(credits, test_lecture_2, all.x = TRUE)
+
  # 
  # #   Тест по Лекции 3
  # 
- # 
- # test_lecture_3 <- read_xlsx("data/Тест по теме Динамика популяций (Биоинженеры) (Ответы).xlsx")
- # 
- # 
- # test_lecture_3 <- test_lecture_3 %>%
- #   select(c(3,2))
- # 
- # 
- # names(test_lecture_3) <- c("Score_lecture_3", "Login")
- # 
- # 
- # credits <- merge(credits, test_lecture_3, all.x = TRUE)
- # 
+
+ test_lecture_3 <- read_xlsx("data/Тест_по_теме_Динамика_популяций_Ответы.xlsx")
+
+
+ test_lecture_3 <- test_lecture_3 %>%
+   select(c(3,4))
+
+
+ names(test_lecture_3) <- c("Score_lecture_3", "Login")
+
+
+ credits <- merge(credits, test_lecture_3, all.x = TRUE)
+
  # 
  # test_lecture_4 <- read_xlsx("data/Тест по теме Взаимоотношения организмов (Биоинженеры) (Ответы).xlsx")
  # 
@@ -185,7 +186,7 @@ test_lecture_1 <-
 
   credits <- credits %>% filter(Login != "NA")
 
- credits_sum <- 20 
+ credits_sum <- 20 + 12 + 10 
  # 16 + 10 + 10 + 6 + 4 + 10 + 5
  # + 11 +10 + 4 + 6 + 6 + 10 + 7 + 8
  #  19 + 9 + 14 + 10 + 9 +6 + 7 + 8 + 10
@@ -412,29 +413,30 @@ test_lecture_1 <-
 
 <!-- Семинары Биологи -->
 
-<!-- ```{r warning = FALSE, message=FALSE} -->
+```{r warning = FALSE, message=FALSE}
 
-<!-- library(googlesheets4) -->
-<!-- # detach(googlesheets4) -->
+library(googlesheets4)
+# detach(googlesheets4)
 
-<!-- sem <- read_sheet('https://docs.google.com/spreadsheets/d/1VoXiPykKt8hH3TLelmhAv8ws2CRzF6T1AMchM7-V5UY/edit?usp=sharing', col_types = "?") -->
+sem <- read_sheet('https://docs.google.com/spreadsheets/d/1jsA4cUIqSaYIBfBlmVWE_0kFhujq3fJVeaDUm0BfOFk/edit?usp=sharing', col_types = "?")
 
-<!-- names(sem)[1:3] <- c("Name", "Login", "Group") -->
+names(sem)[1:3] <- c("Name", "Login", "Group")
 
 
-<!-- # sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA") -->
+# sem <- read_excel("data/Seminars_2023_biotech.xlsx", na = "NA")
 
-<!-- sem <- sem %>% select(-c(Name)) -->
+sem <- sem %>% select(-c(Name))
 
-<!-- # str(sem) -->
+# str(sem)
 
-<!-- sem_print <- -->
-<!-- merge(class, sem, all = T, by = "Login") %>% -->
-<!-- select(-c(Family, Name, Otch)) %>%  -->
-<!-- arrange(Group)%>% -->
-<!-- mutate(Exam = rowSums(.[3:ncol(.)], na.rm = T) * 3 ) -->
+sem_print <-
+merge(class, sem, all = T, by = "Login") %>%
+select(-c(Family, Name, Otch)) %>%
+arrange(Group)%>%
+mutate(Exam = rowSums(.[3:ncol(.)], na.rm = T) * 3 )
 
-<!-- ``` -->
+kable(sem_print)
+```
 
 
 <!-- Семинары Биоинженеры -->

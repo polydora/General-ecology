@@ -53,9 +53,9 @@ title: Презентации к лекциям
 
 ## Лекция 6. Взаимоотношения организмов (часть 1)
 
-<!-- - [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Симфизиология.pdf) -->
+- [Взаимоотношения организмов (часть 1)](Presentations//Lecture 5 Симфизиология.pdf)
 
-<!-- [**Тест по теме "Симфизиологические связи"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=header) -->
+[**Тест по теме "Симфизиологические связи"** дата окончания **13 ноября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSf6kagaWsEPCnB-ZS4LaqgWP1KhfwWjR5eVZn4MyjiWNbsSVA/viewform?usp=dialog)
 
 ## Лекция 7. Взаимоотношения организмов (часть 2)
 

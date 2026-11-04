@@ -341,30 +341,38 @@ test_lecture_1 <-
 
 ## **Анализ контрольной работы № 1**
 
-Максимальное количество баллов для экзамена: 1.5%
+Максимальное количество баллов для экзамена: 3%
 
 
-<!-- ```{r,  echo=FALSE, message=FALSE, warning=FALSE} -->
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 
-<!--  cont1 <- read_excel("data/Контрольная работа № 1 (Биоинженеры) (Ответы).xlsx") -->
+ cont1 <- read_excel("data/Контрольная работа № 1.xlsx")
 
-<!--  cont1 <- cont1 %>% select(3, 4) -->
+ cont1 <- cont1 %>% select(3, 4)
 
-<!--  names(cont1) <- c("Score", "Login") -->
+ names(cont1) <- c("Score", "Login")
 
-<!--   cont1_print <- merge(class, cont1)  -->
+  cont1_print <- merge(class, cont1)
 
-<!--   cont1_print <-  -->
-<!--     cont1_print %>%  -->
-<!--     select(Login, Score) %>%  -->
-<!--     mutate(Exam = round(Score / 25 * 3, 1) ) -->
+  cont1_print <-
+    cont1_print %>%
+    select(Login, Score) %>%
+    mutate(Exam = round(Score / 24 * 1.5, 1) )
 
-
-
-<!--  kable(cont1_print) -->
+kable(cont1_print)
 
 
-<!-- ``` -->
+```
+
+Распределение оценок за контрольную №1 получилось явно бимодальное. Те, кто попал в правый пик, - **молодцы!**. Один вопрос, по техническим причинам, не имел метки "правильно". Поэтому максимальное количество вопросов стало 24.   
+
+```{r}
+cont1_print |> 
+  ggplot(aes(x = Exam)) +
+  geom_histogram(aes(y = after_stat(density)), binwidth = 0.15) +
+  geom_density(color = "blue", linewidth = 1)
+```
+
 
 
 

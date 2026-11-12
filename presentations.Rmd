@@ -63,9 +63,9 @@ title: Презентации к лекциям
 
 ## Лекция 7. Взаимоотношения организмов (часть 2)
 
-<!-- - [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Классификация отношений.pdf) -->
+- [Взаимоотношения организмов (часть 2)](Presentations//Lecture 6 Классификация отношений.pdf)
 
-<!-- [**Тест по теме "Взаимоотношения организмов"** дата окончания **20 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=header) -->
+[**Тест по теме "Взаимоотношения организмов"** дата окончания **19 ноября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSdBQqhKKFDaZyHh8erBgKrNhVIjtRqRJmFXsVFpD5AEnspwEw/viewform?usp=dialog)
 
 
 ## Лекция 8.Конкурентные отношения

@@ -70,9 +70,9 @@ title: Презентации к лекциям
 
 ## Лекция 8.Конкурентные отношения
 
-<!-- - [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf) -->
+- [Конкурентные отношения](Presentations//Lecture 7 Конкуренция.pdf)
 
-<!-- [**Тест по теме "Конкурентные отношения"** дата окончания **27 сентября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=preview) -->
+[**Тест по теме "Конкурентные отношения"** дата окончания **25 ноября** (23:59)](https://docs.google.com/forms/d/e/1FAIpQLSd5oFpMQZlcnG2cuSo4GlNr-qAYyNSCRxCtABIfGFiZ_PYEZA/viewform?usp=dialog)
 
 
 
